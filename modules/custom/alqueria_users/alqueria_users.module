@@ -1,0 +1,124 @@
+<?php
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\alqueria_config\Controller\AlqueriaConfigController;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Path;
+use Drupal\taxonomy\Entity\Term;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\Core\Ajax\InvokeCommand;
+
+function alqueria_users_form_user_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+	$roles=\Drupal::currentUser()->getRoles();
+	if(!in_array("administrator", $roles) ){
+			$form['actions']['submit']['#attributes']['class'][]="btn-default";
+			$form['actions']['submit']['#attributes']['class'][]="back-green";
+		if ( !is_null($form['account']['current_pass']['#access']) && $form['account']['current_pass']['#access'] ==1  ) {
+			unset($form['account']);
+			$form['massage1'] = [
+				'#type' => 'markup',
+				'#markup' => '<p>Enlace inválido</p>',
+			];
+			$form['actions']['submit']['#submit'][] = 'redirectFunction';
+			$form['actions']['submit']['#value']= 'Ir al home';
+		}else{
+			$form['massage1'] = [
+				'#type' => 'markup',
+				'#markup' => '<h2>Restablecer Contraseña</h2>',
+				'#weight' => '-100'
+			];
+			$form['#attached']['library'][] = 'alqueria_users/alqueriaUsersJS';
+			unset($form['field_apellidos']);
+			unset($form['field_ciudad']);
+			unset($form['field_departamento']);
+			unset($form['field_favoritos']);
+			unset($form['user_picture']);
+			unset($form['field_newsletter']);
+			unset($form['field_nombres']);
+			unset($form['field_preferencias']);
+			unset($form['field_telefono']);
+			unset($form['field_fbid']);
+			unset($form['field_gid']);
+			unset($form['account']['mail']);
+			$form['massage'] = [
+				'#type' => 'markup',
+				'#markup' => '<div class="result_message"></div>',
+			];
+			$form['actions']['submit']['#value']= 'Continuar';
+			//$form['#token'] = FALSE;
+			$form['account']['pass']['#process'][] = 'form_user_reset_process_pass';
+			$form['actions']['submit']['#ajax']['callback']='dataValidation';
+		}
+
+	}
+}
+
+function redirectFunction($form, \Drupal\Core\Form\FormStateInterface $form_state) {
+	$form_state->setRedirect('<front>');
+}
+
+function form_user_reset_process_pass(&$element, \Drupal\Core\Form\FormStateInterface $form_state, &$complete_form) {
+	$element = \Drupal\Core\Render\Element\PasswordConfirm::processPasswordConfirm($element, $form_state, $complete_form);
+	$element['pass1']['#title'] = t('Nueva contraseña');
+	$element['pass1']['#placeholder'] = t('Password');
+	$element['pass2']['#placeholder'] = t('Confirm password');
+	return $element;
+}
+
+function dataValidation(array &$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+	$response = new AjaxResponse();
+	$re = '/^(?=.*[0-9])(?=.*[a-zA-ZñÑ])([a-zñA-ZÑ0-9]+)$/m';
+	if ($form['account']['pass']['pass1']['#value'] != $form['account']['pass']['pass2']['#value']) {
+		$msg="<p> Las contraseñas no coinciden </p>";
+	}
+	elseif ($form['account']['pass']['pass1']['#value'] == "") {
+		$msg="<p> Por favor ingrese una contraseña </p>";
+	}
+	elseif ((preg_match($re, $form['account']['pass']['pass1']['#value']) != 1) ) {
+		$msg="<p> Por favor ingrese una contraseña alfanúmerica </p>";
+	}
+	elseif (strlen($form['account']['pass']['pass1']['#value'])<8 ) {
+		$msg="<p> Por favor ingrese una contraseña mínimo de 8 caracteres </p>";
+	}
+	else{
+		$user_storage = \Drupal::entityManager()->getStorage('user');
+	// Load user by their user ID
+		$user = $user_storage->load(\Drupal::currentUser()->id());
+	// Set the new password
+		$user->setPassword($form['account']['pass']['pass1']['#value']);
+	// Save the user
+		$user->save();
+		$msg='<div id="modal-successful" class="modal-successful modal fade" role="dialog">
+		<div class="modal-dialog modal-center modal-md">
+		<div class="modal-content">
+		<i class="demo-icon icon-icon-close1" data-dismiss="modal" aria-label="Close">&#xe81c;</i>
+		<div class="modal-body">
+		<div class="c-registration">
+		<div class="content-icon">
+		<i class="demo-icon icon-icon-check1">&#xe820;</i>
+		</div>
+		<div class="content-title">
+		<div class="title">
+		<h2>¡Tu contraseña se ha cambiado exitosamente!</h2>
+		</div>
+		<p>Ahora podrás disfrutar de tu contenido alqueria</p>
+		<a href="/" class="btn-default back-green" data-seo="btn-content">
+		Ir al home
+		</a>
+		</div>
+		</div>
+		</div>        
+		</div>
+		</div>
+		</div>';
+	}
+	$response->addCommand(
+		new HtmlCommand(
+			'.result_message',
+			$msg
+		)
+	);
+  	$response->addCommand(new InvokeCommand(NULL,'mostrarModal', ['']));
+  	return $response;
+}

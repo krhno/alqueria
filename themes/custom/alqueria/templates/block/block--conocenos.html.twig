@@ -1,0 +1,20 @@
+<section class="know-us back-gray1">
+	<div class="containerGrid">
+		<div class="content">
+			<div class="c-header">
+				<h2>{{label}}</h2>
+				{{ content['#block_content'].body.value|raw }}
+			</div>
+			<div class="c-know-us">
+				<div class="s-slider-knowUs owl-carousel owl-theme">
+					{{content.field_conocenos}}
+				</div>
+			</div>
+			{% if content['#block_content'].field_enlace is not empty %}
+				<div class="c-bottom">
+					<a href="{{ content['#block_content'].field_enlace.0.url }}" class="btn-default back-green" data-seo="btn-content">{{ content['#block_content'].field_enlace.title }}</a>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</section>

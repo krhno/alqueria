@@ -1,0 +1,50 @@
+/*offices-list*/
+.offices-list{
+	.content{
+		.c-offices-list{
+			padding-top: 35px;
+			
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			article{
+				width: calc(33.33% - 15px);
+    			margin: 0 7.5px 35px 7.5px;
+    			box-shadow: 0 0 10px 0 $shadow;
+    			@media (max-width: $desktop_1024){
+    				width: calc(50% - 15px);
+    				margin: 0 7.5px 35px 7.5px;
+    			}
+    			@media (max-width: $mobile){
+    				width: 100%;
+    				margin: 0 0 35px 0;
+    			}
+    			&:hover{
+    				.info{
+    					background-color: $gray8;
+    				}
+    			}
+				.info{
+					padding: 20px;
+					border-top: 3px solid $red1;
+					span{
+						display: block;
+						padding-top: 10px;
+						i{
+							color: $red1;
+							font-size: 1.25rem;
+							padding-right: 15px;
+							@media (max-width: $desktop_1640){
+								padding-right: 10px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.c-bottom{
+			width: 100%;
+			text-align: center;
+		}
+	}
+}

@@ -1,0 +1,49 @@
+<li class="item-menu">
+	<a href="{{get_config_data('config.settings','sostenibilidad')}}" class="a-item-menu" data-seo="btn-header">
+		{{titulo}}
+	</a>
+	<div id="megamenu-sustainability" class="megamenu-desktop panel-collapse collapse">
+		<div class="column-left">
+			<ul class="no-dics panel-collapse collapse collapse1 show">
+				<li class="item-collapse1">
+					<a href="#sustainability-desktop" class="a-item-collapse1 active" data-toggle="collapse" data-id="sustainability-desktop">
+						{{titulo}}
+					</a>
+					<ul id="sustainability-desktop" class="no-dics panel-collapse collapse collapse2 show">
+						{% set primerSostenibilidad=0 %}
+						{% set tidSostenibilidad=0 %}
+						{% for key, value in obtener_taxonomia('categorias_menu_sostenibilidad') %}
+						{% set taxInfo = obtener_taxonomia_detalle(key,'field_desactivar_menu_dinamico,field_vista') %}
+						{% if loop.index == 1%}
+							{% set tidSostenibilidad = key %}
+							{% if taxInfo.field_desactivar_menu_dinamico == 1%}
+							{% set primerSostenibilidad = sostenibilidad_menu_contenido %}
+							{%else%}
+							{% set primerSostenibilidad = taxInfo.field_vista %}
+							{% endif %}
+						{% endif %}
+						<li class="item-collapse2">
+							<span class="a-item-collapse2 {% if loop.index == 1%}active{% endif %}" data-tid="{{key}}" data-view="{% if taxInfo.field_desactivar_menu_dinamico == 1%}sostenibilidad_menu_contenido{%else%}{{taxInfo.field_vista}}{% endif %}" data-url="field_url_youtube" data-mode="desktop" data-seo="btn-header">
+								{{value.name}}
+							</span>
+						</li>
+						{% endfor %}
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="column-right">
+			<div class="content-right content-sustainability" data-id="sustainability-desktop">
+				<div class="list-articles sustainability">
+					{{vista_render(0,primerSostenibilidad,'block_1')}}
+				</div>
+				<div class="button">
+					{% set taxInfo = obtener_taxonomia_detalle(tidSostenibilidad,'field_url_youtube') %}
+					<a href="{{taxInfo.field_url_youtube}}" class="btn-default back-green" data-seo="btn-header">
+						Ir a la sección
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</li>

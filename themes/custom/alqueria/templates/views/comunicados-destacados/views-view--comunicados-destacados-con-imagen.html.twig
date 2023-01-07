@@ -1,0 +1,22 @@
+<section{{ attributes.addClass(classes) }}>
+	<div class="containerGridp">
+		<div class="content">
+			<div class="c-releases">
+				<div class="column-left">
+					<div class="s-slider-releases owl-dots-gray owl-carousel owl-theme">
+						{{rows}}
+					</div>
+				</div>
+				<div class="column-right">
+					<h2>{{get_config_data('config.settings','titulo_comunicados_destacados')}}</h2>
+					<div class="articles">
+						{{ vista_render(0, 'comunicados_destacados_texto', 'block_1') }} 
+					</div>
+				</div>
+			</div>
+			<div class="c-bottom">
+				<a href="{{get_config_data('config.settings','url_boton_comunidados_destacados')}}" class="btn-default back-green" data-seo="btn-content">{{get_config_data('config.settings','titulo_boton_comunidados_destacados')}}</a>
+			</div>
+		</div>
+	</div>
+</section>

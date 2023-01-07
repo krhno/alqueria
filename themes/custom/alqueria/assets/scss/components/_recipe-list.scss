@@ -1,0 +1,242 @@
+/*recipe-list*/
+.recipe-list{
+	.content{
+		.c-results{
+			position: relative;
+			label{
+				@media (max-width: $tablet){
+					top: 60px;
+					left: 0;
+					position: absolute;
+				}
+				#type-recipe{
+					font-weight: 700;
+					font-style: italic;
+					font-family: $Poppins;
+					text-transform: lowercase;
+				}
+			}
+			.result-items{
+				padding-top: 25px;
+
+				display: flex;
+				flex-direction: row;
+				@media (max-width: $tablet){
+					padding-top: 0;
+
+					flex-direction: column-reverse;
+				}
+				.result-tags{
+					width: 85%;
+					margin-right: 25px;
+					@media (max-width: $tablet){
+						width: 100%;
+						margin-top: 70px;
+						margin-right: 0;
+					}
+					ul{
+						padding: 0;
+						
+						display: flex;
+						flex-wrap: wrap;
+						flex-direction: row;
+						li{
+							padding: 7px;
+							margin: 0 10px 10px 0;
+							border-radius: 20px;
+							transition: all .25s;
+							background-color: $gray8;
+							@media (max-width: $tablet){
+								width: calc(33.33% - 15px);
+    							margin: 0 7.5px 10px 7.5px;
+							}
+							@media (max-width: $mobile){
+								width: calc(50% - 10px);
+    							margin: 0 5px 10px 5px;
+							}
+							.title-tag{
+								@media (max-width: $mobile){
+									font-size: .9rem;
+								}
+							}
+							i{
+								top: -1px;
+								cursor: pointer;
+								color: $gray4;
+								font-size: .8rem;
+								padding-right: 3px;
+								position: relative;
+								&:hover{
+									color: $gray1;
+								}
+							}
+							&:last-child{
+								margin-right: 0;
+							}
+							&.all-tags{
+								cursor: pointer;
+								text-align: center;
+								padding: 7px 15px 7px 15px;
+								background-color: $gray5;
+								@media (max-width: $mobile){
+									font-size: .9rem;
+								}
+							}
+							&:hover{
+								background-color: $gray5;
+								i{
+									color: $gray1;
+								}
+							}
+						}
+					}
+				}
+				.result-order{
+					width: 15%;
+					position: relative;
+					@media (max-width: $tablet){
+						width: 100%;
+					}
+					.nice-select{
+						top: 0;
+						right: 0;
+						width: 100%;
+						height: 35px;
+    					line-height: 35px;
+    					padding-left: 20px;
+    					padding-right: 60px;
+						border-radius: 20px;
+						position: absolute;
+						border: 1px solid $gray2;
+						@media (max-width: $tablet){
+							top: inherit;
+							right: inherit;
+							position: relative;
+						}
+						ul.list{
+							width: 100%;
+							li.option{
+								padding: 0 15px;
+								min-height: 30px;
+								&:before{
+					                display: none;
+					            }
+							}
+						}
+						&:after{
+							right: 15px;
+							width: 6px;
+							height: 6px;
+							border-bottom: 2px solid $red1;
+    						border-right: 2px solid $red1;
+						}
+					}
+				}
+			}
+		}
+		.c-recipe-list{
+			.featured-article{
+				padding-top: 35px;
+				article{
+					margin: 0;
+
+					display: flex;
+					flex-direction: row;
+					@media (max-width: $tablet){
+						flex-direction: column;
+					}
+					.img-card{
+						width: 50%;
+						@media (max-width: $tablet){
+							width: 100%;
+						}
+					}
+					.content-card{
+						width: 50%;
+						padding: 30px 20px 20px 20px;
+						@media (max-width: $tablet){
+							width: 100%;
+							padding: 20px;
+						}
+						.category{
+							left: inherit;
+						    bottom: inherit;
+						    position: relative;
+						    background-color: $red1;
+
+						    font-weight: 700;
+						    font-style: normal;
+						    font-family: $Poppins;
+						    @media (max-width: $desktop_1024){
+								display: none;
+							}
+						}
+						.content-star{
+							padding-top: 25px;
+							@media (max-width: $desktop_1024){
+								padding-top: 0;
+							}
+						}
+						.text{
+							padding-top: 25px;
+							@media (max-width: $desktop_1024){
+								padding: 0;
+								padding-top: 15px;
+							}
+							@media (max-width: $mobile){
+								padding: 0;
+								padding-top: 10px;
+							}
+							.btn-link{
+								@media (max-width: $tablet){
+									display: none;
+								}
+							}
+						}
+						.bottom{
+							left: 20px;
+							bottom: 15px;
+							width: 92.5%;
+							position: absolute;
+							@media (max-width: $tablet){
+								left: inherit;
+								bottom: inherit;
+								width: inherit;
+								position: relative;
+							}
+							ul.steps{
+								width: 60%;
+								margin: 0 auto;
+								@media (max-width: $desktop_1024){
+									width: 100%;
+								}
+							}
+						}
+					}
+				}
+			}
+			.list-articles{
+				padding-top: 40px;
+
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				article{
+    				width: calc(33.33% - 20px);
+    				margin: 0 10px 30px 10px;
+    				@media (max-width: $desktop_1024){
+    					width: calc(50% - 20px);
+    				}
+    				@media (max-width: $mobile){
+    					width: 100%;
+    					margin: 0 0 25px 0;
+    				}
+				}
+			}
+		}
+		.c-bottom{
+			width: 100%;
+			text-align: center;
+		}
+	}
+}

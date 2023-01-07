@@ -1,0 +1,94 @@
+/*releases-list*/
+.releases-list{
+	.content{
+		.c-results{
+			padding-top: 35px;
+			position: relative;
+			label{
+				@media (max-width: $tablet){
+					top: 60px;
+					left: 0;
+					position: absolute;
+				}
+				#type-releases{
+					font-weight: 700;
+					font-style: italic;
+					font-family: $Poppins;
+					text-transform: lowercase;
+				}
+			}
+			.result-items{
+				.result-order{
+					display: flex;
+				    align-items: center;
+				    justify-content: flex-end;
+					@media (max-width: $tablet){
+						width: 100%;
+					}
+					.nice-select{
+						width: auto;
+						height: 35px;
+    					line-height: 35px;
+    					padding-left: 25px;
+    					padding-right: 60px;
+						border-radius: 20px;
+						position: relative;
+						border: 1px solid $gray2;
+
+						display: flex;
+						align-items: center;
+						@media (max-width: $mobile){
+							width: 100%;
+						}
+						ul.list{
+							width: 100%;
+							li.option{
+								padding: 0 15px;
+								min-height: 30px;
+								&:before{
+					                display: none;
+					            }
+							}
+						}
+						&:after{
+							right: 15px;
+							width: 6px;
+							height: 6px;
+							border-bottom: 2px solid $red1;
+    						border-right: 2px solid $red1;
+						}
+					}
+				}
+			}
+		}
+		.c-releases-list{
+			.list-articles{
+				padding-top: 40px;
+
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				article{
+    				width: calc(33.33% - 15px);
+    				margin: 0 7.5px 35px 7.5px;
+    				@media (max-width: $desktop_1024){
+    					width: calc(50% - 15px);
+    					margin: 0 7.5px 25px 7.5px;
+    				}
+    				@media (max-width: $mobile){
+    					width: 100%;
+    					margin: 0 0 25px 0;
+    				}
+    				.content-card{
+    					padding: 15px 20px;
+    					border-top: 3px solid $red1;
+    				}
+				}
+			}
+		}
+		.c-bottom{
+			width: 100%;
+			text-align: center;
+		}
+	}
+}

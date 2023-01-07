@@ -1,0 +1,43 @@
+<section class="tags-list">
+	<div class="containerGridp">
+		<div class="content">
+			<div class="c-header">
+				<h1>{{name}}</h1>
+				{{content.description}}
+			</div>
+			{% set ids = obtener_tax_por_nombre(term.label)%}
+			{% if ids is not empty %}
+			{% set taxes = "" %}
+			{% for item in ids %}
+			{% set taxes = taxes~item %}
+			{% if loop.index != ids|length %}
+			{% set taxes = taxes~',' %}
+			{% endif %}
+			{% endfor %}
+			<div class="c-results">
+				<div class="result-items">
+					<label>Resultados 1 de {{obtener_count_view(taxes,'tags','block_1')}}</label>
+					<div class="result-order">
+						<select id="order-tags" name="order-tags">
+							<option value="block_1">Ordenar por</option>
+							<option value="block_1">Más recientes</option>
+							<option value="block_2">Título (A-Z)</option>
+							<option value="block_3">Título (Z-A)</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="c-tags-list">
+				{{ vista_render(taxes, 'tags', 'block_1') }}
+			</div>
+			{#{% set count=obtener_count_view(row._entity.id,'listado_recetas','block_1') %}#}
+			{% set count=obtener_count_view(taxes,'tags','block_1') %}
+			{% set total=count/9 %}
+			{% set total=total|round(0,'ceil')%}
+			<div class="c-bottom" cantidad="{{ total }}">
+				<span class="btn-link btn-ajax-tags" data-page="0" max-pager="{{total-1}}" data-seo="btn-content">Cargar más</span>
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</section>

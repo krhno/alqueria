@@ -1,0 +1,76 @@
+/*sustainability-ancles*/
+.sustainability-ancles{
+	.content{
+		margin: 0 7%;
+		@media (max-width: $desktop_1024){
+			margin: 0;
+		}
+		.c-header{
+			h1{
+				color: $green1;
+			}
+		}
+		.c-sustainability-ancles{
+			padding-top: 25px;
+			.s-slider-sust-ancles{
+				@media (max-width: $mobile){
+					padding: 0 7%;
+				}
+				.owl-stage{
+					padding-bottom: 5px;
+					.item{
+						padding: 12.5px 0;
+						text-align: center;
+						position: relative;
+						border-top: 2px solid transparent;
+						border-bottom: 2px solid $green1;
+						@media (max-width: $mobile){
+							border-top: 2px solid $green1;
+							border-bottom: 2px solid $green1;
+						}
+						&:hover, &.active{
+							.btn-anchor{
+								color: $green1;
+								font-size: 1.2rem;
+								font-weight: 700;
+								font-style: normal;
+								font-family: $Poppins;
+							}
+							&:after{
+								content: '';
+								left: 0;
+								right: 0;
+								bottom: -4px;
+								width: 100%;
+								height: 7px;
+								margin: 0 auto;
+								border-radius: 3px;
+								position: absolute;
+								background-color: $green1;
+								@media (max-width: $mobile){
+									display: none;
+								}
+							}
+						}
+					}
+				}
+				.owl-nav{
+					button.owl-prev{
+						top: 10%;
+						left: -5%;
+						i{
+							background-color: $green1;
+						}
+					}
+					button.owl-next{
+						top: 10%;
+						right: -5%;
+						i{
+							background-color: $green1;
+						}
+					}
+				}
+			}
+		}
+	}
+}

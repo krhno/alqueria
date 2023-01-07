@@ -1,0 +1,24 @@
+<section{{ attributes.addClass(classes) }}>  
+  <div class="containerGridp">
+    <div class="content">
+      <div class="c-header">
+        <h2>{{get_config_data('config.settings','titulo_categorias_productos_home')}}</h2>
+      </div>
+      <div class="c-slider-cards">
+        <div class="s-slider-cards owl-dots-gray owl-nav-icons1 owl-carousel owl-theme">
+          {% if rows -%}
+            {{ rows }}
+          {% elseif empty -%}
+            {{ empty }}
+          {% endif %}       
+          </div>
+      </div>
+      <div class="c-bottom">
+        <a href="{{get_config_data('config.settings','url_btn_categorias_productos_home')}}" class="btn-default back-yellow" data-seo="btn-content">{{get_config_data('config.settings','titulo_btn_categorias_productos_home')}}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+

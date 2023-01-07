@@ -1,0 +1,876 @@
+/*profile*/
+.profile{
+  .content{
+    .c-profile{
+      .banner-profile{
+        position: relative;
+      }
+      .content-profile{
+        padding-top: 0;
+
+        display: flex;
+        flex-direction: row;
+        .column-left{
+          width: 25%;
+          @media (max-width: $desktop_1640){
+            width: 30%;
+          }
+          @media (max-width: $desktop_1024){
+            display: none;
+          }
+          .div-nav{
+            position: relative;
+            background-color: $blue1;
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, .15);
+            .info-person{
+              width: 100%;
+              padding: 0 20px 40px 20px;
+
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              @media (max-width: $desktop_1640){
+                padding: 0 15px 40px 15px;
+              }
+              .img{
+                top: -25px;
+                width: 35%;
+                z-index: 2;
+                overflow: hidden;
+                border-radius: 50%;
+                position: relative;
+                border: 3px solid $white;
+                box-shadow: 0 0 10px 0 $shadow;
+              }
+              .text{
+                width: 65%;
+                padding-left: 15px;
+                padding-bottom: 10px;
+                .author{
+                  display: block;
+                  padding-bottom: 10px;
+
+                  color: $gray1;
+                  font-size: 1.5rem;
+                  font-weight: 700;
+                  font-style: normal;
+                  font-family: $Poppins;
+                }
+                .btn-edit{
+                  &.active{
+                    color: $red1;
+                    i{
+                      color: $white;
+                      background-color: $red1;
+                    }
+                  }
+                }
+              }
+            }
+            .profile-menu{
+              ul{
+                li{
+                  cursor: pointer;
+                  padding: 15px 20px !important;
+                }
+              }
+            }
+          }
+          .button{
+            margin: 30px 0;
+            .btn-default, .btn-border{
+              width: 60%;
+              margin: 0 auto;
+              display: block;
+            }
+            .btn-border{
+              border: 1px solid $green1;
+
+              color: $gray1;
+              font-weight: 700;
+              font-style: normal;
+              font-family: $Poppins;
+              &:hover{
+                color: $white;
+                transition: all 0.25s;
+                background-color: $green1;
+              }
+            }
+          }
+        }
+        .column-right{
+          width: 75%;
+          padding: 30px 40px 40px 40px;
+          box-shadow: 0 0 10px 0 $shadow;
+          @media (max-width: $desktop_1640){
+            width: 70%;
+          }
+          @media (max-width: $desktop_1024){
+            width: 100%;
+            padding: 30px 7% 60px 7%;
+          }
+          .div-content{
+            width: 100%;
+            height: 100%;
+            display: none;
+            &:first-child{
+              display: block;
+            }
+            &[data-id='recipes']{
+              article{
+                .content-card{
+                  .text{
+                    padding-top: 0 !important;
+                  }
+                }
+              }
+            }
+            .content-title{
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              @media (max-width: $mobile){
+                flex-direction: column;
+                align-items: flex-start;
+              }
+              .title{
+                h2{
+                  font-size: 1.75rem;
+                  @media (max-width: $desktop_1640){
+                    font-size: 1.45rem;
+                  }
+                }
+              }
+              .subtitle{
+                span{
+                  display: block;
+                  padding-top: 15px;
+
+                  color: $gray1;
+                  font-size: 1.2rem;
+                  font-weight: 700;
+                  font-style: normal;
+                  font-family: $Poppins;
+                }
+              }
+              .filters{
+                @media (max-width: $mobile){
+                  width: 100%;
+                  padding: 15px 0;
+                }
+                form{
+                  @media (max-width: $mobile){
+                    width: 100%;
+                  }
+                  .form-type-select{
+                    margin: 0;
+
+                    display: flex;
+                    align-items: center;
+                    @media (max-width: $mobile){
+                      width: 100%;
+                    }
+                    .nice-select{
+                      width: 200px;
+                      height: 40px;
+                      border: none;
+                      border-radius: 0;
+                      margin-left: 15px;
+                      padding-left: 15px;
+                      padding-right: 30px;
+                      box-shadow: 0 0 10px 0 $shadow;
+
+                      display: flex;
+                      align-items: center;
+                      @media (max-width: $mobile){
+                        width: 100%;
+                        height: 40px;
+                      }
+                      ul.list{
+                        width: 100%;
+                        border-radius: 0;
+                        li.option{
+                          padding: 0 15px;
+                          &:before{
+                            display: none;
+                          }
+                          &:hover, &.selected{
+                            color: $white;
+                            background-color: $red1 !important;
+                          }
+                        }
+                      }
+                      &:after{
+                        top: 45%;
+                        right: 15px;
+                        width: 7.5px;
+                        height: 7.5px;
+                        border-bottom: 1px solid $red1;
+                        border-right: 1px solid $red1;
+                      }
+                    }
+                  }
+                  .form-actions{
+                    display: none;
+                  }
+                }
+              }
+            }
+            .full-list{
+              width: 100%;
+              height: auto;
+              article{
+                margin: 0;
+                padding: 25px 0;
+                box-shadow: none;
+                position: relative;
+                border-bottom: 1px solid $gray6;
+
+                display: flex;
+                flex-direction: row;
+                align-items: flex-start;
+                @media (max-width: $mobile){
+                  padding: 20px 0;
+                }
+                &:first-child{
+                  margin-top: 15px;
+                }
+                &:last-child{
+                  padding-bottom: 0;
+                  border-bottom: none;
+                }
+                &.recipes{
+                  .content-card{
+                    .category{
+                      background-color: $red1;
+                    }
+                  }
+                }
+                &.nutrition{
+                  .content-card{
+                    .category{
+                      background-color: $yellow1;
+                    }
+                  }
+                }
+                &.sustainability{
+                  .content-card{
+                    .category{
+                      background-color: $green1;
+                    }
+                  }
+                }
+                .img-card{
+                  width: 30%;
+                  box-shadow: 0 0 10px 0 $shadow;
+                }
+                .content-card{
+                  width: 70%;
+                  padding: 0 0 0 20px;
+                  @media (max-width: $mobile){
+                    padding: 0 0 0 15px;
+                  }
+                  .category{
+                    bottom: 0;
+                    position: relative;
+                  }
+                  .btn-edit{
+                    top: 0;
+                    right: 0;
+                    position: absolute;
+                    @media (max-width: $mobile){
+                      top: inherit;
+                      right: inherit;
+                      padding-top: 10px;
+                      position: relative;
+                    }
+                  }
+                  .text{
+                    padding-top: 10px;
+                    h3{
+                      color: $gray1;
+                      font-size: 1.7rem;
+                      @media (max-width: $desktop_1640){
+                        font-size: 1.4rem;
+                      }
+                      @media (max-width: $mobile){
+                        font-size: 1.1rem;
+                      }
+                    }
+                    p{
+                      min-height: auto;
+                      @media (max-width: $mobile){
+                        display: none;
+                      }
+                    }
+                  }
+                  .bottom{
+                    margin-top: 0;
+                    padding-top: 0;
+                    border-top: none;
+                    @media (max-width: $mobile){
+                      display: none;
+                    }
+                    ul.steps{
+                      justify-content: flex-start !important;
+                      li{
+                        padding-right: 30px;
+                        &:last-child{
+                          padding-right: 0;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              /*notifications*/
+              .notification{
+                padding: 25px 20px;
+                box-shadow: none;
+                position: relative;
+
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                @media (max-width: $mobile){
+                  padding: 15px;
+                }
+                &.active{
+                  background-color: $blue1;
+                }
+                &:after{
+                  content: "";
+                  left: 0;
+                  bottom: 0;
+                  width: 100%;
+                  height: 1px;
+                  position: absolute;
+                  background-color: $gray6;
+                }
+                &:first-child{
+                  margin-top: 15px;
+                }
+                &:last-child{
+                  padding-bottom: 0;
+                  &:after{
+                    display: none;
+                  }
+                }
+                .img{
+                  width: 10%;
+                  overflow: hidden;
+                  border-radius: 50%;
+                  border: 3px solid $white;
+                  box-shadow: 0 0 10px 0 $shadow;
+                  @media (max-width: $desktop_1024){
+                    width: 15%;
+                  }
+                  @media (max-width: $tablet){
+                    width: 20%;
+                  }
+                  @media (max-width: $mobile){
+                    width: 25%;
+                  }
+                }
+                .text{
+                  width: 90%;
+                  padding-left: 20px;
+                  position: relative;
+                  @media (max-width: $desktop_1024){
+                    width: 85%;
+                  }
+                  @media (max-width: $tablet){
+                    width: 80%;
+                  }
+                  @media (max-width: $mobile){
+                    width: 75%;
+                    padding-left: 15px;
+                  }
+                  h3{
+                    width: 80%;
+                    color: $gray1;
+                    font-size: 1.7rem;
+                    padding-bottom: 5px;
+                    @media (max-width: $desktop_1640){
+                      font-size: 1.4rem;
+                    }
+                    @media (max-width: $mobile){
+                      width: 100%;
+                      font-size: 1.1rem;
+                    }
+                  }
+                  time{
+                    top: 0;
+                    right: 0;
+                    font-size: 0.95rem;
+                    font-style: italic;
+                    position: absolute;
+                    @media (max-width: $mobile){
+                      top: inherit;
+                      right: inherit;
+                      position: relative;
+                    }
+                  }
+                }
+              }
+            }
+            .c-bottom, .pager__items{
+              margin-top: 35px;
+            }
+            .empty-list{
+              width: 50%;
+              height: 100%;
+              margin: 0 auto;
+              padding-top: 7%;
+              text-align: center;
+              @media (max-width: $desktop_1640){
+                width: 60%;
+              }
+              @media (max-width: $desktop_1024){
+                padding: 50px 0;
+              }
+              @media (max-width: $mobile){
+                width: 100%;
+              }
+              i{
+                font-size: 3.8rem;
+                color: $gray6;
+                @media (max-width: $desktop_1640){
+                  font-size: 3rem;
+                }
+              }
+              .title{
+                width: auto;
+                display: table;
+                margin: 0 auto;
+                position: relative;
+                padding-bottom: 20px;
+                @media (max-width: $mobile){
+                  width: 80%;
+                }
+                span{
+                  color: #cb262a;
+                  font-size: 2.5rem;
+                  font-weight: 700;
+                  font-style: normal;
+                  line-height: normal;
+                  font-family: $Poppins;
+                  @media (max-width: $desktop_1640){
+                    font-size: 2.2rem;
+                  }
+                  @media (max-width: $mobile){
+                    font-size: 2rem;
+                  }
+                }
+                &:before{
+                  top: 0;
+                  left: -30px;
+                  width: auto;
+                  height: auto;
+                  position: absolute;
+                  background-color: transparent;
+                  content: url("/themes/custom/alqueria/assets/img/icons/figure1.png");
+                  @media (max-width: $mobile){
+                    top: 10px;
+                    left: -30px;
+                  }
+                }
+                &:after{
+                  top: 0;
+                  right: -40px;
+                  width: auto;
+                  height: auto;
+                  position: absolute;
+                  background-color: transparent;
+                  content: url("/themes/custom/alqueria/assets/img/icons/figure2.png");
+                  @media (max-width: $mobile){
+                    top: 10px;
+                    right: -40px;
+                  }
+                }
+              }
+            }
+            /*Form*/
+            .profile-title{
+              display: flex;
+              align-items: center;
+              flex-direction: row;
+              justify-content: space-between;
+              .title{
+                h2{
+                  font-size: 1.75rem;
+                  @media (max-width: $desktop_1640){
+                    font-size: 1.45rem;
+                  }
+                }
+              }
+              .account{
+                .btn-link{
+                  margin: 0 10px;
+                  font-size: 1rem;
+                  @media (max-width: $mobile){
+                    margin: 0 5px;
+                    font-size: .9rem;
+                  }
+                  &:first-child{
+                    margin-left: 0;
+                  }
+                  &:last-child{
+                    margin-right: 0;
+                  }
+                }
+              }
+            }
+            form{
+              .content-form{
+                .img-profile{
+                  padding: 30px 0;
+
+                  display: flex;
+                  flex-direction: row;
+                  align-items: center;
+                  .text{
+                    padding-right: 20px;
+                    span{
+                      color: $gray1;
+                      font-size: 1.2rem;
+                      font-weight: 700;
+                      font-style: normal;
+                      font-family: $Poppins;
+                    }
+                  }
+                  .image{
+                    width: 8%;
+                    position: relative;
+                    @media (max-width: $desktop_1640){
+                      width: 10%;
+                    }
+                    @media (max-width: $tablet){
+                      width: 12%;
+                    }
+                    @media (max-width: $mobile){
+                      width: 20%;
+                    }
+                    .img{
+                      overflow: hidden;
+                      border-radius: 50%;
+                      border: 3px solid $white;
+                      box-shadow: 0 0 10px 0 $shadow;
+                    }
+                    .input{
+                      .btn-edit{
+                        right: -10px;
+                        bottom: -5px;
+                        z-index: 1;
+                        position: absolute;
+                      }
+                      input[type="file"]{
+                        display: none;
+                      }
+                    }
+                  }
+                }
+                .form{
+                  display: flex;
+                  flex-wrap: wrap;
+                  flex-direction: row;
+                  @media (max-width: $mobile){
+                    flex-direction: column;
+                  }
+                  .form-group{
+                    width: 50%;
+                    margin-bottom: 25px;
+                    @media (max-width: $mobile){
+                      width: 100%;
+                    }
+                    &:nth-child(odd){
+                      padding-right: 10px;
+                      @media (max-width: $mobile){
+                        padding-right: 0;
+                      }
+                    }
+                    &:nth-child(even){
+                      padding-left: 10px;
+                      @media (max-width: $mobile){
+                        padding-left: 0;
+                      }
+                    }
+                    label{
+                      display: block;
+                      padding-left: 3px;
+                      padding-bottom: 3px;
+
+                      font-weight: 700;
+                      font-style: normal;
+                      font-family: $Poppins;
+                    }
+                    input{
+                      width: 100%;
+                      height: 40px;
+                      box-shadow: none;
+                      padding: 10px 15px;
+                      border-radius: 5px;
+                      border: 1px solid $gray6;
+                      background-color: $white;
+
+                      color: $gray1;
+                      font-size: 1.2rem;
+                      font-weight: 300;
+                      font-style: normal;
+                      font-family: $Poppins;
+                      @media (max-width: $desktop_1640){
+                        font-size: 1rem;
+                      }
+                    }
+                    .nice-select{
+                      width: 100%;
+                      ul.list{
+                        width: 100%;
+                        overflow-y: scroll;
+                        li.option{
+                          min-height: 30px;
+                          line-height: 30px;
+                          &:before{
+                            display: none;
+                          }
+                        }
+                      }
+                      &:after{
+                        right: 20px;
+                        width: 7px;
+                        height: 7px;
+                        border-bottom: 1px solid $gray3;
+                        border-right: 1px solid $gray3;
+                      }
+                    }
+                  }
+                }
+                .checks{
+                  padding: 15px 0 60px 0;
+                  @media (max-width: $mobile){
+                    padding: 15px 0;
+                  }
+                  span{
+                    color: $gray1;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    font-style: normal;
+                    font-family: $Poppins;
+                  }
+                  .div-checks{
+                    padding-top: 10px;
+
+                    display: flex;
+                    flex-direction: row;
+                    @media (max-width: $mobile){
+                      flex-direction: column;
+                    }
+                    .div-check{
+                      .form-check{
+                        padding-left: 0;
+                        padding-right: 40px;
+                        @media (max-width: $mobile){
+                          padding-right: 0;
+                          padding-bottom: 15px;
+                        }
+                        label{
+                          cursor: pointer;
+                        }
+                        input[type="checkbox"]{
+                          display: none;
+                        }
+                        input[type="checkbox"]{
+                          top: 5px;
+                          width: 20px;
+                          height: 20px;
+                          cursor: pointer;
+                          border-radius: 50%;
+                          margin-right: 5px;
+                          position: relative;
+                          display: inline-block;
+                          box-sizing: border-box;
+                          border: 1px solid $red1;
+                          background-color: transparent;
+
+                          -webkit-appearance: none;
+                          -moz-appearance: none;
+                          appearance: none;
+                        }
+                        input[type="checkbox"]:checked{
+                          background-image: url("../img/icons/checkbox4.png");
+                          background-repeat: no-repeat;
+                          background-position: center;
+                          border-color: transparent;
+                          background-size: 25px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              .button{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                @media (max-width: $mobile){
+                  align-items: center;
+                  flex-direction: column;
+                }
+                .btn-default, .btn-border{
+                  width: 25%;
+                  margin: 0 10px;
+                  @media (max-width: $desktop_1640){
+                    width: 30%;
+                  }
+                  @media (max-width: $desktop_1024){
+                    width: 25%;
+                  }
+                  @media (max-width: $tablet){
+                    width: 35%;
+                  }
+                  @media (max-width: $mobile){
+                    width: 70%;
+                    margin: 10px auto;
+                  }
+                }
+                .btn-border{
+                  border: 1px solid $green1;
+
+                  color: $gray1;
+                  font-weight: 700;
+                  font-style: normal;
+                  font-family: $Poppins;
+                  &:hover{
+                    color: $white;
+                    transition: all 0.25s;
+                    background-color: $green1;
+                  }
+                }
+              }
+            }
+            /*Welcome*/
+            .welcome-title{
+              width: 80%;
+              margin: 0 auto;
+              padding-top: 35px;
+              text-align: center;
+              @media (max-width: $desktop_1024){
+                padding-top: 0;
+              }
+              @media (max-width: $mobile){
+                width: 100%;
+              }
+              .title{
+                width: auto;
+                display: table;
+                margin: 0 auto;
+                position: relative;
+                @media (max-width: $mobile){
+                  width: 80%;
+                }
+                &:before{
+                  top: 0;
+                  left: -30px;
+                  width: auto;
+                  height: auto;
+                  position: absolute;
+                  background-color: transparent;
+                  content: url("/themes/custom/alqueria/assets/img/icons/figure1.png");
+                  @media (max-width: $mobile){
+                    top: 10px;
+                    left: 0;
+                  }
+                }
+                &:after{
+                  top: 0;
+                  right: -40px;
+                  width: auto;
+                  height: auto;
+                  position: absolute;
+                  background-color: transparent;
+                  content: url("/themes/custom/alqueria/assets/img/icons/figure2.png");
+                  @media (max-width: $mobile){
+                    top: 10px;
+                    right: -10px;
+                  }
+                }
+              }
+              .subtitle{
+                span{
+                  display: block;
+                  padding: 15px 0;
+
+                  color: $gray1;
+                  font-size: 1.5rem;
+                  font-weight: 700;
+                  font-style: normal;
+                  font-family: $Poppins;
+                  @media (max-width: $desktop_1640){
+                    font-size: 1.2rem;
+                  }
+                }
+                label{
+                  display: block;
+                  padding-top: 25px;
+
+                  color: $red1;
+                  font-size: 1.5rem;
+                  font-weight: 700;
+                  font-style: normal;
+                  font-family: $Poppins;
+                  @media (max-width: $desktop_1640){
+                    font-size: 1.2rem;
+                  }
+                }
+              }
+            }
+            .preferences{
+              padding: 30px 0 40px 0;
+
+              display: flex;
+              flex-direction: row;
+              @media (max-width: $mobile){
+                flex-direction: column;
+              }
+              .item{
+                margin: 0 10px;
+                position: relative;
+                width: calc(33.33% - 20px);
+                box-shadow: 0 0 10px 0 $shadow;
+                @media (max-width: $mobile){
+                  width: 100%;
+                  margin: 0 0 20px 0;
+                }
+                &:last-child{
+                  margin-bottom: 0;
+                }
+                &.recipes{
+                  border: 3px solid $red1;
+                  .category{
+                    background-color: $red1;
+                  }
+                }
+                &.nutrition{
+                  border: 3px solid $yellow1;
+                  .category{
+                    background-color: $yellow1;
+                  }
+                }
+                &.sustainability{
+                  border: 3px solid $green1;
+                  .category{
+                    background-color: $green1;
+                  }
+                }
+              }
+            }
+            .button{
+              width: 100%;
+              text-align: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

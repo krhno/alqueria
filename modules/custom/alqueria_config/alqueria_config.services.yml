@@ -1,0 +1,37 @@
+services:
+  alqueria_config.twig.obtenerBreadcrumb:
+    class: Drupal\alqueria_config\Extensions\ObtenerBreadcrumb
+    tags:
+      - { name: twig.extension }
+  alqueria_config.twig.obtenerTaxonomia:
+    class: Drupal\alqueria_config\Extensions\ObtenerTaxonomia
+    tags:
+      - { name: twig.extension }
+  alqueria_config.twig.obtenerTaxonomiaDetalle:
+    class: Drupal\alqueria_config\Extensions\ObtenerTaxonomiaDetalle
+    tags:
+      - { name: twig.extension }
+  alqueria_config.twig.obtenerCountView:
+    class: Drupal\alqueria_config\Extensions\ObtenerCountView
+    tags:
+      - { name: twig.extension }
+  alqueria_config.twig.obtenerRecetasPorCategoria:
+    class: Drupal\alqueria_config\Extensions\ObtenerRecetasRelacionadas
+    tags:
+      - { name: twig.extension }
+  alqueria_config.twig.validarFavorito:
+    class: Drupal\alqueria_config\Extensions\ValidarFavorito
+    tags:
+      - { name: twig.extension }
+  alqueria_config.twig.obtenerBuscador:
+    class: Drupal\alqueria_config\Extensions\ObtenerBuscador
+    tags:
+      - { name: twig.extension }
+  alqueria_config.twig.obtenerUri:
+    class: Drupal\alqueria_config\Extensions\ObtenerUri
+    tags:
+      - { name: twig.extension }
+  alqueria_config.twig.obtenerTaxPorNombre:
+    class: Drupal\alqueria_config\Extensions\ObtenerTaxPorNombre
+    tags:
+      - { name: twig.extension }

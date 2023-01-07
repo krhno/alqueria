@@ -1,0 +1,130 @@
+/*banner-text-img4*/
+.banner-text-img4{
+	.containerGrid{
+		@media (max-width: $tablet){
+			padding: 60px 0 0 0;
+		}
+		&.padding{
+			padding-top: 25px;
+		}
+	}
+	.content{
+		margin: 0 7%;
+		@media (max-width: $desktop_1024){
+			margin: 0;
+		}
+		.c-header{
+			@media (max-width: $mobile){
+				padding: 0 7%;
+			}
+		}
+		.c-banner-text-img4{
+			padding-top: 35px;
+
+			display: flex;
+			flex-direction: row;
+			@media (max-width: $tablet){
+				flex-direction: column-reverse;
+			}
+			.column-left{
+				width: 50%;
+				padding: 25px 5%;
+				background-color: $red1;
+
+				display: flex;
+			    flex-direction: column;
+			    align-items: flex-start;
+			    justify-content: center;
+			    @media (max-width: $tablet){
+			    	width: 90%;
+			    	margin: 0 auto;
+			    }
+			    @media (max-width: $mobile){
+			    	padding: 25px 7%;
+			    }
+			    h3, h4, h5, h6{
+			    	color: $white;
+			    }
+				p{
+					color: $white;
+					padding: 15px 0 25px 0;
+				}
+				.btn-default{
+					color: $gray1;
+					@media (max-width: $mobile){
+						margin: 0 auto;
+					}
+				}
+			}
+			.column-right{
+				width: 50%;
+				padding: 25px 0;
+				@media (max-width: $tablet){
+					width: 100%;
+					padding: 0;
+				}
+			}
+		}
+	}
+	&.sustainability{
+		.content{
+			.c-header{
+				h2{
+					color: $green1;
+				}
+			}
+			.c-banner-text-img4{
+				.column-left{
+					background-color: $blue1;
+					@media (max-width: $tablet){
+						width: 100%;
+					}
+					h3, h4, h5, h6{
+						color: $gray1;
+					}
+				}
+				.column-right{
+					padding: 0;
+				}
+			}
+		}
+	}
+	&.sustainability.left{
+		.content{
+			.c-header{
+				h2{
+					color: $green1;
+				}
+			}
+			.c-banner-text-img4{
+				.column-left{
+					background-color: $green1;
+					h3, h4, h5, h6{
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+	&.sustainability.right{
+		.content{
+			.c-header{
+				h2{
+					color: $green1;
+				}
+			}
+			.c-banner-text-img4{
+				flex-direction: row-reverse;
+				@media (max-width: $tablet){
+					flex-direction: column-reverse;
+				}
+				.column-left{
+					background-color: $green1;
+					h3, h4, h5, h6{
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+}

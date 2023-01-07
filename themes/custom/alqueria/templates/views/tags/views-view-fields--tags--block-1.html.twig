@@ -1,0 +1,50 @@
+{%
+  set classes = [
+  'view',
+  'view-' ~ id|clean_class,
+  'view-id-' ~ id,
+  'view-display-id-' ~ display_id,
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+  %}
+
+{% set contentType = fields.type.content|render %}
+
+{% set css = "sustainability" %}
+{% set label = "Sostenibilidad" %}
+{% if contentType == "receta" %}
+  {% set css = "recipes" %}
+  {% set label = "Recetas" %}
+{% elseif contentType == "blog_nutricion" %}
+  {% set css = "nutrition" %}
+  {% set label = "Bienestar y nutrición" %}
+{% endif %}
+
+  <article class="article-default {{css}}">
+    <div class="img-card">
+      <a href="{{fields.view_node.content}}" data-seo="btn-content">
+        {{fields.field_foto_principal.content}}
+        {% if row._entity.field_url_youtube is not empty %}
+        <div class="video">
+          <div class="icon-play">
+            <span><i class="demo-icon icon-icon-play">&#xe80d;</i></span>
+          </div>
+          <div class="layer-black"></div>
+        </div>
+        {% endif %}
+        <span class="category">{{label}}</span>
+      </a>
+    </div>
+    <div class="content-card">
+      <time datetime="{{fields.created.content}}" class="font-18">{{fields.created.content}}</time>
+      <div class="text">
+        <h3 class="titleHeight"><a href="{{fields.view_node.content}}" data-seo="btn-content">{{fields.title.content}}</a></h3>
+        {% set titulo= row._entity.title.value %}
+        {% set des= row._entity.body.value %}
+        {% if fields.title.content != fields.body.content %}
+          <p class="textHeight">{{fields.body.content}}</p>
+        {% endif %}
+        <a href="{{fields.view_node.content}}" class="btn-link" data-seo="btn-content">Leer más</a>
+      </div>
+    </div>
+  </article>

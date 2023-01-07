@@ -1,0 +1,44 @@
+/*terms-conditions*/
+.terms-conditions{
+	.content{
+		margin: 0 7%;
+		@media (max-width: $desktop_1024){
+			margin: 0;
+		}
+		.c-header{
+			@media (max-width: $mobile){
+				width: 100%;
+			}
+		}
+		.c-terms-conditions{
+			padding-top: 35px;
+			.banner-video{
+				@media (max-width: $desktop_1024){
+					margin: 0 5%;
+				}
+				@media (max-width: $mobile){
+					margin: 0;
+				}
+				.copy{
+					padding-top: 10px;
+					text-align: right;
+					@media (max-width: $mobile){
+						padding: 10px 7% 0 7%;
+						text-align: left;
+					}
+					span{
+						font-weight: 300;
+						font-style: italic;
+						font-family: $Poppins;
+					}
+				}
+			}
+			.info{
+				padding-top: 35px;
+				h3, h4, h5, h6{
+					color: $gray1;
+				}
+			}
+		}
+	}
+}

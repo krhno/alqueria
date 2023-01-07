@@ -1,0 +1,22 @@
+<div class="modal-successful modal fade" role="dialog">
+  <div class="modal-dialog modal-center modal-md">
+    <div class="modal-content"><i aria-label="Close" class="demo-icon icon-icon-close1" data-dismiss="modal">&#xe81c;</i>
+      <div class="modal-body">
+        <div class="c-registration">
+          <div class="content-icon"><i class="demo-icon icon-icon-check1">&#xe820;</i></div>
+            <div class="content-title">
+              <div class="title">
+                <h2>{{content.field_titulo_a_mostrar}}</h2>
+              </div>
+              {% if registro == true %}
+                <p>{{ content.field_texto_registro_exitoso }}</p>
+                <a class="btn-default back-green" data-seo="btn-content" href="#">{{content.field_descripcion_corta}}</a></div>
+              {% else %}
+                <p>{{ content.field_texto_comentario_enviado }}</p>
+              {% endif %}
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

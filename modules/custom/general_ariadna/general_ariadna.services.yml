@@ -1,0 +1,33 @@
+services:
+  general_ariadna.twig.MenuTwigExtension:
+    class: Drupal\general_ariadna\Extensions\MenuTwigExtension
+    tags:
+      - { name: twig.extension }    
+  general_ariadna.twig.VistasRenderTwigExtension:
+    class: Drupal\general_ariadna\Extensions\VistasRenderTwigExtension
+    tags:
+      - { name: twig.extension }
+  general_ariadna.twig.BlockRenderTwigExtension:
+    class: Drupal\general_ariadna\Extensions\BlockRenderTwigExtension
+    tags:
+      - { name: twig.extension }
+  general_ariadna.twig.BlockRenderIdTwigExtension:
+    class: Drupal\general_ariadna\Extensions\BlockRenderIdTwigExtension
+    tags:
+      - { name: twig.extension }
+  general_ariadna.twig.WebFormRenderTwigExtension:
+    class: Drupal\general_ariadna\Extensions\WebFormRenderTwigExtension
+    tags:
+      - { name: twig.extension }
+  general_ariadna.twig.DebugTwigExtension:
+    class: Drupal\general_ariadna\Extensions\DebugTwigExtension
+    tags:
+      - { name: twig.extension }
+  general_ariadna.twig.MenuArrayExtension:
+    class: Drupal\general_ariadna\Extensions\MenuArrayExtension
+    tags:
+      - { name: twig.extension }
+  general_ariadna.twig.GetConfigDataTwigExtension:
+    class: Drupal\general_ariadna\Extensions\GetConfigDataTwigExtension
+    tags:
+      - { name: twig.extension }

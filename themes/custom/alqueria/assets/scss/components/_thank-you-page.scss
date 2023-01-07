@@ -1,0 +1,144 @@
+/*thank-you-page*/
+.thank-you-page{
+	background-image: url("/themes/custom/alqueria/assets/img/background/thankYouPage-desktop.jpg");
+	background-repeat: no-repeat;
+	background-position: top;
+	background-size: contain;
+	@media (max-width: $mobile){
+		background-image: url("/themes/custom/alqueria/assets/img/background/thankYouPage-mobile.jpg");
+		background-repeat: no-repeat;
+		background-position: top;
+		background-size: contain;
+		margin-top: -45px;
+	}
+	.containerGridp{
+		padding-top: 0;
+		.content{
+			.c-thank-you-page{
+				text-align: center;
+				padding: 12% 0 120px 0;
+				@media (max-width: $desktop_1366){
+					padding: 10% 0 120px 0;
+				}
+				@media (max-width: $mobile){
+					padding: 120px 0;
+				}
+				.icon{
+					width: 120px;
+					height: 120px;
+					margin: 0 auto;
+					border-radius: 50%;
+					margin-bottom: 35px;
+					box-shadow: 0 0 10px 0 $shadow;
+					background-color: $white;
+
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					@media (max-width: $tablet){
+						width: 100px;
+						height: 100px;
+					}
+					i{
+						color: $green1;
+						font-size: 3rem;
+						@media (max-width: $desktop_1640){
+							font-size: 2.7rem;
+						}
+					}
+				}
+				.title{
+					width: auto;
+                	display: table;
+                    margin: 0 auto;
+                    position: relative;
+					h1{
+						color: $red1;
+						font-size: 6.3rem;
+						font-weight: 700;
+						font-style: normal;
+						line-height: normal;
+						font-family: $Poppins;
+					    @media (max-width: $desktop_1640){
+					        font-size: 6rem;
+					    }
+					    @media (max-width: $desktop_1440){
+					    	font-size: 5.7rem;
+					    }
+					    @media (max-width: $mobile){
+					    	font-size: 4rem;
+					    }
+					}
+					&:before{  
+	                    top: 0;
+	                    left: -110px;
+	                    width: auto;
+	                    height: auto;
+	                    position: absolute;
+	                    background-color: transparent;
+	                    content: url("/themes/custom/alqueria/assets/img/icons/figure5.png");
+	                    @media (max-width: $mobile){
+	                        top: 0;
+	                        left: -60px;
+	                        content: url("/themes/custom/alqueria/assets/img/icons/figure3.png");
+	                    }
+	                }
+	                &:after{
+	                    top: 0;
+	                    right: -110px;
+	                    width: auto;
+	                    height: auto;
+	                    position: absolute;
+	                    background-color: transparent;
+	                    content: url("/themes/custom/alqueria/assets/img/icons/figure6.png");
+	                    @media (max-width: $mobile){
+	                        top: 0;
+	                        right: -60px;
+	                        content: url("/themes/custom/alqueria/assets/img/icons/figure4.png");
+	                    }
+	                }
+				}
+				.text{
+					padding-top: 35px;
+					@media (max-width: $mobile){
+						padding-top: 25px;
+					}
+					p{
+						display: block;
+						padding-bottom: 25px;
+
+						font-size: 1.75rem;
+						font-weight: 300;
+						font-style: normal;
+						line-height: 35px;
+						font-family: $Poppins;
+						@media (max-width: $desktop_1640){
+							font-size: 1.45rem;
+							line-height: 29px;
+						}
+						br{
+							@media (max-width: $mobile){
+								display: none;
+							}
+						}
+					}
+					span{
+						display: block;
+						padding: 30px 0 40px 0;
+
+						font-size: 1.75rem;
+						font-weight: 700;
+						font-style: normal;
+						line-height: 35px;
+						font-family: $Poppins;
+						@media (max-width: $desktop_1640){
+							font-size: 1.45rem;
+							line-height: 29px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+	

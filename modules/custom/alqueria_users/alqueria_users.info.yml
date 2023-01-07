@@ -1,0 +1,5 @@
+name: Alqueria Usuarios
+description: Modulo para manejar el registro e inicio de sesión de los usuarios del portal
+package: CDI
+type: module
+core: 8.x

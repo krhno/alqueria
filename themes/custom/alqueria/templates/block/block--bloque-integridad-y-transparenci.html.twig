@@ -1,0 +1,41 @@
+<section class="slider-indicator1">
+  <div class="containerGridp">
+    <div class="content">
+      <div class="c-header">
+        <h2>{{content['#block_content'].field_titulo_a_mostrar.value}}</h2>
+        {{content['#block_content'].body.value|raw}}
+      </div>
+      <div class="c-slider-indicator1">
+        <div class="s-slider-indicator1 owl-dots-gray owl-carousel owl-theme">
+          {% for item in content['#block_content'].field_bloque_integridad_y_transp %}
+            <div class="item">
+              <div class="img">
+                {% set imagestyle = {
+                  '#theme':      'image_style',
+                  '#style_name': '124x124',
+                  '#uri':        item.entity.field_foto.entity.fileuri,
+                  '#alt':        item.entity.field_foto.alt,
+                  '#title':      item.entity.field_foto.title,
+                  '#attributes': { class: 'lazyload' },
+                }
+                %}
+                <picture>
+                  {{imagestyle}}
+                </picture>
+              </div>
+              <div class="info">
+                <h3 class="titleHeight">{{item.entity.field_titulo.value}}</h3>
+                <p class="textHeight">{{item.entity.field_subtitulo.value}}</p>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% if content['#block_content'].field_enlace is not empty %}
+        <div class="c-bottom">
+          <a href="{{ content['#block_content'].field_enlace.0.url }}" target="{{content['#block_content'].field_enlace.0.url.external ? '_blank' : '_self'}}" class="btn-default back-green" data-seo="btn-content">{{ content['#block_content'].field_enlace.title }}</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+<div class="container-header {% if frontpage==0 %}header-animation {% endif %}">
+	<div class="content-logo">
+		<div class="logo">
+			<a href="/" data-seo="btn-header">
+				<picture>
+					<img data-src="{{logo}}" alt="Alquería" title="Alquería" class="lazyload">
+				</picture>
+			</a>
+		</div>
+		<div class="back-logo">
+			<picture>
+				<source media="(max-width: 768px)" srcset="/{{directory}}/assets/img/header/back-logo-mobile.svg">
+				<img data-src="/{{directory}}/assets/img/header/back-logo-desktop.svg" alt="Background Alqueria" title="Background Alqueria" class="lazyload">
+			</picture>
+		</div>
+	</div>
+	<div class="content-menu">								
+		{{menu_twig('main')}}		  		
+	</div>
+</div>

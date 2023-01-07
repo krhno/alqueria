@@ -1,0 +1,36 @@
+alqueria.xs:
+  label: MAX-1024
+  mediaQuery: '(max-width: 1024px)'
+  weight: 0
+  multipliers:
+    - 1x
+alqueria.xl:
+  label: MIN-1024
+  mediaQuery: '(min-width: 1024px)'
+  weight: 1
+  multipliers:
+    - 1x
+alqueria.xs768:
+  label: MAX-768
+  mediaQuery: '(max-width: 768px)'
+  weight: 0
+  multipliers:
+    - 1x
+alqueria.xl768:
+  label: MIN-768
+  mediaQuery: '(min-width: 768px)'
+  weight: 1
+  multipliers:
+    - 1x
+alqueria.xs540:
+  label: MAX-540
+  mediaQuery: '(max-width: 540px)'
+  weight: 0
+  multipliers:
+    - 1x
+alqueria.xl540:
+  label: MIN-540
+  mediaQuery: '(min-width: 540px)'
+  weight: 1
+  multipliers:
+    - 1x

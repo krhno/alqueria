@@ -1,0 +1,83 @@
+/*fqa*/
+.fqa{
+	.content{
+		margin: 0 7%;
+		@media (max-width: $desktop_1024){
+			margin: 0;
+		}
+		.c-header{
+            h2{
+                color: $green1;
+            }
+        }
+		.c-fqa{
+			padding-top: 30px;
+			.item{
+				position: relative;
+				padding: 20px 5px 20px 25px;
+				border-bottom: 1px solid $gray6;
+				.title{
+					display: block;
+					position: relative;
+					padding-right: 50px;
+
+					font-weight: 700;
+					font-style: normal;
+					font-family: $Poppins;
+					&:hover{
+						color: $gray1;
+					}
+					&:before{
+						content: '';
+						left: -20px;
+						top: 7px;
+						width: 7px;
+						height: 7px;
+						border-radius: 50%;
+						position: absolute;
+						background-color: $red1;
+					}
+					.icon{
+						top: 0;
+						right: 0;
+						bottom: 0;
+						width: 30px;
+						height: 30px;
+						margin: auto;
+						border-radius: 50%;
+						position: absolute;
+						background-color: $red1;
+
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						@media (max-width: $desktop_1640){
+							width: 25px;
+							height: 25px;
+						}
+						i{
+							font-size: .65rem;
+							color: $white;
+							transition: all .25s;
+							@media (max-width: $desktop_1640){
+								font-size: .5rem;
+							}
+						}
+					}
+				}
+				.panel-collapse{
+					padding-top: 15px;
+					padding-right: 50px;
+					@media (max-width: $mobile){
+	                    padding-right: 0;
+	                }
+				}
+			}
+		}
+		.c-bottom{
+			width: 100%;
+			padding-top: 30px;
+			text-align: center;
+		}
+	}
+}

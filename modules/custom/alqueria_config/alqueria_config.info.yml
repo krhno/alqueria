@@ -1,0 +1,6 @@
+name: Alqueria Configuración
+description: Modulo para configuración básica del sitio
+package: CDI
+type: module
+core: 8.x
+configure: alqueria_config.configuracion_basica

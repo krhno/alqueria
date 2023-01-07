@@ -1,0 +1,81 @@
+/*editorial-info*/
+.editorial-info{
+	.content{
+		margin: 0 7%;
+		@media (max-width: $desktop_1024){
+			margin: 0;
+		}
+		.c-editorial-info{
+			display: flex;
+			flex-direction: row;
+			@media (max-width: $tablet){
+				flex-direction: column;
+			}
+			.column-left{
+				width: 50%;
+				padding-right: 30px;
+				@media (max-width: $tablet){
+					width: 100%;
+					padding: 0 0 40px 0;
+				}
+				@media (max-width: $mobile){
+					padding: 0 7% 40px 7%;
+				}
+				.info{
+					h3, h4, h5, h6{
+						color: $gray1;
+					}
+					ul{
+						padding: 10px 0;
+					}
+					a{
+						color: $links;
+					}
+				}
+			}
+			.column-right{
+				width: 50%;
+				@media (max-width: $tablet){
+					width: 100%;
+				}
+				.img{
+					box-shadow: 0px 0 10px 0px $shadow;
+				}
+			}
+			&.row-reverse{
+				flex-direction: row-reverse;
+				@media (max-width: $tablet){
+					flex-direction: column;
+				}
+				.column-left{
+					padding-left: 30px;
+					padding-right: 0;
+					@media (max-width: $tablet){
+						padding: 0 0 40px 0;
+					}
+					@media (max-width: $mobile){
+						padding: 0 7% 40px 7%;
+					}
+				}
+			}
+		}
+		.full-row{
+			width: 100%;
+			padding-top: 40px;
+			@media (max-width: $mobile){
+				padding: 40px 7% 0 7%;
+			}
+			.info{
+				h3, h4, h5, h6{
+					color: $gray1;
+				}
+				ul{
+					padding: 10px 0;
+				}
+				a{
+					color: $links;
+				}
+			}
+		}
+	}
+}

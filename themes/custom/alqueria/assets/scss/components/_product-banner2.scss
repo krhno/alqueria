@@ -1,0 +1,24 @@
+/*product-banner2*/
+.product-banner2{
+	.content{
+		margin: 0 9%;
+		@media (max-width: $tablet){
+			margin: 0 5%;
+		}
+		@media (max-width: $mobile){
+			margin: 0;
+		}
+		.c-header{
+			@media (max-width: $mobile){
+				padding: 0 7%;
+			}
+		}
+		.c-product-banner2{
+			padding: 40px 0;
+		}
+		.c-bottom{
+			width: 100%;
+			text-align: center;
+		}
+	}
+}

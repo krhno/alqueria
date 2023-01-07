@@ -1,0 +1,9 @@
+services:
+  alqueria_notifications.twig.obtenerNotificaciones:
+    class: Drupal\alqueria_notifications\Extensions\ObtenerNotificaciones
+    tags:
+      - { name: twig.extension }
+  alqueria_notifications.twig.obtenerNotificacionesVisibles:
+    class: Drupal\alqueria_notifications\Extensions\ObtenerNotificacionesVisibles
+    tags:
+      - { name: twig.extension }

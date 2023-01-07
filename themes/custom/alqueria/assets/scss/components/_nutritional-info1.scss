@@ -1,0 +1,195 @@
+/*nutrition-info - Milk*/
+.nutrition-info.milk{
+	position: relative;
+	.content{
+		.c-nutrition-info{
+			width: 75%;
+			margin: 0 auto;
+			@media (max-width: $desktop_1024){
+				width: 100%;
+			}
+			.div-info-table{
+				display: flex;
+				flex-direction: row;
+				align-items: flex-end;
+				@media (max-width: $mobile){
+					flex-direction: column-reverse;
+				}
+				.info-table{
+					width: 80%;
+					margin-right: 25px;
+					@media (max-width: $desktop_1024){
+						width: 75%;
+					}
+					@media (max-width: $mobile){
+						width: 100%;
+						margin-right: 0;
+					}
+					.div-table{
+						position: relative;
+						margin-bottom: 20px;
+						padding: 10px 0 15px 0;
+						background-color: $white;
+						box-shadow: 0px 0 10px 0px $shadow;
+						@media (max-width: $desktop_1640){
+							margin-bottom: 15px;
+						}
+						@media (max-width: $mobile){
+							margin-bottom: 20px;
+							padding-bottom: 40px;
+						}
+						table{
+							width: 85%;
+							margin: 0 auto;
+							thead{
+								tr{
+									border: none;
+									background-color: transparent;
+									th{
+										border: none;
+										padding: 5px 0;
+										background-color: transparent;
+										width: 25%;
+										text-align: center;
+
+										@media (max-width: $mobile){
+											width: 20%;
+										}
+
+										color: $red1;
+										font-weight: 700;
+										font-style: normal;
+										font-family: $Poppins;
+										&:first-child{
+											width: 50%;
+											text-align: left;
+
+											@media (max-width: $mobile){
+												width: 60%;
+											}
+										}
+									}
+								}
+							}
+							tbody{
+								tr{
+									background-color: transparent;
+									border-bottom: 1px solid $gray6;
+									&:last-child{
+										border-bottom: none;
+									}
+									th, td{
+										border: none;
+										padding: 5px 0;
+										vertical-align: middle;
+										background-color: transparent;
+
+										color: $gray1;
+										font-style: 400;
+										font-style: normal;
+										font-family: $Poppins;
+									}
+									th{
+										width: 50%;
+										text-align: left;
+										font-weight: initial;
+
+										@media (max-width: $mobile){
+											width: 60%;
+										}
+									}
+									td{	
+										width: 25%;
+										text-align: center;
+
+										@media (max-width: $mobile){
+											width: 20%;
+										}
+									}
+								}
+							}
+						}
+						i{
+							right: 5px;
+							bottom: 5px;
+							cursor: pointer;
+							color: $red1;
+							font-size: 1.5rem;
+							position: absolute;
+							@media (max-width: $mobile){
+								left: 0;
+								right: 0;
+								bottom: 10px;
+								text-align: center;
+							}
+						}
+						.tooltip-desktop{
+							display: block;
+							@media (max-width: 767px){
+								display: none;
+							}
+						}
+						.tooltip-mobile{
+							display: none;
+							@media (max-width: 767px){
+								display: block;
+							}
+						}
+					}
+					.div-table:nth-of-type(3) {
+						table {
+							thead {
+								tr th {
+									width: 50%;
+								}
+							}
+							tbody {
+								tr {
+									th, td {
+										width: 50%;
+									}
+								}
+							}
+						}
+					}
+					label{
+						display: block;
+						text-align: center;
+						@media (max-width: $mobile){
+							text-align: left;
+						}
+					}
+				}
+				.info-product{
+					width: 20%;
+					text-align: center;
+					padding-bottom: 35px;
+					@media (max-width: $desktop_1024){
+						width: 25%;
+					}
+					@media (max-width: $mobile){
+						width: 50%;
+						margin: 0 auto;
+					}
+					.img{
+						width: 80%;
+						margin: 0 auto;
+					}
+					.title{
+						padding: 10px 0 15px 0;
+						h3{
+							color: $gray1;
+							font-size: 1.3rem;
+						}
+					}
+					.button{
+						.btn-default{
+							width: 100%;
+							padding: 10px 15px;
+						}
+					}
+				}
+			}	
+		}
+	}
+}

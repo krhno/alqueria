@@ -1,0 +1,6 @@
+pd.dowload:
+  path: '/cdi_pdf/pdf_download/{page}/{id}' 
+  defaults: 
+    _controller: '\Drupal\cdi_pdf\Controller\DownloadPdf::pdf' 
+  requirements: 
+    _permission: 'access content' 

@@ -1,0 +1,610 @@
+/*general-filter*/
+.general-filter{
+	.content{
+		.c-header{
+			@media (max-width: $mobile){
+				padding: 0 7%;
+			}
+			.result-title{
+				display: flex;
+				align-items: center;
+				flex-direction: row;
+				justify-content: center;
+				@media (max-width: $tablet){
+					flex-direction: column;
+				}
+				.img{
+					width: 7%;
+    				overflow: hidden;
+    				margin-right: 15px;
+    				border-radius: 50%;
+    				box-shadow: 0 0 10px 0 $shadow;
+    				@media (max-width: $desktop_1024){
+    					width: 10%;
+    				}
+    				@media (max-width: $tablet){
+    					width: 15%;
+    					margin-right: 0;
+    					margin-bottom: 5px;
+    				}
+    				@media (max-width: $mobile){
+    					width: 20%;
+    				}
+				}
+				.title{
+					h2{
+						color: $green1;
+					}
+				}
+			}
+		}
+		.c-general-filter.desktop{
+			margin-top: 40px;
+			box-shadow: 0 0 10px 0 $shadow;
+
+			display: flex;
+			flex-direction: column;
+			@media (max-width: $desktop_1024){
+				top: 0 !important;
+				right: -1500px;
+				width: 50%;
+				z-index: 11;			
+				margin-top: 0 !important;
+				position: fixed;
+				box-shadow: none;
+				transition: 1s all;
+			}
+			@media (max-width: $mobile){
+				width: 95%;
+			}
+			.filters{
+				padding: 25px 30px;
+
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				@media (max-width: $desktop_1024){
+					padding: 25px 7% 40px 7%;
+					flex-direction: column;
+				}
+				.input{
+					width: 25%;
+					margin-right: 30px;
+					@media (max-width: $desktop_1024){
+						width: 100%;
+						margin-right: 0;
+						padding-bottom: 25px;
+					}
+					input{
+						width: 100%;
+						height: 35px;
+						padding: 0 15px;
+						border-radius: 30px;
+						border: 1px solid $green1;
+						@media (max-width: $desktop_1024){
+							height: 40px;
+							display: none;
+						}
+					}
+					#searchD{
+						@media (max-width: $desktop_1024){
+							display: none;
+						}
+					}
+				}
+				.select{
+					width: 25%;
+					margin-right: 30px;
+					@media (max-width: $desktop_1024){
+						width: 100%;
+						margin-right: 0;
+						padding-bottom: 25px;
+					}
+					.nice-select{
+						width: 100%;
+						height: 35px;
+	    				line-height: 35px;
+	    				padding-left: 5px;
+	    				padding-right: 20px;
+						border-radius: 0;
+						border-color: transparent;
+						border-bottom: 1px solid $green1;
+
+						display: flex;
+						align-items: center;
+						&:last-child{
+							margin-right: 0;
+						}
+						.current{
+							width: 100%;
+							overflow: hidden;
+							white-space: nowrap;
+						  	display: inline-block;
+						  	text-overflow: ellipsis;
+						}
+						ul.list{
+							width: 100%;
+							li.option{
+								padding: 0 15px;
+								min-height: 30px;
+								&:before{
+					                display: none;
+					            }
+							}
+						}
+						&:after{
+							right: 7px;
+							width: 6px;
+							height: 6px;
+							border-bottom: 2px solid $green1;
+							border-right: 2px solid $green1;
+						}
+					}
+					.select2{
+						width: 100% !important;
+						height: 35px !important;
+	    				line-height: 35px;
+	    				padding-left: 5px;
+	    				padding-right: 5px;
+						border-radius: 0;
+						border-color: transparent;
+						border-bottom: 1px solid $green1;
+						&.select2-container--open{
+							.selection{
+								.select2-selection{
+									&:after{
+										transform: rotate(-135deg);
+									}
+								}
+							}
+							
+						}
+						.selection{
+							.select2-selection{
+								width: 100%;
+								height: 35px;
+								padding: 0;
+								border: none;
+								border-radius: 0;
+								position: relative;
+								background-color: transparent;
+
+								display: flex;
+								align-items: center;
+								.select2-selection__rendered{
+									padding: 0;
+									color: $gray1;
+									line-height: normal;
+								}
+								.select2-selection__arrow{
+									display: none;
+								}
+								&:after{
+									content: '';
+									top: 50%;
+								    right: 7px;
+								    width: 6px;
+								    height: 6px;
+								    margin-top: -4px;
+								    position: absolute;
+								    pointer-events: none;
+								    transform: rotate(45deg);
+								    transform-origin: 66% 66%;
+								    transition: all .15s ease-in-out;
+								    border-bottom: 2px solid $green1;
+								    border-right: 2px solid $green1;
+								}
+							}
+						}
+					}
+					&.moment{
+						display: none;
+						flex-direction: row;
+						align-items: center;
+						@media (max-width: $desktop_1024){
+							display: flex;
+						}
+						.img{
+							width: 20%;
+							overflow: hidden;
+							margin-right: 5px;
+							border-radius: 50%;
+							box-shadow: 0 0 10px 0 $shadow;
+							@media (max-width: $desktop_1024){
+								width: 15%;
+							}
+						}
+						.list-select{
+							width: 80%;
+							.nice-select{
+								.current{
+									color: $green1;
+									font-weight: 700;
+									font-style: normal;
+									font-family: $Poppins;
+								}
+								ul.list{
+									width: auto;
+								}
+							}
+						}
+					}
+				}
+				.btn-controls{
+					display: none;
+					@media (max-width: $desktop_1024){
+						width: 100%;
+						padding-bottom: 35px;
+
+						display: flex;
+						justify-content: space-between;
+					}
+					.btn-prev{
+						width: 35px;
+						height: 35px;
+						border-radius: 50%;
+						visibility: hidden;
+						background-color: $red1;
+
+						display: flex;
+					    align-items: center;
+					    justify-content: center;
+						i{
+							font-size: 1.2rem;
+							color: $white;
+						}
+					}
+					.btn-close{
+						display: flex;
+						align-items: center;
+						i{
+							opacity: 1;
+							font-size: 1.7rem;
+							color: $red1;
+						}
+					}
+				}
+				.btn-search{
+					display: none;
+					@media (max-width: $desktop_1024){
+						width: 100%;
+						display: block;
+						margin-top: 10px;
+					}
+					button{
+						@media (max-width: $desktop_1024){
+							width: 100%;
+							border: none;
+							padding: 10px 0;
+							text-align: center;
+						}
+					}
+				}
+			}
+			.c-slider-moments1{
+				position: relative;
+				@media (max-width: $desktop_1024){
+					display: none !important;
+				}
+				.s-slider-moments1{
+					width: 90%;
+					margin: 0 auto;
+					padding: 0 10px;
+					.item{
+						cursor: pointer;
+						padding: 15px 10px;
+						transition: all .25s;
+						margin: 5px 5px 20px 5px;
+						background-color: transparent;
+						.img{
+							width: 70%;
+							margin: 0 auto;
+							overflow: hidden;
+							border-radius: 50%;
+							box-shadow: 0 0 10px 0 $shadow;
+							.static{ 
+								display: block; 
+							}
+							.hover{ 
+								display: none; 
+							}
+						}
+						.text{
+							padding-top: 5px;
+							text-align: center;
+							@media (max-width: $mobile){
+								padding-top: 5px;
+							}
+							.title{
+								display: block;
+
+								font-weight: 700;
+								font-style: normal;
+								font-family: $Poppins;
+							}
+						}
+						&:hover, &.active{
+							box-shadow: 0 0 10px 0 $shadow;
+							background-color: $blue1;
+							.static{
+								display: none; 
+							}
+							.hover{
+								display: block; 
+							}
+							.title{
+								color: $green1;
+								font-weight: 700;
+								font-style: normal;
+								font-family: $Poppins;
+							}
+						}
+					}
+					.owl-dots{
+						@media (max-width: $mobile){
+							left: 0;
+							right: 0;
+							margin: 0 auto;
+							position: absolute;
+							margin-top: 25px !important;
+						}
+					}
+					.owl-nav{
+				        button.owl-prev{
+				            top: 55%;
+				            left: -3%;
+				            i{ 
+				            	color: $gray5; 
+				            }
+				        }
+				        button.owl-next{
+				            top: 55%;
+				            right: -3%;
+				            i{ 
+				            	color: $gray5; 
+				            }
+				        }
+				    }
+				}
+				.back{
+					left: 0;
+					bottom: 0;
+					width: 100%;
+					height: 100px;
+					position: absolute;
+					background-color: $blue1;
+				}
+			}
+			@media (min-width: 1025px){
+				&.scroll{
+					top: inherit;
+					left: 0;
+					z-index: 5;
+					width: 100%;
+					position: fixed;
+					background-size: cover;
+					margin-top: 0 !important;
+					animation-fill-mode: both;
+    				animation: animate_scroll .3s;
+					.filters{
+						width: 100%;
+						margin: 0 auto;
+						padding: 20px 0;
+						max-width: 1440px;
+						@media (max-width: $desktop_1640){
+							padding: 20px 7%;
+						}
+						@media (max-width: $mobile){
+							padding: 15px 7%;
+						}
+						.input{
+							width: 20%;
+						}
+						.select{
+							width: 20%;
+							margin-right: 25px;
+							&.moment{
+								display: flex;
+								margin-right: 0;
+							}
+						}
+					}
+				}
+			}
+			&.right-0{
+				right: 0;
+			}
+		}
+		.c-general-filter.mobile{
+			display: none;
+			@media (max-width: $desktop_1024){
+				display: block;
+				margin-top: 35px;
+				box-shadow: 0 0 10px 0 $shadow;
+				background-color: $white;
+			}
+			.filters{
+				padding: 25px 7%;
+
+				display: flex;
+				flex-direction: row;
+				@media (max-width: $mobile){
+					padding: 15px 7% !important;
+				}
+				.input{
+					width: 95%;
+					margin-right: 20px;
+					@media (max-width: $mobile){
+						width: 90%;
+					}
+					input{
+						width: 100%;
+						height: 35px;
+						padding: 0 15px;
+						border-radius: 30px;
+						border: 1px solid $green1;
+					}
+				}
+				.btn-tools{
+					width: 5%;
+					@media (max-width: $mobile){
+						width: 10%;
+					}
+					i{
+						width: 35px;
+						height: 35px;
+						font-size: 1rem;
+						color: $white;
+						border-radius: 50%;
+						background-color: $green1;
+
+						display: flex;
+					    align-items: center;
+					    justify-content: center;
+					}
+				}
+			}
+			&.scroll{
+				top: inherit;
+				left: 0;
+				z-index: 5;
+				width: 100%;
+				margin-top: 0;
+				position: fixed;
+				.filters{
+					padding: 20px 7%;
+				}
+			}
+		}
+	}
+	&.prehome{
+		.content{
+			.c-general-filter.desktop{
+				margin-top: 35px;
+				background-color: $white;
+				.filters{
+					.input, .select{
+						width: 22%;
+						@media (max-width: $desktop_1024){
+							width: 100%;
+						}
+					}
+					.btn-search{
+						width: 12%;
+						display: block;
+						@media (max-width: $desktop_1024){
+							width: 100%;
+						}
+						button{
+							width: 100%;
+							height: 40px;
+							border: none;
+							padding: 8px 0;
+							font-size: 1.2rem;
+							text-align: center;
+						}
+					}
+				}
+			}
+			.c-general-filter.mobile{
+				@media (max-width: $desktop_1024){
+					margin-top: 75px;
+				}
+			}
+			.c-header{
+				width: 40%;
+				@media (max-width: $desktop_1024){
+					width: 60%;
+				}
+				@media (max-width: $tablet){
+					width: 90%;
+				}
+				span{
+					padding: 0;
+
+					color: $red1;
+					font-size: 1.5rem;
+					font-weight: 700;
+					font-style: normal;
+					line-height: 25px;
+					font-family: $Poppins;
+					@media (max-width: $desktop_1640){
+						font-size: 1.2rem;
+						line-height: 23px;
+					}
+				}
+			}
+			.c-slider-moments2{
+				padding-top: 10px;
+				.s-slider-moments2{
+					width: 90%;
+					margin: 0 auto;
+					@media (max-width: $desktop_1024){
+						padding: 0 7%;
+					}
+					@media (max-width: $mobile){
+						padding: 0;
+					}
+					.item{
+						cursor: pointer;
+						.img{
+							width: 70%;
+							margin: 0 auto;
+						}
+						.text{
+							padding-top: 5px;
+							text-align: center;
+						}
+						&:hover{
+							.title{
+								color: $red1;
+								font-weight: 700;
+								font-style: normal;
+								font-family: $Poppins;
+							}
+						}
+					}
+					.owl-dots{
+						@media (max-width: $mobile){
+							left: 0;
+							right: 0;
+							margin: 0 auto;
+							position: absolute;
+							margin-top: 15px !important;
+						}
+					}
+					.owl-nav{
+				        button.owl-prev{
+				            top: 45%;
+				            left: -5%;
+				            @media (max-width: $desktop_1024){
+				            	left: 0
+				            }
+				            i{ 
+				            	color: $gray5; 
+				            }
+				        }
+				        button.owl-next{
+				            top: 45%;
+				            right: -5%;
+				            @media (max-width: $desktop_1024){
+				            	right: 0
+				            }
+				            i{ 
+				            	color: $gray5; 
+				            }
+				        }
+				    }
+				}
+			}
+		}
+	}
+}
+@keyframes animate_scroll{
+    from{
+        transform: scale(0.9);
+    }
+    to{
+        transform: scale(1);
+    }
+}

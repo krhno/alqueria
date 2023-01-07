@@ -1,0 +1,67 @@
+<li class="item-menu">
+	<a href="{{get_config_data('config.settings','recetas')}}" class="a-item-menu" data-seo="btn-header">
+		{{titulo}}
+	</a>
+	<div id="megamenu-recipes" class="megamenu-desktop panel-collapse collapse">
+		<div class="column-left">
+			<ul class="no-dics panel-collapse collapse collapse1 show">
+				<li class="item-collapse1">
+					<a href="#moments-desktop" class="a-item-collapse1 active" data-toggle="collapse" data-id="moments-desktop" data-seo="btn-header">
+						Momentos
+					</a>
+					<ul id="moments-desktop" class="no-dics panel-collapse collapse collapse2 show">
+						{% set primerMomento=0 %}
+						{% for key, value in obtener_taxonomia('momentos') %}
+						{% if loop.index == 1%}
+						{% set primerMomento = key %}
+						{% endif %}
+							<li class="item-collapse2">
+								<span class="a-item-collapse2 {% if loop.index == 1%}active{% endif %}" data-tid="{{key}}" data-view="recetas_por_momentos_menu" data-mode="desktop" data-url="field_enlace_interna_" data-seo="btn-header">
+									{{value.name}}
+								</span>
+							</li>
+						{% endfor %}
+					</ul>
+				</li>
+				<li class="item-collapse1">
+					<span class="a-item-collapse1" data-id="tips-desktop" data-toggle="collapse" data-seo="btn-header">
+						Tips de cocina
+					</span>
+				</li>
+			</ul>
+		</div>
+		<div class="column-right">
+			<div class="content-right content-moments" data-id="moments-desktop">
+				<div class="info">
+					{% set taxInfo = obtener_taxonomia_detalle(primerMomento,'field_descripcion,field_url_youtube,field_enlace_interna_') %}
+					<span class="title">{{taxInfo.label}}</span>
+          {% if taxInfo.field_descripcion is not empty %}
+            <div class="descripcion">{{taxInfo.field_descripcion|raw}}</div>
+          {% endif %}
+          {% if taxInfo.field_url_youtube is not empty %}
+            <span class="subtitle">{{taxInfo.field_url_youtube}}</span>
+          {% endif %}
+				</div>
+				<div class="list-articles moments">
+					{{vista_render(primerMomento,'recetas_por_momentos_menu','block_1')}}
+				</div>
+				<div class="button">
+					<a href="{{taxInfo.field_enlace_interna_}}" class="btn-default back-green" data-seo="btn-header">
+						Ver más
+					</a>
+				</div>
+			</div>
+			<div class="content-right content-tips" data-id="tips-desktop">
+				<div class="info">
+					<span class="subtitle">Lo más visto</span>
+				</div>
+				<div class="list-articles tips">
+					{{vista_render(0,'tips_de_cocina_menu','block_1')}}
+				</div>
+				<div class="button">
+					<a href="{{get_config_data('config.settings','tips_cocina')}}" class="btn-default back-green" data-seo="btn-header">Ver más</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</li>

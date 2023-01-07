@@ -1,0 +1,86 @@
+/*slider-prehome*/
+.slider-prehome{
+  .containerr{
+    @media (max-width: $desktop_1024){
+      padding-top: 0;
+    }
+  }
+  .content{
+    .c-header{
+      padding-bottom: 25px;
+      @media (max-width: $desktop_1024){
+        padding: 25px 7%;
+      }
+    }
+    .c-slider-prehome{
+      .s-slider-prehome{
+        .item{
+          position: relative;
+          margin: 0 5px 25px 5px;
+          box-shadow: 0 5px 15px 0 $shadow;
+          @media (max-width: $mobile){
+            margin: 0 0 25px 0;
+          }
+          .text{
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 10px 20px;
+            position: absolute;
+            background-color: rgba(0, 0, 0, .5);
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            @media (max-width: $mobile){
+              padding: 15px;
+              flex-direction: column;
+            }
+            .category{
+              top: -40px;
+              bottom: initial;
+              background-color: $red1;
+
+              font-weight: 700;
+              font-style: normal;
+              font-family: $Poppins;
+            }
+            .title{
+              width: 65%;
+              @media (max-width: $mobile){
+                width: 100%;
+              }
+              h2{
+                color: $white;
+                font-size: 2rem;
+                font-weight: 700;
+                font-style: normal;
+                line-height: normal;
+                font-family: $Poppins;
+                @media (max-width: $desktop_1640){
+                  font-size: 1.75rem;
+                }
+              }
+            }
+            .btn{
+              width: 35%;
+              text-align: right;
+              @media (max-width: $mobile){
+                width: 100%;
+                margin-top: 15px;
+                text-align: center;
+              }
+              .btn-border{
+                @media (max-width: $mobile){
+                  width: 60%;
+                  padding: 12.5px 25px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

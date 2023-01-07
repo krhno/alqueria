@@ -1,0 +1,52 @@
+/*slider-moments2*/
+.slider-moments2{
+	.content{
+		.c-slider-moments2{
+			.s-slider-moments2{
+				.item{
+					.img{
+						width: 70%;
+						margin: 0 auto;
+					}
+					.text{
+						padding-top: 5px;
+						text-align: center;
+					}
+					&:hover{
+						.title{
+							color: $red1;
+							font-weight: 700;
+							font-style: normal;
+							font-family: $Poppins;
+						}
+					}
+				}
+				.owl-dots{
+					@media (max-width: $mobile){
+						left: 0;
+						right: 0;
+						margin: 0 auto;
+						position: absolute;
+						margin-top: 25px !important;
+					}
+				}
+				.owl-nav{
+			        button.owl-prev{
+			            top: 60%;
+			            left: -5%;
+			            i{ 
+			            	color: $gray5; 
+			            }
+			        }
+			        button.owl-next{
+			            top: 60%;
+			            right: -5%;
+			            i{
+			            	color: $gray5; 
+			            }
+			        }
+			    }
+			}
+		}
+	}
+}

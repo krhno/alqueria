@@ -1,0 +1,45 @@
+<li class="item-menu">
+	<a href="{{get_config_data('config.settings','nutricion')}}" class="a-item-menu" data-seo="btn-header">
+		{{titulo}}
+	</a>
+	<div id="megamenu-nutrition" class="megamenu-desktop panel-collapse collapse">
+		<div class="column-left">
+			<ul class="no-dics panel-collapse collapse collapse1 show">
+				<li class="item-collapse1">
+					<a href="#blog-nutrition-desktop" class="a-item-collapse1 active" data-toggle="collapse" data-id="blog-nutrition-desktop" data-seo="btn-header">
+						Bienestar y nutrición Blog
+					</a>
+					<ul id="blog-nutrition-desktop" class="no-dics panel-collapse collapse collapse2 show">
+						{% set primerBlogNutricion=0 %}
+						{% for key, value in obtener_taxonomia('categorias_nutricion') %}
+						{% if loop.index == 1%}
+						{% set primerBlogNutricion = key %}
+						{% endif %}
+						<li class="item-collapse2">
+							<span class="a-item-collapse2 {% if loop.index == 1%}active{% endif %}" data-tid="{{key}}" data-view="blog_nutricion_menu" data-mode="desktop" data-seo="btn-header" data-url="field_url_youtube">
+								{{value.name}}
+							</span>
+						</li>
+						{% endfor %}
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="column-right">
+			<div class="content-right content-nutrition" data-id="blog-nutrition-desktop">
+				<div class="info">
+					<span class="subtitle">Lo más visto</span>
+				</div>
+				<div class="list-articles nutrition">
+					{{vista_render(primerBlogNutricion,'blog_nutricion_menu','block_1')}}
+				</div>
+				<div class="button">
+					{% set taxInfo = obtener_taxonomia_detalle(primerBlogNutricion,'field_url_youtube') %}
+					<a href="{{taxInfo.field_url_youtube}}" class="btn-default back-yellow" data-seo="btn-header">
+						Conoce más aquí
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</li>

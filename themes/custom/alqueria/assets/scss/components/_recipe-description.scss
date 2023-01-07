@@ -1,0 +1,259 @@
+/*recipe-description*/
+.recipe-description{
+	.content{
+		margin: 0 7%;
+		@media (max-width: $desktop_1024){
+			margin: 0;
+		}
+		.c-recipe-description{
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			.content-tags{
+				width: 90%;
+				@media (max-width: $mobile){
+					width: 100%;
+				}
+				ul.tags-ingredients{
+					padding: 35px 0 30px 0;
+
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: center;
+					li{
+						font-size: 1.65rem;
+						font-weight: 700;
+						font-style: normal;
+						font-family: $Poppins;
+						padding: 0 45px !important;
+						@media (max-width: $tablet){
+							font-size: 1.45rem;
+							padding: 0 25px !important;
+						}
+						@media (max-width: $mobile){
+							font-size: 1.35rem;
+							padding: 0 15px !important;
+						}
+						&:after{
+				            content: '';
+				            top: -5px;
+				            right: 0;
+				            width: 1px;
+				            height: 25px;
+				            position: absolute;
+				            background-color: $gray6;
+				        }
+					}
+				}
+				ul.steps{
+					width: 100%;
+					height: auto;
+					padding: 15px 0;
+					background-color: $blue1;
+
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: space-around;
+					li{
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						@media (max-width: $mobile){
+							flex-direction: column;
+						}
+						span{
+							width: 60px;
+							height: 60px;
+							margin: 0 auto;
+							display: block;
+							margin-right: 15px;
+							border-radius: 50%;
+							background-color: $red1;
+
+							display: flex;
+						    align-items: center;
+						    justify-content: center;
+							@media (max-width: $desktop_1640){
+								width: 50px;
+								height: 50px;
+							}
+							@media (max-width: $mobile){
+								margin: 0 0 5px 0;
+							}
+							.icon-icon-recipe-food{
+								color: $white;
+								font-size: 1.3rem;
+							}
+							.icon-icon-recipe-time{
+								color: $white;
+								font-size: 2rem;
+							}
+							.icon-icon-recipe-chef{
+								color: $white;
+								font-size: 2rem;
+							}
+						}
+					}
+				}
+			}
+			.content-description{
+				width: 100%;
+				padding-top: 40px;
+
+				display: flex;
+				flex-direction: row;
+				@media (max-width: $mobile){
+					flex-direction: column-reverse;
+				}
+				@media (max-width: $mobile){
+					padding-top: 145px;
+				}
+				&.center{
+					padding: 35px 0;
+
+					justify-content: center;
+					.column-right{
+						@media (max-width: $desktop_1024){
+							width: 70%;
+						}
+						@media (max-width: $mobile){
+							width: 100%;
+						}
+						.s-recipe-description{
+							.item{
+								margin: 5px;
+								box-shadow: 0px 0 10px 0px $shadow;
+							}
+							.owl-nav{
+								.owl-prev{
+									top: 40%;
+									left: -10%;
+								}
+								.owl-next{
+									top: 40%;
+									right: -10%;
+								}
+							}
+							.owl-dots{
+								.owl-dot{
+	            					span{
+	            						@media (max-width: $mobile){
+		            						background-color: transparent;
+		                					border: 1px solid $gray2;
+		                				}
+	            					}
+	            				}
+							}
+							.owl-dot:hover span, 
+							.owl-dot.active span{
+					        	@media (max-width: $mobile){
+					            	background-color: $gray2;
+					            }
+					        }
+						}
+					}
+				}
+				.column-left{
+					width: 40%;
+					padding: 30px;
+					margin: 15px 0;
+					background-color: $red1;
+
+					background-image: url("/themes/custom/alqueria/assets/img/background/description-recipe-desktop.png");
+				    background-repeat: repeat;
+				    background-position: top;
+				    background-size: contain;
+					@media (max-width: $tablet){
+						width: 50%;
+					}
+					@media (max-width: $mobile){
+						width: 90%;
+						margin: 0 auto;
+						padding: 60px 20px 30px 20px;
+					}
+					h2{
+						color: $white;
+						@media (max-width: $tablet){
+							text-align: left;
+						}
+						&.add-icon{
+					        i{
+					        	color: $white;
+					        }
+						}
+					}
+					.description{
+						overflow-y: auto;
+						margin-top: 25px;
+						padding-right: 15px;
+						@media (max-width: $mobile){
+							height: 250px;
+							overflow-y: auto;
+						}
+						b, strong,
+						q, cite, sub, sup,
+						a, p, label, span, textarea, time{
+							color: $white;
+						}
+						&::-webkit-scrollbar{
+					        width: 5px;
+					    }
+					    &::-webkit-scrollbar-thumb{
+					        border-radius: 5px;
+					        background-color: $white;
+					    }
+					    &::-webkit-scrollbar-thumb:hover,
+					    &::-webkit-scrollbar-thumb:active{
+					        background-color: $white;
+					    }
+					   	&::-webkit-scrollbar-track{
+					        border-radius: 5px;
+					        background-color: transparent;
+					    }
+					    &::-webkit-scrollbar-track:hover,
+					    &::-webkit-scrollbar-track:active{
+					        background-color: transparent;
+					    }
+					}
+				}
+				.column-right{
+					width: 60%;
+					@media (max-width: $tablet){
+						width: 50%;
+					}
+					@media (max-width: $mobile){
+						width: 100%;
+					}
+					.s-recipe-description{
+						.item{
+							margin: 0;
+							box-shadow: none;
+						}
+						.owl-dots{
+							left: 0;
+							right: 0;
+							margin: 0 auto;
+							position: absolute;
+							.owl-dot{
+            					span{
+            						@media (max-width: $mobile){
+	            						background-color: transparent;
+	                					border: 1px solid $white;
+	                				}
+            					}
+            				}
+						}
+						.owl-dot:hover span, 
+						.owl-dot.active span{
+				        	@media (max-width: $mobile){
+				            	background-color: $white;
+				            }
+				        }
+					}
+				}
+			}
+		}
+	}
+}

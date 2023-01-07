@@ -1,0 +1,21 @@
+<li class="item-menu">
+  	<a href="#products1-mobile" class="a-item-menu icon-icon-arrow" data-toggle="collapse" data-seo="btn-header">
+    	{{item.title}}<i class="demo-icon icon-icon-arrow-down">&#xe809;</i>
+ 	</a>
+  	<a href="{{get_config_data('config.settings','productos')}}" class="a-item-prehome" data-seo="btn-header">
+      {{get_config_data('config.settings','Label_prehome')}}<i class="demo-icon icon-icon-redirect">&#xe83a;</i>
+  	</a>
+	<ul id="products1-mobile" class="no-dics panel-collapse collapse collapse1">
+		{% set primerProducto=0 %}
+		{% for key, value in obtener_taxonomia('categoria_producto') %}
+			{% if loop.index == 1%}
+				{% set primerProducto = key %}
+			{% endif %}
+			<li class="item-collapse1">
+				<span class="a-item-collapse1 dataid {% if loop.index == 1%}active{% endif %}" data-id="megamenu-products" data-tid="{{key}}" data-url="field_enlace_interna_" data-view="productos_por_categoria_menu" data-mode="mobile" data-seo="btn-header">
+					{{value.name}}<i class="demo-icon icon-icon-arrow-right">&#xe80c;</i>
+				</span>
+			</li>
+		{% endfor %}
+	</ul>
+</li>

@@ -1,0 +1,14 @@
+name: 'Block content machine name'
+type: module
+description: 'Creates machine name field for block_content and allows user to create default blocks with machine name.'
+package: Other
+# core: 8.x
+dependencies:
+  - block_content
+  - machine_name_widget
+
+# Information added by Drupal.org packaging script on 2017-11-07
+version: '8.x-1.5'
+core: '8.x'
+project: 'block_content_machine_name'
+datestamp: 1510033387

@@ -1,0 +1,3 @@
+shareConfig.settings:
+  type: config_object
+  label: 'Configuración para bloque share redes'

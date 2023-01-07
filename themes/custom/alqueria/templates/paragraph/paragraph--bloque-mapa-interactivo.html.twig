@@ -1,0 +1,335 @@
+{#
+  /**
+  * @file
+  * Default theme implementation to display a paragraph.
+  *
+  * Available variables:
+  * - paragraph: Full paragraph entity.
+  *   Only method names starting with "get", "has", or "is" and a few common
+  *   methods such as "id", "label", and "bundle" are available. For example:
+  *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+  *   - paragraph.id(): The paragraph ID.
+  *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+  *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+  *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+  *   and methods for the paragraph object.
+  * - content: All paragraph items. Use {{ content }} to print them all,
+  *   or print a subset such as {{ content.field_example }}. Use
+  *   {{ content|without('field_example') }} to temporarily suppress the printing
+  *   of a given child element.
+  * - attributes: HTML attributes for the containing element.
+  *   The attributes.class element may contain one or more of the following
+  *   classes:
+  *   - paragraphs: The current template type (also known as a "theming hook").
+  *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+  *     "Image" it would result in "paragraphs--type--image". Note that the machine
+  *     name will often be in a short form of the human readable label.
+  *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+  *     preview would result in: "paragraphs--view-mode--preview", and
+  *     default: "paragraphs--view-mode--default".
+  * - view_mode: View mode; for example, "preview" or "full".
+  * - logged_in: Flag for authenticated user status. Will be true when the
+  *   current user is a logged-in member.
+  * - is_admin: Flag for admin user status. Will be true when the current user
+  *   is an administrator.
+  *
+  *
+  * @ingroup themeable
+  */
+  #}
+  {%
+    set classes_paragraph = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,        
+    ]
+    %}
+
+    {{ attach_library('alqueria/jvectormap') }}
+    <section id="centros-de-distribucion" class="interactive-map back-blue">
+      <div class="containerGridp">
+        <div class="content">
+          <div class="c-interactive-map">
+            <div class="column-left">
+              <div class="info desktop">
+                <div class="info-general">
+                  <h3>{{paragraph.field_titulo.value}}</h3>
+                  {{paragraph.field_descripcion_larga.value|raw}}
+                </div>
+                {% for item in paragraph.field_departamentos %}
+                  <div class="info-department" data-id="{{item.entity.field_departamento.value}}">
+                    {{item.entity.field_descripcion_larga.value|raw}}
+                    {% if item.entity.field_listado is not empty %}
+                      <div class="list">
+                        <div class="first-list">
+                          <ul class="no-dics">
+                            {% set moreItems = 0 %}
+                            {% if item.entity.field_listado|length <= 4 %}
+                            {% set limit = item.entity.field_listado|length-1 %}
+                            {% else %}
+                            {% set limit = 3 %} 
+                            {% set moreItems = 1 %}
+                            {% endif%}
+                            {% for listado in 0..limit %}
+                              {% if item.entity.field_listado[loop.index-1] is not empty %}
+                                <li>
+                                  <div class="icon-check">
+                                    <i class="demo-icon icon-icon-check2">&#xe822;</i>
+                                  </div>
+                                  {{ item.entity.field_listado[loop.index-1].value }}
+                                </li>
+                              {% endif %}
+                            {% endfor %}
+                          </ul>
+                        </div>
+                        {% if moreItems %}
+                          <div class="more-list">
+                            <ul class="no-dics">                        
+                              {% for listado in 4..item.entity.field_listado|length-1 %}
+                                {% if item.entity.field_listado[loop.index+3] is not empty %}
+                                  <li>
+                                    <div class="icon-check">
+                                      <i class="demo-icon icon-icon-check2">&#xe822;</i>
+                                    </div>
+                                    {{ item.entity.field_listado[loop.index+3].value }}
+                                  </li>
+                                {% endif %}
+                              {% endfor %}
+                            </ul>
+                          </div>
+                          <div class="button">
+                            <span class="btn-link btn-more-list">Leer más</span>
+                          </div>
+                        {% endif %}
+                      </div>
+                    {% endif %}
+                  </div>
+                {% endfor %}
+                <div class="empty-department">
+                  {{paragraph.field_descripcion_complementaria.value|raw}}
+                </div>
+              </div>
+            </div>
+            <div class="column-right">
+              <div id="interactive-map"></div>
+              <div class="info mobile"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<script type="text/javascript">
+  var map;
+  var panOnDrag;
+  var nameRegion;
+  var zoomAnimate;
+  var regionEnabled=[];
+  var markerEnabled=[];
+  var markersDefault=[];
+  
+  /*RegionEnabled Init*/
+  regionEnabled = ["{{paragraph.field_departamento_por_defecto.value}}"];
+  jQuery(".interactive-map .info-department[data-id='"+regionEnabled[0]+"']").css("display", "block");
+
+  /*Markers*/
+  markersDefault = [
+    { latLng: [-0.9480403754930313, -71.72627390230939], name: "Amazonas", region: "amazonas" },
+    { latLng: [6.871619613936651, -75.53509895495704], name: "Antioquía", region: "antioquia" },
+    { latLng: [6.991280429265008, -71.12210008126789], name: "Arauca", region: "arauca" },
+    { latLng: [10.979095392789077, -75.0406636305357], name: "Atlantico", region: "atlantico" },
+    { latLng: [4.6780459039676145, -74.10044826928468], name: "Bogotá", region: "bogota" },
+    { latLng: [8.488638314989378, -74.22222100522845], name: "Bolivar", region: "bolivar" },
+    { latLng: [5.671677338379702, -73.25061851892792], name: "Boyacá", region: "boyaca" },
+    { latLng: [5.548534513437747, -75.51050052181913], name: "Caldas", region: "caldas" },
+    { latLng: [1.0240563208379012, -74.1249229386592], name: "Caquetá", region: "caqueta" },
+    { latLng: [5.587019401875682, -71.50785717493017], name: "Casanare", region: "casanare" },
+    { latLng: [2.808114247865551, -76.98708993009096], name: "Cauca", region: "cauca" },
+    { latLng: [10.219540177723939, -73.47991706597098], name: "Cesar", region: "cesar" },
+    { latLng: [6.019008889948731, -76.79690514040622], name: "Choco", region: "choco" },
+    { latLng: [8.613713669228906, -75.78667581556108], name: "Córboba", region: "corboba" },
+    { latLng: [5.310150828610633, -74.3231384603367], name: "Cundinamarca", region: "cundinamarca" },
+    { latLng: [2.99601341936517, -68.99932718231885], name: "Guainía", region: "guainia" },
+    { latLng: [2.16795606158381, -72.17248339497351], name: "Guaviare", region: "guaviare" },
+    { latLng: [2.785659024773661, -75.52696281977984], name: "Huila", region: "huila" },
+    { latLng: [11.595106649046523, -72.91686201223025], name: "La Guajira", region: "la_guajira" },
+    { latLng: [10.346470861303345, -74.44442151496503], name: "Magdalena", region: "magdalena" },
+    { latLng: [3.5499910854683088, -72.91141010867504], name: "Meta", region: "meta" },
+    { latLng: [1.8109831774152287, -77.89234394820096], name: "Nariño", region: "narino" },
+    { latLng: [8.296143962502876, -72.94753783538472], name: "Norte de Santander", region: "norte_de_santander" },
+    { latLng: [0.7652267623267134, -75.84462073034699], name: "Putumayo", region: "putumayo" },
+    { latLng: [4.664683878419112, -75.70828445091861], name: "Quindío", region: "quindio" },
+    { latLng: [5.391292272776153, -76.00622463824024], name: "Risaralda", region: "risaralda" },
+    /*{ latLng: [10.714691255708194, -79.04896527635164], name: "San Andrés y Providencia", region: "san_andres_y_providencia" },*/
+    { latLng: [6.903861102946124, -73.48380702168139], name: "Santander", region: "Santander" },
+    { latLng: [9.248184574219497, -75.06990376387783], name: "Sucre", region: "sucre" },
+    { latLng: [4.273922460473978, -75.22845588801955], name: "Tolima", region: "tolima" },
+    { latLng: [3.926799780271548, -76.53350845094342], name: "Valle del cauca", region: "valle_del_cauca" },
+    { latLng: [0.995747839985144, -70.76036674179812], name: "Vaupés", region: "vaupes" },
+    { latLng: [4.939173716888092, -69.32480892258187], name: "Vichada", region: "vichada" },
+  ];
+  /*MarkerEnabled Init*/
+  for (var i = 0; i < markersDefault.length; i++) {
+    for (var j = 0; j < regionEnabled.length; j++) {
+      if (markersDefault[i].region == regionEnabled[j]) {
+          markerEnabled.push(markersDefault[i]);
+        }
+    }
+  }
+
+  /*config_jvm_mobile*/
+  function config_jvm_mobile(){
+    if(jQuery(window).width()<=768){
+      panOnDrag=false;
+      zoomAnimate=false;
+    }
+    else{
+      panOnDrag=true;
+      zoomAnimate=true;
+    }
+  }
+  config_jvm_mobile();
+  jQuery(window).resize(function(){
+    config_jvm_mobile()
+  });
+
+  /*Config JVM*/
+  map = new jvm.Map({
+    map: "jvectormap",
+    container: jQuery("#interactive-map"),
+    backgroundColor: "",
+    regionsSelectable: true,
+    regionsSelectableOne: true,
+    normalizeFunction: "polynomial",
+    markers: markerEnabled,
+    zoomOnScroll: zoomAnimate,
+    selectedRegions: regionEnabled,
+    regionStyle: {
+      initial: {
+        "fill": "{{paragraph.field_color_de_relleno.color}}",
+        "fill-opacity": 1,
+        "stroke": '{{paragraph.field_color_lineas_divisoras.color}}',
+        "stroke-width": 2,
+        "stroke-opacity": 1
+      },
+      hover: {
+        "fill": "{{paragraph.field_color_hover.color}}",
+        "fill-opacity": 1
+      },
+      selected: {
+        "fill": "{{paragraph.field_color_selected.color}}",
+        "fill-opacity": 1
+      }
+    },
+    markerStyle: {
+      initial: {
+        {% if paragraph.field_foto is not empty %}
+          image: "{{content.field_foto}}"
+        {% else %}
+          image: "/themes/custom/alqueria/assets/img/icons/icon-marker.png"
+        {% endif %}
+      }
+    },
+    series: {
+      regions: [{
+        attribute: "fill",
+        scale: {
+          {% for item in paragraph.field_departamentos %}              
+            "color{{loop.index}}": "{{item.entity.field_color_de_relleno.color}}",
+          {% endfor %}
+        },
+        values: {
+          {% for item in paragraph.field_departamentos %}              
+            "{{item.entity.field_departamento.value}}": 'color{{loop.index}}',
+          {% endfor %}
+        }
+      }]
+    },
+    onRegionClick: function(event, code){
+      var existe=0;
+      nameRegion=map.getRegionName(code);
+
+      /*Display block/none info-department*/
+      jQuery(".interactive-map .info-department").each(function(i, val){
+        var dataID = jQuery(this).attr("data-id");
+        if(code == dataID){
+          jQuery(".interactive-map .info-department").css("display", "none");
+          jQuery(".interactive-map .empty-department").css("display", "none");
+          jQuery(this).fadeIn();
+          existe=1;
+        }
+      });
+      if(existe==0){
+        jQuery(".interactive-map .info-department").css("display", "none");
+        jQuery(".interactive-map .empty-department").fadeIn();
+      }
+    },
+    onMarkerTipShow: function(event, label, code){
+      map.tip.text(nameRegion);
+    }
+  });
+  /*Tooltip*/
+  jQuery(".jvectormap-tip").css({
+    "color": "{{paragraph.field_tooltip_letra.color}}",
+    "border-color": "{{paragraph.field_tooltip_borde.color}}",
+    "background-color": "{{paragraph.field_tooltip_fondo.color}}"
+  });
+  /*Controls*/
+  jQuery(".jvectormap-zoomin, .jvectormap-zoomout").css({
+    "color": "{{paragraph.field_botones_zoom_iconos.color}}",
+    "background-color": "{{paragraph.field_botones_zoom_fondo.color}}"
+  });
+
+  /*click-region*/
+  jQuery(".jvectormap-region").click(function(e){
+    /*removeMarkers*/
+    jQuery(".jvectormap-marker").remove();
+
+    /*addMarkers*/
+    var latLng = map.pointToLatLng(
+      e.pageX - map.container.offset().left,
+      e.pageY - map.container.offset().top-20
+    ),
+    targetCls = jQuery(e.target).attr("class");
+
+    if (latLng && (!targetCls || (targetCls && jQuery(e.target).attr("class").indexOf("jvectormap-marker") == -1))) {
+      map.addMarker(0, {latLng: [latLng.lat, latLng.lng]});
+    }
+
+    /*slideUp 'readMore'*/
+    jQuery(".interactive-map .info-department .more-list").slideUp();
+    jQuery(".interactive-map .info-department .btn-more-list").text("Leer más");
+  });
+
+  /*hover-region*/
+  map.container.mousemove(function(e){
+    /*modified positionTooltip*/
+    var top=jQuery(".jvectormap-tip").offset().top;
+    var left=jQuery(".jvectormap-tip").offset().left+jQuery(".jvectormap-tip").outerWidth()+15;
+    jQuery(".jvectormap-tip").css({
+      "top": top,
+      "left": left
+    });
+  });
+  
+  /*move_info_department*/
+  function move_info_dep(){
+    if(jQuery(window).width()<=768){
+      /*Move 'div' info-department.mobile*/
+      jQuery(".interactive-map .info.desktop .info-department").each(function(i, val){
+          jQuery(".interactive-map .info.mobile").append(val);
+      });
+      jQuery(".interactive-map .info.mobile").append(jQuery(".empty-department"));
+    }
+    else{
+      /*Move 'div' info-department.mobile*/
+      jQuery(".interactive-map .info.mobile .info-department").each(function(i, val){
+          jQuery(".interactive-map .info.desktop").append(val);
+      });
+      jQuery(".interactive-map .info.desktop").append(jQuery(".empty-department"));
+    }
+  }
+  move_info_dep();
+  jQuery(window).resize(function(){
+    move_info_dep()
+  });
+</script>

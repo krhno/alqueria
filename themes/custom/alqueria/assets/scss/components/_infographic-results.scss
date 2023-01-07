@@ -1,0 +1,74 @@
+/*infographic-results*/
+.infographic-results{
+    .content{
+        margin: 0 7%;
+        @media (max-width: $desktop_1024){
+            margin: 0;
+        }
+        .c-infographic-results{
+            padding: 45px 7% 0 7%;
+            @media (max-width: $mobile){
+                padding: 35px 0 0 0;
+            }
+            .item{
+                min-height: 130px;
+                margin-bottom: 25px;
+                position: relative;
+                border-radius: 15px;
+                box-shadow: 0 0 10px 0 $shadow;
+                background-color: $blue1;
+
+                display: flex;
+                align-items: center;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+                @media (max-width: $mobile){
+                    margin-left: 10px;
+                }
+                .icon{
+                    left: -45px;
+                    width: 12%;
+                    position: absolute;
+                    @media (max-width: $tablet){
+                        width: 15%;
+                    }
+                    @media (max-width: $mobile){
+                        left: -20px;
+                        width: 25%;
+                    }
+                }
+                .text{
+                    padding: 0 100px;
+                    @media (max-width: $desktop_1024){
+                        padding: 0 80px;
+                    }
+                    @media (max-width: $tablet){
+                        padding: 0 60px;
+                    }
+                    @media (max-width: $mobile){
+                        padding: 0 20px 0 75px;
+                    }
+                }
+            }
+        }
+        .c-bottom{
+            width: 60%;
+            margin: 0 auto;
+            padding-top: 30px;
+            text-align: center;
+            @media (max-width: $mobile){
+                width: 100%;
+            }
+        }
+    }
+    &.sustainability{
+        .content{
+            .c-header{
+                h2{
+                    color: $green1;
+                }
+            }
+        }
+    }
+}

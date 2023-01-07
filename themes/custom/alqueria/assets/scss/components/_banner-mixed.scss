@@ -1,0 +1,60 @@
+/*banner-mixed*/
+.banner-mixed{
+	.content{
+		margin: 0 7%;
+		@media (max-width: $mobile){
+			margin: 0;
+		}
+		.c-header{
+			@media (max-width: $mobile){
+				padding: 0 7%;
+			}
+		}
+		.c-banner-mixed{
+			padding-top: 35px;
+			.text{
+				padding: 25px 0 0 0;
+				@media (max-width: $mobile){
+					padding: 25px 7% 0 7%;
+				}
+			}
+			.copy{
+				padding-top: 10px;
+				text-align: right;
+				@media (max-width: $mobile){
+					padding: 10px 7% 0 7%;
+					text-align: left;
+				}
+				span{
+					font-weight: 300;
+					font-style: italic;
+					font-family: $Poppins;
+				}
+			}
+		}
+		.c-bottom{
+			width: 100%;
+    		text-align: center;
+    		@media (max-width: $mobile){
+				padding: 0 7%;
+			}
+		}
+	}
+	&.sustainability{
+		.content{
+			.c-header{
+				h2{
+					color: $green1;
+				}
+			}
+			.c-banner-mixed{
+				.s-slider-full-img{
+					.item{
+						margin: 5px;
+						box-shadow: 0 0 10px 0 $shadow;
+					}
+				}
+			}
+		}
+	}
+}

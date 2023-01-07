@@ -1,0 +1,5 @@
+cdi_pdf.add_form:
+  route_name: entity.cdi_pdf.add_form
+  title: 'Add cdi_pdf'
+  appears_on:
+    - entity.cdi_pdf.collection

@@ -1,0 +1,21 @@
+{%
+  set classes = [
+  'view',
+  'view-' ~ id|clean_class,
+  'view-id-' ~ id,
+  'view-display-id-' ~ display_id,
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+  %}
+  <article>
+    <a href="{{fields.view_taxonomy_term.content}}" data-seo="btn-header">
+      <div class="img">
+        <picture>
+          {{fields.field_foto.content}}
+        </picture>
+      </div>
+      <div class="text">
+        <span>{{fields.name.content}}</span>
+      </div>
+    </a>
+  </article>

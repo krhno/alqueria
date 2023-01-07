@@ -1,0 +1,39 @@
+{
+  "name": "dev-alqueria-content-hub",
+  "version": "1.0.0",
+  "description": "CONTENTS OF THIS FILE ---------------------",
+  "author": "JonathanVelandia",
+  "main": "index.js",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-sass": "^4.1.1",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "readable-stream": "^3.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp",
+    "gulp-watch": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/cdi-interactive/alqueria/alqueria-content-hub.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/cdi-interactive/alqueria/alqueria-content-hub/issues"
+  },
+  "homepage": {
+    "url": "https://gitlab.com/cdi-interactive/alqueria/alqueria-content-hub#readme"
+  },
+  "dependencies": {
+    "install": "^0.13.0",
+    "npm": "^8.19.2",
+    "o": "^2.3.2"
+  }
+}

@@ -1,0 +1,18 @@
+<section class="banner-text-img3 {% if content['#block_content'].field_estilo_rojo.value != 1 %}sustainability{% endif %}">
+	<div class="containerr">
+		<div class="content">
+			<div class="c-banner-text-img3">
+				<div class="column-left">
+					<h2>{{label}}</h2>
+					{{content.body}}					
+					{% if content['#block_content'].field_enlace is not empty %}
+					<a href="{{ content['#block_content'].field_enlace.0.url }}" target="{{content['#block_content'].field_enlace.0.url.external ? '_blank' : '_self'}}" class="btn-default back-white" data-seo="btn-content">{{ content['#block_content'].field_enlace.title }}</a>
+					{% endif %}
+				</div>
+				<div class="column-right">
+					{{content.field_imagen_frontal}}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

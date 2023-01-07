@@ -1,0 +1,486 @@
+/*slider-cards*/
+.slider-cards{
+	.content{
+		.c-slider-cards{
+			padding-top: 35px;
+			.s-slider-cards{
+				padding: 0 5%;
+				margin: 0 auto;
+				@media (max-width: $mobile){
+					padding: 0;
+				}
+			}
+		}
+		.c-bottom{
+			width: 100%;
+			margin-top: 25px;
+    		text-align: center;
+		}
+	}
+	&.news3, &.news4{
+		.content{
+			.c-header{
+				h2{
+					color: $red1;
+				}
+			}
+			.c-slider-cards{
+				.s-slider-cards{
+					article{
+						.img-card{
+							.category{
+								background-color: $red1;
+							}
+						}
+						.content-card{
+							padding: 15px 20px;
+							border-top: 3px solid $red1;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.nutrition{
+		.content{
+			.c-header{
+				h2{
+					color: $red1;
+				}
+			}
+			.c-slider-cards{
+				.s-slider-cards{
+					article{
+						.img-card{
+							.category{
+								background-color: $red1;
+							}
+						}
+						.content-card{
+							padding: 15px 20px;
+							border-top: 3px solid $yellow1;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.pillars{
+		.content{
+			.c-slider-cards{
+				.s-slider-cards{
+					article{
+						&.recipes{
+							.content-card{
+								padding: 15px;
+								border-top: 3px solid $red1;
+								.text{
+									padding: 0;
+									h3{
+										color: $red1;
+										@media (max-width: $mobile){
+									        font-size: 1.55rem;
+									    }
+									}
+									p{
+										padding: 10px 0 0 0;
+									}
+								}
+							}
+						}
+						&.nutrition{
+							.content-card{
+								padding: 15px 20px;
+								border-top: 3px solid $yellow1;
+								.text{
+									padding: 0;
+									h3{
+										color: $yellow1;
+										@media (max-width: $mobile){
+									        font-size: 1.55rem;
+									    }
+									}
+									p{
+										padding: 10px 0 0 0;
+									}
+								}
+							}
+						}
+						&.sustainability{
+							.content-card{
+								padding: 15px 20px;
+								border-top: 3px solid $green1;
+								.text{
+									padding: 0;
+									h3{
+										color: $green1;
+										@media (max-width: $mobile){
+									        font-size: 1.55rem;
+									    }
+									}
+									p{
+										padding: 10px 0 0 0;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.products{
+		margin-top: 0;
+		.content{
+			.c-slider-cards{
+				.s-slider-cards{
+					article{
+						.content-card{
+							padding: 15px 20px;
+							.info-person{
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.programs{
+		.content{
+			.c-header{
+				h2{
+					color: $green1;
+				}
+			}
+			.c-slider-cards{
+				.s-slider-cards{
+					article{
+						margin: 5px 5px 15px 5px;
+						.info{
+							.text{
+								h3{
+									font-size: 1.6rem;
+									@media (max-width: $desktop_1640){
+										font-size: 1.3rem;
+									}
+								}
+							}
+						}
+					}
+					.owl-nav{
+						.owl-prev, .owl-next{
+							i{
+								color: $green1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.realities{
+		.content{
+			.c-slider-cards{
+				.s-slider-cards{
+					article{
+						.content-card{
+							padding: 15px 20px;
+							border-top: 3px solid $red1;
+							.text{
+								padding: 0;
+								h3{
+									@media (max-width: $mobile){
+								        font-size: 1.55rem;
+								    }
+								}
+								p{
+									padding: 10px 0 0 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.recipes, &.tips{
+		.content{
+			.c-slider-cards{
+				.s-slider-cards{
+					article{
+						.img-card{
+							.category{
+								background-color: $green1;
+							}
+							.video{
+								.icon-play{
+									span{
+										width: 70px;
+										height: 70px;
+										@media (max-width: $desktop_1640){
+								            width: 50px;
+								            height: 50px;
+								        }
+									}
+								}
+							}
+						}
+						.content-card{
+							padding: 15px 20px;
+							border-top: 3px solid $red1;
+							.content-star{
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.related{
+		.content{
+			.c-slider-cards{
+				.s-slider-cards{
+					article{
+						.img-card{
+							.category{
+								background-color: $green1;
+							}
+							.video{
+								.icon-play{
+									span{
+										width: 70px;
+										height: 70px;
+										@media (max-width: $desktop_1640){
+								            width: 50px;
+								            height: 50px;
+								        }
+									}
+								}
+							}
+						}
+						.content-card{
+							padding: 15px 20px;
+							border-top: 3px solid $red1;
+							.content-star{
+								display: none;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.sustainability{
+		.content{
+			.c-header{
+				h2{
+					color: $red1;
+				}
+			}
+			.c-slider-cards{
+				.s-slider-cards{
+					article{
+						margin: 5px;
+						.info{
+							.text{
+								p{
+									padding: 10px 0;
+								}
+								&.no-img{
+									h3{
+										padding-left: 0;
+									}
+								}
+							}
+						}
+					}
+					.owl-nav{
+						.owl-prev, .owl-next{
+							i{
+								color: $green1;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.cards2.home{
+			.content{
+				.c-slider-cards{
+				}
+			}
+		}
+		&.cards3.home{
+			.content{
+				.c-slider-cards{
+					padding-top: 35px;
+				}
+			}
+		}
+		&.cards3.prehome{
+			.content{
+				.c-header{
+					h2{
+						color: $green1;
+					}
+				}
+				.c-slider-cards{
+					padding-top: 35px;
+					article{
+						.info{
+							.text{
+								h3{
+									padding-left: 0;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.tom{
+		margin-top: 0;
+		.content{
+			.c-slider-cards{
+				.s-slider-cards{
+					article{
+						.content-card{
+							padding: 15px 20px;
+							border-top: 3px solid $red1;
+							.text{
+								padding: 0;
+								text-align: center;
+								p, b, label, span, strong{
+									padding: 0;
+									font-size: 1.2rem;
+									@media (max-width: $desktop_1640){
+										font-size: 1.1rem;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.valued{
+		.content{
+			.c-slider-cards{
+				.s-slider-cards{
+					padding: 0;
+
+					display: flex;
+					flex-wrap: wrap;
+					flex-direction: row;
+					@media (max-width: $desktop_1024){
+						flex-direction: column;
+					}
+					article{
+						width: calc(33.33% - 20px);
+						margin: 0 10px 20px 10px;
+						@media (max-width: $desktop_1024){
+							width: 100%;
+							margin: 20px 0;
+							position: relative;
+							background-color: $white;
+
+							display: flex;
+							flex-direction: row;
+							align-items: center;
+							&:first-child{
+								margin-top: 0;
+							}
+							&:last-child{
+								border-bottom: 0;
+								&:after{
+									display: none;
+								}
+							}
+							&:after{
+								content: '';
+								left: 0;
+								bottom: -20px;
+								width: 100%;
+								height: 1px;
+								position: absolute;
+								background-color: $gray6;
+							}
+						}
+						.img-card{
+							@media (max-width: $desktop_1024){
+								width: 25%;
+							}
+							@media (max-width: $mobile){
+								width: 50%;
+							}
+							.video{
+								.icon-play{
+									span{
+		    							@media (max-width: $mobile){
+								            width: 45px;
+								            height: 45px;
+										}
+										i{
+									        @media (max-width: $mobile){
+									        	font-size: 1.5rem;
+									        }
+										}
+									}
+								}
+							}
+						}
+						.content-card{
+							padding: 15px 20px;
+							@media (max-width: $desktop_1024){
+								width: 75%;
+							}
+							@media (max-width: $mobile){
+								width: 50%;
+								padding: 10px;
+							}
+							.info-person{
+								display: none;
+							}
+							.text{
+								@media (max-width: $mobile){
+									padding-top: 5px;
+								}
+								h3{
+								    @media (max-width: $desktop_1024){
+								        font-size: 1.1rem;
+								    }
+								}
+								p{
+									@media (max-width: $desktop_1024){
+										padding: 5px 0;
+									}
+									&.desktop{
+										display: block;
+										@media (max-width: $mobile){
+											display: none;
+										}
+									}
+									&.mobile{
+										display: none;
+										@media (max-width: $mobile){
+											display: none;
+										}
+									}
+								}
+							}
+							.bottom{
+								@media (max-width: $mobile){
+									display: none;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

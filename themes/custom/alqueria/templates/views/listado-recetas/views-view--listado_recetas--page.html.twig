@@ -1,0 +1,137 @@
+<section class="general-filter recipes">
+	<div class="containerGrid">
+		<div class="content">
+			<div class="c-header">
+        {% if view.title %}
+          <h3>{{ view.title }}</h3>
+        {% else %}
+          {{get_config_data('config.settings','header_listado_recetas')}}
+        {% endif %}
+			</div>
+			<div class="c-general-filter mobile back-general-filterM">
+				<div class="filters">
+					<div class="input">
+						<input type="text" id="searchM-recipes" name="searchM-recipes" placeholder="Hoy que quieres preparar">
+					</div>
+					<div class="btn-tools">
+						<i class="demo-icon icon-icon-tools">&#xe81d;</i>
+					</div>
+				</div>
+			</div>
+			<div class="c-general-filter desktop back-general-filterD">
+				<div class="filters">
+					<div class="btn-controls">
+						<div class="btn-prev">
+							<i class="demo-icon icon-icon-arrow-left prev">&#xe80a;</i>
+						</div>
+						<div class="btn-close">
+							<i class="demo-icon icon-icon-close1 close">&#xe81c;</i>
+						</div>
+					</div>
+					<div class="input">
+						<input type="text" id="searchD-recipes" name="searchD-recipes" placeholder="Hoy que quieres preparar">
+					</div>
+					<div class="select kitchen">
+						<select id="tc-recipes" name="tc-recipes">
+							<option value="">Tipos de cocina</option>
+							{% for key, value in obtener_taxonomia('tipos_de_cocina') %}
+								<option value="{{key}}">{{value.name}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="select ingredient">
+						<select id="ip-recipes" name="ip-recipes">
+						    <option value="">Ingrediente principal</option>
+						    {% for key, value in obtener_taxonomia('ingredientes_destacados') %}
+								<option value="{{key}}">{{value.name}}</option>
+							{% endfor %}
+						</select>
+					</div>
+					<div class="select level">
+						<select id="nd-recipes" name="nd-recipes">
+							<option value="">Nivel de dificultad</option>
+							<option value="bajo">Bajo</option>
+							<option value="medio">Medio</option>
+							<option value="alto">Alto</option>
+						</select>
+					</div>
+					<div class="select moment">
+						<div class="img">
+							<picture>
+								<img data-src="/{{directory}}/assets/img/sliders/s-moments1/moments1-hover.png" alt="Momento Alquería" title="Momento Alquería" class="lazyload">
+							</picture>
+						</div>
+						<div class="list-select">
+							<select id="m-recipes" name="m-recipes">
+								<option value="">Momento</option>
+								{% for key, value in obtener_taxonomia('momentos') %}
+									<option data-icon="{{value.url}}" value="{{key}}">{{value.name}}</option>
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+					<div class="btn-search recipes">
+						<button class="btn-default back-green" data-seo="btn-content">Buscar</button>
+					</div>
+				</div>
+				{{ vista_render(0, 'momentos_listado', 'block_1') }}
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="recipe-list">
+	<div class="containerGridp">
+		<div class="content">
+			<div class="c-results">
+				<label>Resultados <span id="type-recipe">para recetas</span></label>
+				<div class="result-items">
+					<div class="result-tags">
+						<ul class="no-dics font-18">
+							<li id="tc-tag-recipes">
+								<span class="close-tag"><i class="demo-icon icon-icon-close1">&#xe81c;</i></span>
+								<span class="title-tag">Tipos de cocina</span>
+							</li>
+							<li id="ip-tag-recipes">
+								<span class="close-tag"><i class="demo-icon icon-icon-close1">&#xe81c;</i></span>
+								<span class="title-tag">Ingrediente Principal</span>
+							</li>
+							<li id="nd-tag-recipes">
+								<span class="close-tag"><i class="demo-icon icon-icon-close1">&#xe81c;</i></span>
+								<span class="title-tag">Nivel de dificultad</span>
+							</li>
+							<li id="m-tag-recipes">
+								<span class="close-tag"><i class="demo-icon icon-icon-close1">&#xe81c;</i></span>
+								<span class="title-tag">Momento</span>
+							</li>
+							<li id="all-tags-recipes" class="all-tags">
+								Limpiar Filtros
+							</li>
+						</ul>
+					</div>
+					<div class="result-order">
+						<select id="order-recipes" name="order-recipes">
+							<option value="">Ordenar por</option>
+							<option value="block_2">Nombre</option>
+							<option value="block_1">Recientes</option>
+							<option value="block_3">Más vistos</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="c-recipe-list">
+				<div class="content-featured">
+					{{ vista_render(0, 'destacado_listado_recetas', 'block_1') }}
+				</div>
+				<div class="list-articles">
+					{{rows}}
+				</div>
+				{% set total=view.total_rows/9 %}
+				{% set total=total|round(0,'ceil')%}
+				<div class="c-bottom">
+                	<span class="btn-link btn-ajax-recipes" data-page="0" max-pager="{{total-1}}" data-seo="btn-content">Cargar más</span>
+            	</div>
+			</div>
+		</div>
+	</div>
+</section>

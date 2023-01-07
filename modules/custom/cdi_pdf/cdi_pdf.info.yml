@@ -1,0 +1,8 @@
+name: cdi_pdf
+type: module
+description: 'Provides a cdi_pdf entity.'
+package: Cdi
+core: 8.x
+core_version_requirement: ^8 || ^9
+dependencies:
+  - webform_views_extras

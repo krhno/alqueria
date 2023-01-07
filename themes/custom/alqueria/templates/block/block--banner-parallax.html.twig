@@ -1,0 +1,51 @@
+<section class="banner-parallax {% if content['#block_content'].field_descripcion_corta is not empty %}max-height{% endif %}">
+  <div class="containerr">
+    <div class="content">
+      {% if is_mobile() or is_tablet() %}
+        <div class="c-banner-parallax" style="background-image: url({{content.field_imagen_mobile}});">
+          <div class="info">
+            {% if content['#block_content'].field_imagen_frontal is not empty %}
+              <div class="img">
+                <picture>
+                  {{content.field_imagen_frontal}}
+                </picture>
+              </div>
+            {% else %}
+              <div class="text">
+                <h2>{{content.field_titulo_a_mostrar}}</h2>
+                {% if content['#block_content'].field_descripcion_corta is not empty %}
+                  <p>{{content.field_descripcion_corta}}</p>
+                  {% if content['#block_content'].field_enlace is not empty %}
+                    <a href="{{ content['#block_content'].field_enlace.0.url }}" target="{{content['#block_content'].field_enlace.0.url.external ? '_blank' : '_self'}}" class="btn-link" data-seo="btn-content">{{ content['#block_content'].field_enlace.title }}</a>
+                  {% endif %}
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% else %}
+        <div class="c-banner-parallax" style="background-image: url({{content.field_imagen_de_fondo_desktop}});">
+          <div class="info">
+            {% if content['#block_content'].field_imagen_frontal is not empty %}
+              <div class="img">
+                <picture>
+                  {{content.field_imagen_frontal}}
+                </picture>
+              </div>
+            {% else %}
+              <div class="text">
+                <h2>{{content.field_titulo_a_mostrar}}</h2>
+                {% if content['#block_content'].field_descripcion_corta is not empty %}
+                  <p>{{content.field_descripcion_corta}}</p>
+                  {% if content['#block_content'].field_enlace is not empty %}
+                    <a href="{{ content['#block_content'].field_enlace.0.url }}" target="{{content['#block_content'].field_enlace.0.url.external ? '_blank' : '_self'}}" class="btn-link" data-seo="btn-content">{{ content['#block_content'].field_enlace.title }}</a>
+                  {% endif %}
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

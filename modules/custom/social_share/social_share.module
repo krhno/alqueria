@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Adding classes to blocks.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\block\Entity\Block;
+use Drupal\Component\Utility\Html;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\block\BlockInterface;
+use Drupal\Core\Url;
+use Drupal\Component\Utility;
+
+function social_share_theme($existing, $type, $theme, $path) {  
+  return array(
+   'share-redes' => array(
+            'variables' => array('data' => ''),           
+        ),
+  );
+}
+

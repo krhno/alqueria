@@ -1,0 +1,8 @@
+alqueria_users.enlaces:
+   title: 'Configuración Usuarios'   
+   parent: alqueria_config.enlaces   
+   route_name: alqueria_users.configuracion_basica
+alqueria_users.sube_tu_receta:
+   title: 'Configuración sube tu receta'   
+   parent: alqueria_config.enlaces   
+   route_name: alqueria_users.configuracion_subir_receta

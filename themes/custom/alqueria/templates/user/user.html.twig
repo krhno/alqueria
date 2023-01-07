@@ -1,0 +1,396 @@
+{#
+	/**
+	* @file
+	* Theme override to present all user data.
+	*
+	* This template is used when viewing a registered user's page,
+	* e.g., example.com/user/123. 123 being the user's ID.
+	*
+	* Available variables:
+	* - content: A list of content items. Use 'content' to print all content, or
+	*   print a subset such as 'content.field_example'. Fields attached to a user
+	*   such as 'user_picture' are available as 'content.user_picture'.
+	* - attributes: HTML attributes for the container element.
+	* - user: A Drupal User entity.
+	*
+	* @see template_preprocess_user()
+	*/
+	#}
+	<section class="profile">
+		<div class="containerr padding0">
+			<div class="content">
+				<div class="c-profile">
+					<div class="banner-profile">
+						<picture>
+							<source media="(max-width: 540px)" srcset="/{{directory}}/assets/img/user/profile/banner/banner-mobile.jpg">
+							<img data-src="/{{directory}}/assets/img/user/profile/banner/banner-desktop.jpg" alt="Banner" title="Banner" class="lazyload">
+						</picture>
+						<div class="layer-black"></div>
+					</div>
+					<div class="content-profile containerGrid">
+						<div class="column-left">
+							<div class="div-nav">
+								<div class="info-person">
+									<div class="img">
+										<picture>
+											{% if user.user_picture is empty %}
+												<img data-src="/themes/custom/alqueria/assets/img/user/profile/person/img-desktop1.png" alt="Imagen de perfil de {{nombreUsuario}}" title="Imagen de perfil de {{nombreUsuario}}" class="lazyload">
+											{% else %}
+												{{content.user_picture}}
+											{% endif %}
+										</picture>
+									</div>
+									<div class="text">
+										<span class="author">{{user.field_nombres.value}} {{user.field_apellidos.value}}</span>
+										<span class="item-dataid btn-edit" data-id="form-profile"><i class="demo-icon icon-icon-edit1">&#xe827;</i>Editar perfil</span>
+									</div>
+								</div>
+								<div class="profile-menu">
+									<ul class="no-dics">
+										<li class="item-dataid {% if seccion == 'recetas'  %} active {% endif %}" data-id="recipes" data-seo="btn-content">
+											<i class="icon-left demo-icon icon-icon-recipe-hat">&#xe82a;</i>
+											Mis recetas
+											<i class="icon-right demo-icon icon-icon-arrow-right">&#xe80c;</i>
+										</li>
+										<li class="item-dataid {% if seccion == 'favoritos'  %} active {% endif %}" data-id="favorites" data-seo="btn-content">
+											<i class="icon-left demo-icon icon-icon-favorite">&#xe817;</i>
+											Favoritos
+											<i class="icon-right demo-icon icon-icon-arrow-right">&#xe80c;</i>
+										</li>
+										<li class="item-dataid {% if seccion == 'notificaciones'  %} active {% endif %}" data-id="notifications" data-seo="btn-content">
+											<div class="icon">
+												<i class="icon-left demo-icon icon-icon-notification3">&#xe831;</i>
+												<span class="number">{{obtener_notificaciones_visibles()}}</span>
+											</div>
+											Notificaciones
+											<i class="icon-right demo-icon icon-icon-arrow-right">&#xe80c;</i>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="button">
+								<a href="{{get_config_data('alqueriaUsers.settings','enlace_sube_tu_receta')}}" class="btn-default back-green" data-seo="btn-content">Subir receta</a>
+							</div>
+						</div>
+							<div class="column-right">
+								<div class="div-content" data-id="welcome" {% if seccion != ''  %} style="display: none" {% else %} style="display: block" {% endif %}>
+									<div class="welcome-title">
+										<div class="title">
+											<h1>{{get_config_data('alqueriaUsers.settings','titulo_perfil')}}</h1>
+										</div>
+										<div class="subtitle">
+											<span>{{user.field_nombres.value}} {{user.field_apellidos.value}}</span>
+											{{get_config_data('alqueriaUsers.settings','descripcion_perfil')}}
+										</div>
+									</div>
+									<div class="preferences">
+										<div class="item recipes">
+											<a href="{{get_config_data('alqueriaUsers.settings','url_recetas')}}" data-seo="btn-content">
+												{% set imgReceta= get_config_data('alqueriaUsers.settings','imagen_recetas') %}
+												{% set imgReceta= obtener_uri(imgReceta[0]) %}
+												{% set responsiveimagestyle = {
+								                    '#theme': 'responsive_image',
+								                    '#responsive_image_style_id': '390x340_330x290',
+								                    '#uri':        imgReceta,
+								                    '#alt':        "Imagen de recetas",
+								                    '#title':      "Título de recetas",
+								                    '#attributes': { class: 'lazyload' },
+								                  }
+								                  %}
+								              {{responsiveimagestyle}}
+												<span class="category">Recetas</span>
+											</a>
+										</div>
+										<div class="item nutrition">
+											<a href="{{get_config_data('alqueriaUsers.settings','url_nutricion')}}" data-seo="btn-content">
+												{% set imgReceta= get_config_data('alqueriaUsers.settings','imagen_nutricion') %}
+												{% set imgReceta= obtener_uri(imgReceta[0]) %}
+												{% set responsiveimagestyle = {
+								                    '#theme': 'responsive_image',
+								                    '#responsive_image_style_id': '390x340_330x290',
+								                    '#uri':        imgReceta,
+								                    '#alt':        "Imagen de nutrición",
+								                    '#title':      "Título de nutrición",
+								                    '#attributes': { class: 'lazyload' },
+								                  }
+								                  %}
+								              {{responsiveimagestyle}}
+												<span class="category">Nutrición</span>
+											</a>
+										</div>
+										<div class="item sustainability">
+											<a href="{{get_config_data('alqueriaUsers.settings','url_sostenibilidad')}}" data-seo="btn-content">
+												{% set imgReceta= get_config_data('alqueriaUsers.settings','imagen_sostenibilidad') %}
+												{% set imgReceta= obtener_uri(imgReceta[0]) %}
+												{% set responsiveimagestyle = {
+								                    '#theme': 'responsive_image',
+								                    '#responsive_image_style_id': '390x340_330x290',
+								                    '#uri':        imgReceta,
+								                    '#alt':        "Imagen de sostenibilidad",
+								                    '#title':      "Título de sostenibilidad",
+								                    '#attributes': { class: 'lazyload' },
+								                  }
+								                  %}
+								              {{responsiveimagestyle}}
+												<span class="category">Sostenibilidad</span>
+											</a>
+										</div>
+									</div>
+									<div class="button">
+										<a class="btn-default back-green" data-seo="btn-content" href="/">Ir al home</a>
+									</div>
+								</div>
+								<div class="div-content" data-id="recipes" {% if seccion == 'recetas' %} style="display: block" {% endif %}>
+									{{vista_render(0,'recetas_por_usuario','block_1')}}
+								</div>
+								<div class="div-content" data-id="favorites" {% if seccion == 'favoritos' %} style="display: block" {% endif %}>
+								{{vista_render(0,'favoritos_usuario','block_1')}}
+								</div>
+								<div class="div-content" data-id="notifications" {% if seccion == 'notificaciones'  %} style="display: block" {% endif %}>
+									<div class="content-title">
+										<div class="title">
+											<h2>Notificaciones</h2>
+										</div>
+									</div>
+									{% set notificacionesListado = obtener_notificaciones() %}
+									<div class="full-list">
+										{% if notificacionesListado is not empty %}
+										{% for key, value in notificacionesListado %}
+										{% if value.tipo == "publicacion" %}
+											<article class="notification">
+												<div class="img">
+													<a href="{{path('entity.node.canonical', {'node': value.nid})}}" data-seo="btn-content">
+														<picture>
+															<img data-src="/{{directory}}/assets/img/user/profile/notifications/img-desktop2.png" alt="Imagen Alquería" title="Imagen Alquería" class="lazyload">
+														</picture>
+													</a>
+												</div>
+												<div class="text">
+													<h3><a href="{{path('entity.node.canonical', {'node': value.nid})}}" data-seo="btn-content">Alquería</a></h3>
+													<time datetime="{{value.fecha|date('Y-m-d')}}">{{value.fecha|date('d-m-Y h:i:s A')}}</time>
+													<p>Tu receta {{value.titulo}} ha sido publicada</p>
+												</div>
+											</article>
+										{% elseif value.tipo == "comentario" %}
+											<article class="notification">
+												<div class="img">
+													<a href="{{path('entity.node.canonical', {'node': value.nid})}}" data-seo="btn-content">
+														<picture>
+															<img data-src="{{value.foto}}" alt="Imagen de perfil de {{value.titulo}}" title="Imagen de perfil de {{value.titulo}}" class="lazyload">
+														</picture>
+													</a>
+												</div>
+												<div class="text">
+													<h3><a href="{{path('entity.node.canonical', {'node': value.nid})}}" data-seo="btn-content">
+														{% if value.count >1 %}
+														{{value.titulo}} y {{value.count}} personas más
+													</a></h3>
+													<time datetime="{{value.fecha|date('Y-m-d')}}">{{value.fecha|date('d-m-Y h:i:s A')}}</time>
+													<p>Comentaron tu receta {{value.mensaje}}</p>
+													{% else %}
+													{{value.titulo}}
+												</a></h3>
+												<time datetime="{{value.fecha|date('Y-m-d')}}">{{value.fecha|date('d-m-Y h:i:s A')}}</time>
+												<p>Comentó tu receta {{value.mensaje}}</p>
+												{% endif %}
+											</div>
+										</article>
+									{% elseif value.tipo=="publicidad" %}
+										<article class="notification">
+											<div class="img">
+												<a href="{{value.enlace}}" target="_blank" data-seo="btn-content">
+													<picture>
+														<img data-src="{{value.foto}}" alt="Image Perfil" title="Image Perfil" class="lazyload">
+													</picture>
+												</a>
+											</div>
+											<div class="text">
+												<h3><a href="{{value.enlace}}" target="_blank" data-seo="btn-content">{{value.titulo}}</a></h3>
+												<time datetime="{{value.fecha|date('Y-m-d')}}">{{value.fecha|date('d-m-Y h:i:s A')}}</time>
+												<p>{{value.mensaje}}</p>
+											</div>
+										</article>
+									{% endif %}
+									{% endfor %}
+									{% else %}
+										<div class="empty-list">
+											<i class="demo-icon icon-icon-notification3">&#xe831;</i>
+											<div class="title">
+												<span>No tienes notificaciones</span>
+											</div>
+											<p>Te invitamos a navegar nuestro sitio web y descubre todo lo que Alquería tiene para ti.</p>
+										</div>
+									{% endif %}
+								</div>
+							</div>
+							<div class="div-content" data-id="form-profile" {% if seccion == 'editar-perfil'  %} style="display: block" {% endif %}>
+								<div class="profile-title">
+									<div class="title">
+										<h2>Editar perfil</h2>
+									</div>
+									<div class="account">
+                    {% if user.field_fbid.value == '0' %}
+										  <span class="btn-link font-18" data-toggle="modal" data-target="#modal-delete-account1" data-seo="btn-content">Eliminar cuenta</span>
+                    {% endif %}
+                    {% if user.field_fbid.value == '1' %}
+										  <span class="btn-link font-18" data-toggle="modal" data-target="#modal-delete-account2" data-seo="btn-content">{{get_config_data('alqueriaUsers.settings','label_boton_en_perfil')}}</span>
+                    {% endif %}
+									</div>
+								</div>
+								<form id="form-edit-register" method="post" autocomplete="off" enctype="multipart/form-data">
+									<div class="content-form">
+										<div class="img-profile">
+											<div class="text">
+												<span>Imagen de perfil</span>
+											</div>
+											<div class="image">
+												<div class="img">
+													<picture>
+													{% if user.user_picture is empty %}
+														<img data-src="/themes/custom/alqueria/assets/img/user/profile/person/img-desktop1.png" alt="Image" title="Image" class="lazyload">
+													{% else %}
+														{{content.user_picture}}
+													{% endif %}
+													</picture>
+												</div>
+												<div class="input">
+													<label for="file-profile" class="btn-edit"><i class="demo-icon icon-icon-edit1">&#xe827;</i></label>
+													<input type="file" id="file-profile" name="file-profile">
+												</div>
+											</div>
+										</div>
+										<div class="form">
+											<div class="form-group">
+												<label>Nombres</label>
+												<input type="text" id="register-name" name="nombres" class="letter" placeholder="Nombres" required="required" value="{{user.field_nombres.value}}">
+												<span class="error">Este campo es obligatorio.</span>
+											</div>
+											<div class="form-group">
+												<label>Apellidos</label>
+												<input type="text" id="register-lastname" name="apellidos" class="letter" placeholder="Apellidos" required="required" value="{{user.field_apellidos.value}}">
+												<span class="error">Este campo es obligatorio.</span>
+											</div>
+											<div class="form-group">
+												<label>Teléfono</label>
+												<input type="text" id="register-telephone" name="telefono" class="numeric" maxlength="10" placeholder="Teléfono" required="required" value="{{user.field_telefono.value}}">
+												<span class="error">Este campo es obligatorio.</span>
+											</div>
+											<div class="form-group">
+												<label>Correo Electrónico</label>
+												<input type="email" id="register-email" name="register-email" class="disabled" placeholder="usuario@mail.com" required="required" value="{{user.mail.value}}">
+												<span class="error">Este campo es obligatorio.</span>
+											</div>
+											<div class="form-group">
+												<label>Departamento</label>
+												<select id="register-department" name="departamento" required="required">
+													<option value="0">Departamento</option>
+													{% for key, value in obtener_taxonomia('departamentos') %}
+													<option value="{{key}}" {% if key == user.field_departamento.target_id %}selected{%endif%} >{{value.name}}</option>
+													{% endfor %}
+												</select>
+												<span class="error">Este campo es obligatorio.</span>
+											</div>
+											<div class="form-group">
+												<label>Ciudad</label>
+												<select id="register-city" name="ciudad" required="required">
+													<option value="{{user.field_ciudad.target_id}}">{{user.field_ciudad.entity.label}}</option>
+												</select>
+												<span class="error">Este campo es obligatorio.</span>
+											</div>
+											<div class="form-group">
+												<label>Nueva Contraseña</label>
+												<input type="password" id="register-password1" name="register-password1" placeholder="Contraseña" required="required" autocomplete="off">
+												<span class="error">Este campo es obligatorio.</span>
+											</div>
+											<div class="form-group">
+												<label>Confirmar contraseña</label>
+												<input type="password" id="register-password2" name="register-password2" placeholder="Confirmar contraseña" required="required" autocomplete="off">
+												<span class="error">Este campo es obligatorio.</span>
+											</div>
+										</div>
+										<div class="checks">
+											<span>Preferencias</span>
+											<div class="div-checks">
+												<div class="div-check">
+													<div class="form-check">
+														{% set checked=0 %}
+														{% for item in user.field_preferencias %}
+														{% if item.value=="recetas" %}
+														{% set checked=1 %}
+														{% endif %}
+														{% endfor %}
+														<input type="checkbox" id="pre-recipes" name="pre_recipes" {% if checked %}checked="checked"{% endif%}>
+														<label for="pre-recipes">Recetas</label>
+													</div>
+												</div>
+												<div class="div-check">
+													<div class="form-check">
+														{% set checked=0 %}
+														{% for item in user.field_preferencias %}
+														{% if item.value=="nutricion" %}
+														{% set checked=1 %}
+														{% endif %}
+														{% endfor %}
+														<input type="checkbox" id="pre-nutrition" name="pre_nutrition" {% if checked %}checked="checked"{% endif%}>
+														<label for="pre-nutrition">Bienestar y nutrición</label>
+													</div>
+												</div>
+												<div class="div-check">
+													<div class="form-check">
+														{% set checked=0 %}
+														{% for item in user.field_preferencias %}
+														{% if item.value=="sostenibilidad" %}
+														{% set checked=1 %}
+														{% endif %}
+														{% endfor %}
+														<input type="checkbox" id="pre-sustainability" name="pre_sustainability" {% if checked %}checked="checked"{% endif%}>
+														<label for="pre-sustainability">Sostenibilidad</label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="button">
+										<span id="btn-user-edit" class="btn-default back-green" data-seo="btn-content">Guardar cambios</span>
+										<span id="btn-user-cancel" class="btn-border" data-seo="btn-content">Cancelar</span>
+									</div>
+								</form>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div id="modal-delete-account1" class="modal-delete-account1 modal fade" role="dialog">
+			<div class="modal-dialog modal-center modal-md">
+				<div class="modal-content">
+					<i class="demo-icon icon-icon-close1" data-dismiss="modal" aria-label="Close">&#xe81c;</i>
+					<div class="modal-body">
+						<div class="c-content-account">
+							<div class="info">
+								{{ webform_render(get_config_data('alqueriaUsers.settings','cancelar_form')) }}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="modal-delete-account2" class="modal-delete-account2 modal fade" role="dialog">
+			<div class="modal-dialog modal-center modal-md">
+				<div class="modal-content">
+					<i class="demo-icon icon-icon-close1" data-dismiss="modal" aria-label="Close">&#xe81c;</i>
+					<div class="modal-body">
+						<div class="c-content-account">
+							<div class="info">
+								<h2>{{get_config_data('alqueriaUsers.settings','titulo_eliminar_datos')}}</h2>
+								<p>{{get_config_data('alqueriaUsers.settings','descripcion_eliminar_datos')}}</p>
+                <a href="{{get_config_data('alqueriaUsers.settings','url_boton_eliminar_datos')}}" class="btn-border back-green" data-seo="btn-content">{{get_config_data('alqueriaUsers.settings','label_boton_eliminar_datos')}}</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>

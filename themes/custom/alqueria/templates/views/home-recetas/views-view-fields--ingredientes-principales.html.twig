@@ -1,0 +1,19 @@
+{%
+  set classes = [
+  'view',
+  'view-' ~ id|clean_class,
+  'view-id-' ~ id,
+  'view-display-id-' ~ display_id,
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+  %}
+  <div class="item" data-tid="{{row._entity.id}}" data-url="{{ path('entity.taxonomy_term.canonical', {'taxonomy_term': row._entity.id}) }}">
+    <div class="img">
+      <picture>
+        {{fields.field_icono_mor.content}}
+      </picture>
+    </div>
+    <div class="text">
+      <span class="title">{{fields.name.content}}</span>
+    </div>
+  </div>

@@ -1,0 +1,375 @@
+{# Cabecera otro nodos#}
+{% if node.field_descripcion_iconos is not empty %}
+  <section class="infographic-banner sustainability">
+    <div class="containerr">
+      <div class="content">
+        <div class="c-header">
+          {% if node.field_descripcion_iconos is not empty %}
+            <h1>{{ node.title.value }}</h1>
+          {% endif %}
+          {{ node.field_descripcion_iconos.value|raw }}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{% if node.field_descripcion_iconos is empty %}
+  <section class="infographic-header sustainability">
+    <div class="containerGridp">
+      <div class="content">
+        <div class="c-header">
+          {% if node.field_descripcion_iconos is empty %}
+            <h1>{{ node.title.value }}</h1>
+          {% endif %}
+        </div>
+        {# Cabecera de infografia #}
+        {% if node.field_copy_truco_del_chef is not empty or content.field_banner_sostenibilidad is not empty or node.field_url_youtube is not empty %}
+          <div class="c-infographic-header">
+            {% if node.field_copy_truco_del_chef is not empty or content.field_icono_motivacion is not empty or node.field_descripcion_inferior is not empty %}
+              <div class="info-text">
+                {% if node.field_copy_truco_del_chef is not empty %}
+                  <div class="left">
+                    {{ node.field_copy_truco_del_chef.value|raw }}
+                  </div>
+                {% endif %}
+                {% if content.field_icono_motivacion is not empty %}
+                  <div class="right">
+                    <div class="icon">
+                      {{ content.field_icono_motivacion }}
+                    </div>
+                    <div class="text">
+                      <p>{{ node.field_descripcion_inferior.value|raw }}</p>
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+            {% if content.field_imagen_objetivo is not empty %}
+              <div class="info-modal">
+                {% if content.field_imagen_objetivo is not empty %}
+                  <div class="img">
+                    {{ content.field_imagen_objetivo }}
+                  </div>
+                {% endif %}
+                {# Bloque imagenes iniciales pilares - paragraph #}
+                {% if node.field_bloques_contenido is not empty %}
+                  <div class="s-slider-infographic-ods owl-dots-gray owl-carousel owl-theme">
+                    {% for item in node.field_bloques_contenido %}
+                      <div class="item">
+                        <img data-src="{{ file_url(item.entity.field_icono.entity.fileuri) }}" alt="{{ item.entity.field_icono.entity.alt }}" title="{{ item.entity.field_icono.entity.title }}" class="lazyload">
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+                {# Boton ver mas - pilares - modal #}
+                {% if node.field_bloques_contenido is not empty %}
+                  <div class="button" data-toggle="modal" data-target="#modal-infographic-ods-{{ node.id }}">
+                    <img data-src="/{{directory}}/assets/img/infographics/header/button.png" alt="Button" title="Button" class="lazyload">
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+            <div class="info-banner if-img-video">
+              <div class="banner {% if node.field_url_youtube is not empty %}video{%else%}img{%endif%}">
+                <div class="img-banner">
+                  {{ content.field_banner_sostenibilidad }}
+                </div>
+                {% if node.field_url_youtube is not empty %}
+                  {% if 'https://youtu.be/' in node.field_url_youtube.value %}
+                    {% set codigo=node.field_url_youtube.value|replace({'https://youtu.be/':''}) %}
+                  {% elseif 'https://www.youtube.com/watch?v=' in node.field_url_youtube.value %}
+                    {% set codigo=node.field_url_youtube.value|replace({'https://www.youtube.com/watch?v=':''}) %}
+                  {% endif %}
+                  <div class="video-banner" data-src="https://www.youtube.com/embed/{{codigo}}">
+                    <iframe width="100%" height="100%" class="iframe-yt" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  </div>
+                  <div class="icon-play">
+                    <span><i class="demo-icon icon-icon-play">&#xe80d;</i></span>
+                  </div>
+                {% endif %}
+                <div class="layer-black"></div>
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{# Bloques adicionales parte superior #}
+{% if content.field_documentos is not empty %}
+  {{ content.field_documentos }}
+{% endif %}
+
+{# Bloques adicionales parte superior #}
+{% if content.field_modulos is not empty %}
+  {{ content.field_modulos }}
+{% endif %}
+
+{# Bloque linea del tiempo #}
+{% if node.field_linea_de_tiempo is not empty %}
+  <section class="slider-timeline sustainability">
+    <div class="containerGrid">
+      <div class="content">
+        <div class="c-header">
+          <h2>{{ node.field_titulo_motivacion.value }}</h2>
+        </div>
+        <div class="c-slider-timeline">
+          <div class="slider-desktop">
+            <div class="barProgress">
+              <div class="start-barProgress"></div>
+              <div class="reset-barProgress"></div>
+            </div>
+            <div class="s-slider-timeline desktop owl-dots-gray owl-nav-icons2 owl-carousel owl-theme">
+              {% set cols = 6 %}
+              {% for row in node.field_linea_de_tiempo %}
+                {% if loop.index0 % cols == 0 %}
+                  <div class="items">
+                {% endif %}
+                <div class="item">
+                  <span>{{ row.entity.field_anno.value }}</span>
+                  <div class="text">
+                    <p>{{ row.entity.field_descripcion_ano.value }}</p>
+                  </div>
+                </div>
+                {% if (loop.index0 % cols == cols - 1 or loop.last) %}
+                  </div>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+          <div class="slider-mobile">
+            <div class="barProgress">
+              <div class="start-barProgress-left"></div>
+              <div class="start-barProgress-right"></div>
+              <div class="reset-barProgress"></div>
+              <div class="reset-barProgress-left"></div>
+              <div class="reset-barProgress-right"></div>
+            </div>
+            <div class="s-slider-timeline mobile owl-dots-gray owl-nav-icons2 owl-carousel owl-theme">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{# Bloques adicionales parte superior #}
+{% if content.field_modulos_noticias is not empty %}
+  {{ content.field_modulos_noticias }}
+{% endif %}
+
+{# Bloques adicionales parte superior #}
+{% if content.field_acordeon_de_texto is not empty %}
+  {{ content.field_acordeon_de_texto }}
+{% endif %}
+
+{# MODAL pilares - paragraph #}
+{% if node.field_bloques_contenido is not empty %}
+  <div id="modal-infographic-ods-{{ node.id }}" class="modal-infographic-ods modal fade" role="dialog">
+  <div class="modal-dialog modal-center modal-lg">
+    <div class="modal-content">
+      <i class="demo-icon icon-icon-close1" data-dismiss="modal" aria-label="Close">&#xe81c;</i>
+      <div class="modal-body">
+        {% for item in node.field_bloques_contenido %}
+          <div class="item">
+            <a href="#infographic-ods-{{ loop.index }}" class="title icon-icon-arrow" data-toggle="collapse">
+              <div class="img">
+                <img data-src="{{ file_url(item.entity.field_icono.entity.fileuri) }}" alt="{{ item.entity.field_icono.entity.alt }}" title="{{ item.entity.field_icono.entity.title }}" class="lazyload">
+              </div>
+              <div class="text">
+                <span>{{ item.entity.field_titulo.value }}</span>
+              </div>
+              <div class="icon">
+                <i class="demo-icon icon-icon-arrow-down">&#xe809;</i>
+              </div>
+            </a>
+            <div id="infographic-ods-{{ loop.index }}" class="panel-collapse collapse">
+              {{ item.entity.field_descripcion_larga.value|raw }}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{# bloques adicionales pagina #}
+
+{# Bloques adicionales parte superior #}
+{% if content.field_bloque_lineas_economia is not empty %}
+  {{ content.field_bloque_lineas_economia }}
+{% endif %}
+
+{# Bloque 2 imagenes horizontales #}
+{% if node.field_titulo_educacion  is not empty %}
+  <section class="infographic-cards sustainability">
+    <div class="containerGridp">
+      <div class="content">
+        <div class="c-header">
+          <h2>{{ node.field_titulo_educacion.value }}</h2>
+        </div>
+        <div class="c-infographic-cards">
+          {% for item in node.field_presentaciones %}
+            <div class="item">
+              <div class="img">
+                <img data-src="{{ file_url(item.entity.field_imagen.entity.fileuri) }}" alt="{{ item.entity.field_imagen.entity.alt }}" title="{{ item.entity.field_imagen.entity.title }}" class="lazyload">
+              </div>
+              <div class="text">
+                <span>{{ item.entity.field_subtitulo.value }}</span>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{# Bloques adicionales parte superior #}
+{% if content.field_submodulos is not empty %}
+  {{ content.field_submodulos }}
+{% endif %}
+
+{# Bloque de datos #}
+{% if node.field_titulo_seccion_datos is not empty %}
+  <section class="slider-axes sustainability back-blue">
+    <div class="containerGridp">
+      <div class="content">
+        <div class="c-header">
+          <h2>{{ node.field_titulo_seccion_datos.value }}</h2>
+          {% if node.field_descripcion_seccion_datos is not empty %}
+            <p>{{ node.field_descripcion_seccion_datos.value|raw }}</p>
+          {% endif %}
+        </div>
+        <div class="c-slider-axes">
+          <div class="s-slider-axes owl-dots-gray owl-nav-icons2 owl-carousel owl-theme">
+            {% set cols = 3 %}
+            {% for row in node.field_datos_alqueria %}
+              {% if loop.index0 % cols == 0 %}
+                <div class="items">
+              {% endif %}
+              <div class="item">
+                <div class="img">
+                  <picture>
+                    <img data-src="{{ file_url(row.entity.field_icono.entity.fileuri) }}" alt="{{ row.entity.field_icono.entity.alt }}" title="{{ row.entity.field_icono.entity.alt }}" class="lazyload">
+                  </picture>
+                </div>
+                <div class="info">
+                  <h3>{{ row.entity.field_titulo.value }}</h3>
+                  <p>{{ row.entity.field_descripcion_corta.value }}</p>
+                </div>
+              </div>
+              {% if (loop.index0 % cols == cols - 1 or loop.last) %}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{# Bloque imagen gotas #}
+{% if node.field_t is not empty %}
+  <section class="banner-full-img4 sustainability">
+    <div class="containerGridp">
+      <div class="content">
+        <div class="c-header">
+          <h2>{{ node.field_t.value }}</h2>
+        </div>
+        <div class="c-banner-full-img4">
+          {{ content.field_imagen_lanzamiento	 }}
+        </div>
+        <div class="c-bottom">
+          <p>{{ node.field_subtitulo_imagen.value|raw }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{# Bloque imagen/video 1 sostenibilidad #}
+{% if node.field_bloque_imagen_video_1 is not empty %}
+  {{ content.field_bloque_imagen_video_1 }}
+{% endif %}
+
+{# Bloque resultados #}
+{% if node.field_titulo_a_mostrar is not empty %}
+  <section class="infographic-results sustainability">
+    <div class="containerGridp">
+      <div class="content">
+        <div class="c-header">
+          <h2>{{ node.field_titulo_a_mostrar.value }}</h2>
+        </div>
+        <div class="c-infographic-results">
+          {% for item in node.field_modulos_interna %}
+            <div class="item">
+              <div class="icon">
+                <picture>
+                  <img data-src="{{ file_url(item.entity.field_imagen.entity.fileuri) }}" alt="{{ item.entity.field_imagen.entity.alt }}" title="{{ item.entity.field_imagen.entity.title }}" class="lazyload">
+                </picture>
+              </div>
+              <div class="text">
+                {{ item.entity.field_descripcion_complementaria.value|raw }}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        {% if node.field_descripcion_corta is not empty %}
+          <div class="c-bottom">
+            <p>{{ node.field_descripcion_corta.value }}</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}
+
+{# Bloque tarjeta descripción larga #}
+{% if node.field_grupo_nutricional is not empty %}
+  {{ content.field_grupo_nutricional }}
+{% endif %}
+
+{# Bloque imagen/video 2 sostenibilidad #}
+{% if node.field_bloque_imagen_video is not empty %}
+  {{ content.field_bloque_imagen_video }}
+{% endif %}
+
+
+{# Tarjetas sostenibilidad #}
+{% if node.field_titulo_comparador is not empty %}
+  <section class="slider-infographic-cards sustainability">
+    <div class="containerGridp">
+      <div class="content">
+        <div class="c-header">
+          <h2>{{ node.field_titulo_comparador.value }}</h2>
+        </div>
+        <div class="c-slider-infographic-cards">
+          <div class="s-slider-infographic-cards owl-dots-gray owl-nav-icons1 owl-carousel owl-theme">
+            {% for item in node.field_preparacion %}
+              <div class="item">
+                <div class="number-info">
+                  <span>{{ loop.index }}</span>
+                </div>
+                <div class="info autoHeight">
+                  {{ item.entity.field_descripcion_tarjetas.value|raw }}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+        {% if node.field_descripcion_lanzamiento is not empty %}
+          <div class="c-bottom">
+            <p>{{ node.field_descripcion_lanzamiento.value }}</p>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% endif %}

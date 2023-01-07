@@ -1,0 +1,107 @@
+{#
+  /**
+  * @file
+  * Theme override for main view template.
+  *
+  * Available variables:
+  * - attributes: Remaining HTML attributes for the element.
+  * - css_name: A css-safe version of the view name.
+  * - css_class: The user-specified classes names, if any.
+  * - header: The optional header.
+  * - footer: The optional footer.
+  * - rows: The results of the view query, if any.
+  * - empty: The content to display if there are no rows.
+  * - pager: The optional pager next/prev links to display.
+  * - exposed: Exposed widget form/info to display.
+  * - feed_icons: Optional feed icons to display.
+  * - more: An optional link to the next page of results.
+  * - title: Title of the view, only used when displaying in the admin preview.
+  * - title_prefix: Additional output populated by modules, intended to be
+  *   displayed in front of the view title.
+  * - title_suffix: Additional output populated by modules, intended to be
+  *   displayed after the view title.
+  * - attachment_before: An optional attachment view to be displayed before the
+  *   view content.
+  * - attachment_after: An optional attachment view to be displayed after the
+  *   view content.
+  * - dom_id: Unique id for every view being printed to give unique class for
+  *   Javascript.
+  *
+  * @see template_preprocess_views_view()
+  */
+  #}
+  {%
+    set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+    ]
+    %}
+    <section{{ attributes.addClass(classes) }}>
+      <div class="containerGrid">
+        <div class="content">
+          <div class="c-header">
+            <span>{{get_config_data('config.settings','titulo_listado_ingredientes')}}</span>
+          </div>
+          <div class="c-slider-moments2">
+            <div class="s-slider-moments2 owl-dots-gray owl-nav-icons1 owl-carousel owl-theme">
+              {% if rows -%}
+                {{ rows }}
+              {% elseif empty -%}
+                {{ empty }}
+              {% endif %}
+            </div>
+          </div>
+          <div class="c-general-filter desktop back-general-filterD">
+            <div class="filters">
+              <div class="btn-controls">
+                <div class="btn-prev">
+                  <i class="demo-icon icon-icon-arrow-left prev">&#xe80a;</i>
+                </div>
+                <div class="btn-close">
+                  <i class="demo-icon icon-icon-close1 close">&#xe81c;</i>
+                </div>
+              </div>
+              <div class="input">
+                <input type="text" id="searchD-recipes" name="searchD-recipes" placeholder="Hoy que quieres preparar">
+              </div>
+              <div class="select kitchen">
+                <select id="tc-recipes" name="tc-recipes">
+                  <option value="">Tipos de cocina</option>
+                  {% for key, value in obtener_taxonomia('tipos_de_cocina') %}
+                    <option value="{{key}}">{{value.name}}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="select ingredient">
+                <select id="ip-recipes" name="ip-recipes">
+                  <option value="">Ingrediente principal</option>
+                  {% for key, value in obtener_taxonomia('ingredientes_destacados') %}
+                    <option value="{{key}}">{{value.name}}</option>
+                  {% endfor %}
+                </select>
+              </div>
+              <div class="select level">
+                <select id="nd-recipes" name="nd-recipes">
+                  <option value="">Nivel de dificultad</option>
+                  <option value="bajo">Bajo</option>
+                  <option value="medio">Medio</option>
+                  <option value="alto">Alto</option>
+                </select>
+              </div>
+              <div class="btn-search recipes">
+                <button class="btn-default back-green" data-seo="btn-content">Buscar</button>
+              </div>
+            </div>
+          </div>
+          <div class="c-general-filter mobile back-general-filterM">
+            <div class="filters">
+              <div class="input">
+                <input type="text" id="searchM-recipes" name="searchM-recipes" placeholder="Hoy que quieres preparar">
+              </div>
+              <div class="btn-tools">
+                <i class="demo-icon icon-icon-tools">&#xe81d;</i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

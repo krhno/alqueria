@@ -1,0 +1,141 @@
+/*slider-ods*/
+.slider-ods{
+	.content{
+		margin: 0 7%;
+		@media (max-width: $tablet){
+			margin: 0;
+		}
+		.c-header{
+			h1{
+				color: $green1;
+			}
+		}
+		.c-slider-ods{
+			.s-slider-ods{
+				width: 100%;
+				padding: 20px 0;
+				margin: 40px 0 30px 0;
+				border-top: 1px solid $gray3;
+				border-bottom: 1px solid $gray3;
+				@media (max-width: $tablet){
+					width: 90%;
+					margin: 30px auto;
+				}
+				@media (max-width: $mobile){
+					width: 100%;
+					margin: 30px 0;
+					padding: 12.5px 0;
+				}
+				.owl-stage-outer{
+					padding: 0 10px;
+				}
+				.owl-stage{
+					display: flex;
+					align-items: center;
+					flex-direction: row;
+					.owl-item{
+						&:after{
+						    content: '';
+						    top: 0;
+						    right: 0;
+						    width: 1px;
+						    height: 40px;
+						    position: absolute;
+						    background-color: $gray3;
+						    @media (max-width: $mobile){
+						    	display: none;
+						    }
+						}
+						&:last-child{
+			                &:after{
+			                    display: none;
+			                }
+			            }
+						.item{
+							cursor: pointer;
+							text-align: center;
+							position: relative;
+							span{
+								width: 85%;
+								display: block;
+								margin: 0 auto;
+
+								color: $gray1;
+								font-size: 1.25rem;
+								
+								font-family: $Poppins;
+							}
+				            &.active{
+								span{
+									font-weight: 700;
+									font-style: normal;
+									font-family: $Poppins;
+								}
+							}
+						}
+					}
+				}
+				.owl-nav{
+					button.owl-prev{
+						top: 15%;
+						left: -7%;
+						i{
+							color: $green1;
+						}
+					}
+					button.owl-next{
+						top: 15%;
+						right: -7%;
+						i{
+							color: $green1;
+						}
+					}
+				}
+				.owl-dots{
+					@media (max-width: $mobile){
+						left: 0;
+						right: 0;
+						bottom: -35px;
+						margin: 0 auto;
+						position: absolute;
+					}
+				}
+			}
+			.content-ods{
+				.item-ods{
+					display: none;
+					&.active{
+						display: block;
+					}
+					.containerGrid, .containerGridp{
+						padding: 50px 0 0 0;
+						@media (max-width: $desktop_1640){
+                            padding: 40px 0 0 0;
+                        }
+						.content{
+							margin: 0;
+							.c-full-img-video{
+								width: 80%;
+								@media (max-width: $desktop_1024){
+									width: 100%;
+								}
+							}
+							.c-full-text{
+								h3, h4, h5, h6{
+									color: $brown1;
+								}
+								ul{
+									li{
+										&:before{
+											background-color: $green1;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

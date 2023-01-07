@@ -1,0 +1,93 @@
+{#
+	/**
+	* @file
+	* Default theme implementation to display a paragraph.
+	*
+	* Available variables:
+	* - paragraph: Full paragraph entity.
+	*   Only method names starting with "get", "has", or "is" and a few common
+	*   methods such as "id", "label", and "bundle" are available. For example:
+	*   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+	*   - paragraph.id(): The paragraph ID.
+	*   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+	*   - paragraph.getOwnerId(): The user ID of the paragraph author.
+	*   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+	*   and methods for the paragraph object.
+	* - content: All paragraph items. Use {{ content }} to print them all,
+	*   or print a subset such as {{ content.field_example }}. Use
+	*   {{ content|without('field_example') }} to temporarily suppress the printing
+	*   of a given child element.
+	* - attributes: HTML attributes for the containing element.
+	*   The attributes.class element may contain one or more of the following
+	*   classes:
+	*   - paragraphs: The current template type (also known as a "theming hook").
+	*   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+	*     "Image" it would result in "paragraphs--type--image". Note that the machine
+	*     name will often be in a short form of the human readable label.
+	*   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+	*     preview would result in: "paragraphs--view-mode--preview", and
+	*     default: "paragraphs--view-mode--default".
+	* - view_mode: View mode; for example, "preview" or "full".
+	* - logged_in: Flag for authenticated user status. Will be true when the
+	*   current user is a logged-in member.
+	* - is_admin: Flag for admin user status. Will be true when the current user
+	*   is an administrator.
+	*
+	*
+	* @ingroup themeable
+	*/
+	#}
+	{%
+		set classes_paragraph = [
+		'paragraph',
+		'paragraph--type--' ~ paragraph.bundle|clean_class,
+		]
+	%}
+	<section class="anchors2">
+		<div class="containerGridp">
+			<div class="content">
+				<div class="c-header">
+					{% if paragraph.field_titulo is not empty %}
+					<span>{{paragraph.field_titulo.value}}</span>
+					{% endif %}
+				</div>
+				<div class="c-anchors2">
+					<div class="steps-anchor s-slider-anchors2 owl-carousel owl-theme">
+						{% for item in paragraph.field_tab_contenido %}
+						<span class="step-anchor {% if loop.index == 1%}active {% endif %}" data-id="anchor-{{loop.index}}">
+							<div class="img">
+								<picture>
+									{% set imagestyle = {
+										'#theme':      'image_style',
+										'#style_name': '60x60',
+										'#uri':        item.entity.field_foto.entity.fileuri,
+										'#alt':        item.entity.field_foto.alt,
+										'#title':      item.entity.field_foto.title,
+                    					'#attributes': { class: 'lazyload' },
+									}
+									%}
+									{{imagestyle}}
+								</picture>
+							</div>
+							<div class="text">
+								<span>{{item.entity.field_titulo.value}}</span>
+							</div>
+						</span>
+						{% endfor %}
+					</div>
+					<div class="content-anchor">
+						{% for item in paragraph.field_tab_contenido %}
+						<div class="item-anchor {% if loop.index == 1%}active {% endif %}" data-id="anchor-{{loop.index}}">
+							<div class="title">
+								<span>{{item.entity.field_texto_inferior.value}}</span>
+							</div>
+							<div class="info">
+								{{content.field_tab_contenido[loop.index-1]}}
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>

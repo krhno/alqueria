@@ -1,0 +1,77 @@
+/*editorial-sidebar*/
+.editorial-sidebar{
+	.content{
+		margin: 0 7%;
+		@media (max-width: $desktop_1024){
+			margin: 0;
+		}
+		.c-editorial-sidebar{
+			display: flex;
+			flex-direction: row;
+			@media (max-width: $tablet){
+				flex-direction: column;
+			}
+			.left{
+				width: 75%;
+				padding-right: 30px;
+				border-right: 1px solid $gray6;
+				@media (max-width: $tablet){
+					width: 100%;
+					padding-right: 0;
+					border-right: 0;
+				}
+				.info{
+					a{
+						color: $links;
+					}
+				}
+			}
+			.right{
+				width: 25%;
+				padding-left: 25px;
+				position: relative;
+				@media (max-width: $tablet){
+					width: 100%;
+					padding-top: 35px;
+					padding-left: 0;
+				}
+				.sidebar{
+					.related-recipes{
+						h3{
+							color: $gray1;
+						}
+						.s-related-recipes{
+							display: block;
+							article{
+								padding: 15px 0;
+								border-bottom: 1px solid $gray6;
+								&:last-child{
+									border: none;
+								}
+								@media (max-width: $tablet){
+									&:last-child{
+										border-bottom: 1px solid $gray6;
+									}
+								}
+								.content-star{
+					    			.star{
+					    				&:before{
+					    					font-size: 1.6rem;
+					    					@media (max-width: $desktop_1640){
+					    						font-size: 1.3rem;
+					    					}
+					    				}
+					    			}
+								}
+								h4{
+									padding: 10px 0;
+									color: $gray1;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

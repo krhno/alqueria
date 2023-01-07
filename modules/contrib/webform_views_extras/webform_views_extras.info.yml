@@ -1,0 +1,10 @@
+name: 'Webform Views Extras'
+type: module
+description: 'Extends Webform views and supports relationships in views with all content entities not only node.'
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: 'Webform'
+dependencies:
+  - webform_views:webform_views
+  - webform:webform
+  - drupal:views

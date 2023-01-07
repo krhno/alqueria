@@ -1,0 +1,67 @@
+/*sustainability-info*/
+.sustainability-info{
+	.content{
+		.c-sustainability-info{
+			.title{
+				width: 85%;
+				margin: 0 auto;
+				padding-bottom: 40px;
+
+				display: flex;
+				align-items: center;
+				flex-direction: row;
+				@media (max-width: $tablet){
+					width: 100%;
+					flex-direction: column;
+				}
+				.column-left{
+					width: 45%;
+					padding-right: 60px;
+					@media (max-width: $desktop_1024){
+						padding-right: 30px;
+					}
+					@media (max-width: $tablet){
+						width: 100%;
+						padding-right: 0;
+					}
+					h2{
+						color: $green1;
+						@media (max-width: $mobile){
+							text-align: center;
+						}
+					}
+				}
+				.column-right{
+					width: 55%;
+					@media (max-width: $tablet){
+						width: 100%;
+						padding: 25px 0;
+					}
+					@media (max-width: $mobile){
+						padding: 25px 0 0 0;
+					}
+				}
+			}
+			.articles{
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				article{
+					width: calc(50% - 15px);
+					margin: 0 7.5px 35px 7.5px;
+					@media (max-width: $desktop_1024){
+						width: calc(50% - 15px);
+						margin: 0 7.5px 25px 7.5px;
+					}
+					@media (max-width: $mobile){
+						width: 100%;
+						margin: 0 0 25px 0;
+						&:last-child{
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}

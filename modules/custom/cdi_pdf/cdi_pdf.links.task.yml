@@ -1,0 +1,18 @@
+entity.cdi_pdf.view:
+  title: View
+  route_name: entity.cdi_pdf.canonical
+  base_route: entity.cdi_pdf.canonical
+entity.cdi_pdf.edit_form:
+  title: Edit
+  route_name: entity.cdi_pdf.edit_form
+  base_route: entity.cdi_pdf.canonical
+entity.cdi_pdf.delete_form:
+  title: Delete
+  route_name: entity.cdi_pdf.delete_form
+  base_route: entity.cdi_pdf.canonical
+  weight: 10
+entity.cdi_pdf.collection:
+  title: cdi_pdf
+  route_name: entity.cdi_pdf.collection
+  base_route: system.admin_content
+  weight: 10

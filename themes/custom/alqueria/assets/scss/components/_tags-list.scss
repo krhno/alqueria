@@ -1,0 +1,137 @@
+/*tags-list*/
+.tags-list{
+	.content{
+		.c-results{
+			padding-top: 35px;
+			position: relative;
+			.result-items{
+				display: flex;
+				align-items: center;
+				flex-direction: row;
+				justify-content: space-between;
+				@media (max-width: $mobile){
+					align-items: flex-start;
+					justify-content: center;
+					flex-direction: column-reverse;
+				}
+				.result-order{
+					@media (max-width: $tablet){
+						width: 100%;
+					}
+					@media (max-width: $mobile){
+						padding-bottom: 35px;
+					}
+					.nice-select{
+						width: auto;
+						height: 35px;
+    					line-height: 35px;
+    					padding-left: 25px;
+    					padding-right: 60px;
+						border-radius: 20px;
+						position: relative;
+						border: 1px solid $gray2;
+
+						display: flex;
+						align-items: center;
+						@media (max-width: $mobile){
+							width: 100%;
+						}
+						ul.list{
+							width: 100%;
+							li.option{
+								padding: 0 15px;
+								min-height: 30px;
+								&:before{
+					                display: none;
+					            }
+							}
+						}
+						&:after{
+							right: 15px;
+							width: 6px;
+							height: 6px;
+							border-bottom: 2px solid $red1;
+    						border-right: 2px solid $red1;
+						}
+					}
+				}
+			}
+		}
+		.c-tags-list{
+			.list-articles{
+				padding-top: 40px;
+
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				@media (max-width: $mobile){
+					padding-top: 15px;
+				}
+				article{
+    				width: calc(33.33% - 15px);
+    				margin: 0 7.5px 35px 7.5px;
+    				@media (max-width: $desktop_1024){
+    					width: calc(50% - 15px);
+    					margin: 0 7.5px 25px 7.5px;
+    				}
+    				@media (max-width: $mobile){
+    					width: 100%;
+    					margin: 0 0 25px 0;
+    				}
+    				&.nutrition{
+    					.img-card{
+    						.category{
+    							background-color: $yellow1;
+    						}
+    					}
+    					.content-card{
+    						padding: 15px 20px;
+    						border-top: 3px solid $yellow1;
+    						.text{
+	    						h3{
+	    							color: $gray1;
+	    						}
+	    					}
+    					}
+    				}
+    				&.recipes{
+    					.img-card{
+    						.category{
+    							background-color: $red1;
+    						}
+    					}
+    					.content-card{
+    						padding: 15px 20px;
+    						border-top: 3px solid $red1;
+    						.text{
+	    						h3{
+	    							color: $gray1;
+	    						}
+	    					}
+    					}
+    				}
+    				&.sustainability{
+    					.img-card{
+    						.category{
+    							background-color: $green1;
+    						}
+    					}
+    					.content-card{
+    						padding: 15px 20px;
+    						border-top: 3px solid $green1;
+    						.text{
+	    						h3{
+	    							color: $gray1;
+	    						}
+	    					}
+    					}
+    				}
+				}
+			}
+		}
+		.c-bottom{
+			width: 100%;
+			text-align: center;
+		}
+	}
+}

@@ -1,0 +1,114 @@
+/*download-list*/
+.download-list{
+	.content{
+		.c-download-list{
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			article{
+				width: calc(25% - 15px);
+    			margin: 0 7.5px 35px 7.5px;
+    			box-shadow: 0 0 10px 0 $shadow;
+    			@media (max-width: $desktop_1024){
+    				width: calc(50% - 15px);
+    				margin: 0 7.5px 35px 7.5px;
+    			}
+    			@media (max-width: $mobile){
+    				width: 100%;
+    				margin: 0 0 35px 0;
+    			}
+				.info{
+					position: relative;
+					padding: 15px 20px 15px 90px;
+					border-top: 3px solid $red1;
+					background-color: $white;
+					@media (max-width: $desktop_1640){
+						padding: 15px 20px 15px 75px;
+					}
+					.icon{
+						top: -15px;
+						left: 20px;
+						width: 60px;
+						height: 60px;
+						margin: 0 auto;
+						border-radius: 50%;
+						position: absolute;
+						border: 3px solid $red1;
+						background-color: $white;
+
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						@media (max-width: $desktop_1640){
+							top: -15px;
+							left: 15px;
+							width: 50px;
+							height: 50px;
+						}
+						i{
+							font-size: 2.6rem;
+							color: $red1;
+							@media (max-width: $desktop_1640){
+								font-size: 2rem;
+							}
+						}
+					}
+					.text{
+						.btn-link{
+							display: block;
+							padding-top: 15px;
+							
+							color: $gray1;
+							font-weight: 300;
+							font-style: italic;
+							font-family: $Poppins;
+						}
+					}
+				}
+			}
+		}
+		.c-bottom{
+			width: 100%;
+			text-align: center;
+		}
+	}
+	&.sustainability{
+		.content{
+			.c-header{
+				h2{
+					color: $green1;
+				}
+			}
+			.c-download-list{
+				padding-top: 35px;
+				article{
+					.info{
+						&:hover{
+							background-color: $white;
+						}
+					}
+					.info{
+						background-color: $blue1;
+						border-top: 3px solid $green1;
+						.icon{
+							border: 3px solid $green1;
+							i{
+								color: $green1;
+							}
+						}
+						.text{
+							h3{
+								color: $green1;
+							}
+						}
+					}
+				}
+			}
+			.c-bottom{
+				span{
+					color: $green1;
+				}
+			}
+		}
+	}
+}

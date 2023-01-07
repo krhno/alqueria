@@ -1,0 +1,209 @@
+/*milk-list*/
+.milk-list{
+	.content{
+		.c-milk-list{
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			justify-content: space-between;
+			@media (max-width: $mobile){
+				flex-direction: column;
+			}
+			article{
+				width: 48.5%;
+				margin-top: 110px;
+				position: relative;
+				border-radius: 20px;
+				transition: .25s all;
+				padding: 40px 40px 75px 40px;
+				background-color: $blue1;
+				box-shadow: 0 0 10px 0 $shadow;
+				&:nth-child(1), &:nth-child(2){
+					margin-top: 45px;
+				}
+				@media (max-width: $desktop_1640){
+					margin-top: 100px;
+					&:nth-child(1), &:nth-child(2){
+						margin-top: 30px
+					}
+				}
+				@media (max-width: $desktop_1366){
+					margin-top: 90px;
+					&:nth-child(1), &:nth-child(2){
+						margin-top: 15px;
+					}
+				}
+				@media (max-width: $desktop_1024){
+					width: 48%;
+					margin-top: 110px;
+					padding: 40px 40px 65px 40px;
+				}
+				@media (max-width: $mobile){
+					width: 100%;
+					margin-top: 100px;
+					padding: 30px 30px 65px 30px;
+					&:nth-child(1){
+						margin-top: 60px;
+					}
+					&:nth-child(2){
+						margin-top: 120px;
+					}
+				}
+				.info-top{
+					position: relative;
+
+					display: flex;
+					flex-direction: row;
+					@media (max-width: $desktop_1024){
+						flex-direction: column;
+					}
+					.column-left{
+						top: -90px;
+						width: 30%;
+						position: absolute;
+						@media (max-width: $desktop_1280){
+							top: -80px;
+						}
+						@media (max-width: $desktop_1024){
+							top: -95px;
+							left: 0;
+							right: 0;
+							width: 40%;
+							margin: 0 auto;
+							position: relative;
+						}
+						@media (max-width: $tablet){
+							width: 50%;
+						}
+						@media (max-width: $mobile){
+							width: 45%;
+						}
+					}
+					.column-right{
+						min-height: 160px;
+						padding-left: 35%;
+						position: relative;
+
+						display: flex;
+						flex-direction: column;
+						justify-content: flex-start;
+						@media (max-width: $desktop_1640){
+							min-height: 115px;
+						}
+						@media (max-width: $desktop_1024){
+							padding: 0;
+							margin-top: -75px;
+							justify-content: flex-start;
+						}
+						@media (max-width: $tablet){
+							padding-bottom: 20px;
+						}
+						@media (max-width: $mobile){
+							min-height: auto;
+						}
+						h3{
+							color: $gray1;
+							padding-bottom: 10px;
+						}
+					}
+				}
+				.info-items{
+					hr{
+						@media (max-width: $desktop_1024){
+							display: none;
+						}
+					}
+					.items{
+						width: 90%;
+	    				margin: 0 auto;
+
+						display: flex;
+						flex-wrap: wrap;
+						flex-direction: row;
+						justify-content: space-between;
+						@media (max-width: $desktop_1024){
+							width: 100%;
+						}
+						@media (max-width: $desktop_1024){
+							flex-direction: column;
+						}
+						.item{
+							width: 47%;
+							padding-bottom: 15px;
+
+							display: flex;
+							flex-direction: row;
+							align-items: center;
+							@media (max-width: $desktop_1024){
+								width: 100%;
+								padding-bottom: 20px;
+							}
+							.img{
+								width: 20%;
+								@media (max-width: $desktop_1024){
+									width: 15%;
+								}
+								.static{ 
+									display: block; 
+								}
+								.hover{ 
+									display: none; 
+								}
+							}
+							.text{
+								width: 80%;
+								padding-left: 15px;
+								@media (max-width: $desktop_1024){
+									width: 85%;
+								}
+							}
+						}
+					}
+				}
+				.button{
+					left: 0;
+					right: 0;
+					bottom: 35px;
+					margin: 0 auto;
+					text-align: center;
+					position: absolute;
+					.btn-link{
+						color: $gray1;
+					}
+				}
+				&:hover{
+					background-color: $gray8;
+					.info-top{
+						.column-right{
+							h3{
+								color: $red1;
+								font-weight: 700;
+								font-style: normal;
+								font-family: $Poppins;
+							}
+						}
+					}
+					.info-items{
+						.items{
+							.item{
+								.img{
+									.static{
+										display: none; 
+									}
+									.hover{
+										display: block; 
+									}
+								}
+							}
+						}
+					}
+					.button{
+						.btn-link{
+							color: $red1;
+						}
+					}
+				}
+			}
+		}
+	}
+}

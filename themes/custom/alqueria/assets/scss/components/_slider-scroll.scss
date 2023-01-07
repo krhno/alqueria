@@ -1,0 +1,328 @@
+/*slider-scroll*/
+.slider-scroll{
+	.content{
+		.c-header{
+			@media (max-width: $tablet){
+				padding: 0 7%;
+			}
+		}
+		.c-slider-scroll{
+			position: relative;
+			.s-slider-scroll{
+				width: 100%;
+				height: auto;
+				overflow: hidden;
+				position: relative;
+				box-shadow: 0 0 10px 0 $shadow;
+
+				display: flex;
+				flex-direction: column;
+				@media (max-width: $desktop_1024){
+					padding: 0 7%;
+				}
+				@media (max-width: $mobile){
+					padding: 0;
+				}
+				article{
+					width: 100%;
+					height: 100vh;
+					&:nth-child(even){
+						background-color: $blue1;
+					}
+					@media (max-width: $desktop_1024){
+						width: 100%;
+						height: auto;
+						margin: 5px 5px 15px 5px;
+						box-shadow: 0 0 10px 0 $shadow;
+					}
+					@media (max-width: $mobile){
+						margin: 5px 0 15px 0;
+					}
+					.wrapper-photo{
+						top: -1000px;
+						left: 0;
+						width: 50%;
+						height: 100vh;
+						float: left;
+						position: absolute;
+						transition: 1s all;
+						@media (max-width: $desktop_1024){
+							top: inherit;
+							left: inherit;
+							width: 100%;
+							height: auto;
+							float: inherit;
+							position: relative;
+						}
+						picture{
+							img{
+								width: 100%;
+								height: 100%;
+								object-fit: cover;
+							}
+						}
+					}
+					.wrapper-info{
+						top: 0;
+						right: 0;
+						width: 50%;
+						height: 100vh;
+						float: right;
+						padding: 0 13% 0 3%;
+						position: relative;
+						transition: 1s all ease;
+
+						display: flex;
+						flex-direction: column;
+						align-items: flex-start;
+						justify-content: center;
+						@media (max-width: $desktop_1024){
+							top: inherit;
+							right: initial;
+							width: 100%;
+							height: auto;
+							padding: 20px;
+							float: inherit;
+							position: relative;
+							box-shadow: 0 0 10px 0 $shadow;
+						}
+						@media (max-width: $mobile){
+							margin: 0 0 5px 0;
+						}
+						.text{
+							.category{
+								left: inherit;
+								bottom: inherit;
+								position: relative;
+								background-color: $red1;
+
+								font-weight: 700;
+								font-style: normal;
+								font-family: $Poppins;
+								@media (max-width: $desktop_1024){
+									top: -50px;
+									left: 0;
+									position: absolute;
+								}
+							}
+							.content-star{
+								padding: 35px 0 25px 0;
+								@media (max-width: $desktop_1024){
+									padding-top: 0;
+								}
+				    			.star{
+				    				&:before{
+				    					font-size: 2rem;
+				    					@media (max-width: $desktop_1640){
+				    						font-size: 1.5rem;
+				    					}
+				    				}
+				    			}
+							}
+							h3{
+								font-size: 2.1rem;
+							    @media (max-width: $desktop_1640){
+							        font-size: 1.8rem;
+							    }
+							    @media (max-width: $mobile){
+							        font-size: 1.5rem;
+							    }
+							}
+							p{
+								padding: 15px 0 25px 0;
+							}
+							.counter{
+								color: $gray1;
+								padding-top: 25px;
+								.indexD, .indexM{
+									width: 25px;
+									height: 25px;
+									padding: 2px 0;
+									text-align: center;
+									border-radius: 50%;
+									display: inline-block;
+									background-color: $red1;
+
+									color: $white;
+									font-weight: 700;
+									font-style: normal;
+									font-family: $Poppins;
+								}
+							}
+							.counter-desktop{
+								display: block;
+								@media (max-width: $desktop_1024){
+									display: none;
+								}
+							}
+							.counter-mobile{
+								display: none;
+								@media (max-width: $mobile){
+									display: block;
+								}
+							}
+						}
+					}
+				}
+				article.visible{
+					.wrapper-photo{
+						top: 0;
+					}
+				}
+			}
+			.s-slider-scroll.fixed-photo{
+				.wrapper-photo{
+					position: fixed;
+				}
+			}
+			.s-slider-scroll.bottom-photo{
+				.wrapper-photo{
+					top: auto !important; 
+					bottom: 0;
+				}
+			}
+			.container-anchor{
+				top: 0;
+				right: 0;
+				z-index: 1;
+				width: 10%;
+				height: 100vh;
+				position: absolute;
+
+				display: flex;
+				flex-direction: row;
+			    align-items: center;
+			    @media (max-width: $desktop_1024){
+			    	display: none;
+			    }
+				.anchors{
+					width: 100%;
+					height: 50%;
+					position: relative;
+
+					display: flex;
+				    flex-direction: column;
+				    align-items: flex-start;
+				    justify-content: space-between;
+				    &:after{
+				    	content: '';
+						z-index: -1;
+						top: 0;
+						left: 20px;
+						width: 1px;
+						height: 100%;
+						position: absolute;
+						background-color: $yellow1;
+				    }
+					.anchor{
+						left: 10px;
+						width: 25px;
+						height: 25px;
+						display: block;
+						cursor: pointer;
+						border-radius: 50%;
+						position: relative;
+						background-color: $yellow1;
+						@media (max-width: $desktop_1640){
+							width: 20px;
+							height: 20px;
+						}
+						&:hover:before, &.active:before{
+							content: '';
+							top: -12px;
+							left: -12px;
+							width: 50px;
+							height: 50px;
+							border-radius: 50%;
+							position: absolute;
+							background-color: transparent;
+							border: 1px solid $yellow1;
+							@media (max-width: $desktop_1640){
+								top: -10px;
+								left: -10px;
+								width: 40px;
+								height: 40px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.c-slider-scroll.fixed-dots{
+			.container-anchor{
+				position: fixed;
+			}
+		}
+		.c-slider-scroll.bottom-dots{
+			.container-anchor{
+				top: auto !important;
+				bottom: 0;
+			}
+		}
+	}
+	&.sustainability{
+		.content{
+			.c-header{
+				@media (max-width: $desktop_1024){
+					padding: 0 7%;
+				}
+				h1{
+					color: $green1;
+				}
+			}
+			.c-slider-scroll{
+				padding-top: 35px;
+				.s-slider-scroll{
+					article{
+						.wrapper-info{
+							.text{
+								.category{
+									background-color: $green1;
+								}
+								h3{
+									color: $brown1;
+								}
+								.btn-link{
+									color: $green1;
+								}
+								.counter{
+									.indexD, .indexM{
+										background-color: $green1;
+									}
+								}
+							}
+						}
+					}
+					.owl-dots{
+						&:after{
+							background-color: $green1;
+						}
+						.owl-dot{
+							span{
+								background-color: $green1 !important;
+							}
+						}
+						.owl-dot.active span{
+							&:before{
+								border: 1px solid $green1;
+							}
+						}
+					}
+				}
+				.container-anchor{
+					.anchors{
+					    &:after{
+							background-color: $green1;
+					    }
+						.anchor{
+							background-color: $green1;
+							&:hover:before, &.active:before{
+								border: 1px solid $green1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

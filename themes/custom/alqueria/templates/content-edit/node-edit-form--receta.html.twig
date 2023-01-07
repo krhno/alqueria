@@ -1,0 +1,230 @@
+{#
+/**
+ * @file
+ * Theme override for a node edit form.
+ *
+ * Two column template for the node add/edit form.
+ *
+ * This template will be used when a node edit form specifies 'node_edit_form'
+ * as its #theme callback.  Otherwise, by default, node add/edit forms will be
+ * themed by form.html.twig.
+ *
+ * Available variables:
+ * - form: The node add/edit form.
+ *
+ * @see seven_form_node_form_alter()
+ */
+#}
+
+<section class="recipe-form">
+  <div class="containerr">
+    <div class="content">
+      <div class="c-recipe-form">
+        <form {{attributes}}>
+          {{form.changed}}
+          {{form.form_build_id}}
+          {{form.form_id}}
+          {{form.form_token}}
+          <div class="accordion">
+            <div class="item">
+              <a href="#title-recipe" class="title icon-icon-arrow" data-toggle="collapse" data-seo="btn-content">
+                {{get_config_data('alqueriaReceta.settings','titulo_titulo_tab')}}
+                <div class="icon">
+                  <i class="demo-icon icon-icon-arrow-down">&#xe809;</i>
+                </div>
+              </a>
+               <div id="title-recipe" class="panel-collapse collapse">
+                <ul>
+                  <li>
+                    {{get_config_data('alqueriaReceta.settings','campo_titulo')}}
+                    <div class="columns">
+                      <div class="title column">
+                        {{form.title}}
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    {{get_config_data('alqueriaReceta.settings','campo_imagen_principal')}}
+                    <div class="columns">
+                      <div class="image column">
+                        {{form.field_foto_principal}}
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    {{get_config_data('alqueriaReceta.settings','campo_video')}}
+                    <div class="columns">
+                      <div class="video column">
+                        {{form.field_url_youtube}}
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+               </div>
+            </div>
+            <div class="item">
+              <a href="#description-recipe" class="title icon-icon-arrow" data-toggle="collapse" data-seo="btn-content">
+                {{get_config_data('alqueriaReceta.settings','descripcion_titulo_tab')}}
+                <div class="icon">
+                  <i class="demo-icon icon-icon-arrow-down">&#xe809;</i>
+                </div>
+              </a>
+              <div id="description-recipe" class="panel-collapse collapse">
+                <ul>
+                  <li>
+                    {{get_config_data('alqueriaReceta.settings','campo_descripcion')}}
+                    <div class="columns">
+                      <div class="description column">
+                        {{form.body}}
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    {{get_config_data('alqueriaReceta.settings','campo_caracteristicas')}}
+                    <div class="columns mobile">
+                      <div class="number-portions column">
+                        <span class="subtitle2">
+                          <i class="demo-icon icon-icon-recipe-food">&#xe80f;</i>{{get_config_data('alqueriaReceta.settings','campo_porciones')}}
+                        </span>
+                        <div class="columns">
+                          <div class="column marginb">
+                            {{form.field_numero_de_porciones}}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="preparation-time column">
+                        <span class="subtitle2">
+                          <i class="demo-icon icon-icon-recipe-time">&#xe810;</i>{{get_config_data('alqueriaReceta.settings','campo_tiempo')}}
+                        </span>
+                        <div class="columns">
+                          <div class="hours column marginb">
+                            <div class="columns">
+                              <div class="column margin0">
+                                {{form.field_tiempo_de_preparacion_hora}} 
+                              </div>
+                              <div class="hours-label column margin0">
+                                Horas
+                              </div>
+                            </div>
+                          </div>
+                          <div class="minutes column marginb">
+                            <div class="columns">
+                              <div class="column margin0">
+                                {{form.field_tiempo_de_preparacion_minu}}
+                              </div>
+                              <div class="minute-label column margin0">
+                                Minutos
+                              </div>
+                            </div>
+                          </div>
+                        </div>                       
+                      </div>
+                    </div>
+                    <div class="columns mobile">
+                      <div class="difficulty-level column">
+                        <span class="subtitle2">
+                          <i class="demo-icon icon-icon-recipe-chef">&#xe812;</i>{{get_config_data('alqueriaReceta.settings','campo_nivel')}}
+                        </span>
+                        <div class="columns">
+                          <div class="column marginb">
+                            {{form.field_nivel_de_dificultad}}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="type-kitchen column">
+                        <span class="subtitle2">
+                          <i class="demo-icon icon-icon-recipe-kitchen">&#xe832;</i>{{get_config_data('alqueriaReceta.settings','campo_tipo_cocina')}}
+                        </span>
+                        <div class="columns">
+                          <div class="column marginb">
+                            {{form.field_tipo_de_cocina}}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="columns mobile">
+                      <div class="cooking-time column">
+                        <span class="subtitle2">
+                          <i class="demo-icon icon-icon-recipe-kitchen">&#xe832;</i>{{get_config_data('alqueriaReceta.settings','campo_momentos')}}
+                        </span>
+                        <div class="columns">
+                          <div class="column marginb">
+                            {{form.field_momentos}}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    {{get_config_data('alqueriaReceta.settings','campo_imagenes')}}
+                    <div class="columns">
+                      <div class="images-description column">
+                        {{form.field_fotos}}
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="item">
+              <a href="#ingredient-recipe" class="title icon-icon-arrow" data-toggle="collapse" data-seo="btn-content">
+                {{get_config_data('alqueriaReceta.settings','ingredientes_titulo_tab')}}
+                <div class="icon">
+                  <i class="demo-icon icon-icon-arrow-down">&#xe809;</i>
+                </div>
+              </a>
+               <div id="ingredient-recipe" class="panel-collapse collapse">
+                <ul>
+                  <li>
+                    {{get_config_data('alqueriaReceta.settings','campo_ingredientes_general')}}
+                    <div class="columns mobile">
+                      <div class="principal-ingredient column">
+                        <span class="subtitle2">{{get_config_data('alqueriaReceta.settings','campo_ingrediente_principal')}}</span>
+                        {{form.field_ingredientes_destacados}}
+                      </div>
+                    </div>
+                    <div class="columns">
+                      <div class="other-ingredients column">
+                        <span class="subtitle2">{{get_config_data('alqueriaReceta.settings','campo_ingredientes_normales')}}</span>
+                        {{form.field_ingredientes}}
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    {{get_config_data('alqueriaReceta.settings','campo_productos')}}
+                    <div class="columns">
+                      <div class="products column">
+                        {{form.field_productos}}
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+               </div>
+            </div>
+            <div class="item">
+              <a href="#preparation-recipe" class="title icon-icon-arrow" data-toggle="collapse" data-seo="btn-content">
+                {{get_config_data('alqueriaReceta.settings','preparacion_titulo_tab')}}
+                <div class="icon">
+                  <i class="demo-icon icon-icon-arrow-down">&#xe809;</i>
+                </div>
+              </a>
+               <div id="preparation-recipe" class="panel-collapse collapse">
+                <ul>
+                  <li>
+                   {{get_config_data('alqueriaReceta.settings','campo_pasos')}}
+                    <div class="columns">
+                      <div class="preparation-steps column">
+                        {{form.field_preparacion}}
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+               </div>
+            </div>
+          </div>
+          {{ form.actions|without('preview') }}
+        </form>        
+      </div>
+    </div>
+  </div>
+</section>

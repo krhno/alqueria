@@ -1,0 +1,4 @@
+alqueria_notifications.configuracion:
+   title: 'Configuración Notificaciones'   
+   parent: alqueria_config.enlaces   
+   route_name: alqueria_notifications.configuracion_notificaciones

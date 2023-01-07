@@ -1,0 +1,67 @@
+/*full-text*/
+.full-text{
+	.content{
+		margin: 0 7%;
+		@media (max-width: $desktop_1024){
+			margin: 0;
+		}
+		.c-full-text{
+			width: 80%;
+			margin: 0 auto;
+			@media (max-width: $mobile){
+				width: 100%;
+			}
+			h2{
+				font-size: 2rem;
+				@media (max-width: $desktop_1640){
+					font-size: 1.75rem;
+				}
+			}
+			h3, h4, h5, h6{
+				color: $gray1;
+			}
+			a{
+				color: $links;
+			}
+			img, picture{
+				width: auto;
+				height: auto;
+				display: flex;
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+/*full-text2*/
+.full-text2{
+	.content{
+		margin: 0 7%;
+		padding: 60px 0;
+		box-shadow: 0 0 10px 0 $shadow;
+		background-color: $blue1;
+		@media (max-width: $desktop_1024){
+			margin: 0;
+		}
+		@media (max-width: $tablet){
+        	padding: 40px 25px;
+        }
+		.c-full-text2{
+			width: 80%;
+			margin: 0 auto;
+			padding-top: 35px;
+			@media (max-width: $tablet){
+				width: 100%;
+			}
+		}
+	}
+	&.sustainability{
+        .content{
+            .c-header{
+                h2{
+                    color: $green1;
+                }
+            }
+        }
+    }
+}

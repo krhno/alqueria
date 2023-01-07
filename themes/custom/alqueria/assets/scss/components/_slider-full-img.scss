@@ -1,0 +1,16 @@
+/*slider-full-img*/
+.slider-full-img{
+	.content{
+		margin: 0 7%;
+		@media (max-width: $desktop_1024){
+			margin: 0;
+		}
+		.c-slider-full-img{
+			width: 80%;
+			margin: 0 auto;
+			@media (max-width: $desktop_1024){
+				width: 100%;
+			}
+		}
+	}
+}

@@ -1,0 +1,112 @@
+<?php
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\alqueria_notifications\Controller\AlqueriaNotificationsController;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Path;
+use Drupal\taxonomy\Entity\Term;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\HtmlCommand;
+use Drupal\Core\Ajax\InvokeCommand;
+
+
+function alqueria_notifications_entity_update(Drupal\Core\Entity\EntityInterface $entity) {  
+  if($entity->getEntityType()->id()=="node" && $entity->bundle()=="receta" ){    
+    $original = $entity->original->isPublished();
+    $nuevo = $entity->isPublished();
+    if ( (!$original && $nuevo) && (\Drupal::currentUser()->id() != $entity->getOwner()->id()) ) {    
+      $controller = new AlqueriaNotificationsController();
+      $data = array('nid' => $entity->id(), 
+        'titulo' => $entity->label(),
+        'foto' => null,
+        'mensaje' => null,
+        'enlace' => null,
+        'tipo' => "publicacion",
+        'uid_emisor' =>\Drupal::currentUser()->id(),
+        'uid_receptor' =>$entity->getOwner()->id(),                        
+        'fecha' =>\Drupal::time()->getRequestTime() );
+      $controller->registrarNotificacion($data);       
+      $url = \Drupal\Core\Url::fromRoute('entity.node.canonical', ['node' => $entity->id()], ['absolute' => TRUE]);
+      $params = ['label' => $entity->label(), 'url' => $url->toString(),'uid'=>$entity->getOwner()->id() ];
+      enviarCorreo($params);          
+    }  
+  }
+}
+
+function alqueria_notifications_mail($key, &$message, $params) {
+ switch ($key) {
+   case 'sube_tu_receta':
+   $message['from'] = \Drupal::config('system.site')->get('mail');
+   $message['subject'] = $params['title'];
+   $message['body'][] = $params['message'];
+   $message['headers'] = [
+    'MIME-Version' => '1.0',
+    'Content-Type' => 'text/html; charset=UTF-8; format=flowed; delsp=yes',
+    'Content-Transfer-Encoding' => '8Bit',
+    'X-Mailer' => 'Drupal',
+  ];
+  break;
+}
+}
+
+function enviarCorreo($params){
+ $mailManager = \Drupal::service('plugin.manager.mail');
+ $userInfo = \Drupal::entityTypeManager()->getStorage('user')->load($params['uid']);
+ $message =  \Drupal::config('alqueriaUsers.settings')->get('descripcion_mail');
+ $mail = $userInfo->mail->value;
+ $message =  str_replace("{{email}}",$mail , $message);
+ $message =  str_replace("{{nombres}}", $userInfo->field_nombres->value, $message);
+ $message =  str_replace("{{apellidos}}", $userInfo->field_apellidos->value, $message);
+ $message =  str_replace("{{titulo_receta}}", $params['label'], $message);
+ $message =  str_replace("{{url_receta}}", $params['url'], $message);
+ $params['message'] = $message;
+ $params['title'] =  \Drupal::config('alqueriaUsers.settings')->get('titulo_mail');
+ $result = $mailManager->mail('alqueria_notifications','sube_tu_receta', $mail, 'es', $params, NULL, TRUE);
+ if (!$result['result']) {
+   \Drupal::logger('alqueria_notificaciones')->error('No se pudo enviar correo notificando que se aprobó la receta a:'.$mail); 
+ }
+} 
+
+function alqueria_notifications_preprocess_user(&$variables) {  
+  $seccion = \Drupal::request()->query->get('s');  
+  if (!is_null(\Drupal::request()->query->get('s')) || \Drupal::request()->query->get('s')!= "") {
+    if (\Drupal::request()->query->get('s')=="notificaciones") {
+      $controller = new AlqueriaNotificationsController();
+      $desactivar = $controller->desactivarNotificacionesVisibles(\Drupal::currentUser()->id());
+      if (!$desactivar) {
+        \Drupal::logger('alqueria_notificaciones')->error('No se pudo hacer update a las notificaciones visibles. Error:'.$registro['msg']); 
+      }
+    }
+  }
+}
+
+function alqueria_notifications_comment_update(Drupal\Core\Entity\EntityInterface $entity){
+  $original = $entity->original->isPublished();
+  $nuevo = $entity->isPublished();           
+  if ( !$original && $nuevo) {    
+    $userInfo = \Drupal::entityTypeManager()->getStorage('user')->load($entity->getOwner()->id());
+    $nombreUsuario=$userInfo->field_nombres->value.' '.$userInfo->field_apellidos->value;  
+    $foto="/themes/custom/alqueria/assets/img/user/profile/person/img-desktop1.png";
+    if (!$userInfo->user_picture->isEmpty()) {
+      $style = \Drupal::entityTypeManager()->getStorage('image_style')->load('155x155');
+      $url = $style->buildUrl($userInfo->user_picture->entity->getFileUri());
+      $foto=$url;
+    }
+    $node = Node::load($entity->get('entity_id')->target_id); 
+    if ($entity->getOwner()->id() != $node->getOwner()->id() ) {
+      $controller = new AlqueriaNotificationsController();
+      $data = array('nid' => $entity->get('entity_id')->target_id,        
+        'tipo' => "comentario",
+        'titulo' => $nombreUsuario,
+        'foto' => $foto,
+        'enlace' => null,
+        'mensaje' => $node->label(),
+        'uid_emisor' => $entity->getOwner()->id(),
+        'uid_receptor' => $node->getOwner()->id(),                        
+        'fecha' => \Drupal::time()->getRequestTime() );
+      $controller = new AlqueriaNotificationsController();
+      $controller->registrarNotificacion($data);  
+    }
+    
+  }  
+}

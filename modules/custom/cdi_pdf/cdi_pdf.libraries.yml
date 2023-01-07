@@ -1,0 +1,7 @@
+cdi_pdf:
+  version: 1.x
+  css:
+    theme:
+      assets/css/mycss.css: {}
+  dependencies:
+    - core/jquery

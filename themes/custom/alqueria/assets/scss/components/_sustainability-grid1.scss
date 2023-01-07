@@ -1,0 +1,54 @@
+/*sustainability-grid1*/
+.sustainability-grid1{
+	.content{
+		.c-sustainability-grid1{
+			.s-sustainability-grid1{
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				justify-content: space-between;
+				@media (max-width: $desktop_1024){
+					justify-content: center;
+				}
+				article{
+					box-shadow: none;
+					@media (max-width: $desktop_1024){
+						width: auto !important;
+						padding: 0 !important;
+						margin: 5px 5px 15px 5px;
+						box-shadow: 0 0 10px 0 $shadow;
+					}
+					.info{
+						box-shadow: 0 0 10px 0 $shadow;
+						@media (max-width: $desktop_1024){
+							box-shadow: none;
+						}
+					}
+					&:nth-child(1){
+						width: 50%;
+						padding-right: 10px;
+						padding-bottom: 25px;
+					}
+					&:nth-child(2){
+						width: 50%;
+						padding-left: 10px;
+						padding-bottom: 25px;
+					}
+					&:nth-child(3){
+						width: 31.5%;
+						padding-right: 10px; 
+					}
+					&:nth-child(4){
+						width: 36%;
+						padding-left: 5px;
+						padding-right: 5px; 
+					}
+					&:nth-child(5){
+						width: 31.5%;
+						padding-left: 10px; 
+					}
+				}
+			}
+		}
+	}
+}

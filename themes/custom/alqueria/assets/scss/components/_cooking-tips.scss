@@ -1,0 +1,55 @@
+/*cooking-tips*/
+.cooking-tips{
+    .c-cooking-tips{
+        .list-tips{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+
+            padding-top: 35px;
+            article{
+                width: calc(25% - 20px);
+                margin: 0 10px 30px 10px;
+                @media (max-width: $desktop_1024){
+                    width: calc(50% - 20px);
+                }
+                @media (max-width: $mobile){
+                    width: 100%;
+                    margin: 0 0 20px 0;
+
+                    display: flex;
+                    flex-direction: row;
+                }
+                .img-card{
+                    .category{
+                        background-color: $red1;
+                    }
+                    @media (max-width: $mobile){
+                        width: 50%;
+                    }
+                }
+                .content-card{
+                    padding: 15px 15px;
+                    @media (max-width: $mobile){
+                        width: 50%;
+                    }
+                    time{
+                        @media (max-width: $mobile){
+                            display: none;
+                        }
+                    }
+                    .text{
+                        h3{
+                            cursor: pointer;
+                        }
+                        p, span{
+                            @media (max-width: $mobile){
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

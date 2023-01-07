@@ -1,0 +1,23 @@
+<section class="breadcrumbb">
+  <div class="containerGridp">
+    <div class="content">
+      <ul class="breadcrumbb no-dics">
+        {% set breadc=obtener_breadcrumb() %}
+        <li><a href="/" data-seo="btn-content">Home&nbsp;&nbsp;<span>></span>&nbsp;&nbsp;</a></li>
+        {% for item in breadc %}
+          {% if loop.index !=1 %}
+            <li>
+              {% if loop.index == breadc|length %}
+                {{item['name']}}
+              {% else %}
+                <a href="{{item['uri']}}" data-seo="btn-content">
+                  {{item['name']}}&nbsp;&nbsp;<span>></span>&nbsp;&nbsp;
+                </a>
+              {% endif %}
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

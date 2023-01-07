@@ -1,0 +1,243 @@
+/*nutrition-grid*/
+.nutrition-grid{
+	.content{
+		.c-nutrition-grid{
+			display: flex;
+			flex-direction: row;
+			@media (max-width: $tablet){
+				flex-direction: column;
+			}
+			.left{
+				width: 75%;
+				padding-right: 25px;
+				border-right: 1px solid $gray6;
+				@media (max-width: $tablet){
+					width: 100%;
+					padding-right: 0;
+					border-right: 0;
+				}
+				.content-sidebar{
+					.row:nth-child(1){
+						margin: 0;
+
+						display: flex;
+						flex-direction: row;
+						@media (max-width: $mobile){
+							flex-direction: column;
+						}
+						article{
+							&:hover{
+								background-color: $gray8;
+							}
+							.img-card{
+								.category{
+									background-color: $red1;
+								}
+							}
+							.content-card{
+								padding: 10px 15px;
+								border-top: 3px solid $yellow1;
+								.text{
+									h3{
+										color: $gray1;
+									}
+								}
+							}
+						}
+						article:nth-child(1n){
+							width: 66%;
+							margin: 0 2% 20px 0;
+							@media (max-width: $mobile){
+								width: 100%;
+								margin: 0 0 25px 0;
+							}
+						}
+						article:nth-child(2n){
+							width: 32%;
+							margin: 0 0 20px 0;
+							@media (max-width: $mobile){
+								width: 100%;
+								margin: 0 0 25px 0;
+							}
+						}
+					}
+					.row:nth-child(2){
+						margin: 0;
+
+						display: flex;
+						flex-direction: row;
+						@media (max-width: $mobile){
+							flex-direction: column;
+						}
+						article{
+							width: 32%;
+							margin: 0 2% 20px 0;
+							&:nth-child(3n){
+								margin-right: 0;
+							}
+							&:hover{
+								background-color: $gray8;
+							}
+							@media (max-width: $mobile){
+								width: 100%;
+								margin: 0 0 25px 0;
+							}
+							.img-card{
+								.category{
+									background-color: $red1;
+								}
+							}
+							.content-card{
+								padding: 10px 15px;
+								border-top: 3px solid $yellow1;
+								.text{
+									h3{
+										color: $gray1;
+									}
+								}
+							}
+						}
+					}
+					.row:nth-child(3){
+						margin: 0;
+
+						display: flex;
+						flex-direction: column;
+						article{
+							margin: 0 0 20px 0;
+
+							display: flex;
+							flex-direction: row;
+							&:last-child{
+								margin-bottom: 0;
+							}
+							&:hover{
+								background-color: $gray8;
+							}
+							@media (max-width: $mobile){
+								margin: 0 0 25px 0;
+								align-items: center;
+							}
+							.img-card{
+								width: 40%;
+								border-right: 3px solid $yellow1;
+								@media (max-width: $desktop_1024){
+									width: 40%;
+								}
+								@media (max-width: $mobile){
+									width: 50%;
+								}
+								.category{
+									background: $red1;
+								}
+								.video{
+									.icon-play{
+										span{
+			    							@media (max-width: $mobile){
+									            width: 45px;
+									            height: 45px;
+											}
+											i{
+										        @media (max-width: $mobile){
+										        	font-size: 1.5rem;
+										        }
+											}
+										}
+									}
+								}
+							}
+							.content-card{
+								width: 60%;
+								padding: 10px 15px;
+
+								display: flex;
+							    flex-direction: column;
+							    align-items: flex-start;
+							    justify-content: center;
+								@media (max-width: $desktop_1024){
+									width: 60%;
+								}
+								@media (max-width: $mobile){
+									width: 50%;
+									padding: 10px;
+								}
+								.category{
+									bottom: 0;
+									position: relative;
+									margin-bottom: 10px;
+									background: $red1;
+									@media (max-width: $desktop_1024){
+										display: none;
+									}
+								}
+								.text{
+									h3{
+										color: $gray1;
+										@media (max-width: $mobile){
+											font-size: 1.1rem;
+										}
+									}
+									p{
+										padding: 5px 0 0  0;
+										@media (max-width: $mobile){
+											display: none;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			.right{
+				width: 25%;
+				padding-left: 25px;
+				position: relative;
+				@media (max-width: $tablet){
+					width: 100%;
+					padding-top: 35px;
+					padding-left: 0;
+				}
+				.sidebar{
+					.related-recipes{
+						h3{
+							color: $gray1;
+						}
+						.s-related-recipes{
+							display: block;
+							article{
+								padding: 15px 0;
+								border-bottom: 1px solid $gray6;
+								&:last-child{
+									border: none;
+								}
+								@media (max-width: $tablet){
+									&:last-child{
+										border-bottom: 1px solid $gray6;
+									}
+								}
+								.content-star{
+					    			.star{
+					    				&:before{
+					    					font-size: 1.6rem;
+					    					@media (max-width: $desktop_1640){
+					    						font-size: 1.3rem;
+					    					}
+					    				}
+					    			}
+								}
+								h4{
+									padding: 10px 0;
+									color: $gray1;
+								}
+							}
+						}
+					}
+					.related-banner{
+						padding-top: 25px;
+					}
+				}
+			}
+		}
+	}
+}

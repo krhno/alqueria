@@ -1,0 +1,92 @@
+/*corporate-banner*/
+.corporate-banner{
+	.content{
+		.c-header{
+			@media (max-width: $tablet){
+				padding: 0 7%;
+			}
+		}
+		.c-corporate-banner{
+			padding-top: 30px;
+			.text{
+				width: 85%;
+				z-index: 3;
+				margin: 0 auto;
+				padding: 35px 5%;
+				margin-top: -50px;
+				text-align: center;
+				position: relative;
+				transition: all .5s;
+				background-color: $blue1;
+				box-shadow: 0px 0 10px 0px $shadow;
+				@media (max-width: $tablet){
+					margin-top: -25px;
+				}
+				span{
+					padding-top: 5px;
+					display: inline-block;
+
+					font-size: 1.35rem;
+					font-weight: 300;
+					font-style: italic;
+					font-family: $Poppins;
+				}
+				.blockquote{
+					margin: 0;
+					padding: 30px 0 0 0;
+					text-align: center;
+					position: relative;
+					&:before{
+						content: '';
+						top: 15px;
+						left: 0;
+						right: 0;
+						width: 55%;
+						height: 2px;
+						margin: 0 auto;
+						border-radius: 3px;
+						position: absolute;
+						background-color: $red1;
+						@media (max-width: $mobile){
+							width: 80%;
+						}
+					}
+					blockquote{
+						padding-bottom: 15px;
+
+						color: $gray1;
+						font-size: 2rem;
+						font-weight: 700;
+						font-style: italic;
+						line-height: normal;
+						font-family: $Poppins;
+						@media (max-width: $desktop_1640){
+							font-size: 1.7rem;
+						}
+						@media (max-width: $mobile){
+							font-size: 1.5rem;
+						}
+					}
+					.author{
+						font-size: 1.35rem;
+						font-weight: 300;
+						font-style: italic;
+						font-family: $Poppins;
+						@media (max-width: $mobile){
+							font-size: 1.2rem;
+						}
+					}
+					.job, .separator{
+						font-size: 1.35rem;
+						font-weight: 700;
+						font-style: italic;
+						font-family: $Poppins;
+						@media (max-width: $mobile){
+							font-size: 1.2rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}

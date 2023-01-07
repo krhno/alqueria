@@ -1,0 +1,72 @@
+/*recipe-banner*/
+.recipe-banner{
+	.content{
+		margin: 0 7%;
+		padding-bottom: 60px;
+		@media (max-width: $tablet){
+			margin: 0;
+			padding-bottom: 40px;
+		}
+		.c-recipe-banner{
+			.banner{
+				.info-person{
+					left: 0;
+					bottom: -55px;
+					width: 100%;
+					z-index: 4;
+					padding-left: 30px;
+					position: absolute;
+
+					display: flex;
+					flex-direction: row;
+					align-items: flex-end;
+					@media (max-width: $desktop_1024){
+						left: 0;
+						bottom: -55px;
+					}
+					@media (max-width: $mobile){
+						padding-left: 15px;
+					}
+					.img{
+						width: 8%;
+						overflow: hidden;
+						transition: all 1s;
+						border-radius: 50%;
+						border: 3px solid $white;
+						@media (max-width: $desktop_1024){
+							width: 12%;
+						}
+						@media (max-width: $tablet){
+							width: 15%;
+						}
+						@media (max-width: $mobile){
+							width: 20%;
+						}
+					}
+					.text{
+						width: 92%;
+						padding-left: 10px;
+						padding-bottom: 5px;
+						@media (max-width: $desktop_1024){
+							width: 88%;
+						}
+						@media (max-width: $tablet){
+							width: 85%;
+						}
+						@media (max-width: $mobile){
+							width: 80%;
+						}
+						span, time{
+							display: block;
+							margin-top: -2px;
+							font-style: italic;
+						    b{
+						    	color: $red1;
+						    }
+						}
+					}
+				}
+			}
+		}
+	}
+}

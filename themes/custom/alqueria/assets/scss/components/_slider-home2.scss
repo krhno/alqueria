@@ -1,0 +1,183 @@
+/*slider-home2*/
+.slider-home2{
+  .content{
+    .c-slider-home2{
+      .s-slider-home2{
+        padding-top: 35px;
+        .item{
+          margin: 0 0 25px 0;
+          box-shadow: 0 5px 15px 0 $shadow;
+          @media (max-width: $mobile){
+            margin: 0 0 25px 0;
+          }
+          .img{
+            position: relative;
+            .category{
+              @media (max-width: $mobile){
+                background-color: $red1;
+
+                font-weight: 700;
+                font-style: normal;
+                font-family: $Poppins;
+              }
+            }
+          }
+          .text{
+            padding: 15px 23% 15px 20px;
+            border: 1px solid $gray6;
+            @media (max-width: $desktop_1640){
+              padding: 10px 23% 10px 20px;
+            }
+            @media (max-width: $desktop_1024){
+              padding: 10px;
+            }
+            @media (max-width: $mobile){
+              margin-bottom: 15px;
+              box-shadow: 0 5px 15px 0 $shadow;
+              border-top: 1.5px solid $red1;
+            }
+            h2{
+              transition: all 0.25s;
+
+              color: $green1;
+              font-size: 2.2rem;
+              font-weight: 400;
+              font-style: normal;
+              line-height: normal;
+              font-family: $Poppins;
+              @media (max-width: $desktop_1640){
+                font-size: 1.7rem;
+              }
+              @media (max-width: $tablet){
+                font-size: 1.5rem;
+              }
+              @media (max-width: $mobile){
+                color: $red1;
+                font-size: 1.6rem;
+                font-weight: 700;
+                font-style: normal;
+                font-family: $Poppins;
+              }
+            }
+          }
+          &:hover{
+            .img{
+              .category{
+                color: $white;
+                font-weight: 700;
+                font-style: normal;
+                font-family: $Poppins;
+                background-color: $red1;
+              }
+            }
+            .text{
+              h2{
+                transition: all 0.25s;
+
+                color: $green1;
+                font-weight: 700;
+                font-style: normal;
+                font-family: $Poppins;
+              }
+            }
+          }
+        }
+        .center{
+          .item{
+            .img{
+              .category{
+                background-color: $red1;
+
+                color: $white;
+                font-weight: 700;
+                font-style: normal;
+                font-family: $Poppins;
+              }
+            }
+            .text{
+              border-top: 1px solid $red1;
+              h2{
+                color: $red1;
+                font-weight: 700;
+                font-style: normal;
+                font-family: $Poppins;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.sustainability{
+    .content{
+      .c-header{
+        h1{
+          color: $green1;
+        }
+      }
+      .c-slider-home2{
+        .s-slider-home2{
+          .item{
+            .img{
+              .category{
+                background-color: $green1;
+              }
+            }
+            .text{
+              @media (max-width: $mobile){
+                border-top: 1.5px solid $green1;
+              }
+              h2{
+                @media (max-width: $mobile){
+                  color: $brown1;
+                }
+              }
+            }
+            &:hover{
+              .img{
+                .category{
+                  color: $white;
+                  background-color: $green1;
+                }
+              }
+              .text{
+                h2{
+                  color: $green1;
+                }
+              }
+            }
+          }
+          .center{
+            .item{
+              .img{
+                .category{
+                  color: $white;
+                  background-color: $green1;
+                }
+              }
+              .text{
+                border-top: 1px solid $green1;
+                h2{
+                  color: $green1;
+                }
+              }
+            }
+          }
+          .owl-dot:hover span, 
+          .owl-dot.active span, 
+          .owl-dot.complete span{
+            transition: all 0.25s;
+            background-color: $green2;
+            box-shadow: inset 0px 0px 0px 5px $green1;
+          }
+          .owl-dot.active span, 
+          .owl-dot.complete span{
+            .bar{
+              background-color: $green1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

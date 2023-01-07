@@ -1,0 +1,323 @@
+/*slider-timeline*/
+.slider-timeline{
+	.content{
+		margin: 0 7%;
+		@media (max-width: $desktop_1024){
+			margin: 0;
+		}
+		.c-slider-timeline{
+			position: relative;
+			.slider-desktop{
+				.barProgress{
+					display: block;
+					@media (max-width: $tablet){
+						display: none;
+					}
+					.start-barProgress{
+						top: 39px;
+						left: 0;
+						width: 0;
+						max-width: 100%;
+						height: 6px;
+						z-index: 1;
+						border-radius: 5px;
+						position: absolute;
+						background: $red1;
+					}
+					.reset-barProgress{
+						top: 40px;
+						left: 0;
+						width: 100%;
+						max-width: 100%;
+						height: 4px;
+						z-index: 0;
+						border-radius: 5px;
+						position: absolute;
+						background: $gray6;
+					}
+				}
+				.s-slider-timeline.desktop{
+					.items{
+						margin: 10px 6px 120px 6px;
+
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						justify-content: space-between;
+						.item{
+							position: relative;
+							span{
+								width: 50px;
+								height: 50px;
+								display: block;
+								cursor: pointer;
+								border-radius: 50%;
+								position: relative;
+								transition: all .5s;
+
+								color: $gray1;
+								font-weight: 700;
+								font-style: normal;
+								font-family: $Poppins;
+								background-color: $gray6;
+
+								display: flex;
+								align-items: center;
+								justify-content: center;
+								&:after{
+									content: '';
+									width: 50px;
+								    height: 50px;
+								    border-radius: 50%;
+								    position: absolute;
+								    box-shadow: 0 0 5px 5px $gray7;
+								}
+							}
+							.text{
+								display: none;
+								width: 25%;
+								height: auto;
+								padding: 10px 15px;
+								margin-top: 10px;
+								border-radius: 5px;
+								position: fixed;
+								box-shadow: 0 0 10px 0 $shadow;
+								background-color: $blue1;
+								&:before{
+									content: '';
+								    top: -15px;
+								    left: 22.5px;
+								    width: 0;
+								    height: 0;
+								    margin: 0 auto;
+								    position: absolute;
+								    border-left: 12.5px solid transparent;
+								    border-right: 12.5px solid transparent;
+								    border-bottom: 15px solid $blue1;
+								}
+							}
+							&.active{
+								span{
+									width: 70px;
+									height: 70px;
+									position: relative;
+									background-color: $red2;
+
+									color: $white;
+									font-weight: 700;
+									font-style: normal;
+									font-family: $Poppins;
+									
+									&:after{
+										content: '';
+									    width: 68px;
+									    height: 68px;
+									    border-radius: 50%;
+									    position: absolute;
+									    box-shadow: 0 0 0 6px $red1;
+									}
+								}
+								.text{
+									display: block;
+								}
+							}
+							&:first-child{
+								.text{
+									left: 5px;
+								}
+							}
+							&:last-child{
+								.text{
+									right: 5px;
+									&:before{
+										content: '';
+									    top: -15px;
+									    left: inherit;
+									    right: 22.5px;
+									}
+								}
+							}
+						}
+					}
+					.owl-nav{
+						button.owl-prev{
+							top: 10%;
+							left: -5%;
+						}
+						button.owl-next{
+							top: 10%;
+							right: -5%;
+						}
+					}
+				}
+			}
+			.slider-mobile{
+				.barProgress{
+					display: block;
+					@media (min-width: 769px){
+						display: none;
+					}
+					.start-barProgress-left{
+						top: 39px;
+						left: 0;
+						width: 50%;
+						max-width: 50%;
+						height: 6px;
+						z-index: 1;
+						position: absolute;
+						background: $gray6;
+					}
+					.start-barProgress-right{
+						top: 39px;
+						right: 0;
+						width: 50%;
+						max-width: 50%;
+						height: 6px;
+						z-index: 1;
+						position: absolute;
+						background: $gray6;
+					}
+					.reset-barProgress{
+						top: 40px;
+						width: 100%;
+						max-width: 100%;
+						height: 4px;
+						position: absolute;
+						background: $gray6;
+					}
+					.reset-barProgress-left{
+						top: 39px;
+						left: 0;
+						width: 50%;
+						max-width: 50%;
+						height: 6px;
+						z-index: 0;
+						position: absolute;
+						background: $red1;
+					}
+					.reset-barProgress-right{
+						top: 39px;
+						right: 0;
+						width: 50%;
+						max-width: 50%;
+						height: 6px;
+						z-index: 0;
+						position: absolute;
+						background: $red1;
+					}
+				}
+				.s-slider-timeline.mobile{
+					.owl-item{
+						.item{
+							margin: 10px 0 120px 0;
+
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							@media (max-width: $tablet){
+								margin: 10px 0 100px 0;
+							}
+							span{
+								width: 70px;
+								height: 70px;
+								display: block;
+								border-radius: 50%;
+								position: relative;
+								transition: all .5s;
+
+								color: $white;
+								font-weight: 700;
+								font-style: normal;
+								font-family: $Poppins;
+								background-color: $red2;
+
+								display: flex;
+								align-items: center;
+								justify-content: center;
+								&:after{
+									content: '';
+								    width: 68px;
+								    height: 68px;
+								    border-radius: 50%;
+								    position: absolute;
+								    box-shadow: 0 0 0 6px $red1;
+								}
+							}
+							.text{
+								display: none;
+								bottom: 7px;
+								width: 85%;
+								height: auto;
+								margin: 10px 0;
+								padding: 15px 15px;
+								border-radius: 5px;
+								position: absolute;
+								box-shadow: 0 0 10px 0 $shadow;
+								background-color: $blue1;
+								&:before{
+									content: '';
+								    top: -15px;
+								    left: 0;
+								    right: 0;
+								    width: 0;
+								    height: 0;
+								    margin: 0 auto;
+								    position: absolute;
+								    border-left: 12.5px solid transparent;
+								    border-right: 12.5px solid transparent;
+								    border-bottom: 15px solid $blue1;
+								}
+							}
+						}
+						&.active{
+							.item{
+								.text{
+									display: block;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.sustainability{
+		.content{
+            .c-header{
+                h2{
+                    color: $green1;
+                }
+            }
+            .c-slider-timeline{
+            	margin-top: 60px;
+				.slider-desktop{
+					.s-slider-timeline.desktop{
+						.items{
+							.item{
+								span{
+									font-size: 2rem;
+								}
+								&.active{
+									span{
+										font-size: 3rem;
+									}
+								}
+							}
+						}
+					}
+				}
+				.slider-mobile{
+					.s-slider-timeline.mobile{
+						.owl-item{
+							.item{
+								span{
+									font-size: 3rem;
+								}
+							}
+						}
+					}
+				}
+			}
+        }
+	}
+}

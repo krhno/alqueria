@@ -1,0 +1,38 @@
+<section class="recipe-list">
+	<div class="containerGridp">
+		<div class="content">			
+			<div class="c-recipe-list">				
+				<div class="list-articles">
+					{% if view.result | length != 0 %}
+						{{rows}}
+					{% else %}
+					<div class="results-not-found">
+						<div class="title">
+							<h3 class="color-secondary">
+								<i class="demo-icon icon-icon-close1">&#xe81c;</i>No hay resultados
+							</h3>
+						</div>
+						<div class="message">
+							<p><b>Lo sentimos, esta búsqueda no esta disponible.</b></p>
+							<p>Para obtener los mejores resultados de búsqueda, sigue estos consejos:</p>
+							<ul class="add-dics">
+								<li>Comprueba la ortografía.</li>
+								<li>Prueba con términos similares o sinónimos.</li>
+								<li>Prueba con más de una sola palabra.</li>
+							</ul>
+						</div>
+					</div>
+					{% endif %}
+				</div>				
+				{% if view.pager.current_page == 0 %}
+				{% set total=view.total_rows/9 %}
+				{% set total=total|round(0,'ceil')%}
+				<div class="hidden new-pager" data-max="{{total-1}}"></div>
+				<div class="c-bottom">
+					<span class="btn-link btn-ajax-recipes-submoments" data-page="0" max-pager="{{total-1}}" data-seo="btn-content">Cargar más</span>
+				</div>
+				{% endif %}			
+			</div>
+		</div>
+	</div>
+</section>

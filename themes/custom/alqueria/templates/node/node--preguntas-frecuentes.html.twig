@@ -1,0 +1,30 @@
+<section class="fqa">
+	<div class="containerGridp">
+		<div class="content">
+			<div class="c-header">
+				<h1>{{node.label}}</h1>
+				{{node.body.value|raw}}
+			</div>
+			<div class="c-fqa">
+        		{% for item in node.field_acordeon_de_texto %}
+				    <div class="item item-faq {% if loop.index>10%}hidden{% endif %}">
+	          			<a href="#fqa-{{loop.index}}" class="title icon-icon-arrow" data-toggle="collapse" data-seo="btn-content">
+	            			{{item.entity.field_titulo.value}}
+	            			<div class="icon">
+                  				<i class="demo-icon icon-icon-arrow-down">&#xe809;</i>
+                			</div>
+	          			</a>
+	          			<div id="fqa-{{loop.index}}" class="panel-collapse collapse">
+	          				{{item.entity.field_descripcion_larga.value|raw}}
+	          			</div>
+	        		</div>
+            	{% endfor %}
+			</div>
+			{% if node.field_acordeon_de_texto|length > 10 %}
+				<div class="c-bottom">
+					<span class="btn-link load-more-faq" data-seo="btn-content">Cargar más</span>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</section>

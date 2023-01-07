@@ -1,0 +1,19 @@
+<section class="social-network">
+	<div class="containerGridp">
+		<div class="content">
+			<div class="c-social-network">
+				<ul class="no-dics">
+					{% for item in data %}
+					<li>
+						<div class="st-custom-button {{item.class}}" data-network="{{item.data_network}}">
+							<i class="{{item.class_icono}}">{{item.caracter}}</i>
+							<span>{{item.label_texto}}</span>
+						</div>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
+{{ attach_library('alqueria/sharethis') }}

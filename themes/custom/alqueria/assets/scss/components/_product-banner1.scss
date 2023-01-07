@@ -1,0 +1,17 @@
+/*product-banner1*/
+.product-banner1{
+	.content{
+		.c-header{
+			@media (max-width: $desktop_1024){
+				padding: 0 7%;
+			}
+		}
+		.c-product-banner1{
+			padding: 40px 0;
+		}
+		.c-bottom{
+			width: 100%;
+			text-align: center;
+		}
+	}
+}

@@ -1,0 +1,130 @@
+/*infographic-header*/
+.infographic-header{
+    .content{
+        margin: 0 7%;
+        @media (max-width: $desktop_1024){
+            margin: 0;
+        }
+        .c-infographic-header{
+            padding-top: 25px;
+            .info-text{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                @media (max-width: $tablet){
+                    text-align: center;
+                    
+                    flex-direction: column;
+                }
+                .left{
+                    width: 48%;
+                    @media (max-width: $tablet){
+                        width: 100%;
+                    }
+                    p{
+                        padding: 0;
+                    }
+                }
+                .right{
+                    width: 48%;
+
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    @media (max-width: $tablet){
+                        width: 100%;
+                        padding-top: 15px;
+                    }
+                    @media (max-width: $mobile){
+                        flex-direction: column;
+                    }
+                    .icon{
+                        width: 20%;
+                        margin-right: 10px;
+                        @media (max-width: $tablet){
+                            width: 15%;
+                        }
+                        @media (max-width: $mobile){
+                            width: 35%;
+                            margin-right: 0;
+                        }
+                    }
+                    .text{
+                        width: 80%;
+                        position: relative;
+                        padding: 5px 0 5px 25px;
+                        @media (max-width: $tablet){
+                            width: 85%;
+                        }
+                        @media (max-width: $mobile){
+                            width: 100%;
+                            padding-left: 0;
+                        }
+                        &:before{
+                            content: '';
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            width: 3px;
+                            height: 100%;
+                            margin: auto;
+                            position: absolute;
+                            background-color: $red1;
+                            @media (max-width: $mobile){
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+            .info-modal{
+                margin: 40px 0;
+                position: relative;
+                .img{
+                    width: 50%;
+                    margin: 0 auto;
+                    @media (max-width: $tablet){
+                        width: 60%;
+                    }
+                    @media (max-width: $mobile){
+                        width: 100%;
+                    }
+                }
+                .s-slider-infographic-ods{
+                    padding: 15px 3% 0 3%;
+                    @media (max-width: $mobile){
+                        width: 55%;
+                        margin: 0 auto;
+                        padding: 15px 0 0 0;
+                    }
+                    .item{
+                        margin: 5px;
+                    }
+                }
+                .button{
+                    width: 15%;
+                    margin: 0 auto;
+                    padding-top: 15px;
+                    cursor: pointer;
+                    text-align: center;
+                    @media (max-width: $desktop_1024){
+                        width: 17%;
+                    }
+                    @media (max-width: $mobile){
+                        width: 40%;
+                    }
+                }
+            }
+        }
+    }
+    &.sustainability{
+        .content{
+            .c-header{
+                h1{
+                    color: $green1;
+                }
+            }
+        }
+    }
+}

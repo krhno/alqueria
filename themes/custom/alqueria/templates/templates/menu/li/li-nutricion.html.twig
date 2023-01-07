@@ -1,0 +1,20 @@
+<li class="item-menu">
+	<a href="#nutrition-mobile" class="a-item-menu icon-icon-arrow" data-toggle="collapse" data-seo="btn-header">
+    	{{item.title}}<i class="demo-icon icon-icon-arrow-down">&#xe809;</i>
+ 	</a>
+  	<a href="{{get_config_data('config.settings','nutricion')}}" class="a-item-prehome" data-seo="btn-header">
+      {{get_config_data('config.settings','Label_prehome')}}<i class="demo-icon icon-icon-redirect">&#xe83a;</i>
+  	</a>
+	<ul id="nutrition-mobile" class="no-dics panel-collapse collapse collapse1">
+		{% for key, value in obtener_taxonomia('categorias_nutricion') %}
+		{% if loop.index == 1%}
+		{% set primerBlogNutricion = key %}
+		{% endif %}
+		<li class="item-collapse1">
+			<span class="a-item-collapse1 dataid {% if loop.index == 1%}active{% endif %}" data-id="megamenu-blog-nutrition" data-tid="{{key}}" data-view="blog_nutricion_menu" data-mode="mobile" data-url="field_url_youtube" data-seo="btn-header">
+				{{value.name}}<i class="demo-icon icon-icon-arrow-right">&#xe80c;</i>
+			</span>
+		</li>
+		{% endfor %}
+	</ul>
+</li>

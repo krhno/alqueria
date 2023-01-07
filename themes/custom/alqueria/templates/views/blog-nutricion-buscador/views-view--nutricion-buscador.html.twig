@@ -1,0 +1,17 @@
+{%
+  set classes = [
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+]
+%}
+	{% if view.pager.current_page == 0 %}
+              {{rows}}
+          {#{% if pager %}
+            {% set total=view.total_rows/4 %}
+            {% set total=total|round(0,'ceil')%}
+            <div class="c-bottom">
+              <span class="btn-link btn-ajax-nutrition" data-page="0" max-pager="{{total-1}}" data-seo="btn-content">Cargar más</span>
+            </div>
+          {% endif %}#}
+  {% else %}
+    {{rows}}
+  {% endif %}

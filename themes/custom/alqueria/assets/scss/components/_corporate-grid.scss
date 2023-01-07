@@ -1,0 +1,123 @@
+/*corporate-grid*/
+.corporate-grid{
+	.content{
+		.c-header{
+			@media (max-width: $tablet){
+				padding: 0 7%;
+			}
+		}
+		.c-corporate-grid{
+			margin-top: 30px;
+			box-shadow: 0px 0 10px 0px $shadow;
+
+			display: flex;
+			align-items: center;
+			&.img-left{
+				flex-direction: row;
+				@media (max-width: $tablet){
+					flex-direction: column;
+				}
+				.column-right{
+					padding: 25px 10% 25px 80px;
+					@media (max-width: $desktop_1024){
+						padding: 30px 7%;
+					}
+				}
+			}
+			&.img-right{
+				flex-direction: row-reverse;
+				@media (max-width: $tablet){
+					flex-direction: column;
+				}
+				.column-right{
+					padding: 25px 80px 25px 10%;
+					@media (max-width: $desktop_1024){
+						padding: 30px 7%;
+					}
+				}
+			}
+			.column-left{
+				width: 50%;
+				@media (max-width: $tablet){
+					width: 100%;
+				}
+			}
+			.column-right{
+				width: 50%;
+				@media (max-width: $tablet){
+					width: 100%;
+				}
+				.text{
+					h3{
+						font-size: 2.3rem;
+						@media (max-width: $desktop_1640){
+							font-size: 2rem;
+						}
+						@media (max-width: $mobile){
+							font-size: 1.7rem;
+						}
+					}
+					span{
+						padding-top: 5px;
+						display: inline-block;
+
+						font-size: 1.35rem;
+						font-weight: 300;
+						font-style: italic;
+						font-family: $Poppins;
+					}
+					.blockquote{
+						text-align: left;
+						position: relative;
+						margin: 25px 0 0 0;
+						padding: 5px 0 5px 25px;
+						&:before{
+							content: '';
+							top: 0;
+							left: 0;
+							width: 5px;
+							height: 100%;
+							border-radius: 3px;
+							position: absolute;
+							background-color: $red1;
+						}
+						blockquote{
+							padding-bottom: 5px;
+
+							color: $gray1;
+							font-size: 2rem;
+							font-weight: 700;
+							font-style: italic;
+							line-height: normal;
+							font-family: $Poppins;
+							@media (max-width: $desktop_1640){
+								font-size: 1.7rem;
+							}
+							@media (max-width: $mobile){
+								font-size: 1.4rem;
+							}
+						}
+						.author{
+							font-size: 1.35rem;
+							font-weight: 300;
+							font-style: italic;
+							font-family: $Poppins;
+							@media (max-width: $mobile){
+								font-size: 1.2rem;
+							}
+						}
+						.job, .separator{
+							font-size: 1.35rem;
+							font-weight: 700;
+							font-style: italic;
+							font-family: $Poppins;
+							@media (max-width: $mobile){
+								font-size: 1.2rem;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

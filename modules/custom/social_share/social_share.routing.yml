@@ -1,0 +1,7 @@
+social_share.basic_config:
+  path: '/admin/config/share_redes/config'
+  defaults:    
+    _form: '\Drupal\social_share\Form\ShareForm'
+    _title: 'Configurar módulo'
+  requirements:
+    _permission: 'Administer site configuration'

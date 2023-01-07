@@ -1,0 +1,153 @@
+/*social-network*/
+.social-network{
+	top: 115px;
+	left: 10px;
+	z-index: 9;
+	position: fixed;
+	@media (max-width: $mobile){
+		top: inherit;
+		left: inherit;
+		position: relative;
+	}
+	.content{
+		.c-social-network{
+			ul{
+				position: relative;
+
+				display: flex;
+				flex-direction: column;
+				@media (max-width: $mobile){
+					flex-direction: row;
+					justify-content: center;
+				}
+				&:after{
+					@media (max-width: $mobile){
+						content: '';
+						top: 20px;
+						left: 0;
+						width: 12%;
+						height: 1px;
+						position: absolute;
+						background-color: $gray3;
+					}
+				}
+				&:before{
+					@media (max-width: $mobile){
+						content: '';
+						top: 20px;
+						right: 0;
+						width: 12%;
+						height: 1px;
+						position: absolute;
+						background-color: $gray3;
+					}
+				}
+				li{	
+					margin-right: 0;
+					margin-bottom: 9px;
+					&:last-child{
+						margin-bottom: 0;
+					}
+					@media (max-width: $mobile){
+						margin-right: 9px;
+						margin-bottom: 0;
+						&:last-child{
+							margin-right: 0;
+						}
+					}
+					.social-icon{
+						width: 40px;
+						height: 40px;
+						cursor: pointer;
+						position: relative;
+						border-radius: 50%;
+						transition: all .25s;
+						background-color: $gray3;
+
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						&:hover span{
+							width: 90px !important;
+							padding: 5px 10px 5px 20px !important;
+						}
+						&.whatsapp:hover{
+							&:after{
+								border-top: 9px solid $whatsapp;
+							    border-left: 6px solid transparent;
+							    border-right: 6px solid transparent;
+							    border-bottom: transparent;
+							}
+						}
+						i{
+							color: $white;
+							font-size: 1.5rem;
+						}
+						span{
+							left: 25px;
+							width: 0;
+							height: auto;
+							z-index: -1;
+							padding: 0;
+							overflow: hidden;
+							color: $gray1;
+							font-size: .95rem;
+							position: absolute;
+							line-height: normal;
+							border-radius: 35px;
+							transition: all 0.25s;
+							background-color: $gray7;
+							@media (max-width: $mobile){
+								display: none;
+							}
+						}
+						&.facebook{
+							&:hover{
+								background-color: $facebook;
+							}
+						}
+						&.linkedin{
+							&:hover{
+								background-color: $linkedin;
+							}
+						}
+						&.pinterest{
+							&:hover{
+								background-color: $pinterest;
+							}
+						}
+						&.printer{
+							&:hover{
+								background-color: $printer;;
+							}
+						}
+						&.twitter{
+							&:hover{
+								background-color: $twitter;
+							}
+						}
+						&.whatsapp{
+							&:hover{
+								background-color: $whatsapp;
+							}
+							&:after{
+								content: '';
+							    bottom: -2px;
+							    left: 0;
+							    width: 0;
+							    height: 0;
+							    position: absolute;
+							    transition: all .25s;
+							    transform: rotate(40deg);
+							    border-top: 9px solid $gray3;
+							    border-left: 6px solid transparent;
+							    border-right: 6px solid transparent;
+							    border-bottom: transparent;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

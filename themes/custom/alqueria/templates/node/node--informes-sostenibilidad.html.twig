@@ -1,0 +1,33 @@
+<section class="download-list sustainability">
+  <div class="containerGridp">
+    <div class="content">
+      <div class="c-header">
+        <h1>{{node.label}}</h1>
+        {{node.body.value|raw}}
+      </div>
+      <div class="c-download-list">
+         {% for item in node.field_documentos_ %}
+          <article class="item item-report {% if loop.index > 8 %}hidden{% endif %}">
+            <div class="img">
+              {{content.field_documentos_[loop.index-1]}}
+            </div>
+            <div class="info">
+              <div class="icon">
+                <i class="demo-icon icon-icon-pdf">&#xe823;</i>
+              </div>
+              <div class="text">
+                <h3 class="titleHeight">{{item.entity.field_titulo.value}}</h3>
+                <a href="{{item.entity.field_enlace.0.url}}" target="_blank" class="btn-link" data-seo="btn-content">{{item.entity.field_enlace.title}}</a>
+              </div>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+      {% if node.field_documentos_|length > 8 %}
+        <div class="c-bottom">
+          <span class="btn-link load-more-report" data-seo="btn-content">Cargar más</span>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

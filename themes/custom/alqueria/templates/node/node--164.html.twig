@@ -1,0 +1,20 @@
+<section class="search-results">
+  <div class="containerGrid">
+    <div class="content">
+      <div class="c-search-results">
+        <div class="results">
+          <div class="title">
+            <h1>Resultados de búsqueda</h1>
+          </div>
+          {% set limit=9 %}
+          {% if query!="" %}
+          {% if query_limit != "" %}
+          {% set limit = query_limit %}
+          {% endif %}
+          {{ obtener_buscador(query,limit) }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

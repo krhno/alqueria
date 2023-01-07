@@ -1,0 +1,52 @@
+/*infographic-cards*/
+.infographic-cards{
+    .content{
+        margin: 0 7%;
+        @media (max-width: $desktop_1024){
+            margin: 0;
+        }
+        .c-infographic-cards{
+            padding-top: 35px;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            @media (max-width: $mobile){
+                flex-direction: column;
+                justify-content: center;
+            }
+            .item{
+                width: 48%;
+                box-shadow: 0 0 10px 0 $shadow;
+                @media (max-width: $mobile){
+                    width: 100%;
+                    margin-bottom: 35px;
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                }
+                .text{
+                    padding: 25px 30px;
+                    background-color: $blue1;
+                    span{
+                        font-size: 1.25rem;
+                        font-weight: 700;
+                        font-style: normal;
+                        line-height: 27px;
+                        font-family: $Poppins;
+                    }
+                }
+            }
+        }
+    }
+    &.sustainability{
+        .content{
+            .c-header{
+                h2{
+                    color: $green1;
+                }
+            }
+        }
+    }
+}

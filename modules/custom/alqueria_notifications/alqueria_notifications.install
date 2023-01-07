@@ -1,0 +1,78 @@
+<?php
+function alqueria_notifications_schema(){
+    $schema['notificaciones'] = [
+        'description' => 'Tabla custom para registrar usuarios',
+            'fields' => [
+                'id' => [
+                    'type' => 'serial',
+                    'not null' => TRUE,
+                    'description' => 'ID notificacion',
+                ],
+                'nid' => [
+                    'type' => 'int',				                    
+                    'not null' => TRUE,
+                    'description' => 'nid si aplica',
+                    'default' => 0,
+                ],
+                'titulo' => [
+                    'type' => 'varchar',				                                        
+                    'description' => 'titulo de la notificacion',                    
+                    'length' => 255,
+                ],
+                'mensaje' => [
+                    'type' => 'varchar',				                                        
+                    'description' => 'mensaje notificacion',     
+                    'length' => 255,               
+                ],
+                'enlace' => [
+                    'type' => 'varchar',				                                        
+                    'description' => 'enlace notificacion',     
+                    'length' => 255,                            
+                ],
+                'foto' => [
+                    'type' => 'varchar',				                                        
+                    'description' => 'URL foto',    
+                    'length' => 255,                
+                ],
+                'tipo' => [
+                    'type' => 'varchar',                
+                    'length' => 12,
+                    'not null' => TRUE,
+                    'description' => 'Tipo de notificación',
+                ],
+                'uid_emisor' => [
+                    'type' => 'int',                                    
+                    'not null' => TRUE,
+                    'description' => 'uid que dispara el evento',
+                    'default' => 0,
+                ],
+                'uid_receptor' => [
+                    'type' => 'int',                                    
+                    'not null' => TRUE,
+                    'description' => 'uid que recibe la notificacion',
+                    'default' => 0,
+                ],
+                'status' => [
+                    'type' => 'int',                                    
+                    'not null' => TRUE,
+                    'description' => 'status de la notificación',
+                    'default' => 1,
+                ],
+                'visible' => [
+                    'type' => 'int',                                    
+                    'not null' => TRUE,
+                    'description' => 'visible',
+                    'default' => 1,
+                ],
+                'fecha' => [
+                    'type' => 'int',
+                    'not null' => TRUE,
+                    'description' => 'Fecha de la operación',
+                ],
+            ],
+        'primary key' => ['id'],		
+    ];
+        
+	 
+    return $schema;
+}

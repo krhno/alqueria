@@ -1,0 +1,46 @@
+base:
+  header: false
+  css:
+    theme:
+      /libraries/bootstrap/css/bootstrap.min.css: {}
+      assets/css/libraries.min.css: {}
+      assets/css/main.min.css: {}
+
+      https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap:
+        { type: external, attributes: { async: true, defer: true } }
+  js:
+    /libraries/bootstrap/js/bootstrap.bundle.min.js: {}
+    assets/js/minify/libraries.min.js: {}
+    assets/js/minify/main.min.js: {}
+
+    https://apis.google.com/js/platform.js?onload=onLoadCallback:
+      { type: external, attributes: { async: true, defer: true } }
+    https://connect.facebook.net/es_LA/sdk.js:
+      { type: external, attributes: { async: true, defer: true } }
+  dependencies:
+    - core/jquery
+aos:
+  header: false
+  css:
+    component:
+      https://unpkg.com/aos@2.3.1/dist/aos.css:
+        { type: external, attributes: { async: true, defer: true } }
+  js:
+    https://unpkg.com/aos@2.3.1/dist/aos.js:
+      { type: external, attributes: { async: true, defer: true } }
+  dependencies:
+    - core/jquery
+jvectormap:
+  header: true
+  js:
+    assets/lib/js/jvectormap/jvectormap.min.js: {}
+    assets/lib/js/jvectormap/jvectormap-map.js: {}
+  dependencies:
+    - core/jquery
+sharethis:
+  header: false
+  js:
+    https://platform-api.sharethis.com/js/sharethis.js#property=60767274aaa4470011e15365&product=custom-share-buttons:
+      { type: external, attributes: { async: true, defer: true } }
+  dependencies:
+    - core/jquery

@@ -1,0 +1,13 @@
+.btn-whatsapp{
+    position: fixed;
+    bottom: 1rem;
+    right: 8rem;
+    width: 4.6rem;
+    margin: 7px 0px 0px 7px;
+    z-index: 50;
+    @media (max-width: $mobile){
+        bottom: 8rem;
+        right: 0;
+        margin: 7px 10px 0px 7px;
+    }
+}

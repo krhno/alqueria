@@ -1,0 +1,23 @@
+{%
+  set classes = [
+  'view',
+  'view-' ~ id|clean_class,
+  'view-id-' ~ id,
+  'view-display-id-' ~ display_id,
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+  %}
+  <article>
+    <div class="content-star after">
+      {% set calificacion = row._entity.field_calificacion is empty ? 0 : row._entity.field_calificacion.value %}
+          {% for item in 5..1 %}
+          <input type="radio" {% if calificacion == item  %} checked="checked" {% endif %}value="{{item}}">
+          <label class="star"></label>
+          {% endfor %}
+    </div>
+    {% for item in row._entity.field_categorias%}
+      <a href="{{path('entity.taxonomy_term.canonical', {'taxonomy_term': item.entity.id})}}" class="font-18">{{item.entity.label}}</a>
+    {% endfor %}
+    <h4><a href="{{fields.view_node.content}}" data-seo="btn-content">{{fields.title.content}}</a></h4>
+    <p>{{fields.body.content}}</p>
+  </article>

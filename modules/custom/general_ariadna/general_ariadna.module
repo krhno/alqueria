@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains general_ariadna.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\general_ariadna\Controller\GeneralAriadnaController;
+
+/**
+ * Implements hook_preprocess_menu().
+ */
+function general_ariadna_preprocess_menu(&$variables) {
+  //Se verifica tipo de menu  
+  if ($variables['theme_hook_original'] == 'menu__menu_idiomas') {
+    //Se carga controlador de ariadna
+    $general_ariadna = new GeneralAriadnaController;
+    //Se cargan los items del menu
+    $items = $variables['items'];
+    $language = \Drupal::languageManager()->getCurrentLanguage()->getId();
+    foreach ($items as $key => $item) {
+      //Se verifica si el menu tiene hijos
+      $menu_link = $item['original_link'];
+      $options = $menu_link->getOptions();
+      if (empty($options['menu_icon']['fid'])) {
+        $items[$key]['menu_image'] = null;
+      } else {
+        $items[$key]['menu_image'] = $general_ariadna->getMenuIcons($options['menu_icon']['fid']);
+      }
+      $items[$key]['language'] = $language;
+    }
+    $variables['items'] = $items;
+  }
+}

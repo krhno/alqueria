@@ -1,0 +1,7 @@
+alqueriaUsersJS:
+  version: 1.x     
+  js:    
+    js/back.js: {}
+  dependencies:
+    - core/drupal
+    - core/jquery

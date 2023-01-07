@@ -1,0 +1,45 @@
+/*site-map*/
+.site-map {
+  .content {
+    nav {
+      ul.nav {
+        display: flex;
+        flex-direction: column;
+        & > li.nav-item {
+          padding-left: 0;
+        }
+        li.nav-item {
+          .title {
+            color: $red1;
+            font-size: 1.25rem;
+            font-weight: 600;
+            font-style: normal;
+            padding: 10px 15px;
+            border-top: 1px solid $red1;
+            border-bottom: 1px solid $red1;
+            font-family: Poppins, sans-serif;
+          }
+          .subtitle {
+            color: $red1;
+            font-size: 1.25rem;
+            font-weight: 600;
+            font-style: normal;
+            padding: 10px 15px 0 15px;
+            font-family: Poppins, sans-serif;
+          }
+          .option {
+            color: #636463;
+            font-size: 1.15rem;
+            font-weight: 300;
+            font-style: normal;
+            line-height: normal;
+            font-family: Poppins, sans-serif;
+          }
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

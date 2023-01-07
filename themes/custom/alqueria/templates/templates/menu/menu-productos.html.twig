@@ -1,0 +1,46 @@
+<li class="item-menu">
+	<a href="{{get_config_data('config.settings','productos')}}" class="a-item-menu" data-seo="btn-header">
+		{{titulo}}
+	</a>
+	<div id="megamenu-products" class="megamenu-desktop panel-collapse collapse">
+		<div class="column-left">
+			<ul class="no-dics panel-collapse collapse collapse1 show">
+				<li class="item-collapse1">
+					<a href="#products-desktop" class="a-item-collapse1 active" data-toggle="collapse" data-id="products-desktop">
+						{{titulo}}
+					</a>
+					<ul id="products-desktop" class="no-dics panel-collapse collapse collapse2 show">
+						{% set primerProducto=0 %}
+				        {% for key, value in obtener_taxonomia('categoria_producto') %}
+				        {% if loop.index == 1%}
+				        {% set primerProducto = key %}
+				        {% endif %}
+				        <li class="item-collapse2">
+				        	<span class="a-item-collapse2 {% if loop.index == 1%}active{% endif %}" data-tid="{{key}}" data-view="productos_por_categoria_menu" data-url="field_enlace_interna_"  data-mode="desktop" data-seo="btn-header">
+				        		{{value.name}}
+				        	</span>
+				        </li>
+				        {% endfor %}
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="column-right">
+			<div class="content-right content-products" data-id="products-desktop">
+				<div class="info">
+					{% set taxInfo = obtener_taxonomia_detalle(primerProducto,'field_descripcion,field_enlace_interna_') %}
+					<span class="title">{{taxInfo.label}}</span>
+					<div class="descripcion">{{taxInfo.field_descripcion|raw}}</div>
+				</div>
+				<div class="list-articles products">
+					{{vista_render(primerProducto,'productos_por_categoria_menu','block_1')}}
+				</div>
+				<div class="button">
+					<a href="{{taxInfo.field_enlace_interna_}}" class="btn-default back-green" data-seo="btn-header">
+            Conoce más aquí
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</li>

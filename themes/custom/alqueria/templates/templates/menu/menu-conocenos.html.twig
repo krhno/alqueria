@@ -1,0 +1,55 @@
+<li class="item-menu">
+	<a href="{{get_config_data('config.settings','conocenos')}}" class="a-item-menu" data-seo="btn-header">
+		{{titulo}}
+	</a>
+	<div id="megamenu-knowus" class="megamenu-desktop panel-collapse collapse">
+		<div class="column-left">
+			<ul class="no-dics panel-collapse collapse collapse1 show">
+				<li class="item-collapse1">
+					<a href="#knowus-desktop" class="a-item-collapse1 active" data-toggle="collapse" data-id="knowus-desktop">
+						{{titulo}}
+					</a>
+					<ul id="knowus-desktop" class="no-dics panel-collapse collapse collapse2 show">
+						{% set primerConocenos=0 %}
+						{% set tidConocenos=0 %}
+						{% for key, value in obtener_taxonomia('categorias_menu_conocenos') %}
+						{% set taxInfo = obtener_taxonomia_detalle(key,'field_desactivar_menu_dinamico,field_vista,field_enlace_interna_') %}
+						{% if loop.index == 1%}
+							{% set tidConocenos = key %}
+							{% if taxInfo.field_desactivar_menu_dinamico == 1%}
+							{% set primerConocenos = conocenos_menu_contenido %}
+							{%else%}
+							{% set primerConocenos = taxInfo.field_vista %}
+							{% endif %}
+						{% endif %}
+
+						<li class="item-collapse2">
+							<span class="a-item-collapse2 {% if loop.index == 1%}active{% endif %}" data-tid="{{taxInfo.field_enlace_interna_}}" data-view="{% if taxInfo.field_desactivar_menu_dinamico == 1%}conocenos_menu_contenido{%else%}{{taxInfo.field_vista}}{% endif %}" data-url="field_url_youtube" data-mode="desktop" data-seo="btn-header">
+								{{value.name}}
+							</span>
+						</li>
+						{% endfor %}
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class="column-right">
+			<div class="content-right content-knowus" data-id="knowus-desktop">
+				<div class="list-articles knowus">
+					{% set taxInfo = obtener_taxonomia_detalle(tidConocenos,'field_url_youtube,field_enlace_interna_') %}
+					{% set argumento = 0 %}
+					{% if taxInfo.field_enlace_interna_ is empty %}
+					{% set argumento = taxInfo.field_enlace_interna_ %}
+					{% endif %}
+					{{vista_render(argumento,primerConocenos,'block_1')}}
+				</div>
+				<div class="button">
+					{% set taxInfo = obtener_taxonomia_detalle(tidConocenos,'field_url_youtube') %}
+					<a href="{{taxInfo.field_url_youtube}}" class="btn-default back-green" data-seo="btn-header">
+						Ver más
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</li>

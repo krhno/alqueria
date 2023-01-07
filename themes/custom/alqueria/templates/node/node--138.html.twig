@@ -1,0 +1,214 @@
+<section class="user-register">
+  <div class="containerGrid">
+    <div class="content">
+      <div class="c-user-register">
+        <div class="form-user-register">
+          <form id="form-user-register" method="post" autocomplete="off">
+            <div class="title">
+              <h1>{{get_config_data('alqueriaUsers.settings','titulo_general')}}</h1>
+              {{get_config_data('alqueriaUsers.settings','descripcion_general')}}
+            </div>
+            <div class="social">
+              <label>{{get_config_data('alqueriaUsers.settings','label_registrate')}}</label>
+              <div class="items">
+                <span id="btn-facebook-register" class="btn-facebook">
+                  <i class="demo-icon icon-icon-facebook">&#xe800;</i>
+                </span>
+                <span id="btn-gmail-register" class="btn-gmail">
+                  <picture>
+                    <img data-src="/{{directory}}/assets/img/icons/icon-gmail.png" alt="Gmail" title="Gmail" class="lazyload">
+                  </picture>
+                </span>
+              </div>
+            </div>
+            <div class="form">
+              <div class="text">
+                <span>
+                  Si ya tienes una cuenta
+                  <span id="login" data-toggle="modal" data-target="#modal-login">Inicia sesión</span>
+                </span>
+                <span>O diligencia el siguiente formulario</span>
+              </div>
+              <div class="form">
+                <div class="form-group">
+                  <label>Nombres</label>
+                  <input type="text" id="register-name" name="register-name" class="letter" placeholder="Nombres" required="required">
+                  <span class="error">Este campo es obligatorio.</span>
+                </div>
+                <div class="form-group">
+                  <label>Apellidos</label>
+                  <input type="text" id="register-lastname" name="register-lastname" class="letter" placeholder="Apellidos" required="required">
+                  <span class="error">Este campo es obligatorio.</span>
+                </div>
+                <div class="form-group">
+                  <label>Género</label>
+                  <select id="register-gender" name="register-gender" required="required">
+                    <option value="0">Género</option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Femenino</option>
+                  </select>
+                  <span class="error">Este campo es obligatorio.</span>
+                </div>
+                <div class="form-group">
+                  <label>Celular</label>
+                  <div class="box-indicative">
+                    <span>+57</span>
+                    <input type="text" id="register-telephone" name="register-telephone" class="numeric" maxlength="10" placeholder="Celular" required="required">
+                  </div>
+                  <span class="error">Este campo es obligatorio.</span>
+                </div>
+                <div class="form-group">
+                  <label>Correo Electrónico</label>
+                  <input type="email" id="register-email" name="register-email" placeholder="usuario@mail.com" required="required">
+                  <span class="error">Este campo es obligatorio.</span>
+                </div>
+                <div class="form-group">
+                  <label>Departamento</label>
+                  <select id="register-department" name="register-department" required="required">
+                    <option value="0">Departamento</option>
+                    {% for key, value in obtener_taxonomia('departamentos') %}
+                      <option value="{{key}}">{{value.name}}</option>
+                    {% endfor %}
+                  </select>
+                  <span class="error">Este campo es obligatorio.</span>
+                </div>
+                <div class="form-group">
+                  <label>Ciudad</label>
+                  <select id="register-city" name="register-city" required="required">
+                    <option value="0">Ciudad</option>
+                  </select>
+                  <span class="error">Este campo es obligatorio.</span>
+                </div>
+                <div class="form-group">
+                  <label>Contraseña</label>
+                  <input type="password" id="register-password1" name="register-password1" placeholder="Contraseña" required="required" autocomplete="off">
+                  <span class="error">Este campo es obligatorio.</span>
+                </div>
+                <div class="form-group">
+                  <label>Confirmar contraseña</label>
+                  <input type="password" id="register-password2" name="register-password2" placeholder="Confirmar contraseña" required="required" autocomplete="off">
+                  <span class="error">Este campo es obligatorio.</span>
+                </div>
+              </div>
+              <div class="checks">
+                <div class="div-checks">
+                  <div class="div-check">
+                    <div class="form-check">
+                      <input type="checkbox" id="register-tyc" name="register-tyc" required="required">
+                      <label for="register-tyc"><a href="/sites/default/files/2020-11/tratamiento-de-datos-personales.pdf" data-seo="btn-content" target="_blank">He leído y autorizo el tratamiento de mis datos personales</a></label>
+                    </div>
+                    <span class="error">Este campo es obligatorio.</span>
+                  </div>
+                  <div class="div-check">
+                    <div class="form-check">
+                      <input type="checkbox" id="register-newsletter" name="register-newsletter">
+                      <label for="register-newsletter">Suscríbete gratis al Newsletter</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="title">
+              <h2>{{get_config_data('alqueriaUsers.settings','titulo_preferencias')}}</h2>
+              {{get_config_data('alqueriaUsers.settings','descripcion_preferencias')}}
+            </div>
+            <div class="preferences-group">
+              <div class="preferences">
+                <div class="item recipes">
+                  <div class="form-check">
+                    <input type="checkbox" id="pre-recipes" name="pre-recipes">
+                    <label for="pre-recipes">
+                      {% set imgReceta= get_config_data('alqueriaUsers.settings','imagen_recetas') %}
+                      {% set imgReceta= obtener_uri(imgReceta[0]) %}
+                      {% set responsiveimagestyle = {
+                        '#theme': 'responsive_image',
+                        '#responsive_image_style_id': '390x340_330x290',
+                        '#uri':        imgReceta,
+                        '#alt':        "Imagen de recetas",
+                        '#title':      "Título de recetas",
+                        '#attributes': { class: 'lazyload' },
+                      }
+                      %}
+                      {{responsiveimagestyle}}
+                    </label>
+                  </div>
+                  <span class="category">Recetas</span>
+                </div>
+                <div class="item nutrition">
+                  <div class="form-check">
+                    <input type="checkbox" id="pre-nutrition" name="pre-nutrition">
+                    <label for="pre-nutrition">
+                      {% set imgReceta= get_config_data('alqueriaUsers.settings','imagen_nutricion') %}
+                      {% set imgReceta= obtener_uri(imgReceta[0]) %}
+                      {% set responsiveimagestyle = {
+                        '#theme': 'responsive_image',
+                        '#responsive_image_style_id': '390x340_330x290',
+                        '#uri':        imgReceta,
+                        '#alt':        "Imagen de nutrición",
+                        '#title':      "Título de nutrición",
+                        '#attributes': { class: 'lazyload' },
+                      }
+                      %}
+                      {{responsiveimagestyle}}
+                    </label>
+                  </div>
+                  <span class="category">Nutrición</span>
+                </div>
+                <div class="item sustainability">
+                  <div class="form-check">
+                    <input type="checkbox" id="pre-sustainability" name="pre-sustainability">
+                    <label for="pre-sustainability">
+                      {% set imgReceta= get_config_data('alqueriaUsers.settings','imagen_sostenibilidad') %}
+                      {% set imgReceta= obtener_uri(imgReceta[0]) %}
+                      {% set responsiveimagestyle = {
+                        '#theme': 'responsive_image',
+                        '#responsive_image_style_id': '390x340_330x290',
+                        '#uri':        imgReceta,
+                        '#alt':        "Imagen de sostenibilidad",
+                        '#title':      "Título de sostenibilidad",
+                        '#attributes': { class: 'lazyload' },
+                      }
+                      %}
+                      {{responsiveimagestyle}}
+                    </label>
+                  </div>
+                  <span class="category">Sostenibilidad</span>
+                </div>
+              </div>
+              <span class="error">Este campo es obligatorio</span>
+              <div class="list-phrases">
+                <h3>Selecciona la frase que más te identifique:</h3>
+                <label class="container">Cocinar es mi pasión, porque puedo demostrar mi creatividad y expertise con mis preparaciones. Siempre busco aprender sobre la cocina, para crear platos súper diferentes y llevar mis recetas a otro nivel.
+                  <input type="radio" checked="checked" name="register-phrase" value="Cocinar es mi pasión, porque puedo demostrar mi creatividad y expertise con mis preparaciones. Siempre busco aprender sobre la cocina, para crear platos súper diferentes y llevar mis recetas a otro nivel.">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Disfruto mucho cocinar y siempre estoy en la búsqueda de ingredientes que me permitan explorar y tener variedad en todas mis preparaciones, siempre quiero aprender para mejorar mi nivelen la cocina.
+                  <input type="radio" name="register-phrase" value="Disfruto mucho cocinar y siempre estoy en la búsqueda de ingredientes que me permitan explorar y tener variedad en todas mis preparaciones, siempre quiero aprender para mejorar mi nivelen la cocina.">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Cocino porque me toca aunque no lo disfruto, por eso hago platos sencillos, que me tomen poco tiempo de elaboración, para poder invertir más tiempo en cosas que me gustan.
+                  <input type="radio" name="register-phrase" value="Cocino porque me toca aunque no lo disfruto, por eso hago platos sencillos, que me tomen poco tiempo de elaboración, para poder invertir más tiempo en cosas que me gustan.">
+                  <span class="checkmark"></span>
+                </label>
+                <label class="container">Me toca cocinar. Siempre lo he hecho pero ya no es una rutina que disfrute. Cocino rico y por eso siempre espero recibir reconocimiento por las preparaciones que realizo.
+                  <input type="radio" name="register-phrase" value="Me toca cocinar. Siempre lo he hecho pero ya no es una rutina que disfrute. Cocino rico y por eso siempre espero recibir reconocimiento por las preparaciones que realizo.">
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="input-hidden">
+              <input type="hidden" id="fbid" name="fbid">
+              <input type="hidden" id="gid" name="gid">
+            </div>
+            <div class="button">
+              <span id="btn-user-register" class="btn-default back-green" data-seo="btn-content">
+                Finaliza tu registro
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

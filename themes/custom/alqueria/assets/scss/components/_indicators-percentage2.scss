@@ -1,0 +1,154 @@
+/*indicator-percentage2*/
+.indicator-percentage2{
+	.content{
+		.c-indicator-percentage2{
+			.s-slider-percentage2{
+				@media (max-width: $tablet){
+					padding: 0 7%;
+				}
+				@media (max-width: $mobile){
+					padding: 0 14%;
+				}
+				.item{
+					padding: 50px 3%;
+					background-color: $gray8;
+
+					display: flex;
+					flex-direction: row;
+					@media (max-width: $tablet){
+						padding: 30px;
+						flex-wrap: wrap;
+					}
+					@media (max-width: $mobile){
+						flex-wrap: inherit;
+						flex-direction: column;
+						justify-content: center;
+					}
+					.info{
+						width: 25%;
+						padding-right: 3%;
+						text-align: center;
+						&:last-child{
+							padding-right: 0;
+						}
+						@media (max-width: $tablet){
+							width: 50%;
+							padding: 10px 25px 10px 25px;
+						}
+						@media (max-width: $mobile){
+							width: 80%;
+							margin: 0 auto;
+							padding: 0 0 25px 0;
+							&:last-child{
+								padding-bottom: 0;
+							}
+						}
+						@media (max-width: $mobile){
+							width: 90%;
+						}
+						span{
+							display: block;
+							position: relative;
+							word-break: break-all;
+
+							color: $red1;
+							font-size: 5rem;
+							font-weight: 700;
+							font-style: normal;
+							line-height: normal;
+							font-family: $Poppins;
+							@media (max-width: $desktop_1640){
+								font-size: 4.5rem;
+							}
+							@media (max-width: $mobile){
+								font-size: 4rem;
+							}
+							&:after{
+								content: '';
+								left: 0;
+								right: 0;
+								bottom: -10px;
+								width: 50px;
+								height: 3px;
+								margin: 0 auto;
+								position: absolute;
+								background-color: $red1;
+							}
+							sup{
+								font-size: 3rem;
+								@media (max-width: $desktop_1640){
+									font-size: 2.5rem;
+								}
+							}
+						}
+						label{
+							width: 80%;
+							margin: 0 auto;
+							display: block;
+							padding-top: 25px;
+							position: relative;
+
+							color: $gray1;
+							font-size: 1.8rem;
+							font-weight: 700;
+							font-style: normal;
+							line-height: normal;
+							font-family: $Poppins;
+							@media (max-width: $desktop_1640){
+								font-size: 1.5rem;
+							}
+						}
+					}
+				}
+				.owl-nav{
+					button.owl-prev{
+						top: 35%;
+						left: -50px;
+						@media (max-width: $tablet){
+							top: 40%;
+							left: 0;
+						}
+					}
+					button.owl-next{
+						top: 35%;
+						right: -50px;
+						@media (max-width: $tablet){
+							top: 40%;
+							right: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.sustainability{
+		.content{
+			.c-indicator-percentage2{
+				.s-slider-percentage2{
+					.item{
+						.info{
+							span{
+								color: $green1;
+								&:after{
+									background-color: $green1;
+								}
+							}
+						}
+					}
+					.owl-nav{
+						button.owl-prev{
+							i{
+								color: $green1;
+							}
+						}
+						button.owl-next{
+							i{
+								color: $green1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

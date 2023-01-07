@@ -1,0 +1,173 @@
+{#
+  /**
+  * @file
+  * Theme override for main view template.
+  *
+  * Available variables:
+  * - attributes: Remaining HTML attributes for the element.
+  * - css_name: A css-safe version of the view name.
+  * - css_class: The user-specified classes names, if any.
+  * - header: The optional header.
+  * - footer: The optional footer.
+  * - rows: The results of the view query, if any.
+  * - empty: The content to display if there are no rows.
+  * - pager: The optional pager next/prev links to display.
+  * - exposed: Exposed widget form/info to display.
+  * - feed_icons: Optional feed icons to display.
+  * - more: An optional link to the next page of results.
+  * - title: Title of the view, only used when displaying in the admin preview.
+  * - title_prefix: Additional output populated by modules, intended to be
+  *   displayed in front of the view title.
+  * - title_suffix: Additional output populated by modules, intended to be
+  *   displayed after the view title.
+  * - attachment_before: An optional attachment view to be displayed before the
+  *   view content.
+  * - attachment_after: An optional attachment view to be displayed after the
+  *   view content.
+  * - dom_id: Unique id for every view being printed to give unique class for
+  *   Javascript.
+  *
+  * @see template_preprocess_views_view()
+  */
+  #}
+  {%
+    set classes = [
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+    ]
+    %}
+    {%  set resultados = view.result  %}
+    {{vista_render(0,'blog_nutricion_destacados_prehome','block_1')}}
+
+    <section class="nutrition-grid">
+      <div class="containerGridp">
+        <div class="content">
+          <div class="c-nutrition-grid">
+            <div class="left">
+              <div class="content-sidebar">
+                <div class="row">
+                  {% if resultados | length != 0 %}
+                  {% for key , row in resultados %}
+                  {%  set data = row._entity  %}
+                  {% if data.field_posicion_cuadricula_destac.value == 1 %}
+                  {% set responsiveimagestyle = {
+                    '#theme': 'responsive_image',
+                    '#responsive_image_style_id': '840_380_370_270',
+                    '#uri':        data.field_foto_principal.entity.fileuri,
+                    '#alt':        data.field_foto_principal.alt,
+                    '#title':      data.field_foto_principal.title,
+                    '#attributes': { class: 'lazyload' },
+                  }
+                  %}
+                  {% endif %}
+
+                  {% if data.field_posicion_cuadricula_destac.value == 2 %}
+                  {% set responsiveimagestyle = {
+                    '#theme': 'responsive_image',
+                    '#responsive_image_style_id': '411_380_370_320',
+                    '#uri':        data.field_foto_principal.entity.fileuri,
+                    '#alt':        data.field_foto_principal.alt,
+                    '#title':      data.field_foto_principal.title,
+                    '#attributes': { class: 'lazyload' },
+                  }
+                  %}
+                  {% endif %}
+
+                  {% if data.field_posicion_cuadricula_destac.value in [3,4,5] %}
+                  {% set responsiveimagestyle = {
+                    '#theme': 'responsive_image',
+                    '#responsive_image_style_id': '409_340_370_320',
+                    '#uri':        data.field_foto_principal.entity.fileuri,
+                    '#alt':        data.field_foto_principal.alt,
+                    '#title':      data.field_foto_principal.title,
+                    '#attributes': { class: 'lazyload' },
+                  }
+                  %}
+                  {% endif %}
+
+                  {% if data.field_posicion_cuadricula_destac.value in [6,7,8] %}
+                  {% set responsiveimagestyle = {
+                    '#theme': 'responsive_image',
+                    '#responsive_image_style_id': '396_287_181_183',
+                    '#uri':        data.field_foto_principal.entity.fileuri,
+                    '#alt':        data.field_foto_principal.alt,
+                    '#title':      data.field_foto_principal.title,
+                    '#attributes': { class: 'lazyload' },
+                  }
+                  %}
+                  {% endif %}
+
+                  <article class="article-default">
+                    <div class="img-card">
+                      <a href="{{path('entity.node.canonical', {'node': data.nid.value})}}" data-seo="btn-content">
+                        {{responsiveimagestyle}}
+                        {% if data.field_posicion_cuadricula_destac.value in [1,2,3,4,5] %}
+                        <span class="category">{{data.field_categorias.0.entity.label}}</span>
+                        {% endif %}
+                        {% if data.field_mostrar_etiqueta_nuevo_ is not empty and data.field_mostrar_etiqueta_nuevo_.value == 1%}
+                        <div class="featured"><span>Nuevo</span></div>
+                        {% endif %}
+                        {% if data.field_url_youtube is not empty %}
+                        <div class="video">
+                          <div class="icon-play">
+                            <span><i class="demo-icon icon-icon-play">&#xe80d;</i></span>
+                          </div>
+                          <div class="layer-black"></div>
+                        </div>
+                        {% endif %}
+                      </a>
+                    </div>
+                    <div class="content-card">
+                      {% if data.field_posicion_cuadricula_destac.value in [6,7,8] %}
+                      <span class="category">{{data.field_categorias.0.entity.label}}</span>
+                      {% endif %}
+                      <div class="content-star after">
+                        {% set calificacion = data.field_calificacion is empty ? 0 : data.field_calificacion.value %}
+                        {% for item in 5..1 %}
+                        <input type="radio" {% if calificacion == item  %} checked="checked" {% endif %}value="{{item}}">
+                        <label class="star"></label>
+                        {% endfor %}
+                      </div>
+                      <time datetime="{{data.createdtime|date('Y-m-d')|t}}" class="font-18">{{data.createdtime|date('F')|t}} {{data.createdtime|date('d, Y')}}</time>
+                      {% if data.field_posicion_cuadricula_destac.value in [6,7,8] %}
+                      <div class="text">
+                        <h3><a href="{{path('entity.node.canonical', {'node': data.nid.value})}}" data-seo="btn-content" target="_black">{{data.label}}</a></h3>
+                        <p>{{data.body.value|raw|striptags|slice(0,170)}}...</p>
+                      </div>
+                      {% else %}
+                      <div class="text">
+                        <h3 class="titleHeight"><a href="{{path('entity.node.canonical', {'node': data.nid.value})}}" data-seo="btn-content" target="_black">{{data.label}}</a></h3>
+                      </div>
+                      {% endif %}
+                    </div>
+                  </article>
+                  {% if data.field_posicion_cuadricula_destac.value in [2,5]%}
+                </div>
+                <div class="row">
+                  {% endif %}
+                  {% endfor %}
+                </div>
+                {% endif %}
+              </div>
+            </div>
+            <div class="right">
+              <div class="sidebar">
+                <div class="related-recipes">
+                  <h3>Lo más visto</h3>
+                  {{vista_render(0,'nutricion_blog_populares_vertical','block_1')}}
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {#<div id="modal-tips" class="modal-tips modal fade" role="dialog">
+        <div class="modal-dialog modal-center modal-lg">
+          <div class="modal-content">
+            <i class="demo-icon icon-icon-close1" data-dismiss="modal" aria-label="Close">&#xe81c;</i>
+            <div class="modal-body modal-tips-body">
+            </div>
+          </div>
+        </div>
+      </div>#}

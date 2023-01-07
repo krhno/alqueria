@@ -1,0 +1,38 @@
+<section class="product-banner1 if-img-video">
+	<div class="containerr">
+		<div class="content">
+			<div class="c-header">
+				<h2>{{content['#block_content'].field_titulo_a_mostrar.value}}</h2>
+				{{content.body}}					
+			</div>
+			<div class="c-product-banner1">
+				<div class="banner {% if content['#block_content'].field_url_youtube is not empty %}video{%else%}img{%endif%}">    
+          <div class="img-banner">
+            {{content.field_imagen_frontal}}
+          </div>
+          {% if content['#block_content'].field_url_youtube is not empty %}              
+          {% if 'https://youtu.be/' in content['#block_content'].field_url_youtube.value %}
+          {% set codigo=content['#block_content'].field_url_youtube.value|replace({'https://youtu.be/':''}) %}
+          {% elseif 'https://www.youtube.com/watch?v=' in content['#block_content'].field_url_youtube.value %}
+          {% set codigo=content['#block_content'].field_url_youtube.value|replace({'https://www.youtube.com/watch?v=':''}) %}
+          {% endif %}
+          <div class="video-banner" data-src="https://www.youtube.com/embed/{{codigo}}">
+            <iframe width="100%" height="100%" class="iframe-yt" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="icon-play">
+            <span>
+              <i class="demo-icon icon-icon-play">&#xe80d;</i>
+            </span>
+          </div>                    
+          {% endif %}
+          <div class="layer-black"></div>
+        </div>  
+			</div>
+			{% if content['#block_content'].field_enlace is not empty %}
+			<div class="c-bottom">
+			<a href="{{ content['#block_content'].field_enlace.0.url }}" target="{{content['#block_content'].field_enlace.0.url.external ? '_blank' : '_self'}}" class="btn-default back-green" data-seo="btn-content">{{ content['#block_content'].field_enlace.title }}</a>				
+			</div>
+			{% endif %}
+		</div>
+	</div>
+</section>

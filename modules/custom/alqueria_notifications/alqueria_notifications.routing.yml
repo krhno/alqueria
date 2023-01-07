@@ -1,0 +1,21 @@
+alqueria_notifications.configuracion_notificaciones:
+  path: '/admin/alqueria_notifications/configuracion'
+  defaults:
+    _form: '\Drupal\alqueria_notifications\Form\NotificationsForm'
+    _title: 'Configuración básica'
+  requirements:
+    _permission: 'administer site configuration'
+alqueria_notifications.desactivar_notificacioness:
+  path: '/desactivar/notificaciones'
+  defaults:
+    _controller: '\Drupal\alqueria_notifications\Controller\AlqueriaNotificationsController::desactivarNotificacionesVisibles'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+alqueria_notifications.listar_publicidad:
+  path: '/admin/alqueria_notifications/listado'
+  defaults:
+    _controller: '\Drupal\alqueria_notifications\Controller\AlqueriaNotificationsController::listarPublicidad'
+    _title: ''
+  requirements:
+    _permission: 'administer site configuration'

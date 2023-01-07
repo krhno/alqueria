@@ -1,0 +1,56 @@
+alqueria_users.registro_usuarios:
+  path: '/registrar/usuario'
+  defaults:
+    _controller: '\Drupal\alqueria_users\Controller\AlqueriaUsersController::registrarUsuario'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+alqueria_users.olvidar_contrasena:
+  path: '/olvidar/contrasena'
+  defaults:
+    _controller: '\Drupal\alqueria_users\Controller\AlqueriaUsersController::olvidarContrasena'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+alqueria_users.iniciar_sesion:
+  path: '/iniciar/sesion'
+  defaults:
+    _controller: '\Drupal\alqueria_users\Controller\AlqueriaUsersController::iniciarSesion'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+alqueria_users.configuracion_basica:
+  path: '/admin/alqueria_users/configuracion'
+  defaults:
+    _form: '\Drupal\alqueria_users\Form\UsersForm'
+    _title: 'Configuración básica'
+  requirements:
+    _permission: 'administer site configuration'
+alqueria_users.configuracion_subir_receta:
+  path: '/admin/alqueria_users/sube-tu-receta'
+  defaults:
+    _form: '\Drupal\alqueria_users\Form\EditForm'
+    _title: 'Configuración sube tu receta'
+  requirements:
+    _permission: 'administer site configuration'
+alqueria_users.editar_perfil:
+  path: '/editar/perfil'
+  defaults:
+    _controller: '\Drupal\alqueria_users\Controller\AlqueriaUsersController::editarPerfil'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+alqueria_users.eliminar_cuenta:
+  path: '/eliminar/cuenta'
+  defaults:
+    _controller: '\Drupal\alqueria_users\Controller\AlqueriaUsersController::eliminarCuenta'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+alqueria_users.eliminar_datos_facebook:
+  path: '/eliminar/cuenta'
+  defaults:
+    _controller: '\Drupal\alqueria_users\Controller\AlqueriaUsersController::eliminarDatosFacebook'
+    _title: ''
+  requirements:
+    _permission: 'access content'

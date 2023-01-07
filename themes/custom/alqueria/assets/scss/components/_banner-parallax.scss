@@ -1,0 +1,90 @@
+/*banner-parallax*/
+.banner-parallax{
+	.content{
+		.c-banner-parallax{
+			height: 200px;
+			position: relative;
+			background-size: cover;
+	        background-position: center;
+	        background-repeat: no-repeat;
+	        background-attachment: fixed;
+			@media (max-width: $desktop_1640){
+				height: 160px;
+			}
+			@media (max-width: $tablet){
+				height: 140px;
+			}
+			.info{
+				width: 60%;
+				height: 100%;
+				margin: 0 auto;
+
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				@media (max-width: $desktop_1024){
+					width: 90%;
+					height: 100%;
+					margin: 0 auto;
+				}
+				.img{
+					width: 20%;
+					@media (max-width: $desktop_1024){
+						width: 20%;
+					}
+				}
+				.text{
+					text-align: center;
+					h1, h2{
+						color: $white;
+						font-size: 3rem;
+						font-weight: 700;
+						font-style: normal;
+						font-family: $Poppins;
+						@media (max-width: $desktop_1640){
+							font-size: 2.7rem;
+						}
+						@media (max-width: $tablet){
+							font-size: 2.3rem;
+						}
+						@media (max-width: $mobile){
+							font-size: 2rem;
+						}
+					}
+					p{
+						padding: 10px 0;
+
+						color: $white;
+						font-size: 1.2rem;
+						font-weight: 700;
+						font-style: normal;
+						font-family: $Poppins;
+						@media (max-width: $desktop_1640){
+							font-size: 1.1rem;
+						}
+					}
+					.btn-link{
+						color: $white;
+					}
+				}
+			}
+		}
+	}
+	&.max-height{
+		.content{
+			.c-banner-parallax{
+				height: 240px;
+				@media (max-width: $desktop_1640){
+					height: 200px;
+				}
+				@media (max-width: $tablet){
+					height: 200px;
+				}
+				@media (max-width: $mobile){
+					height: 250px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,68 @@
+<section class="editorial-banner sustainability if-img-video">
+  <div class="containerGrid">
+    <div class="content">
+      <div class="c-editorial-banner">
+        <div class="title">
+          <div class="column-left">
+            {% if node.field_imagen_lanzamiento is not empty %}
+            <div class="img">
+              <picture>
+                {{content.field_imagen_lanzamiento}}
+              </picture>
+            </div>
+            {% endif %}
+            <div class="text">
+              <h1>{{node.label}}</h1>
+              <span>{{node.field_titulo_a_mostrar.value}}</span>
+            </div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="info-calification">
+            <ul class="tags-ingredients no-dics">
+              {% for item in node.field_categorias_sostenibilidad %}
+                <li>{{item.entity.label}}</li>            
+            {% endfor %}                                      
+            </ul>            
+          </div>
+         <div class="banner {% if node.field_url_youtube is not empty %}video{%else%}img{%endif%}">    
+          <div class="img-banner">
+            {{content.field_foto_principal}}
+          </div>      
+          {% if node.field_url_youtube is not empty %}              
+            {% if 'https://youtu.be/' in node.field_url_youtube.value %}
+            {% set codigo=node.field_url_youtube.value|replace({'https://youtu.be/':''}) %}
+            {% elseif 'https://www.youtube.com/watch?v=' in node.field_url_youtube.value %}
+            {% set codigo=node.field_url_youtube.value|replace({'https://www.youtube.com/watch?v=':''}) %}
+            {% endif %}
+          <div class="video-banner" data-src="https://www.youtube.com/embed/{{codigo}}">
+            <iframe width="100%" height="100%" class="iframe-yt" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="icon-play">
+            <span>
+              <i class="demo-icon icon-icon-play">&#xe80d;</i>
+            </span>
+          </div>                    
+          {% endif %}
+          <div class="layer layer-black"></div>
+          
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if node.body is not empty %}
+<section class="full-text">
+  <div class="containerGridp">
+    <div class="content">
+      <div class="c-full-text">
+        {{node.body.value|raw}}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{{content.field_modulos_sostenibilidad}}

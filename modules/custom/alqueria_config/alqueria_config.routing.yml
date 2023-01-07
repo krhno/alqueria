@@ -1,0 +1,77 @@
+alqueria_config.configuracion_basica:
+  path: '/admin/alqueria_config/configuracion'
+  defaults:
+    _form: '\Drupal\alqueria_config\Form\ConfigForm'
+    _title: 'Configuración básica'
+  requirements:
+    _permission: 'administer site configuration'
+alqueria_config.listado_recetas:
+  path: '/obtener/listado/recetas'
+  defaults:
+    _controller: '\Drupal\alqueria_config\Controller\AlqueriaConfigController::obtenerListadoRecetas'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+alqueria_config.vista_paginada:
+  path: '/obtener/vista/paginada'
+  defaults:
+    _controller: '\Drupal\alqueria_config\Controller\AlqueriaConfigController::obtenerVistaPaginada'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+alqueria_config.contenido_menu:
+  path: '/obtener/contenido/menu'
+  defaults:
+    _controller: '\Drupal\alqueria_config\Controller\AlqueriaConfigController::obtenerContenidoMenu'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+alqueria_config.ciudades:
+  path: '/obtener/ciudades'
+  defaults:
+    _controller: '\Drupal\alqueria_config\Controller\AlqueriaConfigController::obtenerCiudades'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+alqueria_config.insertar_comentario:
+  path: '/insertar/comentario'
+  defaults:
+    _controller: '\Drupal\alqueria_config\Controller\AlqueriaConfigController::insertarComentario'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+alqueria_config.administrar_favoritos:
+  path: '/administrar/favoritos'
+  defaults:
+    _controller: '\Drupal\alqueria_config\Controller\AlqueriaConfigController::administrarFavoritos'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+alqueria_config.listado_noticias:
+  path: '/obtener/listado/noticias'
+  defaults:
+    _controller: '\Drupal\alqueria_config\Controller\AlqueriaConfigController::obtenerListadoNoticias'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+alqueria_config.listado_comunicados:
+  path: '/obtener/listado/comunicados'
+  defaults:
+    _controller: '\Drupal\alqueria_config\Controller\AlqueriaConfigController::obtenerListadoComunicados'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+alqueria_config.listado_tags:
+  path: '/obtener/listado/tags'
+  defaults:
+    _controller: '\Drupal\alqueria_config\Controller\AlqueriaConfigController::obtenerListadoTags'
+    _title: ''
+  requirements:
+    _permission: 'access content'
+alqueria_config.listado_nutricion:
+  path: '/obtener/listado/nutricion'
+  defaults:
+    _controller: '\Drupal\alqueria_config\Controller\AlqueriaConfigController::obtenerListadoNutricion'
+    _title: ''
+  requirements:
+    _permission: 'access content'

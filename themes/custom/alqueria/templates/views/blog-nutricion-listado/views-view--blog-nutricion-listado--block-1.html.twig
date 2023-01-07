@@ -1,0 +1,26 @@
+{%
+	set classes = [
+	dom_id ? 'js-view-dom-id-' ~ dom_id,
+	]
+	%}	
+		<section{{ attributes.addClass(classes) }}>
+			<div class="containerGridp">
+				<div class="content">
+					<div class="c-results">
+						<div class="result-items">
+							<div class="result-order">
+								{{exposed}}
+							</div>
+						</div>
+					</div>
+					<div class="c-nutrition-list">
+						<div class="list-articles">
+							{{rows}}
+						</div>
+					</div>
+					{% if pager %}
+						{{pager}}
+					{% endif %}
+				</div>
+			</div>
+		</section>

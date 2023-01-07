@@ -1,0 +1,10 @@
+access cdi_pdf overview:
+  title: 'Access cdi_pdf overview page'
+delete cdi_pdf:
+  title: Delete cdi_pdf
+create cdi_pdf:
+  title: Create cdi_pdf
+view cdi_pdf:
+  title: View cdi_pdf
+edit cdi_pdf:
+  title: Edit cdi_pdf

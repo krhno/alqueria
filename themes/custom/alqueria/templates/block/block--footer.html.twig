@@ -1,0 +1,111 @@
+<div class="footerr">
+	<div class="btn-scroll-top">
+		<i class="demo-icon icon-icon-arrow-up">&#xe80b;</i>
+	</div>
+	<div class="newsletter">
+		<div class="div-newsletter containerGridp">
+			{{ webform_render('newsletter') }}
+		</div>
+	</div>
+	<div class="main-footer">
+		<div class="top-footer">
+			<div class="div-top-footer containerGrid">
+				<div class="logo">
+					<a href="/" data-seo="btn-footer">
+						<picture>
+							<img data-src="/{{directory}}/assets/img/footer/logo-alqueria.png" alt="Logo Alqueria"
+								title="Logo Alqueria" class="lazyload">
+						</picture>
+					</a>
+				</div>
+				<div class="content">
+					<div class="column-left">
+						<ul class="no-dics">
+							<li>
+								<a href="#footer-1" class="icon-icon-arrow" data-seo="btn-footer">
+									{{get_config_data('config.settings','servicio_label')}}<i
+										class="demo-icon icon-icon-arrow-down">&#xe809;</i>
+								</a>
+								<div id="footer-1" class="accordion">
+									<div class="dropdown">
+										<div class="item-dropdown">
+											<span>{{get_config_data('config.settings','linea_nacional_label')}}</span>
+											<a href="tel:{{get_config_data('config.settings','linea_nacional')}}"
+												data-seo="btn-footer">
+												<i
+													class="demo-icon icon-icon-phone1">&#xe806;</i>{{get_config_data('config.settings','linea_nacional')}}
+											</a>
+										</div>
+										<div class="item-dropdown">
+											<span>{{get_config_data('config.settings','linea_bogota_label')}}</span>
+											<a href="tel:031{{get_config_data('config.settings','linea_bogota')}}"
+												data-seo="btn-footer">
+												<i
+													class="demo-icon icon-icon-phone1">&#xe806;</i>{{get_config_data('config.settings','linea_bogota')}}
+											</a>
+										</div>
+										<div class="item-dropdown">
+											<span>{{get_config_data('config.settings','mail_label')}}</span>
+											<a href="mailto:{{get_config_data('config.settings','mail_footer')}}"
+												data-seo="btn-footer">
+												<i
+													class="demo-icon icon-icon-email">&#xe807;</i>{{get_config_data('config.settings','mail_footer')}}
+											</a>
+										</div>
+										<div class="item-dropdown">
+											<span>{{get_config_data('config.settings','linea_etica_label')}}</span>
+											<a href="tel:{{get_config_data('config.settings','linea_etica')}}"
+												data-seo="btn-footer">
+												<i
+													class="demo-icon icon-icon-phone1">&#xe806;</i>{{get_config_data('config.settings','linea_etica')}}
+											</a>
+										</div>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="column-right">
+						<ul class="no-dics">
+							{{menu_twig('footer')}}
+						</ul>
+					</div>
+				</div>
+				<div class="socials">
+					<div class="social-site">
+						<span>{{get_config_data('config.settings','siguenos_label')}}</span>
+						<ul class="no-dics">
+							{{menu_twig('footer-siguenos')}}
+						</ul>
+					</div>
+					<div class="social-recipes">
+						<span>{{get_config_data('config.settings','siguenos_label_recetas')}}</span>
+						<ul class="no-dics">
+							{{menu_twig('footer-siguenos-recetas')}}
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bottom-footer">
+			<div class="div-bottom-footer containerGridp">
+				<ul class="no-dics">
+					{{menu_twig('footer-documentacion')}}
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="legal-footer">
+		<div class="div-legal-footer containerGridp">
+			<div class="column-left">
+				{{get_config_data('config.settings','derechos_reservados')}}
+			</div>
+			<div class="column-right">
+				<span>{{get_config_data('config.settings','certificados')}}</span>
+				<ul class="no-dics">
+					{{menu_twig('footer-certificados-de-calidad')}}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

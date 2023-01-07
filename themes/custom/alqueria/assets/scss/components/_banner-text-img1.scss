@@ -1,0 +1,66 @@
+/*banner-text-img1*/
+.banner-text-img1{
+	.content{
+		.c-banner-text-img1{
+			display: flex;
+			flex-direction: row;
+			@media (max-width: $tablet){
+				flex-direction: column;
+			}
+			.left{
+				width: 30%;
+				@media (max-width: $desktop_1024){
+					width: 35%;
+				}
+				@media (max-width: $tablet){
+					width: 100%;
+				}
+			}
+			.right{
+				width: 70%;
+				padding-left: 3%;
+				padding-right: 7%;
+				background-color: $yellow2;
+
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				@media (max-width: $desktop_1024){
+					width: 65%;
+				}
+				@media (max-width: $tablet){
+					width: 100%;
+					padding: 15px 7% 25px 7%;
+					
+					flex-direction: column;
+				}
+				.column-left{
+					width: 60%;
+					padding-right: 3%;
+					@media (max-width: $desktop_1024){
+						width: 50%;
+					}
+					@media (max-width: $tablet){
+						width: 100%;
+						padding-right: 0;
+					}
+					p{
+						padding-top: 10px;
+					}
+				}
+				.column-right{
+					width: 40%;
+					text-align: right;
+					@media (max-width: $desktop_1024){
+						width: 50%;
+					}
+					@media (max-width: $tablet){
+						width: 100%;
+						padding-top: 20px;
+    					text-align: center;
+					}
+				}
+			}
+		}
+	}
+}

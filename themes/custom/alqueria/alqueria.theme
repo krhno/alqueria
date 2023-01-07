@@ -1,0 +1,137 @@
+<?php
+function alqueria_preprocess_user(&$variables) {
+  $seccion = \Drupal::request()->query->get('s');
+  $variables['seccion'] = "";
+  if (!is_null(\Drupal::request()->query->get('s')) || \Drupal::request()->query->get('s') != "") {
+    $variables['seccion'] = \Drupal::request()->query->get('s');
+  }
+}
+
+function alqueria_preprocess(&$variables) {
+  $variables['logo'] = file_url_transform_relative(file_create_url(theme_get_setting('logo.url')));
+  $variables['language'] = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  $variables['#cache']['contexts'][] = 'session';
+}
+
+function alqueria_preprocess_html(&$variables) {
+
+  $node = \Drupal::service('current_route_match')->getParameter('node');
+  $aliasSiteMapa = \Drupal\Core\Url::fromRoute('<current>')->toString();
+  $tax = \Drupal::service('current_route_match')->getParameter('taxonomy_term');
+  if (!is_null($node) && $node->id() == 137) {
+    $variables['attributes']['class'][] = "page404";
+  } elseif (!is_null($node) && (in_array($node->bundle(), array("receta", "producto", "terminos_y_condiciones", 'page', 'objetivos_desarrollo_sostenible', 'interna_conocenos', 'informes_sostenibilidad', 'infografias_sostenibilidad'))) && ($node->id() != 164) && ($aliasSiteMapa != "/mapa-del-sitio")) {
+    $variables['attributes']['class'][] = "back-body";
+  } elseif (!is_null($tax) && $tax->getVocabularyId() == 'categoria_producto') {
+    $variables['attributes']['class'][] = "back-body";
+  }
+  $variables['#cache']['contexts'][] = 'url';
+}
+
+
+function alqueria_theme_suggestions_block_alter(&$suggestions, $variables) {
+  $content = $variables['elements']['content'];
+  if (isset($content['#block_content']) && $content['#block_content'] instanceof \Drupal\block_content\BlockContentInterface) {
+    $suggestions[] = 'block__' . $content['#block_content']->bundle();
+  }
+}
+
+function alqueria_theme_preprocess_block(&$variables) {
+  $is_front =  \Drupal::service('path.matcher')->isFrontPage();
+  $variables['frontpage'] = 0;
+  if ($is_front) {
+    $variables['frontpage'] = 1;
+  }
+  $variables['#cache']['contexts'][] = 'url';
+}
+
+function alqueria_preprocess_comment(&$variables) {
+  $comment = $variables['elements']['#comment'];
+  $variables = cargarInfoUsuario($comment->getOwnerId(), $variables);
+}
+
+function alqueria_preprocess_node(&$variables) {
+  if ($variables['node']->getType() == 'receta' || $variables['node']->getType() == 'noticia' || $variables['node']->getType() == 'programa_sostenibilidad') {
+    $variables = cargarInfoUsuario($variables['node']->getOwnerId(), $variables);
+  }
+  if ($variables['node']->id() == 164) {
+    $variables['query'] = "";
+    $variables['query_limit'] = "";
+    if (isset($_GET['q']) && $_GET['q']) {
+      $variables['query'] = $_GET['q'];
+    }
+    if (isset($_GET['l']) && $_GET['l']) {
+      $variables['query_limit'] = $_GET['l'];
+    }
+  }
+}
+
+function alqueria_preprocess_menu(&$variables) {
+  if ($variables['theme_hook_original'] == 'menu__main') {
+    if (\Drupal::currentUser()->id() != 0) {
+      $variables = cargarInfoUsuario(\Drupal::currentUser()->id(), $variables);
+    }
+  }
+}
+
+function cargarInfoUsuario($uid, $variables) {
+  $userInfo = \Drupal::entityTypeManager()->getStorage('user')->load($uid);
+  $variables['nombreUsuario'] = $userInfo->field_nombres->value . ' ' . $userInfo->field_apellidos->value;
+  $variables['rutaUsuario'] = \Drupal\Core\Url::fromRoute('user.page')->toString() . '/' . $uid;
+  $variables['fotoUsuario'] = "/themes/custom/alqueria/assets/img/user/profile/person/img-desktop1.png";
+  if (!$userInfo->user_picture->isEmpty()) {
+    $style = \Drupal::entityTypeManager()->getStorage('image_style')->load('155x155');
+    $url = $style->buildUrl($userInfo->user_picture->entity->getFileUri());
+    $variables['fotoUsuario'] = file_url_transform_relative($url);
+  }
+  return $variables;
+}
+
+
+function alqueria_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_id == 'node_receta_form') {
+    $form['#attributes']['novalidate'] = 'novalidate';
+  }
+  $webforms = [
+    'webform_submission_c_paragraph_1114_add_form',
+    'webform_submission_formato_2_paragraph_1113_add_form',
+    'webform_submission_formato_1_paragraph_1112_add_form'
+  ];
+  if (in_array($form_id, $webforms)) {
+    $form['#attributes']['class'][] = 'default-form';
+  }
+}
+
+function alqueria_theme_suggestions_alter(array &$suggestions, array $variables, $hook) {
+  if ($hook == 'node_edit_form') {
+    $current_path = \Drupal::service('path.current')->getPath();
+    $path_args = explode('/', $current_path);
+    $content_type = $path_args[3];
+    if ($content_type == "receta") {
+      $suggestions[] = 'node_edit_form__' . $content_type;
+    }
+  } elseif ($hook == "taxonomy_term") {
+    $current_path = \Drupal::service('path.current')->getPath();
+    $path_args = explode('/', $current_path);
+    $tax = \Drupal::entityManager()->getStorage('taxonomy_term')->loadByProperties(array('tid' => $path_args[3]));
+    $tax = reset($tax);
+    $types = ['ingredientes_destacados', 'categorias_nutricion', 'categorias_sostenibilidad'];
+    if (in_array($tax->bundle(), $types)) {
+      $suggestions[] = 'taxonomy_term__tags';
+    }
+  }
+}
+
+function alqueria_preprocess_block(&$variables) {
+  if ($variables['attributes']['id'] == "block-modalsuccessful2") {
+    $current_path = \Drupal::service('path.current')->getPath();
+    $path_args = explode('/', $current_path);
+    if ($path_args[2] == "138") {
+      $variables['registro'] = true;
+    } else {
+      $variables['registro'] = false;
+    }
+  }
+}
+
+

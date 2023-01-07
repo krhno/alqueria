@@ -1,0 +1,35 @@
+<section{{ attributes.addClass(classes) }}> 
+	<div class="containerGridp">
+		<div class="content">
+			<div class="c-header">
+				<h1>{{get_config_data('config.settings','titulo_comunicados_home')}}</h1>
+			</div>
+			<div class="c-results">
+				<div class="result-items">
+					<div class="result-order">
+						<select id="order-releases" name="order-releases">
+							<option value="block_1">Ordenar por</option>
+	              			<option value="block_1">Más recientes</option>
+	              			<option value="block_2">Título (A-Z)</option>
+	              			<option value="block_3">Título (Z-A)</option>
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="c-releases-list">
+				<div class="list-articles">
+	          		{{rows}}  
+	        	</div>
+	      	</div>
+	      	{% set total=view.total_rows/9 %}
+	      	{% set total=total|round(0,'ceil')%}
+	      	{% if total >= 1 %}	        	
+	        	<div class="c-bottom">
+					<span class="btn-link btn-ajax-releases" data-page="0" max-pager="{{total-1}}" data-seo="btn-content">
+						Cargar más
+					</span>
+				</div>
+	      	{% endif %}      
+	    </div>
+  	</div>
+</section>

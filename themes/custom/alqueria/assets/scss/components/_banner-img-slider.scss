@@ -1,0 +1,30 @@
+/*banner-img-slider*/
+.banner-img-slider{
+	.content{
+		.c-banner-img-slider{
+			padding-top: 35px;
+			.div-img-slider{
+				padding: 0 7%;
+				display: block;
+				@media (max-width: $mobile){
+					display: none;
+				}
+			}
+			.s-slider-imgSlider{
+				display: none;
+				@media (max-width: $mobile){
+					display: block;
+				}
+			}
+		}
+	}
+	&.sustainability{
+		.content{
+			.c-header{
+				h2{
+					color: $green1;
+				}
+			}
+		}
+	}
+}

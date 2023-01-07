@@ -1,0 +1,425 @@
+/*infographic-grid1*/
+.infographic-grid1{
+    .content{
+    	margin: 0 7%;
+        @media (max-width: $desktop_1024){
+            margin: 0;
+        }
+        .c-infographic-grid1{
+        	.list-default{
+        		.div-content{
+        			&:nth-child(odd){
+        				.separator{
+        					.line{
+					    		&:before{
+							    	top: 0;
+						    		left: 0;
+					    		}
+					    		&:after{
+					    			right: 0;
+							    	bottom: 0;
+					    		}
+					    		.dot-left-info{
+					    			top: 30px;
+					    			left: -15px;
+					    			
+					    		}
+					    		.dot-right-info{
+					    			right: -15px;
+					    			bottom: 30px;
+					    		}
+					    	}
+        				}
+        				.item{
+        					flex-direction: row-reverse;
+        					@media (max-width: $tablet){
+        						flex-direction: column;
+        					}
+		           			.number-info{
+								top: -60px;
+								left: 20%;
+								@media (max-width: $tablet){
+									left: 7%;
+								}
+		           			}
+        				}
+	           		}
+	           		&:nth-child(even){
+	           			.separator{
+        					.line{
+					    		&:before{
+						    		left: 0;
+						    		bottom: 0;
+					    		}
+					    		&:after{
+					    			top: 0;
+						    		right: 0;
+					    		}
+					    		.dot-left-info{
+					    			left: -15px;
+					    			bottom: 30px;
+					    		}
+					    		.dot-right-info{
+					    			top: 30px;
+					    			right: -15px;
+					    		}
+					    	}
+        				}
+	           			.item{
+	           				flex-direction: row;
+	           				@media (max-width: $tablet){
+        						flex-direction: column;
+        					}
+		           			.number-info{
+		           				top: -60px;
+								right: 20%;
+								@media (max-width: $tablet){
+									right: 7%;
+								}
+	           				}
+	           			}
+	           		}
+        			.separator{
+		           		position: relative;
+
+		           		display: flex;
+					    align-items: center;
+					    justify-content: center;
+	    				.line{
+	    					width: 52%;
+	    					height: 1px;
+	    					display: block;
+						    position: relative;
+						    margin: 75px 0 135px 0;
+						    background-color: $red1;
+						    @media (max-width: $tablet){
+						    	width: 74%;
+						    }
+						    @media (max-width: $mobile){
+						    	width: 62%;
+						    }
+						    &:before{
+						    	content: '';
+							    width: 1px;
+							    height: 30px;
+							    position: absolute;
+							    background-color: $red1;
+						    }
+						    &:after{
+						    	content: '';
+							    width: 1px;
+							    height: 30px;
+							    position: absolute;
+							    background-color: $red1;
+						    }
+	    				}
+		           	}
+		           	.item{
+	           			position: relative;
+		           		box-shadow: 0 0 10px 0 $shadow;
+		           		background-color: $blue1;
+
+		           		display: flex;
+		           		align-items: center;
+						.img{
+							width: 50%;
+							@media (max-width: $tablet){
+								width: 100%;
+							}
+						}
+		           		.text{
+		           			width: 50%;
+		           			padding: 30px 25px;
+		           			@media (max-width: $tablet){
+								width: 100%;
+							}
+		           			h3, h4, h5, h6{
+		                        color: $gray1;
+		                    }
+		                    .logo{
+		                    	width: 20%;
+		                    	margin-bottom: 15px;
+		                    	@media (max-width: $tablet){
+		                    		width: 30%;
+		                    	}
+		                    }
+		           		}
+		           	}
+		        }
+        	}
+        }
+    }
+    &.economy{
+		.content{
+	        .c-header{
+	        	width: 40%;
+	        	margin: 0;
+	        	text-align: left;
+	        	@media (max-width: $mobile){
+	        		width: 100%;
+	        		text-align: center;
+	        	}
+	        }
+	        .c-infographic-grid1{
+	        	.list-featured{
+	        		margin-top: 35px;
+	        		position: relative;
+
+	        		display: flex;
+	        		flex-direction: row;
+	        		justify-content: flex-end;
+	        		@media (max-width: $mobile){
+	        			margin-top: 80px;
+	        		}
+	        		.separator{
+	        			@media (max-width: $mobile){
+	        				display: none;
+	        			}
+	    				.line{
+						    width: 21%;
+						    height: 1px;
+						    top: 0;
+						    left: 20%;
+						    bottom: 0;
+						    margin: auto;
+						    position: absolute;
+						    background-color: $red1;
+						    @media (max-width: $tablet){
+						    	left: 15%;
+						    }
+						    &:before{
+						    	content: '';
+						    	left: 0;
+							    bottom: 0;
+							    width: 1px;
+							    height: 120px;
+							    position: absolute;
+							    background-color: $red1;
+						    }
+						    .dot-left-info{
+						    	left: -15px;
+						    	bottom: 120px;
+		    				}
+		    				.dot-right-info{
+						    	top: -15px;
+	    						right: 0;
+		    				}
+	    				}
+		           	}
+					.item{
+						width: 50%;
+						position: relative;
+		           		box-shadow: 0 0 10px 0 $shadow;
+		           		background-color: $blue1;
+
+		           		display: flex;
+		           		flex-direction: row;
+		           		align-items: center;
+		           		@media (max-width: $mobile){
+		           			width: 100%;
+		           		}
+		           		.number-info{
+		           			top: 0;
+		           			left: -65px;
+		           			bottom: 0;
+		           			margin: auto;
+							@media (max-width: $mobile){
+								top: -60px;
+								left: 0;
+								right: 0;
+								margin: 0 auto;
+							}
+						}
+		           		.text{
+		           			padding: 100px 40px;
+		           			@media (max-width: $tablet){
+		           				padding: 80px 40px;
+		           			}
+		           			@media (max-width: $mobile){
+		           				padding: 40px 25px 30px 25px;
+		           			}
+		           			h3, h4, h5, h6{
+		                        color: $gray1;
+		                    }
+		                    .logo{
+		                    	width: 25%;
+		                    	margin-bottom: 15px;
+		                    	@media (max-width: $tablet){
+		                    		width: 30%;
+		                    	}
+		                    }
+		           		}
+		           	}
+				}
+        	}
+	    }
+    }
+    &.livestock{
+    	.content{
+	    	.c-infographic-grid1{
+		        .list-featured{
+		        	padding-top: 100px;
+		        	.item{
+		        		position: relative;
+		        		box-shadow: 0 0 10px 0 $shadow;
+		        		background-color: $blue1;
+
+		        		display: flex;
+		        		align-items: center;
+		        		flex-direction: row-reverse;
+		        		@media (max-width: $tablet){
+		        			flex-direction: column;
+		        		}
+		        		.number-info{
+		           			top: -60px;
+		           			left: 20%;
+							@media (max-width: $tablet){
+								top: -60px;
+								left: 0;
+								right: 0;
+								margin: 0 auto;
+							}
+						}
+		        		.img{
+		        			width: 50%;
+		        			@media (max-width: $tablet){
+		        				width: 100%;
+		        			}
+		        		}
+		        		.text{
+		        			width: 50%;
+		        			padding: 30px 25px;
+		        			@media (max-width: $tablet){
+		        				width: 100%;
+		        			}
+		        			h3, h4, h5, h6{
+		                        color: $gray1;
+		                    }
+		                    .logo{
+		                    	width: 20%;
+		                    	margin-bottom: 15px;
+		                    	@media (max-width: $tablet){
+		                    		width: 30%;
+		                    	}
+		                    }
+		        		}
+		        	}
+	        	}
+	        }
+	    }
+    }
+    &.nutrition{
+		.content{
+	        .c-header{
+	        	width: 40%;
+	        	margin: 0;
+	        	text-align: left;
+	        	@media (max-width: $mobile){
+	        		width: 100%;
+	        		text-align: center;
+	        	}
+	        }
+	        .c-infographic-grid1{
+	        	.list-featured{
+	        		margin-top: 35px;
+	        		position: relative;
+
+	        		display: flex;
+	        		flex-direction: row;
+	        		justify-content: flex-end;
+	        		@media (max-width: $mobile){
+	        			margin-top: 80px;
+	        		}
+	        		.separator{
+	        			@media (max-width: $mobile){
+	        				display: none;
+	        			}
+	    				.line{
+						    width: 21%;
+						    height: 1px;
+						    top: 0;
+						    left: 20%;
+						    bottom: 0;
+						    margin: auto;
+						    position: absolute;
+						    background-color: $red1;
+						    @media (max-width: $tablet){
+						    	left: 15%;
+						    }
+						    &:before{
+						    	content: '';
+						    	left: 0;
+							    bottom: 0;
+							    width: 1px;
+							    height: 200px;
+							    position: absolute;
+							    background-color: $red1;
+						    }
+						    .dot-left-info{
+						    	left: -15px;
+						    	bottom: 200px;
+		    				}
+		    				.dot-right-info{
+						    	top: -15px;
+	    						right: 0;
+		    				}
+	    				}
+		           	}
+					.item{
+						width: 50%;
+						position: relative;
+		           		box-shadow: 0 0 10px 0 $shadow;
+		           		background-color: $blue1;
+
+		           		display: flex;
+		           		flex-direction: row;
+		           		align-items: center;
+		           		@media (max-width: $mobile){
+		           			width: 100%;
+		           		}
+		           		.number-info{
+		           			top: 0;
+		           			left: -65px;
+		           			bottom: 0;
+		           			margin: auto;
+							@media (max-width: $mobile){
+								top: -60px;
+								left: 0;
+								right: 0;
+								margin: 0 auto;
+							}
+						}
+		           		.text{
+		           			padding: 60px 40px;
+		           			@media (max-width: $tablet){
+		           				padding: 30px 35px;
+		           			}
+		           			@media (max-width: $mobile){
+		           				padding: 40px 25px 30px 25px;
+		           			}
+		           			h3, h4, h5, h6{
+		                        color: $gray1;
+		                    }
+		                    .logo{
+		                    	width: 25%;
+		                    	margin-bottom: 15px;
+		                    	@media (max-width: $tablet){
+		                    		width: 30%;
+		                    	}
+		                    }
+		           		}
+		           	}
+				}
+        	}
+	    }
+    }
+    &.sustainability{
+		.content{
+			.c-header{
+				h2{
+					color: $green1;
+				}
+			}
+		}
+	}
+}

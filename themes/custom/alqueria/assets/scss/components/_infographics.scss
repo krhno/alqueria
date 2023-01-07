@@ -1,0 +1,2760 @@
+/*infographics*/
+section.infografias-deslactosados{
+    position: relative;
+    z-index: 9;
+    display: block;
+}
+section.infografias-deslactosados .header-receta{
+    background-color: #0045af;
+    width: 100%;
+    margin-top: 70px;
+}
+section.infografias-deslactosados .header-receta .content{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    font-size: 0;
+}
+section.infografias-deslactosados .header-receta .content .title{
+    width: 60%;
+    display: inline-block;
+    vertical-align: middle;
+}
+section.infografias-deslactosados .header-receta .content .title h1{
+    color: #fff;
+    font-size: 38px;
+    line-height: 38px;
+    margin: 0;
+}
+section.infografias-deslactosados .header-receta .content .title p#breadcrumbs{
+    font-size: 15px;
+    color: #fff;
+}
+section.infografias-deslactosados .header-receta .content .title p#breadcrumbs a{
+    color: #fff;
+}
+section.infografias-deslactosados .header-receta .content .title p.bread{
+    font-size: 15px;
+    color: #fff;
+    font-weight: 600;
+}
+section.infografias-deslactosados .header-receta .btn-receta{
+    width: 40%;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: right;
+}
+section.infografias-deslactosados .header-receta .btn-receta a{
+    font-size: 14px;
+    color: #0045af;
+    background-color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 20px;
+}
+section.infografias-deslactosados .main-infografia{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+    position: relative;
+}
+body.no-infografia section.infografias-deslactosados .main-infografia{
+    display: none;
+}
+section.infografias-deslactosados .main-infografia .content img{
+    width: 100%;
+}
+section.infografias-deslactosados article.articulo_completo{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    display: none;
+}
+body.no-infografia section.infografias-deslactosados article.articulo_completo{
+    display: block;
+    margin-top: 30px;
+}
+section.infografias-deslactosados article.articulo_completo p#breadcrumbs,
+section.infografias-deslactosados article.articulo_completo p#breadcrumbs a{
+    color: #646464;
+}
+section.infografias-deslactosados .main-infografia .panel-layout .custom-html-widget span[typeof="v:Breadcrumb"]{
+  display: none;
+}
+section.infografias-deslactosados .main-infografia .ssbp-wrap{
+  display: none;
+}
+section.infografias-deslactosados .main-infografia .share .ssbp-wrap{
+  display: inline-block;
+}
+section.infografias-deslactosados article .division{
+  position: relative;
+  margin-bottom: 46px;
+}
+body.no-infografia section.infografias-deslactosados article .division{
+    display: none;
+}
+section.infografias-deslactosados article .division span.btn{
+    width: 60px;
+    height: 60px;
+    background-size: contain;
+    background-image: url('/themes/custom/alqueria/assets/img/infographics/others/arrow.png');
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    margin-left: -30px;
+    top: -30px;
+    cursor: pointer;
+}
+section.infografias-deslactosados article .division span.line{
+    border: 2px solid #0066B4;
+    width: 100%;
+    display: block;
+    border-style: dashed solid;
+}
+section.infografias-deslactosados article p.bread{
+    font-size: 15px;
+    color: #646464;
+    font-weight: 600;
+}
+section.infografias-deslactosados article .content h2{
+    font-size: 60px;
+    line-height: 52px;
+    letter-spacing: -1px;
+    margin: 5px 0 15px 0;
+    color: #646464;
+}
+section.infografias-deslactosados article .content img{
+    width: 100%;
+}
+section.infografias-deslactosados article .content .info{
+    padding: 30px 0;
+    box-sizing: border-box;
+}
+section.infografias-deslactosados article .content .info p{
+    margin-bottom: 10px;
+    color: #727272;
+}
+section.infografias-deslactosados article .content .info ul{
+    color: #727272;
+}
+section.infografias-deslactosados article .content .info p span{
+    font-size: 12px;
+    vertical-align: super;
+}
+section.infografias-deslactosados article .content .footer-infografia{
+    font-size: 0;
+}
+section.infografias-deslactosados article .content .footer-infografia .legal{
+    width: 60%;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+    color: #727272;
+}
+section.infografias-deslactosados article .content .footer-infografia .share{
+    width: 40%;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px;
+}
+section.infografias-deslactosados .share{
+    text-align: right;
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+    padding: 0 20px 20px 0;
+    overflow: auto;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-align: center;
+            align-items: center;
+}
+section.infografias-deslactosados .share p{
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 10px;
+}
+section.infografias-deslactosados .share .ssbp-wrap{
+    display: inline-block;
+    vertical-align: middle;
+}
+section.infografias-deslactosados .share .btn{
+    width: 400px;
+    display: inline-block;
+    background-color: #d30a00;
+    color: #fff;
+    text-align: center;
+    padding: 8px 13px;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 13px;
+    font-weight: bold;
+}
+section.infografias-deslactosados .share .ssbp-wrap li.ssbp-li--facebook{
+    background-image: url('/themes/custom/alqueria/assets/img/infographics/others/facebook.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 120px;
+}
+section.infografias-deslactosados .share .ssbp-wrap li.ssbp-li--twitter{
+    background-image: url('/themes/custom/alqueria/assets/img/infographics/others/twitter.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 114px;
+    margin-left: -3px;
+}
+section.infografias-deslactosados .share .ssbp-wrap li.ssbp-li--whatsapp{
+    background-image: url('/themes/custom/alqueria/assets/img/infographics/others/whatsapp.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 119px;
+    margin-left: 2px;
+}
+section.infografias-deslactosados .share .ssbp-wrap li.ssbp-li--google,
+section.infografias-deslactosados .share .ssbp-wrap li.ssbp-li--linkedin{
+    display: none;
+}
+section.infografias-deslactosados .share .ssbp-wrap li.ssbp-li--facebook a.ssbp-facebook,
+section.infografias-deslactosados .share .ssbp-wrap li.ssbp-li--twitter a.ssbp-twitter,
+section.infografias-deslactosados .share .ssbp-wrap li.ssbp-li--whatsapp a.ssbp-whatsapp{
+    opacity: 0;
+    width: 100%;
+    height: 41px;
+}
+section.infografias-deslactosados .slider-recetas-home-deslactosado{
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto 50px auto;
+    z-index: 1;
+    position: relative;
+}
+section.infografias-deslactosados .slider-recetas-home-deslactosado .owl-nav{
+    width: 1200px;
+    left: 50%;
+    margin-left: -600px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    z-index: 2;
+}
+section.infografias-deslactosados .slider-recetas-home-deslactosado .owl-nav .owl-prev{
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    background-image: url('/themes/custom/alqueria/assets/img/infographics/others/left.png');
+    background-size: contain;
+    font-size: 0;
+    background-color: transparent;
+}
+section.infografias-deslactosados .slider-recetas-home-deslactosado .owl-nav .owl-next{
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    margin: 0;
+    background-image: url('/themes/custom/alqueria/assets/img/infographics/others/right.png');
+    background-size: contain;
+    font-size: 0;
+    background-color: transparent;
+}
+section.infografias-deslactosados .slider-recetas-home-deslactosado article{
+    background-color: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 0;
+    box-shadow: 0px 3px 18px -6px rgba(0, 0,0 , .75);
+}
+section.infografias-deslactosados .slider-recetas-home-deslactosado article img{
+    width: 100%;
+}
+section.infografias-deslactosados .slider-recetas-home-deslactosado .owl-item{
+    padding: 10px;
+}
+section.infografias-deslactosados .slider-recetas-home-deslactosado article .info{
+    padding: 20px;
+    min-height: 186px;
+    background-color: #f1f1f1;
+}
+section.infografias-deslactosados .slider-recetas-home-deslactosado article .info h2{
+    color: #0066b4;
+    line-height: 27px;
+    font-size: 24px;
+}
+section.infografias-deslactosados .slider-recetas-home-deslactosado article .info p{
+    color: #333333;
+    font-size: 16px;
+}
+section.infografias-deslactosados .slider-recetas-home-deslactosado article .img{
+    position: relative;
+}
+section.infografias-deslactosados .slider-recetas-home-deslactosado article.square .img:after{
+  content: "";
+  width: 22%;
+  height: 38%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -11%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-image: url('/themes/custom/alqueria/assets/img/infographics/others/slider-ico-infografia-1.png');
+  background-size: contain;
+  z-index: 2;
+  background-repeat: no-repeat;
+}
+section.infografias-deslactosados .slider-recetas-home-deslactosado article.question .img:after{
+  content: "";
+  width: 22%;
+  height: 38%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -11%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-image: url('/themes/custom/alqueria/assets/img/infographics/others/slider-ico-infografia-4.png');
+  background-size: contain;
+  z-index: 2;
+  background-repeat: no-repeat;
+}
+section.infografias-deslactosados .slider-recetas-home-deslactosado article.star .img:after{
+  content: "";
+  width: 22%;
+  height: 38%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -11%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-image: url('/themes/custom/alqueria/assets/img/infographics/others/slider-ico-infografia-3.png');
+  background-size: contain;
+  z-index: 2;
+  background-repeat: no-repeat;
+}
+section.infografias-deslactosados .slider-recetas-home-deslactosado article.tree .img:after{
+  content: "";
+  width: 22%;
+  height: 38%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -11%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-image: url('/themes/custom/alqueria/assets/img/infographics/others/slider-ico-infografia-2.png');
+  background-size: contain;
+  z-index: 2;
+  background-repeat: no-repeat;
+}
+section.infografias-deslactosados .slider-recetas-home-deslactosado article .img:before{
+    width: 100%;
+    height: 100%;
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1;
+    transition: all .5s;
+    -webkit-transition: all .5s;
+}
+section.infografias-deslactosados .slider-recetas-home-deslactosado article:hover .img:before{
+    background-color: rgba(0, 0, 0, .15);
+}
+@media only screen and (max-width: 1346px){
+    section.infografias-deslactosados .header-receta{
+        margin-top: 64px;
+    }
+    section.infografias-deslactosados article .division{
+        margin: 0 20px 46px 20px;
+        box-sizing: border-box;
+    }
+    section.infografias-deslactosados article.articulo_completo p#breadcrumbs,
+    section.infografias-deslactosados article.articulo_completo .content{
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+}
+@media only screen and (max-width: 1200px){
+    section.infografias-deslactosados .slider-recetas-home-deslactosado{
+        width: 94%;
+        margin-left: 3%;
+    }
+    section.infografias-deslactosados .slider-recetas-home-deslactosado .owl-nav{
+        width: 98%;
+        margin-left: 1%;
+        left: initial;
+    }
+}
+@media only screen and (max-width: 1024px){
+    section.infografias-deslactosados article .division span.btn{
+        width: 50px;
+        height: 50px;
+        margin-left: -25px;
+        top: -25px;
+    }
+    section.infografias-deslactosados .header-receta{
+        margin-top: 41px;
+    }
+    section.infografias-deslactosados .header-receta .btn-receta{
+        width: 33%;
+    }
+    section.infografias-deslactosados .header-receta .content .title{
+        width: 67%;
+    }
+    section.infografias-deslactosados article .content h2{
+        font-size: 50px;
+        line-height: 50px;
+    }
+}
+@media only screen and (max-width: 767px){
+    section.infografias-deslactosados .slider-recetas-home-deslactosado .owl-nav{
+        width: 96%;
+        margin-left: 2%;
+    }
+    section.infografias-deslactosados .header-receta .content .title{
+        width: 100%;
+    }
+    section.infografias-deslactosados .header-receta .btn-receta{
+        width: 100%;
+        text-align: left;
+        margin: 30px 0 20px 0;
+    }
+    section.infografias-deslactosados .main-infografia .share .ssbp-wrap{
+        display: block;
+    }
+    section.infografias-deslactosados .share p{
+        display: block;
+        margin-bottom: 26px;
+        margin-top: 11px;
+    }
+    section.infografias-deslactosados .share .ssbp-wrap li.ssbp-li--facebook{
+        width: 108px;
+    }
+    section.infografias-deslactosados .share .ssbp-wrap li.ssbp-li--twitter{
+        width: 100px;
+        margin-left: 0px;
+    }
+    section.infografias-deslactosados .share .btn{
+        display: block;
+        float: right;
+        margin-top: 3px;
+        margin-left: 10px;
+    }
+    section.infografias-deslactosados article .content .footer-infografia .legal{
+        width: 100%;
+    }
+    section.infografias-deslactosados article .content .footer-infografia .share{
+        width: 100%;
+    }
+    section.infografias-deslactosados .share .ssbp-wrap li.ssbp-li--whatsapp{
+        display: inline-block !important;
+    }
+}
+@media only screen and (max-width: 480px){
+    section.infografias-deslactosados article .content .information .info-cook p:nth-child(2){
+        margin: 0;
+        display: block;
+    }
+    section.infografias-deslactosados article .content .information .info-cook p{
+        margin-top: 8px;
+    }
+    section.infografias-deslactosados .slider-recetas-home-deslactosado{
+        width: 88%;
+        margin-left: 6%;
+    }
+    section.infografias-deslactosados .slider-recetas-home-deslactosado .owl-nav{
+        width: 92%;
+        margin-left: 4%;
+        left: initial;
+    }
+    section.infografias-deslactosados .header-receta .content .title p#breadcrumbs a,
+    section.infografias-deslactosados .header-receta .content .title p#breadcrumbs,
+    section.infografias-deslactosados article.articulo_completo p#breadcrumbs a,
+    section.infografias-deslactosados article.articulo_completo p#breadcrumbs{
+        font-size: 13px;
+        line-height: 13px;
+        margin-bottom: 10px;
+    }
+    section.infografias-deslactosados .header-receta .content .title h1{
+        font-size: 36px;
+        line-height: 36px;
+    }
+    section.infografias-deslactosados .header-receta .btn-receta a{
+        font-size: 13px;
+        margin: 0 auto;
+        display: block;
+        text-align: center;
+    }
+    section.infografias-deslactosados .header-receta .btn-receta{
+        margin: 20px 0 20px 0;
+    }
+    section.infografias-deslactosados .share{
+        padding: 0 20px;
+    }
+    section.infografias-deslactosados .share .btn{
+        float: initial;
+        width: 100%;
+        margin-top: 20px;
+    }
+    section.infografias-deslactosados .main-infografia{
+        margin: 0 auto 40px auto;
+    }
+    section.infografias-deslactosados article .content .footer-infografia .legal ol{
+        padding-left: 18px;
+    }
+    section.infografias-deslactosados article .division span.btn{
+        width: 40px;
+        height: 40px;
+        margin-left: -20px;
+        top: -20px;
+    }
+    section.infografias-deslactosados .share p{
+        margin-bottom: 5px;
+        margin-top: 20px;
+    }
+    section.infografias-deslactosados .share .ssbp-wrap li.ssbp-li--whatsapp{
+        background-image: url('/themes/custom/alqueria/assets/img/infographics/others/ico-whatsapp.svg');
+        background-size: contain;
+        width: 38px;
+        margin: 0;
+    }
+    section.infografias-deslactosados .share .ssbp-wrap li.ssbp-li--twitter{
+        background-image: url('/themes/custom/alqueria/assets/img/infographics/others/ico-twitter.svg');
+        width: 38px;
+        margin: 0 6px;
+    }
+    section.infografias-deslactosados .share .ssbp-wrap li.ssbp-li--facebook{
+        background-image: url('/themes/custom/alqueria/assets/img/infographics/others/ico-facebook.svg');
+        background-size: contain;
+        width: 38px;
+    }
+}
+section.infografia-articulo .content .seccion-1{
+    background-image: url('/themes/custom/alqueria/assets/img/infographics/infographic-1/infographic-1-s1-back.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 650px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center center;
+       object-position: center center;
+    position: relative;
+}
+section.infografia-articulo .content .seccion-1 .dummi{
+    width: 41%;
+    position: absolute;
+    right: 0;
+    top: 6%;
+    z-index: 1;
+}
+section.infografia-articulo .content .seccion-1 .copy-1{
+    left: 12%;
+    width: 56%;
+    position: absolute;
+    top: 42%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+section.infografia-articulo .content .seccion-1 .copy-2{
+    left: 15%;
+    width: 47%;
+    position: absolute;
+    top: 63%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+.infografia-header{
+    position: relative;
+    overflow: hidden;
+}
+.infografia-header .infografia-box{
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.infografia-header .infografia-box--item:first-child{
+    min-width: 50%;
+    -webkit-box-ordinal-group:2;
+            order:1;
+}
+@media (max-width:768px){
+    .infografia-box .infografia-box--item:first-child{
+        padding-right: 6%;
+    }
+}
+@media (max-width: 992px){
+    .infografia-box .infografia-box--item:first-child{
+        min-width: 50%;
+    }
+}
+@media (min-width: 992px){
+    .infografia-header .infografia-box--item:first-child > img{
+        max-width: 59%;
+        margin-left: 9%;
+        margin-bottom: 10px;
+    }
+}
+.infografia-header .infografia-box--item:first-child > img:last-child{
+    padding: 0 30px;
+}
+.infografia-header .infografia-box--item:last-child{
+    -webkit-box-ordinal-group: 1;
+        order: 0;
+}
+@media (min-width: 992px){
+    .infografia-header .infografia-box--item:last-child{
+        width: 100%;
+        max-width: 40%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        -webkit-transform: rotate(2deg);
+                transform: rotate(2deg);
+    }
+}
+.infografia-original{
+    position: relative;
+    overflow: hidden;
+}
+.infografia-original .layout-two::before{
+    content: '';
+    position: absolute;
+    top: 68px;
+    left: 0;
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-1/bubble.png') center 40px/100% no-repeat;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+        -webkit-transition: all 2s cubic-bezier(0.21, 1, 0.84, 1.01);
+    transition: all 2s cubic-bezier(0.21, 1, 0.84, 1.01);
+}
+@media (min-width: 992px){
+    .infografia-original .layout-two::before{
+        top: 76px;
+        left: 2px;
+    }
+}
+.infografia-original .layout-two:hover:before{
+-webkit-transform: scale(1.2) translate(-7px, 13px);
+    transform: scale(1.2) translate(-7px, 13px);
+}
+.infografia-original .layout-columns-box::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-1/original-fondo.png') center/cover no-repeat fixed;
+    z-index: 0;
+}
+.infografia-original .layout-columns-header{
+    padding-top: 25px;
+    padding-bottom: 25%;
+}
+@media (min-width: 992px){
+    .infografia-original .layout-columns-header{
+        padding-bottom: 10%;
+    }
+}
+.infografia-original .layout-columns-header::before{
+    content: '';
+    display: block;
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-1/infografia-original-deck.png') center bottom/100% no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -1px;
+    z-index: 0;
+}
+@media (min-width: 992px){
+    .infografia-original .layout-columns-header::before{
+        background-image: url('/themes/custom/alqueria/assets/img/infographics/infographic-1/infografia-original-movil.png');
+    }
+}
+.infografia-original .layout-columns-header,
+.infografia-original .layout-columns-content{
+    text-align: center;
+    position: relative;
+}
+.infografia-original .layout-columns-header img{
+    width: 70%;
+}
+.infografia-original .layout-columns-header .layout-columns-header-img img{
+    max-width: 80%;
+}
+@media (max-width:768px){
+    .infografia-original .layout-columns-header img{
+        padding: 0 10%;
+    }
+}
+
+@media (min-width: 768px){
+    .infografia-original .layout-columns-header img{
+        min-width: 796px;
+        padding: 0 10%;
+    }
+}
+.infografia-original .layout-columns-content{
+    width: 100%;
+    flex-basis: 100%;
+    background-color: white;
+    display: table;
+}
+@media (max-width:768px){
+    .layout-columns-content .collunds-one img{
+        padding: 0 15%;
+    }
+}
+@media (min-width:992px){
+    .infografia-original .layout-columns-content > div.collunds-one > div.left{
+        max-width: 50%;
+        float:left;
+    }
+    .infografia-original .layout-columns-content > div.collunds-one > div.right{
+        max-width: 50%;
+        float:left;
+    }
+}
+#bubbles{ height: 100% }
+.bubble{
+    width: 60px;
+    height: 60px;
+    border-radius: 200px;
+    position: absolute;
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-1/rojo.png') left top/88% no-repeat;
+}
+.x1{
+    left: 0px;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    -webkit-animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+            animation: moveclouds 15s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+.x2{
+    left: 20%;
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6);
+    -webkit-animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+            animation: moveclouds 25s linear infinite, sideWays 5s ease-in-out infinite alternate;
+}
+.x3{
+    left: 40%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    -webkit-animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+            animation: moveclouds 20s linear infinite, sideWays 4s ease-in-out infinite alternate;
+}
+.x4{
+    left: 60%;
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+    -webkit-animation: moveclouds 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            animation: moveclouds 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+}
+.x5{
+    left: 66%;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    -webkit-animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+            animation: moveclouds 7s linear infinite, sideWays 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes moveclouds{
+    0%{
+        top: 500px;
+    }
+    100%{
+        top: -500px;
+    }
+}
+@-webkit-keyframes sideWays{
+    0%{
+        margin-left:0px;
+    }
+    100%{
+        margin-left:50px;
+    }
+}
+.inforgrafia-personas{
+    padding: 15% 5%;
+    position: relative;
+    box-shadow: 0 0 0 1px white inset;
+    overflow: hidden;
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-1/fondo-personas.png') center/cover no-repeat;
+}
+.inforgrafia-personas::before{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-1/fondo-personas-top-movil.png') center top/100% no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -1px;
+    left: 0;
+}
+@media (min-width: 992px){
+    .inforgrafia-personas::before{
+        background-image: url('/themes/custom/alqueria/assets/img/infographics/infographic-1/fondo-personas-top.png');
+    }
+}
+.inforgrafia-personas::after{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-1/fondo-personas-botton-movil.png') center bottom/100% no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+@media (min-width: 992px){
+    .inforgrafia-personas::after{
+        background-image: url('/themes/custom/alqueria/assets/img/infographics/infographic-1/fondo-personas-botton.png');
+    }
+}
+@media(min-width: 768px){
+    .inforgrafia-personas{
+        display: -webkit-box;
+        display: flex;
+    }
+    .inforgrafia-personas .inforgrafia-personas-ringht,
+    .inforgrafia-personas .inforgrafia-personas-left{
+        -webkit-box-flex: 1;
+            flex: 1 1 auto;
+        align-self: center;
+    }
+    .inforgrafia-personas .inforgrafia-personas-ringht{
+        -webkit-box-ordinal-group: 1;
+            order: 0;
+        -webkit-box-flex: 1;
+                flex: 1 1 40%;
+    }
+    .inforgrafia-personas .inforgrafia-personas-left{
+        -webkit-box-ordinal-group: 2;
+            order: 1;
+        -webkit-box-flex: 1;
+                flex: 1 1 60%;
+    }
+}
+.inforgrafia-intoleran{
+    display: -webkit-box;
+    display: flex;
+    text-align: center;
+    overflow: hidden;
+}
+@media (min-width: 768px){
+    .inforgrafia-intoleran{
+        margin-bottom: -17%;
+        -webkit-transform: translateY(-30%);
+                transform: translateY(-30%);
+    }
+}
+@media (min-width: 992px){
+    .inforgrafia-intoleran{
+        -webkit-transform: translateY(-40%);
+                transform: translateY(-40%);
+    }
+}
+.inforgrafia-intoleran-left{
+    width: 100%;
+}
+@media (min-width: 768px){
+    .inforgrafia-intoleran-left,
+    .inforgrafia-intoleran-right{
+        width: 50%;
+    }
+}
+.inforgrafia-intoleran-left{
+    align-self: center;
+}
+@media (max-width: 768px){
+    .inforgrafia-intoleran-left{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+.inforgrafia-intoleran-right img{
+    max-width: 200px;
+}
+@media (min-width: 992px){
+    .inforgrafia-intoleran-right img{
+         max-width: 300px;
+    }
+}
+@media (min-width: 768px){
+    .infografia-header .infografia-box--item:last-child{
+        -webkit-animation: orbit 9s linear infinite;
+                animation: orbit 9s linear infinite;
+    }
+    .infografia-header .infografia-box--item:first-child{
+        -webkit-animation: tada 5s infinite linear;
+                animation: tada 5s infinite linear;
+    }
+    .infografia-original .layout-columns-header .layout-columns-header-img{
+        -webkit-animation: wobble 20s infinite linear;
+                animation: wobble 20s infinite linear;
+    }
+    .inforgrafia-personas .inforgrafia-personas-ringht{
+        -webkit-animation: wobble 8s infinite linear;
+                animation: wobble 8s infinite linear;
+    }
+    .inforgrafia-intoleran > div.inforgrafia-intoleran-right{
+        -webkit-animation: wobble 8s infinite linear;
+                animation: wobble 8s infinite linear;
+    }
+    .infografia-original .layout-columns-content > div.collunds-one > div.left{
+        -webkit-animation: arrow 8s infinite linear;
+                animation: arrow 8s infinite linear;
+    }
+    .infografia-original .layout-columns-content > div.collunds-one > div.right{
+        -webkit-animation: orbit 8s infinite linear;
+                animation: orbit 8s infinite linear;
+    }
+    .infografia-original .layout-columns-box > div > picture:nth-child(1) > img,
+    .infografia-original .layout-columns-box > div > picture:nth-child(3) > img{
+        -webkit-animation: tada 8s infinite linear;
+                animation: tada 8s infinite linear;
+    }
+}
+.que-significa-fondo{
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-2/fondo.png') center/cover no-repeat;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+.que-significa-header{
+    display: table;
+    position: relative;
+    text-align: center;
+    padding: 5% 5% 0;
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-2/fondo_header_movil.png') center/100% 100% no-repeat;
+}
+@media (min-width: 992px){
+    .que-significa-header{
+        background-image: url('/themes/custom/alqueria/assets/img/infographics/infographic-2/fondo_header_deck.png') center/cover no-repeat ;
+    }
+}
+.que-significa-header .columns-left{
+    width: 50%;
+    float: left;
+}
+@media(max-width: 992px){
+    .que-significa-header .columns-left{
+        width: 35%;
+        position: absolute;
+        bottom: -66%;
+    }
+}
+.que-significa-header .columns-right{
+    width: 100%;
+    float: left;
+    padding: 9% 17%;
+    overflow: hidden;
+}
+@media (min-width: 992px){
+    .que-significa-header .columns-right{
+        width: 50%;
+        padding: 16% 0 0 0;
+    }
+}
+.que-significa-header-content .columns-right{
+    overflow: hidden;
+}
+@media (min-width: 992px){
+    .que-significa-header-content .columns-left{
+        width: 50%;
+        float: left;
+    }
+    .que-significa-header-content .columns-right{
+        width: 50%;
+        float: left;
+    }
+}
+@media (max-width: 992px){
+    .que-significa-header-content .columns-left{
+        width: 68%;
+        float: right;
+    }
+    .que-significa-header-content .columns-right{
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+.que-significa-header-content .columns-right .two{
+    width: 50%;
+    float: left;
+}
+.que-significa-header-content .columns-right .one{
+    width: 50%;
+    float: left;
+}
+.que-significa-header-content{
+    text-align: center;
+    overflow: hidden;
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-2/content-movil.png') center/cover no-repeat;
+}
+@media (min-width: 992px){
+    .que-significa-header-content{
+       background-image: url('/themes/custom/alqueria/assets/img/infographics/infographic-2/content-desk.png');
+    }
+}
+@media (min-width: 992px){
+    .que-significa-header-content img{
+        max-width: 80%;
+    }
+}
+.que-significa-footer{
+    position: relative;
+}
+.que-significa-box{
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.estomagos .estomago-derecho,
+.estomagos .estomago-izquierdo{
+    -webkit-box-flex: 1;
+            flex: 1 1 100%;
+}
+@media (max-width: 992px){
+    .estomagos .estomago-derecho,
+    .estomagos .estomago-izquierdo{
+        padding-top: 15%;
+    }
+}
+@media (min-width: 992px){
+    .estomagos .estomago-derecho,
+    .estomagos .estomago-izquierdo{
+        -webkit-box-flex: 1;
+                flex: 1 1 50%;
+        text-align: center;
+    }
+}
+.que-significa-box > img{
+    max-width: 400px;
+}
+@media (max-width: 992px){
+    .que-significa-box > img{
+       display: none;
+    }
+}
+.estomagos{
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-align: center;
+            align-items: center;
+}
+@media (min-width: 992px){
+    .estomagos{
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+                flex-direction: row;
+        justify-content: space-around;
+    }
+}
+.estomagos .estomago-derecho img,
+.estomagos .estomago-izquierdo img{
+    max-width: 171px;
+}
+@media (min-width: 540px){
+    .estomagos .estomago-derecho img,
+    .estomagos .estomago-izquierdo img{
+        max-width: 267px;
+    }
+}
+@media (min-width: 992px){
+    .estomagos .estomago-derecho img,
+    .estomagos .estomago-izquierdo img{
+       min-width: 500px;
+    }
+}
+.estomagos .estomago-derecho,
+.estomagos .estomago-izquierdo{
+    -webkit-animation: wobble 8s infinite linear;
+            animation: wobble 8s infinite linear;
+}
+.que-significa-header-content .columns-right .two{
+    -webkit-animation: arrow 8s infinite linear;
+            animation: arrow 8s infinite linear;
+}
+.que-significa-header-content .columns-right .one{
+    -webkit-animation: orbit 8s infinite linear;
+            animation: orbit 8s infinite linear;
+}
+.que-significa-header .columns-left{
+    -webkit-animation: arrow 8s infinite linear;
+            animation: arrow 8s infinite linear;
+}
+.que-significa-header .columns-right{
+   -webkit-animation: rubberBand 6s infinite linear;
+           animation: rubberBand 6s infinite linear;
+}
+.beneficios-one-columns{
+    position: relative;
+    text-align: left;
+    padding: 11% 0% 18% 0;
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-3/beneficios-one-columns-fondo.png') center/cover no-repeat;
+}
+@media (min-width: 992px){
+    .beneficios-one-columns{
+        background: url('/themes/custom/alqueria/assets/img/infographics/infographic-3/beneficios-one-columns-fondo.png') center/cover no-repeat fixed;
+    }
+}
+@media (min-width: 992px){
+    .beneficios-one-columns{
+        padding: 8% 0% 22% 0;
+    }
+}
+.beneficios-one-columns img:first-child{
+    max-width: 72%;
+    padding: 0 25px;
+    -webkit-animation: orbit 8s infinite linear;
+            animation: orbit 8s infinite linear;
+}
+.beneficios-one-columns img:last-child{
+    position: absolute;
+    top: 9%;
+    right: 0;
+    max-width: 37%;
+    -webkit-animation: arrow 20s infinite;
+            animation: arrow 20s infinite;
+    z-index: 1;
+}
+.beneficios-one-columns::before{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-3/beneficios-one-columns-footer.png') center bottom/100% no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+@-webkit-keyframes arrow{
+    0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%{
+        -webkit-transform: translateY(10px);
+                transform: translateY(10px);
+    }
+    5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95%{
+        -webkit-transform: translateY(-10px);
+                transform: translateY(-10px);
+    }
+}
+@keyframes arrow{
+    0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%{
+        -webkit-transform: translateY(10px);
+                transform: translateY(10px);
+    }
+    5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95%{
+        -webkit-transform: translateY(-10px);
+                transform: translateY(-10px);
+    }
+}
+.beneficios-two-columns{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 5% 15% 0;
+    overflow: hidden;
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-3/beneficios-two-columns-fondo.png') center/cover no-repeat;
+}
+@media (min-width: 992px){
+    .beneficios-two-columns{
+        background: url('/themes/custom/alqueria/assets/img/infographics/infographic-3/beneficios-two-columns-fondo.png') center/cover no-repeat fixed;
+    }
+}
+.beneficios-two-columns .columns-one{
+    width: 50%;
+    float: left;
+}
+.beneficios-two-columns .columns-one > img{
+    max-width: 80%;
+    -webkit-animation: wobble 8s infinite linear;
+            animation: wobble 8s infinite linear;
+}
+.beneficios-two-columns .columns-two{
+    width: 50%;
+    float: left;
+    padding-top: 15%;
+}
+.beneficios-two-columns .columns-two > img{
+    -webkit-animation: tada 8s infinite linear;
+            animation: tada 8s infinite linear;
+}
+.beneficios-two-columns .box-arbol{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.beneficios-two-columns .box-arbol img{
+    -webkit-animation: orbit 30s linear infinite;
+            animation: orbit 30s linear infinite;
+}
+.beneficios-two-columns::before{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-3/beneficios-two-columns-header.png') center top/100% no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -1px;
+    left: 0;
+}
+.beneficios-two-columns::after{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-3/beneficios-two-columns-footer.png') center bottom/100% no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+.beneficios-three-columns{
+    position: relative;
+    width: 100%;
+    padding: 15% 0;
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-3/beneficios-three-columns-fondo.png') center/cover no-repeat;
+}
+@media (min-width: 992px){
+    .beneficios-three-columns{
+        background: url('/themes/custom/alqueria/assets/img/infographics/infographic-3/beneficios-three-columns-fondo.png') center/cover no-repeat fixed;
+    }
+}
+.beneficios-three-columns img.text{
+    max-width: 60vw;
+    margin-left: 10%;
+}
+@media (min-width: 1200px){
+    .beneficios-three-columns img.text{
+        max-width: 500px;
+    }
+}
+.beneficios-three-columns img.ada{
+    max-width: 30vw;
+    position: absolute;
+    top: -20%;
+    right: 20%;
+    z-index: 2;
+}
+@media (min-width: 992px){
+    .beneficios-three-columns img.ada{
+        max-width: 270px;
+    }
+}
+.beneficios-three-columns .ada{
+    -webkit-animation: ada 10s linear infinite;
+            animation: ada 10s linear infinite
+}
+@-webkit-keyframes ada{
+    0%, 10%{
+        -webkit-transform:rotate(0deg) translateY(0);
+                transform:rotate(0deg) translateY(0);
+    }
+    20%, 30%{
+        -webkit-transform:rotate(50deg) translateX(100%);
+                transform:rotate(50deg) translateX(100%);
+    }
+    40%, 50%{
+        -webkit-transform:rotate(10deg) translateX(70%);
+                transform:rotate(10deg) translateX(70%);
+    }
+    60%, 70%{
+        -webkit-transform:rotate(0deg) translateY(150%);
+                transform:rotate(0deg) translateY(150%);
+    }
+    80%, 90%{
+        -webkit-transform:rotate(5deg) translateY(35%);
+                transform:rotate(5deg) translateY(35%);
+    }
+}
+@keyframes ada{
+    0%, 10%{
+        -webkit-transform:rotate(0deg) translateY(0);
+                transform:rotate(0deg) translateY(0);
+    }
+    20%, 30%{
+        -webkit-transform:rotate(50deg) translateX(100%);
+                transform:rotate(50deg) translateX(100%);
+    }
+    40%, 50%{
+        -webkit-transform:rotate(10deg) translateX(70%);
+                transform:rotate(10deg) translateX(70%);
+    }
+    60%, 70%{
+        -webkit-transform:rotate(0deg) translateY(150%);
+                transform:rotate(0deg) translateY(150%);
+    }
+    80%, 90%{
+        -webkit-transform:rotate(5deg) translateY(35%);
+                transform:rotate(5deg) translateY(35%);
+    }
+}
+.beneficios-three-columns .box-arbol{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.beneficios-three-columns img.arbol{
+    -webkit-animation: orbit 30s linear infinite;
+            animation: orbit 30s linear infinite;
+}
+
+.beneficios-three-columns img.hueso{
+    position: absolute;
+    top: 50%;
+    right: 20%;
+    max-width: 22vw;
+    -webkit-animation: latidos .9s linear infinite;
+            animation: latidos .9s linear infinite;
+}
+@media (min-width: 1200px){
+    .beneficios-three-columns img.hueso{
+        max-width: 256px;
+    }
+}
+.beneficios-three-columns::before{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-3/beneficios-three-columns-header.png') center top/100% no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -1px;
+    left: 0;
+}
+.beneficios-three-columns::after{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-3/beneficios-three-columns-footer.png') center bottom/100% no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+@-webkit-keyframes orbit{
+  0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%{
+        -webkit-transform: translateX(10px) rotate(2deg);
+                transform: translateX(10px) rotate(2deg);
+    }
+    5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95%{
+        -webkit-transform: translateX(0px) rotate(0deg);
+                transform: translateX(0px) rotate(0deg);
+    }
+}
+@keyframes orbit{
+    0%, 10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90%, 100%{
+        -webkit-transform: translateX(10px) rotate(2deg);
+                transform: translateX(10px) rotate(2deg);
+    }
+    5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85%, 95%{
+        -webkit-transform: translateX(0px) rotate(0deg);
+                transform: translateX(0px) rotate(0deg);
+    }
+}
+.beneficios-four-columns{
+    text-align: center;
+    padding: 50px 15px 0;
+    position: relative;
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-3/beneficios-four-columns-fondo.png') center/cover no-repeat;
+}
+@media (min-width: 992px){
+    .beneficios-four-columns{
+        background: url('/themes/custom/alqueria/assets/img/infographics/infographic-3/beneficios-four-columns-fondo.png') center/cover no-repeat fixed;
+    }
+}
+.beneficios-four-columns::before{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-3/beneficios-four-columns-header.png') center top/100% no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -1px;
+    left: 0;
+}
+.beneficios-four-columns img.ada{
+    max-width: 80%;
+}
+html:not(.no-js) [data-aos^=flip][data-aos^=flip]{
+    opacity: 0;
+}
+html:not(.no-js) [data-aos=flip-up].aos-animate,
+html:not(.no-js) [data-aos=flip-left].aos-animate{
+    opacity: 1;
+}
+.diferencia-one{
+    text-align: center;
+    padding-bottom: 5%;
+    position: relative;
+    overflow: hidden;
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-4/diferencia-one-fondo-desk.png') left top/140% 100% no-repeat;
+}
+.diferencia-one::before{
+    content: '';
+    background-image: url('/themes/custom/alqueria/assets/img/infographics/infographic-4/diferencia-one-fondo.png');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -1px;
+    left: 0;
+    opacity: 0.3;
+    -webkit-animation: vertical 50s linear infinite;
+            animation: vertical 50s linear infinite;
+}
+.diferencia-one > img{
+    max-width: 90%;
+    margin-top: 15px;
+    -webkit-animation: flip 2s infinite linear;
+            animation: flip 2s infinite linear;
+}
+.diferencia-one-box{
+    display: -webkit-box;
+    display: flex;
+}
+.diferencia-one-box .diferencia-one-left,
+.diferencia-one-box .diferencia-one-right{
+    -webkit-box-flex: 1;
+        flex: 1 1 50%;
+    align-self: center;
+}
+@media (min-width: 992px){
+    .diferencia-one-box .diferencia-one-left{
+        -webkit-box-flex: 1;
+                flex: 1 1 40%;
+    }
+}
+.diferencia-one-left img{
+    -webkit-animation: orbit 30s linear infinite;
+            animation: orbit 30s linear infinite;
+}
+.diferencia-one-box .diferencia-one-right{
+    display: -webkit-box;
+    display: flex;
+}
+@media (min-width: 992px){
+   .diferencia-one-box .diferencia-one-right{
+        -webkit-box-flex: 1;
+                flex: 1 1 60%;
+        display: -webkit-box;
+        display: flex;
+    }
+}
+@media (max-width: 992px){
+    .diferencia-one-box .diferencia-one-right{
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+                flex-flow: column;
+    }
+}
+.diferencia-one-box .diferencia-one-right .diferencia-one-item{
+   -webkit-box-flex: 1;
+           flex: 1 1 auto;
+   align-self: center;
+   margin-bottom: 15px;
+}
+@media (min-width: 992px){
+    .diferencia-one-box .diferencia-one-right .diferencia-one-item{
+        padding: 0 20px;
+    }
+}
+.diferencia-one-box .diferencia-one-right .diferencia-one-item img{
+   max-width: 80%;
+}
+@media (min-width: 768px){
+    .diferencia-one-box .diferencia-one-right .diferencia-one-item img{
+        max-width: 100%;
+    }
+}
+.diferencia-one-box .diferencia-one-item{
+    -webkit-animation: tada 5s linear infinite;
+            animation: tada 5s linear infinite;
+}
+@-webkit-keyframes latidos{
+    from{ -webkit-transform: none; transform: none; }
+    50%{ -webkit-transform: scale(1.03); transform: scale(1.03); }
+    to{ -webkit-transform: none; transform: none; }
+}
+@keyframes latidos{
+    from{ -webkit-transform: none; transform: none; }
+    50%{ -webkit-transform: scale(1.03); transform: scale(1.03); }
+    to{ -webkit-transform: none; transform: none; }
+}
+.diferencia-two{
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    display: -webkit-box;
+    display: flex;
+    -webkit-transform: translateY(-14%);
+            transform: translateY(-14%);
+    padding-top: 35px;
+    padding-bottom: 7px;
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-4/diferencia-two-fondo.png') left top/100% 100% no-repeat;
+}
+.diferencia-two .diferencia-two-left,
+.diferencia-two .diferencia-two-right{
+    -webkit-box-flex: 1;
+        flex: 1 1 50%;
+}
+.diferencia-two .diferencia-two-left{
+    -webkit-animation: bounce 2s infinite linear;
+            animation: bounce 2s infinite linear;
+}
+.diferencia-two .diferencia-two-right{
+    -webkit-animation: bounce 3s infinite linear;
+            animation: bounce 3s infinite linear;
+}
+.diferencia-three{
+    display: -webkit-box;
+    display: flex;
+    position: relative;
+    padding-top: 13%;
+    padding-bottom: 13%;
+    margin-top: -21%;
+    z-index: 0;
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-4/diferencia-three-fondo.png') left top/100% no-repeat;
+}
+.diferencia-three::after{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-4/diferencia-three-footer.png') center bottom/100% no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+.diferencia-three .diferencia-three-left,
+.diferencia-three .diferencia-three-right{
+    -webkit-box-flex: 1;
+            flex: 1 1 50%;
+    text-align: center;
+}
+.diferencia-three-left{
+    -webkit-animation: orbit  10s linear infinite;
+            animation: orbit  10s linear infinite;
+}
+.diferencia-three-left img{
+    max-width: 82%;
+}
+.diferencia-three-right img{
+    padding-right: 10px;
+}
+@media (min-width: 992px){
+    .diferencia-three-right img{
+        padding-top: 25%;
+    }
+}
+.diferencia-four{
+    text-align: center;
+    color: rgb(36, 71, 141);
+}
+.diferencia-four p{
+    padding: 0 25px;
+}
+.cada-cuanto-one{
+    margin: 25px 0;
+    padding: 0px 5%;
+    position: relative;
+    overflow: hidden;
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-5/cada-cuanto-one-fondo.png') left top/cover no-repeat;
+}
+@media (min-width: 992px){
+    .cada-cuanto-one{
+        padding: 25px 10%
+    }
+}
+.cada-cuanto-one img:first-child{
+    max-width: 75%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    float: left;
+}
+@media (min-width: 992px){
+    .cada-cuanto-one img:first-child{
+        max-width: 70%;
+    }
+}
+.cada-cuanto-one img:last-child{
+    max-width: 25%;
+    float: left;
+    margin-top: 20px;
+}
+@media (min-width: 992px){
+    .cada-cuanto-one img:last-child{
+        max-width: 30%;
+    }
+}
+@media (max-width: 992px){
+    .cada-cuanto-one img:last-child{
+         -webkit-transform: scale(1.1) rotate(-4deg);
+                 transform: scale(1.1) rotate(-4deg);
+        align-self: center;
+    }
+}
+.cada-cuanto-one::before{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-5/cada-cuanto-one-header.png') center top/100% no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -1px;
+    left: 0;
+}
+.cada-cuanto-one::after{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-5/cada-cuanto-one-footer.png') center bottom/100% no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+.cada-cuanto-two{
+    position: relative;
+    overflow: hidden;
+    padding: 15% 10px 0;
+    z-index: 0;
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-1/fondo-personas.png') left top/cover no-repeat;
+}
+.cada-cuanto-two::before{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-5/cada-cuanto-two-header.png') center -50%/100% no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -1px;
+    left: 0;
+}
+.cada-cuanto-two img:first-child{
+    max-width: 65%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    z-index: 1;
+    float: left;
+}
+.cada-cuanto-two img:last-child{
+    max-width: 35%;
+    z-index: 1;
+    -o-object-fit: contain;
+       object-fit: contain;
+    float: left;
+}
+.cada-cuanto-three{
+    position: relative;
+    text-align: center;
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-5/cada-cuanto-three-fondo.png') left top/cover no-repeat;
+}
+.cada-cuanto-three .cada-cuanto-top{
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-5/forndo-animado.png') white no-repeat;
+    background-size: cover;
+    padding-top: 23px;
+    -webkit-animation: movimiento 30s infinite linear alternate;
+            animation: movimiento 30s infinite linear alternate;
+}
+@-webkit-keyframes movimiento{
+    from{ background-position: bottom left;}
+    to{ background-position: top right;}
+}
+@keyframes movimiento{
+    from{ background-position: bottom left;}
+    to{ background-position: top right;}
+}
+.cada-cuanto-three .cada-cuanto-top img{
+    max-width: 50%;
+}
+@media (min-width: 992px){
+    .cada-cuanto-three .cada-cuanto-top img{
+        max-width: 30%;
+    }
+}
+.cada-cuanto-three .cada-cuanto-top p{
+    color: #ca2727;
+    padding: 25px 15px;
+    font-size: 12px;
+    width: 70%;
+    margin: 0 auto;
+}
+@media (min-width: 992px){
+    .cada-cuanto-three .cada-cuanto-top p{
+        font-size: 16px;
+    }
+}
+.cada-cuanto-three .cada-cuanto-content{
+    position: relative;
+    padding-top: 10%;
+}
+.cada-cuanto-three .cada-cuanto-content::before{
+     content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-5/cada-cuanto-three-header.png') center -41%/100% no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -1px;
+    left: 0;
+}
+@media (min-width:992px ){
+    .cada-cuanto-three .cada-cuanto-content{
+        min-height: 750px;
+    }
+    .cada-cuanto-three .cada-cuanto-content::before{
+        background: url('/themes/custom/alqueria/assets/img/infographics/infographic-5/cada-cuanto-three-header.png') center -193px/100% no-repeat;
+    }
+}
+@media (min-width:992px ){
+    .cada-cuanto-three .cada-cuanto-content img{
+        position: absolute;
+        top: -25%;
+        left: 0;
+    }
+}
+.cada-cuanto-three .cada-cuanto-content::after{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-5/cada-cuanto-three-footer.png') center bottom/100% no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+.cada-cuanto-two img:last-child{
+    -webkit-animation: wobble 8s infinite linear;
+            animation: wobble 8s infinite linear;
+}
+.cada-cuanto-one img:last-child{
+   -webkit-animation: bounce 2s infinite linear;
+           animation: bounce 2s infinite linear;
+}
+.cada-cuanto-one img:first-child{
+   -webkit-animation: vertical 10s infinite linear;
+           animation: vertical 10s infinite linear;
+}
+.cada-cuanto-two img:first-child{
+    -webkit-animation: orbit 10s infinite linear;
+            animation: orbit 10s infinite linear;
+}
+.cada-cuanto-three .cada-cuanto-top img{
+    -webkit-animation: arrow 10s infinite linear;
+            animation: arrow 10s infinite linear;
+}
+.cada-cuanto-three .cada-cuanto-content img{
+    -webkit-animation: tada 10s infinite linear;
+            animation: tada 10s infinite linear;
+}
+.quienes-pueden-one{
+    padding: 5%  5% 0;
+    position: relative;
+    overflow: hidden;
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-6/one-fondo.png') left top/cover no-repeat;
+    z-index: 2;
+}
+.quienes-pueden-one::before{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-6/one-heade-desk.png') center bottom/100% no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    z-index: -1;
+    -webkit-box-shadow: 0 0 white inset, 0 -2px white inset;
+        box-shadow: 0 0 white inset, 0 -2px white inset;
+}
+@media (min-width:992px){
+    .qdduienes-pueden-one::before{
+        background-image: url('/themes/custom/alqueria/assets/img/infographics/infographic-6/one-heade-desk.png');
+    }
+}
+.quienes-pueden-one .columns-left,
+.quienes-pueden-one .columns-rigth{
+    z-index: 1;
+    float: left;
+    -webkit-animation: tada 5s infinite linear;
+        animation: tada 5s infinite linear;
+}
+@media (min-width:992px){
+    .quienes-pueden-one .columns-left{
+        max-width: 65%;
+
+    }
+}
+.quienes-pueden-one .columns-left img{
+     -o-object-fit: contain;
+        object-fit: contain;
+     float:left;
+}
+.quienes-pueden-one .columns-rigth{
+    display: none;
+}
+@media (min-width:992px){
+    .quienes-pueden-one .columns-rigth{
+        display: block;
+        max-width: 35%;
+    }
+}
+@-webkit-keyframes tada{
+    0%{
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1)
+    }
+    10%,20%{
+        -webkit-transform: scale3d(.9,.9,.9) rotate(-3deg);
+                transform: scale3d(.9,.9,.9) rotate(-3deg)
+    }
+    30%,50%,70%,90%{
+        -webkit-transform: scale3d(1.1,1.1,1.1) rotate(3deg);
+                transform: scale3d(1.1,1.1,1.1) rotate(3deg)
+    }
+    40%,60%,80%{
+        -webkit-transform: scale3d(1.1,1.1,1.1) rotate(-3deg);
+                transform: scale3d(1.1,1.1,1.1) rotate(-3deg)
+    }
+    to{
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1)
+    }
+}
+@keyframes tada{
+    0%{
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1)
+    }
+    10%,20%{
+        -webkit-transform: scale3d(.9,.9,.9) rotate(-3deg);
+                transform: scale3d(.9,.9,.9) rotate(-3deg)
+    }
+    30%,50%,70%,90%{
+        -webkit-transform: scale3d(1.1,1.1,1.1) rotate(3deg);
+                transform: scale3d(1.1,1.1,1.1) rotate(3deg)
+    }
+    40%,60%,80%{
+        -webkit-transform: scale3d(1.1,1.1,1.1) rotate(-3deg);
+                transform: scale3d(1.1,1.1,1.1) rotate(-3deg)
+    }
+    to{
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1)
+    }
+}
+.quienes-pueden-one .columns-rigth img{
+     -o-object-fit: contain;
+        object-fit: contain;
+     float:left;
+}
+.quienes-pueden-two{
+    position: relative;
+    padding: 5% 0;
+    overflow: hidden;
+    background: #0c3f8e;
+    z-index: 0;
+}
+.wate{
+   overflow: hidden;
+}
+.wate::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    -webkit-transform-origin: center bottom;
+            transform-origin: center bottom;
+    background-size: contain;
+    background-image: url('/themes/custom/alqueria/assets/img/infographics/infographic-6/wave.png');
+    -webkit-animation: move_wave 15s linear infinite;
+            animation: move_wave 15s linear infinite;
+    z-index: -1;
+}
+@-webkit-keyframes move_wave{
+   0%{
+        -webkit-transform: translateX(0) translateZ(0) scaleY(1);
+                transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50%{
+        -webkit-transform: translateX(-25%) translateZ(0) scaleY(0.55);
+                transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100%{
+        -webkit-transform: translateX(-50%) translateZ(0) scaleY(1);
+                transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+@keyframes move_wave{
+   0%{
+        -webkit-transform: translateX(0) translateZ(0) scaleY(1);
+                transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50%{
+        -webkit-transform: translateX(-25%) translateZ(0) scaleY(0.55);
+                transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100%{
+        -webkit-transform: translateX(-50%) translateZ(0) scaleY(1);
+                transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+.quienes-pueden-two::before{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-6/two-header-movil.png') left top/100% no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -1px;
+    left: 0;
+}
+@media (min-width:992px){
+    .quienes-pueden-two::before{
+        background-image: url('/themes/custom/alqueria/assets/img/infographics/infographic-6/two-header.png');
+    }
+}
+.quienes-pueden-two::after{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-6/two-footer-movil.png') center bottom/100% no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+@media (min-width:992px){
+    .quienes-pueden-two::after{
+        background-image: url('/themes/custom/alqueria/assets/img/infographics/infographic-6/two-footer.png');
+    }
+}
+.quienes-pueden-three{
+    padding: 5%  5% 0;
+    position: relative;
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-6/three-fondo.png') left top/cover no-repeat;
+    z-index: 0;
+    box-shadow: 0 0 0 0px white inset, 0 0 0 0px white inset, 0 0 0 1px white inset,0 0 0 0px white inset;
+}
+.quienes-pueden-three::before{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-6/three-header-mobile.png') left top/100% no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -1px;
+    left: 0;
+    z-index: -1;
+}
+@media (min-width: 992px){
+    .quienes-pueden-three::before{
+        background-image: url('/themes/custom/alqueria/assets/img/infographics/infographic-6/three-footer-desk.png');
+        background-position: bottom;
+        bottom: -1px;
+    }
+}
+@media (max-width: 992px){
+    .quienes-pueden-three::after{
+        content: '';
+        background: url('/themes/custom/alqueria/assets/img/infographics/infographic-6/three-footer-mobile.png') center bottom/100% no-repeat;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+    }
+}
+@-webkit-keyframes rubberBand{
+    0%{
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1)
+    }
+    30%{
+        -webkit-transform: scale3d(0.85, .75,1);
+                transform: scale3d(0.85, .75,1);
+    }
+    40%{
+        -webkit-transform: scale3d(.95, 1.15,1);
+                transform: scale3d(.95, 1.15,1);
+    }
+    50%{
+        -webkit-transform: scale3d(1, 1.05,1);
+                transform: scale3d(1, 1.05,1);
+    }
+    65%{
+        -webkit-transform: scale3d(.95, 0.85,1);
+                transform: scale3d(.95, 0.85,1);
+    }
+    75%{
+        -webkit-transform: scale3d(1.05, .95,1);
+                transform: scale3d(1.05, .95,1);
+    }
+    to{
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1)
+    }
+}
+@keyframes rubberBand{
+    0%{
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1)
+    }
+    30%{
+        -webkit-transform: scale3d(0.85, .75,1);
+                transform: scale3d(0.85, .75,1);
+    }
+    40%{
+        -webkit-transform: scale3d(.95, 1.15,1);
+                transform: scale3d(.95, 1.15,1);
+    }
+    50%{
+        -webkit-transform: scale3d(1, 1.05,1);
+                transform: scale3d(1, 1.05,1);
+    }
+    65%{
+        -webkit-transform: scale3d(.95, 0.85,1);
+                transform: scale3d(.95, 0.85,1);
+    }
+    75%{
+        -webkit-transform: scale3d(1.05, .95,1);
+                transform: scale3d(1.05, .95,1);
+    }
+    to{
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1)
+    }
+}
+.quienes-pueden-four{
+    display: -webkit-inline-box;
+    display: inline-flex;
+    -webkit-box-align: center;
+            align-items: center;
+    padding: 2% 0;
+}
+.quienes-pueden-four .columns-item{
+    max-width: 33.33%;
+    -webkit-animation: flip 2s infinite linear;
+            animation: flip 2s infinite linear;
+}
+@-webkit-keyframes flip{
+    0%{
+        -webkit-transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-0deg);
+                transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-0deg);
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out
+    }
+    40%{
+        -webkit-transform: perspective(400px) scaleX(1) translateZ(10px) rotateY(-0deg);
+                transform: perspective(400px) scaleX(1) translateZ(10px) rotateY(-0deg);
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out
+    }
+    50%{
+        -webkit-transform: perspective(400px) scaleX(1) translateZ(10px) rotateY(-0deg);
+                transform: perspective(400px) scaleX(1) translateZ(10px) rotateY(-0deg);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in
+    }
+    80%{
+        -webkit-transform: perspective(400px) scale3d(.95,.95,.95) translateZ(0) rotateY(0deg);
+                transform: perspective(400px) scale3d(.95,.95,.95) translateZ(0) rotateY(0deg);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in
+    }
+    to{
+        -webkit-transform: perspective(800px) scaleX(1) translateZ(0) rotateY(0deg);
+                transform: perspective(800px) scaleX(1) translateZ(0) rotateY(0deg);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in
+    }
+}
+@keyframes flip{
+    0%{
+        -webkit-transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-0deg);
+                transform: perspective(400px) scaleX(1) translateZ(0) rotateY(-0deg);
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out
+    }
+    40%{
+        -webkit-transform: perspective(400px) scaleX(1) translateZ(10px) rotateY(-0deg);
+                transform: perspective(400px) scaleX(1) translateZ(10px) rotateY(-0deg);
+        -webkit-animation-timing-function: ease-out;
+                animation-timing-function: ease-out
+    }
+    50%{
+        -webkit-transform: perspective(400px) scaleX(1) translateZ(10px) rotateY(-0deg);
+                transform: perspective(400px) scaleX(1) translateZ(10px) rotateY(-0deg);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in
+    }
+    80%{
+        -webkit-transform: perspective(400px) scale3d(.95,.95,.95) translateZ(0) rotateY(0deg);
+                transform: perspective(400px) scale3d(.95,.95,.95) translateZ(0) rotateY(0deg);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in
+    }
+    to{
+        -webkit-transform: perspective(800px) scaleX(1) translateZ(0) rotateY(0deg);
+                transform: perspective(800px) scaleX(1) translateZ(0) rotateY(0deg);
+        -webkit-animation-timing-function: ease-in;
+                animation-timing-function: ease-in
+    }
+}
+.cantidad-one{
+    padding: 5% 5% 0;
+    overflow: hidden;
+    background-image: url('/themes/custom/alqueria/assets/img/infographics/infographic-7/one-fondo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.cantidad-one .columns-left{
+    float: left;
+    max-width: 65%;
+    margin-top: 10%;
+}
+.cantidad-one .columns-right{
+    float: left;
+    max-width: 35%;
+}
+.cantidad-one .columns-left img{
+    -o-object-fit: contain;
+       object-fit: contain;
+}
+.cantidad-two{
+    position: relative;
+    padding-top: 35px;
+    text-align: center;
+    overflow: hidden;
+    background-image: url('/themes/custom/alqueria/assets/img/infographics/infographic-7/two-fondo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media (min-width: 540px){
+    .cantidad-two{
+        padding-top: 60px;
+    }
+}
+.cantidad-two .columns-top img{
+    max-width: 40%;
+}
+.cantidad-two .columns-left,
+.cantidad-two .columns-right{
+    float: left;
+    max-width: 50%;
+}
+@media (max-width: 992px){
+    .cantidad-two .columns-left{
+        padding-left: 20px;
+    }
+    .cantidad-two .columns-right{
+        margin-top: -56px;
+    }
+}
+.cantidad-two::before{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-7/two-top.png') no-repeat;
+    background-size: 100%;
+    background-position: left -19%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -1px;
+    left: 0;
+}
+.cantidad-two::after{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-7/two-botton.png') no-repeat;
+    background-size: 100%;
+    background-position: left bottom;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+.cantidad-three{
+    position: relative;
+    overflow: hidden;
+    padding: 0 5%;
+    z-index: 0;
+    background-image: url('/themes/custom/alqueria/assets/img/infographics/infographic-7/three-fondo.png');
+    background-repeat: no-repeat repeat;
+    -webkit-animation: movimiento 30s infinite linear alternate;
+            animation: movimiento 30s infinite linear alternate;
+}
+@media (max-width: 992px){
+    .cantidad-three{
+        padding-top: 8%;
+    }
+}
+.cantidad-three .columns-left{
+    float: left;
+    max-width: 60%;
+}
+.cantidad-three .columns-right{
+    float: left;
+    max-width: 40%;
+    z-index: 2;
+}
+.cantidad-three::before{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-7/three-botton.png') no-repeat;
+    background-size: 100%;
+    background-position: left bottom;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    z-index: -1;
+}
+.cantidad-one .columns-right{
+    -webkit-animation: orbit 9s linear infinite;
+            animation: orbit 9s linear infinite;
+}
+.cantidad-one .columns-left{
+    -webkit-animation: tada 5s infinite linear;
+            animation: tada 5s infinite linear;
+}
+.cantidad-two .columns-left{
+    -webkit-animation: wobble 20s infinite linear;
+            animation: wobble 20s infinite linear;
+}
+.cantidad-three .columns-right{
+    -webkit-animation: wobble 8s infinite linear;
+            animation: wobble 8s infinite linear;
+}
+@-webkit-keyframes bounce{
+    0%, 20%, 53%, 80%, to{
+        -webkit-animation-timing-function: cubic-bezier(.215,.61,.355,1);
+        animation-timing-function: cubic-bezier(.215,.61,.355,1);
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+    40%, 43%{
+        -webkit-animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+        animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+        -webkit-transform: translate3d(0,-30px,0);
+        transform: translate3d(0,-30px,0)
+    }
+    70%{
+        -webkit-animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+        animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+        -webkit-transform: translate3d(0,-15px,0);
+        transform: translate3d(0,-15px,0)
+    }
+    90%{
+        -webkit-transform: translate3d(0,-4px,0);
+        transform: translate3d(0,-4px,0)
+    }
+}
+@keyframes bounce{
+    0%, 20%, 53%, 80%, to{
+        -webkit-animation-timing-function: cubic-bezier(.215,.61,.355,1);
+        animation-timing-function: cubic-bezier(.215,.61,.355,1);
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+    40%, 43%{
+        -webkit-animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+        animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+        -webkit-transform: translate3d(0,-30px,0);
+        transform: translate3d(0,-30px,0)
+    }
+    70%{
+        -webkit-animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+        animation-timing-function: cubic-bezier(.755,.05,.855,.06);
+        -webkit-transform: translate3d(0,-15px,0);
+        transform: translate3d(0,-15px,0)
+    }
+    90%{
+        -webkit-transform: translate3d(0,-4px,0);
+        transform: translate3d(0,-4px,0)
+    }
+}
+@-webkit-keyframes wobble{
+    0%{
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+    15%{
+        -webkit-transform: translate3d(-25%,0,0) rotate(-5deg);
+        transform: translate3d(-25%,0,0) rotate(-5deg)
+    }
+    30%{
+        -webkit-transform: translate3d(20%,0,0) rotate(3deg);
+        transform: translate3d(20%,0,0) rotate(3deg)
+    }
+    45%{
+        -webkit-transform: translate3d(-15%,0,0) rotate(-3deg);
+        transform: translate3d(-15%,0,0) rotate(-3deg)
+    }
+    60%{
+        -webkit-transform: translate3d(10%,0,0) rotate(2deg);
+        transform: translate3d(10%,0,0) rotate(2deg)
+    }
+    75%{
+        -webkit-transform: translate3d(-5%,0,0) rotate(-1deg);
+        transform: translate3d(-5%,0,0) rotate(-1deg)
+    }
+    to{
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+@keyframes wobble{
+    0%{
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+    15%{
+        -webkit-transform: translate3d(-25%,0,0) rotate(-5deg);
+        transform: translate3d(-25%,0,0) rotate(-5deg)
+    }
+    30%{
+        -webkit-transform: translate3d(20%,0,0) rotate(3deg);
+        transform: translate3d(20%,0,0) rotate(3deg)
+    }
+    45%{
+        -webkit-transform: translate3d(-15%,0,0) rotate(-3deg);
+        transform: translate3d(-15%,0,0) rotate(-3deg)
+    }
+    60%{
+        -webkit-transform: translate3d(10%,0,0) rotate(2deg);
+        transform: translate3d(10%,0,0) rotate(2deg)
+    }
+    75%{
+        -webkit-transform: translate3d(-5%,0,0) rotate(-1deg);
+        transform: translate3d(-5%,0,0) rotate(-1deg)
+    }
+    to{
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+@-webkit-keyframes swing{
+    20%{
+        -webkit-transform: rotate(15deg);
+        transform: rotate(15deg)
+    }
+    40%{
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg)
+    }
+    60%{
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg)
+    }
+    80%{
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg)
+    }
+    to{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+}
+@keyframes swing{
+    20%{
+        -webkit-transform: rotate(15deg);
+        transform: rotate(15deg)
+    }
+    40%{
+        -webkit-transform: rotate(-10deg);
+        transform: rotate(-10deg)
+    }
+    60%{
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg)
+    }
+    80%{
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg)
+    }
+    to{
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+}
+@-webkit-keyframes rotateOut{
+    0%{
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        opacity: 1
+    }
+    to{
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: rotate(200deg);
+                transform: rotate(200deg);
+        opacity: 0
+    }
+}
+@keyframes rotateOut{
+    0%{
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        opacity: 1
+    }
+    to{
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transform: rotate(200deg);
+                transform: rotate(200deg);
+        opacity: 0
+    }
+}
+.se-puede-fon{
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-8/fondo.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.se-puede-one{
+    position: relative;
+}
+.se-puede-one::after{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-8/two-top.png') no-repeat;
+    background-size: 100%;
+    background-position: left bottom;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+}
+.se-puede-one .columns-left{
+    max-width: 65%;
+    float: left;
+    padding-top: 5%;
+    padding-left: 5%;
+}
+.se-puede-one .columns-right{
+    width: 35%;
+    position: absolute;
+    top: 15%;
+    right: 26px;
+    -webkit-transform: rotate(15deg);
+            transform: rotate(15deg);
+}
+.se-puede-two{
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 0 0 2px white;
+}
+.se-puede-two::before{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-8/two-fondo.png') no-repeat;
+    background-size: contain;
+    background-position: left top;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -1px;
+    left: 0;
+}
+.se-puede-two .columns-top{
+    position: absolute;
+    top: -24%;
+    left: 0;
+    width: 100%;
+}
+.se-puede-two .columns-left{
+    max-width: 50%;
+    float: left;
+    padding-left: 5%;
+    background: white;
+    box-shadow: 0 0 0 2px white;
+}
+.se-puede-two .columns-right{
+    width: 50%;
+    padding-right: 5%;
+    padding-top: 18%;
+    background: white;
+}
+.se-puede-two .columns-bottom{
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+}
+.se-puede-three{
+    position: relative;
+    padding: 15% 5% 0;
+    overflow: hidden;
+}
+@media(min-width: 992px){
+    .se-puede-three{
+        padding: 15% 5% 5%;
+    }
+}
+.se-puede-three::before{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-8/two-bottom.png') no-repeat;
+    background-size: 100%;
+    background-position: left top;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.se-puede-three .columns-left{
+    width: 65%;
+    float: left;
+}
+.se-puede-three .columns-left .columns-two,
+.se-puede-three .columns-left .columns-three{
+    padding: 5%;
+    width: 50%;
+    float: left;
+}
+.se-puede-three .columns-left .columns-two img,
+.se-puede-three .columns-left .columns-three img{
+    max-height: 258px;
+    min-height: 105px;
+    -o-object-fit: contain;
+       object-fit: contain;
+}
+.se-puede-three .columns-right{
+    width: 35%;
+    float: left;
+}
+.se-puede-three .columns-right{
+    max-height: 532px;
+    -o-object-fit: contain;
+       object-fit: contain;
+}
+.se-puede-four{
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    margin-top: -14%;
+}
+@media(min-width: 992px){
+   .se-puede-four{
+        margin-top: -12%;
+    }
+}
+.se-puede-four::before{
+    content: '';
+    background: url('/themes/custom/alqueria/assets/img/infographics/infographic-8/four-fondo.png') no-repeat;
+    background-size: 100%;
+    background-position: left top;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.se-puede-four .columns-left{
+    width: 35%;
+    float: left;
+}
+.se-puede-four .columns-right{
+    width: 65%;
+    float: left;
+    margin-top: 20%;
+    margin-left: -6%;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+}
+.se-puede-one .columns-left{
+    -webkit-animation: tada 5s infinite linear;
+            animation: tada 5s infinite linear;
+}
+.se-puede-one .columns-right{
+    -webkit-animation: swing 20s infinite linear;
+            animation: swing 20s infinite linear;
+}
+.se-puede-two .columns-left img{
+    -webkit-animation: wobble 8s infinite linear;
+            animation: wobble 8s infinite linear;
+}
+.se-puede-three .columns-right img{
+    -webkit-animation: slideInUp 10s infinite linear;
+            animation: slideInUp 10s infinite linear;
+}
+.se-puede-three .columns-left .columns-two,
+.se-puede-three .columns-left .columns-three{
+     -webkit-animation:  orbit 8s infinite linear;
+             animation:  orbit 8s infinite linear;
+}
+.se-puede-two::before{
+    -webkit-animation: vertical 5s infinite linear;
+            animation: vertical 5s infinite linear;
+}
+.se-puede-four .columns-left img{
+    -webkit-animation: wobble 8s infinite linear;
+            animation: wobble 8s infinite linear;
+}
+.se-puede-four .columns-right img{
+    -webkit-animation: vertical 8s infinite linear;
+            animation: vertical 8s infinite linear;
+}
+@-webkit-keyframes vertical{
+    0%{
+        -webkit-transform: translateZ(0);
+                transform: translateZ(0)
+    }
+    10%{
+      -webkit-transform: translate3d(0 ,-10% ,0);
+              transform: translate3d(0 ,-10% ,0);
+    }
+    15%{
+      -webkit-transform: translate3d(0 ,-5% ,0);
+              transform: translate3d(0 ,-5% ,0);
+    }
+    30%{
+      -webkit-transform: translate3d(0 ,0 ,0);
+              transform: translate3d(0 ,0 ,0);
+    }
+    45%{
+      -webkit-transform: translate3d(0 ,5% ,0);
+              transform: translate3d(0 ,5% ,0);
+    }
+    60%{
+      -webkit-transform: translate3d(0 ,10%, 0);
+              transform: translate3d(0 ,10%, 0);
+    }
+    75%{
+      -webkit-transform: translate3d(0 ,15%,0);
+              transform: translate3d(0 ,15%,0);
+    }
+    80%{
+      -webkit-transform: translate3d(0 ,20%,0);
+              transform: translate3d(0 ,20%,0);
+    }
+    85%{
+      -webkit-transform: translate3d(0 ,25%,0);
+              transform: translate3d(0 ,25%,0);
+    }
+    to{
+        -webkit-transform: translateZ(0);
+                transform: translateZ(0)
+    }
+}
+@keyframes vertical{
+    0%{
+        -webkit-transform: translateZ(0);
+                transform: translateZ(0)
+    }
+    10%{
+      -webkit-transform: translate3d(0 ,-10% ,0);
+              transform: translate3d(0 ,-10% ,0);
+    }
+    15%{
+      -webkit-transform: translate3d(0 ,-5% ,0);
+              transform: translate3d(0 ,-5% ,0);
+    }
+    30%{
+      -webkit-transform: translate3d(0 ,0 ,0);
+              transform: translate3d(0 ,0 ,0);
+    }
+    45%{
+      -webkit-transform: translate3d(0 ,5% ,0);
+              transform: translate3d(0 ,5% ,0);
+    }
+    60%{
+      -webkit-transform: translate3d(0 ,10%, 0);
+              transform: translate3d(0 ,10%, 0);
+    }
+    75%{
+      -webkit-transform: translate3d(0 ,15%,0);
+              transform: translate3d(0 ,15%,0);
+    }
+    80%{
+      -webkit-transform: translate3d(0 ,20%,0);
+              transform: translate3d(0 ,20%,0);
+    }
+    85%{
+      -webkit-transform: translate3d(0 ,25%,0);
+              transform: translate3d(0 ,25%,0);
+    }
+    to{
+        -webkit-transform: translateZ(0);
+                transform: translateZ(0)
+    }
+}
+@-webkit-keyframes slideInUp{
+    0%{
+        -webkit-transform: translate3d(0,100%,0);
+        transform: translate3d(0,100%,0);
+        visibility: visible
+    }
+    to{
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+@keyframes slideInUp{
+    0%{
+        -webkit-transform: translate3d(0,100%,0);
+        transform: translate3d(0,100%,0);
+        visibility: visible
+    }
+    to{
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+@-webkit-keyframes slideInLeft{
+    0%{
+        -webkit-transform: translate3d(-100%,0,0);
+        transform: translate3d(-100%,0,0);
+        visibility: visible
+    }
+    to{
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}
+@keyframes slideInLeft{
+    0%{
+        -webkit-transform: translate3d(-100%,0,0);
+        transform: translate3d(-100%,0,0);
+        visibility: visible
+    }
+    to{
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+}

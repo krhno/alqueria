@@ -1,0 +1,87 @@
+/*module-info1*/
+.module-info1{
+	.content{
+        .c-header{
+            padding: 0 7%;
+            @media (max-width: $desktop_1024){
+                padding: 0;
+            }
+        }
+		.c-module-info1{
+            padding: 25px 7% 0 7%;
+            @media (max-width: $desktop_1024){
+                padding: 25px 0 0 0;
+            }
+            .div-table{
+                table{
+                    @media (max-width: $mobile){
+                        width: 1000px;
+                        table-layout: fixed;
+                    }
+                    thead{
+                        tr{
+                            border: none;
+                            th{
+                                border: none;
+                                padding: 20px 40px;
+                                vertical-align: middle;
+                                background-color: $blue1;
+
+                                color: $gray1;
+                                font-weight: 700;
+                                font-style: normal;
+                                font-family: $Poppins;
+                                @media (max-width: $tablet){
+                                    padding: 20px;
+                                }
+                            }
+                        }
+                    }
+                    tbody{
+                        box-shadow: 0px 0 10px 0px $shadow;
+                        tr{
+                            td{
+                                border: none;
+                                padding: 20px 40px;
+                                vertical-align: middle;
+                                background-color: $white;
+                                border-right: 1px solid $gray6;
+                                border-bottom: 1px solid $gray6;
+
+                                color: $gray1;
+                                font-weight: 300;
+                                font-style: normal;
+                                font-family: $Poppins;
+                                @media (max-width: $tablet){
+                                    padding: 20px;
+                                }
+                                &.title{
+                                    width: 20%;
+                                    border: none;
+                                    background-color: $red1;
+                                    border-bottom: 1px solid $white;
+
+                                    color: $white;
+                                    font-weight: 700;
+                                    font-style: normal;
+                                    font-family: $Poppins;
+                                    @media (max-width: $mobile){
+                                        width: initial;
+                                    }
+                                }
+                                &:last-child{
+                                    border-right: none;
+                                }
+                            }
+                            &:last-child{
+                                td{
+                                    border-bottom: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+		}
+	}
+}

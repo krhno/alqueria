@@ -1,0 +1,85 @@
+<section class="editorial-banner if-img-video" data-nid="{{node.id}}">
+  <div class="containerGrid">
+    <div class="content">
+      <div class="c-editorial-banner">
+        <div class="title">
+          <div class="column-left">
+            <h1>{{node.label}}</h1>
+          </div>
+          <div class="column-right p-desktop">
+            {{node.body.value|raw}}
+          </div>
+        </div>
+        <div class="info">
+          <div class="info-calification">
+            <div class="p-mobile">
+              {{node.body.value|raw}}
+            </div>
+            <ul class="tags-ingredients no-dics">
+              {% for item in node.field_categorias  %}
+                <li>{{item.entity.label}}</li>
+              {% endfor %}
+            </ul>
+            <div class="calification">
+              <a href="#comments" class="btn-anchor" data-seo="btn-content">
+               <div class="content-star">
+                  {% set calificacion = node.field_calificacion is empty ? 0 : node.field_calificacion.value %}
+                  {% for item in 5..1 %}
+                    <input type="radio" {% if calificacion == item  %} checked="checked" {% endif %}value="{{item}}">
+                    <label class="star"></label>
+                  {% endfor %}
+                </div>
+              </a>
+              <div class="comments-favorites">
+                <a href="#comments" class="btn-anchor" data-seo="btn-content">
+                  <div class="content-comment font-18">
+                    <i class="demo-icon icon-icon-comment">&#xe819;</i>
+                    {% if node.field_comentarios.comment_count == 0 %}
+                    <span>Sin comentarios</span>
+                    {% else %}
+                    <span>{{node.field_comentarios.comment_count}} comentario{% if node.field_comentarios.comment_count >1 %}s{% endif %}</span>
+                    {% endif %}
+                  </div>
+                </a>
+                <div class="content-favorite">
+                  <input type="checkbox" id="favorite" name="favorite" {% if favorito != false %} checked="checked" {% endif %}>
+                  <label for="favorite" class="favorite"></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="banner {% if node.field_url_youtube is not empty %}video{%else%}img{%endif%}">
+          <div class="img-banner">
+            {{content.field_foto_principal}}
+          </div>
+          {% if node.field_url_youtube is not empty %}
+          {% if 'https://youtu.be/' in node.field_url_youtube.value %}
+          {% set codigo=node.field_url_youtube.value|replace({'https://youtu.be/':''}) %}
+          {% elseif 'https://www.youtube.com/watch?v=' in node.field_url_youtube.value %}
+          {% set codigo=node.field_url_youtube.value|replace({'https://www.youtube.com/watch?v=':''}) %}
+          {% endif %}
+          <div class="video-banner" data-src="https://www.youtube.com/embed/{{codigo}}">
+            <iframe width="100%" height="100%" class="iframe-yt" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="icon-play">
+            <span>
+              <i class="demo-icon icon-icon-play">&#xe80d;</i>
+            </span>
+          </div>
+          {% endif %}
+          <div class="layer-black"></div>
+        </div>
+        {% if node.field_titulo_comparador is not empty %}
+          <div class="copy front-18">
+            <span>{{node.field_titulo_comparador.value}}</span>
+          </div>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{content.field_bloques_contenido}}
+
+{{content.field_comentarios}}

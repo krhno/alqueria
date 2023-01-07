@@ -1,0 +1,24 @@
+# core: 8.x
+engine: twig
+type: theme
+name: Alqueria
+base theme: bootstrap_barrio
+screenshot: screenshot.png
+logo: logo.png
+favicon: favicon.ico
+
+libraries:
+  - alqueria/bootstrap
+  - alqueria/base
+libraries-override:
+  system/base: false
+
+regions:
+  header: 'Header'
+  content: 'Content'
+  footer_first: 'Footer'
+
+version: '8.x'
+core: '8.x'
+project: 'Alqueria'
+datestamp: 1589484064

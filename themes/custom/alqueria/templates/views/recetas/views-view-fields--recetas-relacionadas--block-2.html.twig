@@ -1,0 +1,39 @@
+{%
+  set classes = [
+  'view',
+  'view-' ~ id|clean_class,
+  'view-id-' ~ id,
+  'view-display-id-' ~ display_id,
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+  %}
+  <article>
+    <div class="img-card">
+      <a href="{{fields.view_node.content}}" data-seo="btn-content">
+        {{fields.field_foto_principal.content}}
+        {% if row._entity.field_url_youtube is not empty %}
+          <div class="video">
+            <div class="icon-play">
+              <span><i class="demo-icon icon-icon-play">&#xe80d;</i></span>
+            </div>
+            <div class="layer-black"></div>
+          </div>
+        {% endif %}
+      </a>
+    </div>
+    <div class="content-card">
+      <div class="content-star after">
+        {% set calificacion = row._entity.field_calificacion is empty ? 0 : row._entity.field_calificacion.value %}
+        {% for item in 5..1 %}
+          <input type="radio" {% if calificacion == item  %} checked="checked" {% endif %}value="{{item}}">
+          <label class="star"></label>
+        {% endfor %}
+      </div>
+      <ul class="tags-ingredients no-dics">
+        {% for item in row._entity.field_ingredientes_destacados%}
+          <li>{{item.entity.label}}</li>
+        {% endfor %}
+      </ul>
+      <h4><a href="{{fields.view_node.content}}" data-seo="btn-content">{{fields.title.content}}</a></h4>
+    </div>
+  </article>

@@ -1,0 +1,113 @@
+{#
+  /**
+  * @file
+  * Default theme implementation to display a paragraph.
+  *
+  * Available variables:
+  * - paragraph: Full paragraph entity.
+  *   Only method names starting with "get", "has", or "is" and a few common
+  *   methods such as "id", "label", and "bundle" are available. For example:
+  *   - paragraph.getCreatedTime() will return the paragraph creation timestamp.
+  *   - paragraph.id(): The paragraph ID.
+  *   - paragraph.bundle(): The type of the paragraph, for example, "image" or "text".
+  *   - paragraph.getOwnerId(): The user ID of the paragraph author.
+  *   See Drupal\paragraphs\Entity\Paragraph for a full list of public properties
+  *   and methods for the paragraph object.
+  * - content: All paragraph items. Use {{ content }} to print them all,
+  *   or print a subset such as {{ content.field_example }}. Use
+  *   {{ content|without('field_example') }} to temporarily suppress the printing
+  *   of a given child element.
+  * - attributes: HTML attributes for the containing element.
+  *   The attributes.class element may contain one or more of the following
+  *   classes:
+  *   - paragraphs: The current template type (also known as a "theming hook").
+  *   - paragraphs--type-[type]: The current paragraphs type. For example, if the paragraph is an
+  *     "Image" it would result in "paragraphs--type--image". Note that the machine
+  *     name will often be in a short form of the human readable label.
+  *   - paragraphs--view-mode--[view_mode]: The View Mode of the paragraph; for example, a
+  *     preview would result in: "paragraphs--view-mode--preview", and
+  *     default: "paragraphs--view-mode--default".
+  * - view_mode: View mode; for example, "preview" or "full".
+  * - logged_in: Flag for authenticated user status. Will be true when the
+  *   current user is a logged-in member.
+  * - is_admin: Flag for admin user status. Will be true when the current user
+  *   is an administrator.
+  *
+  *
+  * @ingroup themeable
+  */
+  #}
+  {%
+    set classes_paragraph = [
+    'paragraph',
+    'paragraph--type--' ~ paragraph.bundle|clean_class,        
+    ]
+    %}
+    <section class="timeline">
+      <div class="containerGridp">
+        <div class="content">
+          {% if paragraph.field_titulo is not empty %}
+          <div class="c-header {% if paragraph.field_ocupar_100.value != 1 %}left{%endif%}">
+            <h2>{{paragraph.field_titulo.value}}</h2>
+            {% if paragraph.field_descripcion_larga is not empty %}
+            {{ paragraph.field_descripcion_larga.value|raw }}
+            {% endif %}
+          </div>          
+          {% endif %}
+          <div class="c-timeline">
+            <div class="content-timeline">
+              <div class="steps steps-anchor">            
+                {% for item in paragraph.field_timeline  %}
+                <div id="anchor{{loop.index}}" class="item">
+                  <div class="column-left">
+                    <a href="#anchor{{loop.index}}" class="anchor {%if loop.index==1 %}active{% endif %}" data-seo="btn-content">{{loop.index}}</a>
+                    <div class="text">
+                      <div class="number">{{item.entity.field_titulo.value}}</div>
+                      {{item.entity.field_descripcion_larga.value|raw}}
+                    </div>
+                  </div>
+                  <div class="column-right">
+                    <div class="{% if item.entity.field_imagenes|length > 1 %}s-slider-full-img owl-dots-gray owl-carousel owl-theme{% else %}img {% endif%}">                    
+                      {% if item.entity.field_orientacion_imagen is not empty and item.entity.field_orientacion_imagen.value == 1%}
+                      {% set orientacion='440_400_290_250' %}
+                      {% else %}
+                      {% set orientacion='569x350_294x275' %}
+                      {% endif %}
+                      {% if item.entity.field_imagenes|length > 1 %}
+                      {% for item in item.entity.field_imagenes %}
+                      {% set responsiveimagestyle = {
+                        '#theme': 'responsive_image',
+                        '#responsive_image_style_id': orientacion,
+                        '#uri':        item.entity.fileuri,
+                        '#alt':        item.alt,
+                        '#title':      item.title,
+                        '#attributes': { class: 'lazyload' }, 
+                      } 
+                      %}
+                      <div class="item">
+                        {{responsiveimagestyle}}
+                      </div>
+                      {% endfor %}
+                      {% else %}
+                      {% set responsiveimagestyle = {
+                        '#theme': 'responsive_image',
+                        '#responsive_image_style_id': orientacion,
+                        '#uri':        item.entity.field_imagenes.entity.fileuri,
+                        '#alt':        item.entity.field_imagenes.alt,
+                        '#title':      item.entity.field_imagenes.title,
+                        '#attributes': { class: 'lazyload' }, 
+                      } 
+                      %}
+                      {{responsiveimagestyle}}
+                      {% endif %}                                  
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}      
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    

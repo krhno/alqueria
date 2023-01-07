@@ -1,0 +1,192 @@
+  {#
+    /**
+    * @file
+    * Theme override to display a menu.
+    *
+    * Available variables:
+    * - menu_name: The machine name of the menu.
+    * - items: A nested list of menu items. Each menu item contains:
+    *   - attributes: HTML attributes for the menu item.
+    *   - content.children: The menu item child items.
+    *   - title: The menu link title.
+    *   - url: The menu link url, instance of \Drupal\Core\Url
+    *   - content: The field item content.
+    *   - localized_options: Menu link localized options.
+    *   - is_expanded: TRUE if the link has visible children within the current
+    *     menu tree.
+    *   - is_collapsed: TRUE if the link has children within the current menu tree
+    *     that are not currently visible.
+    *   - in_active_trail: TRUE if the link is in the active trail.
+    */
+    #}
+
+      {% set ruta='/themes/custom/alqueria/templates/templates/menu/' %}
+      <nav class="nav-mobile">
+        <ul class="general-menu no-dics">
+          <li class="user">
+            {% if logged_in %}
+              {% include ruta ~ 'menu-usuario.html.twig' with {'fotoUsuario': fotoUsuario,'nombreUsuario':nombreUsuario,'rutaUsuario':rutaUsuario } %}
+            {% else %}
+              <span class="btn-user static" data-toggle="modal" data-target="#modal-login" data-seo="btn-header">
+                <div class="icon">
+                  <i class="demo-icon icon-icon-user">&#xe804;</i>
+                </div>
+                <div class="text">
+                  <span>{{get_config_data('config.settings','login_label')}}</span>
+                </div>
+              </span>
+            {% endif%}
+          </li>
+          <li class="register">
+            {% if logged_in %}
+            {% else %}
+              <a href="{{get_config_data('alqueriaUsers.settings','url_registrate_login')}}" class="btn-register" data-seo="btn-header">
+                <div class="icon">
+                  <i class="demo-icon icon-icon-register">&#xe838;</i>
+                </div>
+                <div class="text">
+                  <span>{{get_config_data('alqueriaUsers.settings','label_registrate_login')}}</span>
+                </div>
+              </a>
+            {% endif%}
+          </li>
+          <li class="search {% if logged_in %}logged_in{% endif%}" data-toggle="modal" data-target="#modal-search" data-seo="btn-header">
+            <span class="btn-search" data-seo="btn-header">
+              <i class="demo-icon icon-icon-search search">&#xe805;</i>
+              <i class="demo-icon icon-icon-close1 close">&#xe81c;</i>
+            </span>
+          </li>
+          <li class="menu-mobile">
+            <span></span>
+            <span></span>
+            <span></span>
+          </li>
+        </ul>
+        {{ _self.menu_links_mobile(items, attributes, 0) }}
+      </nav>
+
+      {% macro menu_links_mobile(items, attributes, menu_level) %}
+      {% set ruta='/themes/custom/alqueria/templates/templates/menu/' %}
+      {% set primerMomento=0 %}
+      {% set primerBlogNutricion=0 %}
+      {% set primerProducto=0 %}
+        <div class="dropdown-mobile">
+          <div class="btn-nav">
+            <div class="btn-close">
+              <i class="demo-icon icon-icon-close1">&#xe81c;</i>
+            </div>
+            <div class="div-search">
+              <form action="/buscador" method="GET">
+                <div class="input">
+                  <input type="search" id="qq" name="q" placeholder="¿Qué estás buscando?">
+                </div>
+                <div class="search">
+                  <button type="submit" class="icon-search" data-seo="btn-header">
+                    <i class="demo-icon icon-icon-search">&#xe805;</i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="div-menu">
+            <ul class="menu-accordion no-dics">
+              <li class="item-menu">
+                <a href="/" class="a-item-menu active" data-seo="btn-header">Home</a>
+              </li>
+              {% import _self as menu_links %}
+              {% set rutaLi='/themes/custom/alqueria/templates/templates/menu/li/' %}
+              {% for item in items %}
+              {% set tipoEnlace=item.content['#menu_link_content'].field_mostrar.value %}
+
+              {% if tipoEnlace == 2 %}
+              {% include rutaLi ~ 'li-recetas.html.twig' with {'item': item } %}
+              {% elseif tipoEnlace == 3%}
+              {% include rutaLi ~ 'li-nutricion.html.twig' with {'item': item } %}
+              {% elseif tipoEnlace == 4 %}
+              {% include rutaLi ~ 'li-sostenibilidad.html.twig' with {'item': item } %}
+              {% elseif tipoEnlace == 5 %}
+              {% include rutaLi ~ 'li-productos.html.twig' with {'item': item } %}
+              {% elseif tipoEnlace == 6 %}
+              {% include rutaLi ~ 'li-conocenos.html.twig' with {'item': item } %}
+              {% else %}
+                <li class="item-menu">
+                  <a href="{{item.url}}" target="{{ item.url.getOption('attributes').target }}" class="a-item-menu" data-seo="btn-header">{{item.title}}</a>
+                </li>
+              {% endif %}
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div class="megamenu-mobile">
+          {% include ruta ~ 'menu-recetas-mobile.html.twig' with {'primerMomento': primerMomento } %}
+          {% include ruta ~ 'menu-nutricion-mobile.html.twig' %}
+          {% include ruta ~ 'menu-productos-mobile.html.twig' with {'primerProducto': primerProducto } %}
+          {% include ruta ~ 'menu-conocenos-mobile.html.twig' %}
+          {% include ruta ~ 'menu-sostenibilidad-mobile.html.twig' %}
+        </div>
+      {% endmacro %}
+
+      {% set ruta='/themes/custom/alqueria/templates/templates/menu/' %}
+      <nav class="nav-desktop">
+        <ul class="general-menu no-dics">
+          {{ _self.menu_links_desktop(items, attributes, 0) }}
+          <li class="user">
+            {% if logged_in %}
+              {% include ruta ~ 'menu-usuario.html.twig' with {'fotoUsuario': fotoUsuario,'nombreUsuario':nombreUsuario,'rutaUsuario':rutaUsuario } %}
+            {% else %}
+              <span class="btn-user static border-left" data-toggle="modal" data-target="#modal-login" data-seo="btn-header">
+                <div class="icon">
+                  <i class="demo-icon icon-icon-user">&#xe804;</i>
+                </div>
+                <div class="text">
+                  <span>{{get_config_data('config.settings','login_label')}}</span>
+                </div>
+              </span>
+            {% endif%}
+          </li>
+          <li class="register">
+            {% if logged_in %}
+            {% else %}
+              <a href="{{get_config_data('alqueriaUsers.settings','url_registrate_login')}}" class="btn-register border-right" data-seo="btn-header">
+                <div class="icon">
+                  <i class="demo-icon icon-icon-register">&#xe838;</i>
+                </div>
+                <div class="text">
+                  <span>{{get_config_data('alqueriaUsers.settings','label_registrate_login')}}</span>
+                </div>
+              </a>
+            {% endif%}
+          </li>
+          <li class="search {% if logged_in %}logged_in{% endif%}" data-toggle="modal" data-target="#modal-search" data-seo="btn-header">
+            <span class="btn-search" data-seo="btn-header">
+              <i class="demo-icon icon-icon-search search">&#xe805;</i>
+              <i class="demo-icon icon-icon-close1 close">&#xe81c;</i>
+            </span>
+          </li>
+        </ul>
+      </nav>
+
+      {% macro menu_links_desktop(items, attributes, menu_level) %}
+      {% set ruta='/themes/custom/alqueria/templates/templates/menu/' %}
+      {% import _self as menu_links %}
+      {% for item in items %}
+      {% set tipoEnlace=item.content['#menu_link_content'].field_mostrar.value %}
+      {% if tipoEnlace == 2 %}
+      {% include ruta ~ 'menu-recetas.html.twig' with {'titulo': item.title } %}
+      {% elseif tipoEnlace == 3%}
+      {% include ruta ~ 'menu-nutricion.html.twig' with {'titulo': item.title } %}
+      {% elseif tipoEnlace == 4%}
+      {% include ruta ~ 'menu-sostenibilidad.html.twig' with {'titulo': item.title } %}
+      {% elseif tipoEnlace == 5 %}
+      {% include ruta ~ 'menu-productos.html.twig' with {'titulo': item.title } %}
+      {% elseif tipoEnlace == 6 %}
+      {% include ruta ~ 'menu-conocenos.html.twig' with {'titulo': item.title } %}
+      {% else %}
+        <li class="item-menu">
+          <a href="{{item.url}}" target="{{ item.url.getOption('attributes').target }}" class="a-item-menu" data-seo="btn-header">
+            {{item.title}}
+          </a>
+        </li>
+      {% endif %}
+      {% endfor %}
+      {% endmacro %}

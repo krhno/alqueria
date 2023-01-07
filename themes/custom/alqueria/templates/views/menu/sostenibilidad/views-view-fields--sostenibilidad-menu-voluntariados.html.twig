@@ -1,0 +1,27 @@
+{%
+  set classes = [
+  'view',
+  'view-' ~ id|clean_class,
+  'view-id-' ~ id,
+  'view-display-id-' ~ display_id,
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+]
+%}
+<article class="article-default">
+  <div class="img-card">
+    <a href="{{fields.field_enlace_contenido.content}}" data-seo="btn-content">
+      <picture>
+        {{fields.field_imagenes.content}}
+      </picture>
+      <span class="category">{{fields.field_categoria_del_menu.content}}</span>
+    </a>
+  </div>
+  <div class="content-card border-red">
+    <div class="text">
+      <h3 class="titleHeight">
+        <a href="{{fields.field_enlace_contenido.content}}" data-seo="btn-content">{{fields.field_titulo.content}}</a>
+      </h3>
+      <p class="textHeight">{{fields.field_descripcion.content}}</p>
+    </div>
+  </div>
+</article>

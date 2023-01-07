@@ -1,0 +1,19 @@
+<section class="sustainability-axes back-sustainability">
+	<div class="containerr">
+		<div class="content">
+			<div class="c-header">
+				<h2>{{label}}</h2>
+			</div>
+			<div class="c-sustainability-axes">
+				<div class="items">
+					{{content.field_ejes}}
+				</div>
+			</div>
+			{% if content['#block_content'].field_enlace is not empty %}
+			<div class="c-bottom">
+	        	<a href="{{ content['#block_content'].field_enlace.0.url }}" class="btn-default back-green" data-seo="btn-content">{{ content['#block_content'].field_enlace.title }}</a>
+	      	</div>
+	      	{% endif %}
+		</div>
+	</div>
+</section>

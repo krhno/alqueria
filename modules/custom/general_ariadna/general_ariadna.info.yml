@@ -1,0 +1,5 @@
+name: Funciones generales Ariadna
+description: Modulo con funcionalidades generales utiles para el desarrollo de sitios web
+package: CDI
+type: module
+core: 8.x

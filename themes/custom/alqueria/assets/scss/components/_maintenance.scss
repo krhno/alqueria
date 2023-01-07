@@ -1,0 +1,122 @@
+/*maintenance*/
+.maintenance{
+	background-image: url("/themes/custom/alqueria/assets/img/background/maintenance-desktop.jpg");
+	background-repeat: no-repeat;
+	background-position: top;
+	background-size: contain;
+	@media (max-width: $mobile){
+		background-image: url("/themes/custom/alqueria/assets/img/background/maintenance-mobile.jpg");
+		background-repeat: no-repeat;
+		background-position: top;
+		background-size: contain;
+	}
+	.containerGridp{
+		padding-top: 0;
+		.content{
+			.c-maintenance{
+				text-align: center;
+				padding: 12% 0 120px 0;
+				@media (max-width: $desktop_1366){
+					padding: 10% 0 120px 0;
+				}
+				@media (max-width: $mobile){
+					padding: 120px 0;
+				}
+				.icon{
+					width: 180px;
+					height: 180px;
+					margin: 0 auto;
+					padding: 25px 25px;
+					border-radius: 50%;
+					margin-bottom: 35px;
+					box-shadow: 0 0 10px 0 $shadow;
+					background-color: $white;
+
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					@media (max-width: $desktop_1640){
+						width: 140px;
+						height: 140px;
+					}
+					@media (max-width: $mobile){
+						width: 120px;
+						height: 120px;
+					}
+				}
+				.layers{
+					width: 50%;
+					margin: 0 auto;
+					position: relative;
+					@media (max-width: $desktop_1640){
+						width: 55%;
+					}
+					@media (max-width: $desktop_1024){
+						width: 65%;
+					}
+					@media (max-width: $tablet){
+						width: 80%;
+					}
+					@media (max-width: $mobile){
+						width: 100%;
+					}
+					.layer-left{
+						z-index: 1;
+						top: -90px;
+						left: -5%;
+						width: 30%;
+						height: auto;
+						position: absolute;
+					}
+					.layer-middle{
+						z-index: 2;
+						position: relative;
+						text-align: center;
+						h1{
+							color: $red1;
+							font-size: 5rem;
+							font-weight: 700;
+							font-style: normal;
+							line-height: normal;
+							font-family: Poppins;
+							@media (max-width: $desktop_1640){
+						        font-size: 4.5rem;
+						    }
+						    @media (max-width: $desktop_1440){
+						    	font-size: 4rem;
+						    }
+						    @media (max-width: $mobile){
+						    	font-size: 2.5rem;
+						    }
+						}
+						span{
+							font-size: 3rem;
+							font-weight: 700;
+							font-style: normal;
+							line-height: normal;
+							font-family: Poppins;
+							@media (max-width: $desktop_1640){
+								font-size: 2.5rem;
+							}
+							@media (max-width: $tablet){
+								font-size: 2.2rem;
+							}
+							@media (max-width: $mobile){
+								font-size: 1.9rem;
+							}
+						}
+					}
+					.layer-right{
+						z-index: 1;
+						top: -30px;
+						right: -7%;
+						width: 30%;
+						height: auto;
+						position: absolute;
+					}
+				}
+			}
+		}
+	}
+}
+	

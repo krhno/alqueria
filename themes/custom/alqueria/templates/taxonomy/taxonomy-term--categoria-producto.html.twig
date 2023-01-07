@@ -1,0 +1,69 @@
+<section class="product-banner2 if-img-video">
+	<div class="containerGridp">
+		<div class="content">
+			<div class="c-header">
+				<h1>{{name}}</h1>
+				{{term.field_descripcion.value|raw}}
+			</div>
+			<div class="c-product-banner2">
+				<div class="banner {% if term.field_url_youtube is not empty %}video{%else%}img{%endif%}">
+					<div class="img-banner">
+						{{content.field_foto}}
+					</div>
+					{% if term.field_url_youtube is not empty %}
+					{% if 'https://youtu.be/' in term.field_url_youtube.value %}
+					{% set codigo=term.field_url_youtube.value|replace({'https://youtu.be/':''}) %}
+					{% elseif 'https://www.youtube.com/watch?v=' in term.field_url_youtube.value %}
+					{% set codigo=term.field_url_youtube.value|replace({'https://www.youtube.com/watch?v=':''}) %}
+					{% endif %}
+					<div class="video-banner" data-src="https://www.youtube.com/embed/{{codigo}}">
+						<iframe width="100%" height="100%" class="iframe-yt" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					<div class="icon-play">
+						<span>
+							<i class="demo-icon icon-icon-play">&#xe80d;</i>
+						</span>
+					</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{{ vista_render(term.id, 'productos_por_categoria', 'block_1') }}
+
+<section class="banner-full-img1">
+    <div class="containerr">
+      <div class="content">
+       <div class="c-banner-full-img1">
+        <a href="{{term.field_autopauta.entity.field_enlace.0.url}}" target="{{term.field_autopauta.entity.field_enlace.0.url.external ? '_blank' : '_self'}}" data-seo="btn-content">
+          <picture>
+            <source media="(max-width: 768px)" srcset="{{file_url(term.field_autopauta.entity.field_imagen_de_fondo_mobile.entity.fileuri)}}">
+              <img data-src="{{file_url(term.field_autopauta.entity.field_imagen_de_fondo_desktop.entity.fileuri)}}" alt="{{term.field_autopauta.entity.field_imagen_de_fondo_desktop.alt}}" title="{{term.field_autopauta.entity.field_imagen_de_fondo_desktop.title}}" class="lazyload">
+            </picture>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% if term.field_momento_destacado.value == 1%}
+  <section class="slider-cards related">
+    <div class="containerGridp">
+      <div class="content">
+        <div class="c-header">
+          <h2>Recetas relacionadas</h2>
+        </div>
+        <div class="c-slider-cards">
+          <div class="s-slider-cards owl-dots-gray owl-nav-icons1 owl-carousel owl-theme">
+          	{{obtener_recetas_relacionadas(term.id)}}
+          </div>
+        </div>
+        <div class="c-bottom">
+          <a href="{{get_config_data('config.settings','url_btn_recetas_valoradas')}}" class="btn-default back-green" data-seo="btn-content">{{get_config_data('config.settings','titulo_btn_recetas_valoradas')}}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}

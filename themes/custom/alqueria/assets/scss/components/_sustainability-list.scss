@@ -1,0 +1,31 @@
+/*sustainability-list*/
+.sustainability-list{
+	.content{
+		.c-sustainability-list{
+			.list-articles{
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				article{
+					width: calc(33.33% - 15px);
+					margin: 0 7.5px 35px 7.5px;
+					@media (max-width: $desktop_1024){
+						width: calc(50% - 15px);
+						margin: 0 7.5px 25px 7.5px;
+					}
+					@media (max-width: $mobile){
+						width: 100%;
+						margin: 0 0 25px 0;
+					}
+				}
+			}
+		}
+		.c-bottom{
+			width: 100%;
+			text-align: center;
+			.btn-link{
+				color: $green1;
+			}
+		}
+	}
+}

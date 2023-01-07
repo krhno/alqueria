@@ -1,0 +1,20 @@
+<section class="thank-you-page">
+	<div class="containerGridp">
+		<div class="content">
+			<div class="c-thank-you-page">
+				<div class="icon">
+					<i class="demo-icon icon-icon-check1">&#xe820;</i>
+				</div>
+				<div class="title">
+					<h1>{{node.label}}</h1>
+				</div>
+				<div class="text">
+					{{node.body.value|raw}}
+					{% if node.field_enlace is not empty %}
+					<a href="{{node.field_enlace.0.url}}" target="{{node.field_enlace.0.url.external ? '_blank' : '_self'}}" class="btn-default back-green" data-seo="btn-content">{{node.field_enlace.title}}</a>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

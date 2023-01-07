@@ -1,0 +1,58 @@
+<a href="#profile-menu" class="btn-user dropdown icon-icon-arrow" data-toggle="collapse" data-seo="btn-header">
+  <div class="img">
+    <picture>
+      <img data-src="{{fotoUsuario}}" alt="Imagen de perfil de {{nombreUsuario}}" title="Imagen de perfil de {{nombreUsuario}}" class="lazyload">
+    </picture>
+  </div>
+  <div class="text">
+    <span>Mi perfil<i class="demo-icon icon-icon-arrow-down">&#xe809;</i></span>
+  </div>
+</a>
+<div id="profile-menu" class="profile panel-collapse collapse">
+  <div class="div-nav">
+    <div class="info-person">
+      <div class="img">
+          <picture>
+          <img data-src="{{fotoUsuario}}" alt="Imagen de perfil de {{nombreUsuario}}" title="Imagen de perfil de {{nombreUsuario}}" class="lazyload">
+          </picture>
+      </div>
+      <div class="text">
+          <span class="author">{{nombreUsuario}}</span>
+          <a href="{{rutaUsuario}}/?s=editar-perfil" data-seo="btn-header"><span class="item-dataid btn-edit" data-id="form-profile"><i class="demo-icon icon-icon-edit1">&#xe827;</i>Editar perfil</span></a>
+      </div>
+    </div>
+    <div class="profile-menu">
+      <ul class="no-dics">
+        <li class="item-dataid" data-id="recipes">
+          <a href="{{rutaUsuario}}/?s=recetas" data-seo="btn-header">
+            <i class="icon-left demo-icon icon-icon-recipe-hat">&#xe82a;</i>
+            Mis recetas
+          </a>
+        </li>
+        <li class="item-dataid" data-id="favorites">
+          <a href="{{rutaUsuario}}/?s=favoritos" data-seo="btn-header">
+            <i class="icon-left demo-icon icon-icon-favorite">&#xe817;</i>
+            Favoritos
+          </a>
+        </li>
+        <li class="item-dataid" data-id="notifications">
+          <a href="{{rutaUsuario}}/?s=notificaciones" data-seo="btn-header">
+            <div class="icon">
+              <i class="icon-left demo-icon icon-icon-notification3">&#xe831;</i>
+              <span class="number">{{obtener_notificaciones_visibles()}}</span>
+            </div>
+            Notificaciones
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="button">
+      <a href="{{get_config_data('alqueriaUsers.settings','enlace_sube_tu_receta')}}" class="btn-default back-green" data-seo="btn-header">Subir receta</a>
+    </div>
+    <div class="logout">
+      <a href="/alquerialogin/logout" data-seo="btn-header">
+        <i class="demo-icon icon-icon-logout">&#xe82c;</i>Cerrar sesión
+      </a>
+    </div>
+  </div>
+</div>

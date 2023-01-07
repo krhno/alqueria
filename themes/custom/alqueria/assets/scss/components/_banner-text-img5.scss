@@ -1,0 +1,84 @@
+/*banner-text-img5*/
+.banner-text-img5{
+	.content{
+		margin: 0 7%;
+		@media (max-width: $desktop_1024){
+			margin: 0;
+		}
+		.c-banner-text-img5{
+			display: flex;
+			flex-direction: row;
+			@media (max-width: $mobile){
+				flex-direction: column;
+			}
+			.column-left{
+				width: 50%;
+				margin: 20px 0;
+				padding: 25px 5%;
+				background-color: $red1;
+
+				display: flex;
+			    flex-direction: column;
+			    align-items: flex-start;
+			    justify-content: center;
+			    @media (max-width: $mobile){
+			    	width: 90%;
+			    	margin: 0 auto;
+			    	padding: 30px 25px;
+			    	text-align: center;
+			    }
+			    h2{
+			    	color: $white;
+			    }
+				p{
+					color: $white;
+					b, strong{
+						color: $white;
+					}
+				}
+			    span{
+			    	color: $white;
+			    	font-size: 2.65rem;
+			    	font-weight: 700;
+			    	font-style: normal;
+			    	line-height: 50px;
+			    	font-family: $Poppins;
+			    	@media (max-width: $desktop_1640){
+			    		font-size: 2.25rem;
+			    	}
+			    	@media (max-width: $tablet){
+			    		font-size: 2rem;
+			    		line-height: 40px;
+			    	}
+			    	@media (max-width: $mobile){
+			    		font-size: 1.25rem;
+			    		line-height: 30px;
+			    	}
+			    }
+			}
+			.column-right{
+				width: 50%;
+				@media (max-width: $mobile){
+					width: 100%;
+				}
+			}
+		}
+	}
+	&.sustainability{
+		.content{
+			.c-banner-text-img5{
+				flex-direction: row-reverse;
+				@media (max-width: $mobile){
+					flex-direction: column-reverse;
+				}
+				.column-left{
+					background-color: $green1;
+					@media (max-width: $mobile){
+						width: 100%;
+						text-align: left;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,194 @@
+/*timeline*/
+.timeline{
+	.content{
+		.c-header{
+			width: 80%;
+			@media (max-width: $tablet){
+				width: 100%;
+			}
+			&.left{
+				text-align: left;
+			}
+		}
+		.c-timeline{
+			padding: 40px 7% 0 7%;
+
+			display: flex;
+			flex-direction: row;
+			@media (max-width: $desktop_1024){
+				padding: 40px 0 0 0;
+			}
+			@media (max-width: $tablet){
+				flex-direction: column;
+			}
+			.content-timeline{
+				width: 100%;
+				.steps{
+					overflow: hidden;
+					position: relative;
+					.item{
+						padding: 15px 5px;
+
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						&:first-child{
+							padding-top: 0;
+						}
+						&:last-child{
+							padding-bottom: 0;
+						}
+						@media (max-width: $mobile){
+							flex-direction: column;
+						}
+						.column-left{
+							width: 60%;
+							padding-left: 100px;
+							padding-right: 7%;
+							position: relative;
+							@media (max-width: $mobile){
+								width: 100%;
+								padding-left: 80px;
+								padding-right: 0;
+							}
+							.text{
+								.number{
+									display: block;
+
+									color: $gray6;
+									font-size: 6rem;
+									font-weight: 700;
+									font-style: normal;
+									line-height: 80px;
+									font-family: $Poppins;
+									border-bottom: 1px solid $gray6;
+									@media (max-width: $desktop_1640){
+										font-size: 5rem;
+										line-height: 70px;
+									}
+									@media (max-width: $desktop_1024){
+										font-size: 4.5rem;
+										line-height: 70px;
+									}
+									@media (max-width: $mobile){
+										font-size: 4rem;
+										line-height: 60px;
+									}
+								}
+								p{
+									padding-top: 10px;
+								}
+							}
+							&.full-width{
+								width: 100%;
+								padding-right: 0;
+							}
+						}
+						.column-right{
+							width: 40%;
+							@media (max-width: $mobile){
+								width: 100%;
+								padding-top: 15px;
+								padding-left: 75px;
+							}
+							.img{
+								margin: 5px;
+								box-shadow: 0 0 10px 0 $shadow;
+							}
+							.s-slider-full-img{
+								.item{
+									margin: 5px;
+									box-shadow: 0 0 10px 0 $shadow;
+								}
+							}
+						}
+						.anchor{
+							top: 55px;
+							left: 12px;
+							width: 50px;
+							height: 50px;
+							border-radius: 50%;
+							position: absolute;
+
+							color: $gray1;
+							font-size: 2.3rem;
+							font-weight: 300;
+							font-style: normal;
+							font-family: $Poppins;
+							background-color: $gray6;
+
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							@media (max-width: $desktop_1640){
+								top: 45px;
+								left: 10px;
+								width: 45px;
+								height: 45px;
+								font-size: 1.8rem;
+							}
+							@media (max-width: $mobile){
+								top: 40px;
+							}
+							&:hover, &.active{
+								background-color: $red2;
+
+								color: $white;
+								font-weight: 700;
+								font-style: normal;
+								font-family: $Poppins;
+							}
+							&:hover:after, &.active:after{
+								content: '';
+								top: -12px;
+								left: -12px;
+								width: 75px;
+								height: 75px;
+								border-radius: 50%;
+								position: absolute;
+								background-color: transparent;
+								border: 1px solid $gray6;
+								box-shadow: inset 0 0 0 12px $red1;
+								@media (max-width: $desktop_1640){
+									top: -8px;
+									left: -8px;
+									width: 60px;
+									height: 60px;
+									box-shadow: inset 0 0 0 10px $red1;
+								}
+							}
+							&:before{
+								content: '';
+								top: 50px;
+								left: 0;
+								right: 0;
+								width: 1px;
+								height: 100vh;
+								margin: 0 auto;
+								position: absolute;
+								background-color: $gray6;
+								@media (max-width: $desktop_1640){
+									top: 45px;
+								}
+							}
+						}
+					}
+					.item:last-child .anchor:before{
+						content: '';
+						top: 50px;
+						left: 0;
+						right: 0;
+						width: 4px;
+						height: 100vh;
+						margin: 0 auto;
+						position: absolute;
+						background-color: $white;
+						@media (max-width: $desktop_1640){
+							top: 45px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

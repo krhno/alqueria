@@ -1,0 +1,52 @@
+{%
+  set classes = [
+  'view',
+  'view-' ~ id|clean_class,
+  'view-id-' ~ id,
+  'view-display-id-' ~ display_id,
+  dom_id ? 'js-view-dom-id-' ~ dom_id,
+  ]
+  %}
+  <article class="article-default">
+    <div class="img-card">
+      {{fields.field_foto_principal.content}}
+      {% if row._entity.field_destacado_para_home_receta.value == 1%}
+      <div class="featured"><span>Nuevo</span></div>
+      {% endif %}
+      {% if row._entity.field_destacada_para_listado.value == 1%}
+      <span class="category">Popular</span>
+      {% endif %}
+    </div>
+    <div class="content-card">
+      <time datetime="{{fields.created.content}}" class="font-18">{{fields.created.content}}</time>
+      <div class="text">
+        <h3 class="titleHeight click-modal-tips" data-seo="btn-content">{{fields.title.content}}</h3>
+        <p class="textHeight">{{fields.body.content}}</p>
+        <span class="btn-link click-modal-tips" data-seo="btn-content">Leer más</span>
+      </div>
+    </div>
+    <div class="c-modal-tips hidden">
+      <div class="info">
+        <h3>{{fields.title.content}}</h3>
+        <div class="text">
+          <p>{{fields.body_1.content}}</p>
+        </div>
+      </div>
+      <div class="img-video">
+        {% if row._entity.field_url_youtube is not empty %}
+        {% if 'https://youtu.be/' in row._entity.field_url_youtube.value %}
+        {% set codigo=row._entity.field_url_youtube.value|replace({'https://youtu.be/':''}) %}
+        {% elseif 'https://www.youtube.com/watch?v=' in row._entity.field_url_youtube.value %}
+        {% set codigo=row._entity.field_url_youtube.value|replace({'https://www.youtube.com/watch?v=':''}) %}
+        {% endif %}
+        <div class="video">
+          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/{{codigo}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        {% else %}
+        <div class="img">
+          {{fields.field_foto_principal_1.content}}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </article>

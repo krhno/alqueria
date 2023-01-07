@@ -1,0 +1,352 @@
+<section class="product-banner1 if-img-video">
+  <div class="containerr">
+    <div class="content">
+      <div class="c-header">
+        <h1>{{node.label}}</h1>
+        {{node.body.value|raw}}
+      </div>
+      <div class="c-product-banner1">
+        <div class="banner {% if node.field_url_youtube is not empty %}video{%else%}img{%endif%}">
+          <div class="img-banner">
+            {{content.field_foto_principal}}
+          </div>
+          {% if node.field_url_youtube is not empty %}
+          {% if 'https://youtu.be/' in node.field_url_youtube.value %}
+          {% set codigo=node.field_url_youtube.value|replace({'https://youtu.be/':''}) %}
+          {% elseif 'https://www.youtube.com/watch?v=' in node.field_url_youtube.value %}
+          {% set codigo=node.field_url_youtube.value|replace({'https://www.youtube.com/watch?v=':''}) %}
+          {% endif %}
+          <div class="video-banner" data-src="https://www.youtube.com/embed/{{codigo}}">
+            <iframe width="100%" height="100%" class="iframe-yt" src="" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="icon-play">
+            <span>
+              <i class="demo-icon icon-icon-play">&#xe80d;</i>
+            </span>
+          </div>
+          {% endif %}
+          <div class="layer-black"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if node.field_iconos_descriptivos is not empty %}
+<section class="slider-icons">
+  <div class="containerGridp">
+    <div class="content">
+      <div class="c-slider-icons">
+        <div class="s-slider-icons owl-dots-gray owl-nav-icons1 owl-carousel owl-theme">
+          {% for item in node.field_iconos_descriptivos %}
+          {% if loop.index==1 %}
+          <div class="items">
+            {% endif%}
+            <div class="item">
+              <div class="img">
+                <picture>
+                  {{content.field_iconos_descriptivos[loop.index-1]}}
+                </picture>
+              </div>
+              <div class="text">
+                <p>{{item.entity.field_descripcion_corta.value}}</p>
+              </div>
+            </div>
+            {% if loop.index is divisible by(3) or loop.last %}
+          </div>
+          {% endif %}
+          {% if loop.index is divisible by(3) and loop.last!=1 %}
+          <div class="items">
+            {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        {% if node.field_descripcion_iconos.value is not empty %}
+          <div class="icons-description">
+            {{node.field_descripcion_iconos.value|raw}}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="general-header">
+  <div class="containerGridp">
+    <div class="content">
+      <div class="c-header">
+        <h2 class="gray-color">{{content.field_titulo_informacion_nutrici}}</h2>
+        {{node.field_descripcion_informacion_nu.value|raw}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="nutrition-info back-blue milk">
+  <div class="containerGridp">
+    <div class="content">
+      <div class="c-nutrition-info">
+        <div class="right">
+          <div class="div-info-table active" data-id="item-1">
+            <div class="info-table">
+              {% for item in node.field_grupo_nutricional %}
+              <div class="div-table">
+                <table class="table">
+                    <thead>
+                    {# Titulo 1 #}
+                      <tr>
+                        {% if item.entity.field_titulo is not empty %}
+                          <th>{{item.entity.field_titulo.value}}</th>
+                        {% endif %}
+                        {% if item.entity.field_subtitulo is not empty %}
+                          <th>{{item.entity.field_subtitulo.value}}</th>
+                        {% endif %}
+                        {% if item.entity.field_title_col_two is not empty %}
+                          <th>{{item.entity.field_title_col_two.value}}</th>
+                        {% endif %}
+                      </tr>
+                    </thead>
+
+                  <tbody>
+                    {% for item2 in item.entity.field_datos_nutricionales %}
+                      <tr>
+                        {# col 1 #}
+                        {% if item2.entity.field_titulo.value %}
+                          <th>{% if item2.entity.field_ocupar_100.value == 1 %}<strong>{% endif %}
+                          {{-item2.entity.field_titulo.value-}}
+                          {% if item2.entity.field_ocupar_100.value == 1 %}</strong>{% endif %}
+                          </th>
+                        {% endif %}
+                        {# col 2 #}
+                        {% if item2.entity.field_autor.value %}
+                          <td>{% if item2.entity.field_strong_col_two.value == 1 %}<strong>{% endif %}
+                              {{ item2.entity.field_autor.value }}
+                          {% if item2.entity.field_strong_col_two.value == 1 %}</strong>{% endif %}
+                          </td>
+                        {% endif %}
+                        {# col 3 #}
+                        {% if item2.entity.field_subtitulo.value %}
+                          <td>{% if item2.entity.field_aplicar_negrilla_2.value == 1 %}<strong>{% endif %}
+                              {{-item2.entity.field_subtitulo.value-}}
+                              {% if item2.entity.field_aplicar_negrilla_2.value == 1 %}</strong>{% endif %}
+                          </td>
+                        {% endif %}
+                      </tr>
+                    {% endfor%}
+                  </tbody>
+
+                </table>
+                {% if item.entity.field_descripcion_corta is not empty %}
+                  <i class="demo-icon icon-icon-exclamation1 tooltip-desktop" data-toggle="tooltip" data-placement="right" title="{{item.entity.field_descripcion_corta.value}}">&#xe81f;</i>
+                  <i class="demo-icon icon-icon-exclamation1 tooltip-mobile" data-toggle="tooltip" data-placement="bottom" title="{{item.entity.field_descripcion_corta.value}}">&#xe81f;</i>
+                {% endif %}
+              </div>
+              {% endfor %}
+            <label>{{node.field_descripcion_corta_tabla.value}}</label>
+          </div>
+          <div class="info-product">
+            <div class="img">
+              <picture>
+                {% set imagestyle = {
+                  '#theme':      'image_style',
+                  '#style_name': '200x274',
+                  '#uri':        node.field_imagen_de_fondo_mobile.entity.fileuri,
+                  '#alt':        node.field_imagen_de_fondo_mobile.alt,
+                  '#title':      node.field_imagen_de_fondo_mobile.title,
+                  '#attributes': { class: 'lazyload' },
+                }
+                %}
+                {{imagestyle}}
+              </picture>
+            </div>
+            <div class="title">
+              <h3>{{node.label}}</h3>
+            </div>
+            <div class="button">
+              <a href="#slider-products" class="btn-default back-green btn-anchor" data-seo="btn-content">{{get_config_data('config.settings','boton_compra_aqui')}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if node.field_receta_destacada.value == 1 %}
+  <section class="slider-milks">
+    <div class="containerGridp">
+      <div class="content">
+        <div class="c-header">
+          <h2>{{content.field_titulo_comparador}}</h2>
+        </div>
+        <div class="c-slider-milks">
+          <div class="s-slider-milks owl-dots-gray owl-nav-icons1 owl-carousel owl-theme">
+            <article class="item active">
+              <div class="img">
+                <picture>
+                  {% set imagestyle = {
+                    '#theme':      'image_style',
+                    '#style_name': '125x190',
+                    '#uri':        node.field_imagen_de_fondo_mobile.entity.fileuri,
+                    '#alt':        node.field_imagen_de_fondo_mobile.alt,
+                    '#title':        node.field_imagen_de_fondo_mobile.title,
+                    '#attributes': { class: 'lazyload' },
+                  }
+                  %}
+                  {{imagestyle}}
+                </picture>
+              </div>
+              <div class="info">
+                <h3 class="titleHeight">{{node.label}}</h3>
+                <p class="textHeight">{{node.field_descripcion_corta.value}}</p>
+                <table class="table tableHeight t-featured">
+                  <tbody>
+                    {% for item in node.field_elementos_a_comparar %}
+                      <tr>
+                        <th>{{item.entity.field_titulo.value}}</th>
+                        <td>{{item.entity.field_subtitulo.value}}</td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+                <div class="button">
+                  <a href="{{fields.view_node.content}}" class="btn-link" data-seo="btn-content">Ir al producto</a>
+                </div>
+              </div>
+            </article>
+            {{ vista_render(node.field_categoria.target_id~','~node.id,'comparador', 'block_1') }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+{% if node.field_preguntas_frecuentes is not empty %}
+<section class="collapse-fqa">
+  <div class="containerGridp">
+    <div class="content">
+      <div class="c-header">
+        <h2>{{content.field_t}}</h2>
+      </div>
+      <div class="c-collapse-fqa">
+        {% for item in node.field_preguntas_frecuentes %}
+          <div class="item product-faq {% if loop.index>5%}hidden{% endif %}">
+            <a href="#fqa-{{loop.index}}" class="title icon-icon-arrow" data-toggle="collapse" data-seo="btn-content">
+              {{item.entity.field_titulo.value}}
+              <div class="icon">
+                <i class="demo-icon icon-icon-arrow-down">&#xe809;</i>
+              </div>
+            </a>
+            <div id="fqa-{{loop.index}}" class="panel-collapse collapse">
+              {{item.entity.field_descripcion_larga.value|raw}}
+            </div>
+          </div>
+        {% endfor  %}
+      </div>
+      {% if node.field_preguntas_frecuentes|length > 5 %}
+        <div class="c-bottom">
+          <span class="btn-link load-more-product-faq" data-seo="btn-content">Cargar más</span>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% if node.field_autopauta is not empty %}
+  {{block_render(node.field_autopauta.entity.id)}}
+{% endif %}
+
+<section id="slider-products" class="slider-products back-slider-products milk">
+  <div class="containerGridp">
+    <div class="content">
+      <div class="c-header">
+        <h2>{{content.field_titulo_seccion_comprar}}</h2>
+        {{node.field_descripcion_seccion_compra.value|raw}}
+      </div>
+      <div class="c-slider-products">
+        <div class="s-slider-products1 owl-dots-gray owl-nav-icons2 owl-carousel owl-theme">
+          {% for item in node.field_presentaciones %}
+            {% set json='[' %}
+            {% for almacen in item.entity.field_almacenes_de_compra %}
+              {% set json=json~'{"img":"'~file_url(almacen.entity.field_almacen.entity.field_foto.entity.fileuri)~'","link":"'~almacen.entity.field_enlace.0.url|render~'","alt":"'~almacen.entity.field_almacen.entity.field_foto.alt~'","title":"'~almacen.entity.field_almacen.entity.field_foto.title~'" }' %}
+              {% if loop.last != true %}
+              {% set json=json~',' %}
+              {% endif %}
+            {% endfor %}
+            {% set json = json~']'%}
+            <div class="item json {% if loop.index==1%}active{% endif %}" data-json="{{json}}">
+              <div class="img autoHeight">
+                <picture>
+                   {% set imagestyle = {
+                      '#theme':      'image_style',
+                      '#style_name': '200x200',
+                      '#uri':        item.entity.field_foto.entity.fileuri,
+                      '#alt':        item.entity.field_foto.alt,
+                      '#title':      item.entity.field_foto.title,
+                      '#attributes': { class: 'lazyload' },
+                    }
+                  %}
+                  {{imagestyle}}
+                </picture>
+                <i class="demo-icon icon-icon-check1">&#xe820;</i>
+              </div>
+              <div class="info">
+                <h3>{{item.entity.field_titulo.value}}</h3>
+                {% if item.entity.field_subtitulo is not empty%}<span>{{item.entity.field_subtitulo.value}}</span>{%endif%}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+        <div class="info-mobile-products">
+        </div>
+        <div class="c-filters">
+          <span>{{node.field_titulo_donde_comprar.value}}</span>
+          <div class="s-slider-products2 owl-dots-gray owl-nav-icons2 owl-carousel owl-theme">
+            {% for item in node.field_presentaciones[0].entity.field_almacenes_de_compra %}
+              <div class="item" data-url="{{item.entity.field_enlace.0.url}}">
+                <picture>
+                  <img data-src="{{file_url(item.entity.field_almacen.entity.field_foto.entity.fileuri)}}" alt="{{item.entity.field_almacen.entity.field_foto.alt}}" title="{{item.entity.field_almacen.entity.field_foto.title}}" class="lazyload">
+                </picture>
+                <i class="demo-icon icon-icon-check1">&#xe820;</i>
+              </div>
+            {% endfor %}
+          </div>
+          <div class="empty">
+            <p>{{get_config_data('config.settings','texto_no_almacen')}}</p>
+          </div>
+          <div class="button">
+            <a href="#" target="_blank" class="btn-default back-green btn-buy-product" data-seo="btn-content">
+              {{get_config_data('config.settings','boton_compra_aqui')}}
+            </a>
+          </div>
+          {{node.field_descripcion_inferior.value|raw}}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if node.field_mostrar_en_el_home.value == 1 %}
+{% set count=obtener_count_view(node.id,'recetas_por_producto','block_1') %}
+{% if count > 0 %}
+  <section class="slider-cards back-blue products">
+    <div class="containerGridp">
+      <div class="content">
+        <div class="c-header">
+          <h2>Recetas con {{node.label}}</h2>
+        </div>
+        <div class="c-slider-cards">
+          <div class="s-slider-cards owl-dots-gray owl-nav-icons1 owl-carousel owl-theme">
+            {{ vista_render(node.id,'recetas_por_producto', 'block_1') }}
+          </div>
+        </div>
+        <div class="c-bottom">
+          <a href="{{get_config_data('config.settings','url_btn_recetas_valoradas')}}" class="btn-default back-green" data-seo="btn-content">{{get_config_data('config.settings','titulo_btn_recetas_valoradas')}}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endif %}
+{% endif %}

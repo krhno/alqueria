@@ -1,0 +1,1399 @@
+/*modal-center*/
+.modal-center{
+  overflow: auto;
+  min-height: calc(100vh - 0px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @media (max-width: $mobile){
+    margin: 1.5rem;
+  }
+}
+
+/*modal-delete-account1*/
+.modal-delete-account1{
+  padding: 0 !important;
+  &.delete-account2{
+    form{
+      fieldset, .alert-danger, input.form-submit{
+        display: none !important;
+      }
+    }
+  }
+  .modal-dialog{
+    .modal-content{
+      border-radius: 40px;
+      @media (max-width: $mobile){
+        border-radius: 25px;
+      }
+      .icon-icon-close1{
+        top: -35px;
+        right: 5px;
+        z-index: 1;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: $white;
+        position: absolute;
+      }
+      .modal-body{
+        padding: 0;
+        .c-content-account{
+          width: 100%;
+          height: 100%;
+          min-height: 480px;
+          text-align: center;
+          position: relative;
+          padding: 40px 45px 120px 45px;
+
+          background-size: contain;
+          background-position: bottom;
+          background-repeat: no-repeat;
+          background-image: url("/themes/custom/alqueria/assets/img/icons/border.png");
+
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: center;
+          @media (max-width: $mobile){
+            padding: 40px 7% 90px 7%;
+          }
+          .info{
+            form{
+              position: relative;
+              p{
+                padding-top: 20px;
+              }
+              .checkboxes--wrapper{
+                margin: 0;
+                display: block;
+                .js-form-type-checkbox{
+                  padding: 2.5px 0;
+                  text-align: left;
+                  input[type="checkbox"]{
+                    display: none;
+                  }
+                  input[type="checkbox"]{
+                    top: 5px;
+                    left: 0;
+                    width: 23px;
+                    height: 23px;
+                    margin: 0;
+                    cursor: pointer;
+                    border-radius: 50%;
+                    position: relative;
+                    display: inline-block;
+                    box-sizing: border-box;
+                    border: 1px solid $green1;
+                    background-color: transparent;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    appearance: none;
+                  }
+                  input[type="checkbox"]:checked{
+                    background-image: url("../img/icons/checkbox5.png");
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    border-color: transparent;
+                    background-size: 23px;
+                  }
+                  label{
+                    cursor: pointer;
+                    font-size: 1.15rem;
+                    padding: 0 0 0 10px;
+                    display: inline-block;
+                    @media (max-width: $mobile){
+                      font-size: 1.1rem;
+                    }
+                  }
+                }
+              }
+              input.form-submit{
+                width: 150px;
+                height: 45px;
+                margin-top: 25px;
+                border-radius: 30px;
+                text-transform: uppercase;
+                border: 1px solid $green1;
+                background-color: $green1;
+
+                color: $white;
+                font-size: 1.2rem;
+                font-weight: 700;
+                font-style: normal;
+                font-family: $Poppins;
+              }
+              .alert-success{
+                margin: 0;
+                padding: 0;
+                border: none;
+                background-color: transparent;
+                &:before{
+                  display: none;
+                }
+                .close{
+                  display: none;
+                }
+                .delete-account2{
+                  .btn-default{
+                    margin-top: 25px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* modal-delete-account2*/
+.modal-delete-account2{
+  padding: 0 !important;
+  .modal-dialog{
+    .modal-content{
+      border-radius: 40px;
+      @media (max-width: $mobile){
+        border-radius: 25px;
+      }
+      .icon-icon-close1{
+        top: -35px;
+        right: 5px;
+        z-index: 1;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: $white;
+        position: absolute;
+      }
+      .modal-body{
+        padding: 0;
+        .c-content-account{
+          width: 100%;
+          height: 100%;
+          min-height: 480px;
+          text-align: center;
+          position: relative;
+          padding: 40px 45px 120px 45px;
+
+          background-size: contain;
+          background-position: bottom;
+          background-repeat: no-repeat;
+          background-image: url("/themes/custom/alqueria/assets/img/icons/border.png");
+
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: center;
+          @media (max-width: $mobile){
+            padding: 40px 7% 90px 7%;
+          }
+          .info{
+            p{
+              padding-top: 20px;
+              padding-bottom: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*modal-email*/
+.modal-email{
+  padding: 0 !important;
+  .modal-dialog{
+    .modal-content{
+      border-radius: 40px;
+      @media (max-width: $mobile){
+        border-radius: 25px;
+      }
+      .icon-icon-close1{
+        top: -35px;
+        right: 5px;
+        z-index: 1;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: $white;
+        position: absolute;
+      }
+      .modal-body{
+        padding: 0;
+        .c-modal-email{
+          text-align: center;
+          position: relative;
+          padding: 45px 45px 130px 45px;
+
+          background-size: contain;
+          background-position: bottom;
+          background-repeat: no-repeat;
+          background-image: url("/themes/custom/alqueria/assets/img/icons/border.png");
+          @media (max-width: $mobile){
+            padding: 40px 7% 90px 7%;
+          }
+          .content-icon{
+            width: 140px;
+            height: 140px;
+            margin: 0 auto;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 0 $shadow;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media (max-width: $desktop_1640){
+              width: 130px;
+              height: 130px;
+            }
+            @media (max-width: $mobile){
+              width: 120px;
+              height: 120px;
+            }
+            .icon-icon-check1{
+              font-size: 2.7rem;
+              color: $green1;
+              @media (max-width: $mobile){
+                font-size: 2.4rem;
+              }
+            }
+            .icon-icon-close2{
+              font-size: 3rem;
+              color: $red1;
+              @media (max-width: $mobile){
+                font-size: 2.7rem;
+              }
+            }
+          }
+          .content-title{
+            width: 90%;
+            margin: 0 auto;
+            padding-top: 20px;
+            text-align: center;
+            @media (max-width: $mobile){
+              width: 100%;
+            }
+            .title{
+              width: auto;
+              display: table;
+              margin: 0 auto;
+              position: relative;
+              @media (max-width: $mobile){
+                width: 80%;
+              }
+              &:before{
+                top: 0;
+                left: -30px;
+                width: auto;
+                height: auto;
+                position: absolute;
+                background-color: transparent;
+                content: url("/themes/custom/alqueria/assets/img/icons/figure1.png");
+                @media (max-width: $mobile){
+                  top: 0;
+                  left: -20px;
+                }
+              }
+              &:after{
+                top: 0;
+                right: -40px;
+                width: auto;
+                height: auto;
+                position: absolute;
+                background-color: transparent;
+                content: url("/themes/custom/alqueria/assets/img/icons/figure2.png");
+                @media (max-width: $mobile){
+                  top: 0;
+                  right: -30px;
+                }
+              }
+            }
+            p{
+              padding: 15px 0 10px 0;
+              &:last-child{
+                padding: 0;
+              }
+              span{
+                cursor: pointer;
+                
+                color: $gray1;
+                font-size: 1.15rem;
+                font-weight: 700;
+                font-style: normal;
+                font-family: $Poppins;
+                text-decoration: underline !important;
+                @media (max-width: $mobile){
+                  font-size: 1.1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*modal-general*/
+.modal-general{
+  top: 140px;
+  right: 15px;
+  z-index: 999;
+  position: fixed;
+  @media (max-width: $desktop_1024){
+    top: 80px;
+  }
+  .content-text{
+    padding: 10px;
+    border-radius: 5px;
+    background: $red1;
+    @media (max-width: $mobile){
+      padding: 3px 10px;
+    }
+    p{
+      color: $white;
+    }
+  }
+}
+
+/*modal-infographic-ods*/
+.modal-infographic-ods{
+  padding: 0 !important;
+  .modal-dialog{
+    max-width: 65%;
+    min-height: calc(100vh - -50px);
+    @media (max-width: $desktop_1640){
+      max-width: 75%;
+    }
+    @media (max-width: $mobile){
+      max-width: 100%;
+    }
+    .modal-content{
+      .icon-icon-close1{
+        top: -35px;
+        right: 5px;
+        z-index: 1;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: $white;
+        position: absolute;
+      }
+      .modal-body{
+        padding: 35px 45px;
+        @media (max-width: $mobile){
+          padding: 20px;
+        }
+        .item{
+          padding: 15px 0;
+          border-bottom: 1px solid $gray6;
+          &:first-child{
+            padding-top: 0;
+          }
+          &:last-child{
+            padding-bottom: 0;
+            border-bottom: none;
+          }
+          .title{
+            padding-right: 50px;
+            position: relative;
+            
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            .img{
+              width: 10%;
+              padding-right: 15px;
+              @media (max-width: $desktop_1024){
+                width: 15%;
+              }
+              @media (max-width: $tablet){
+                width: 20%;
+              }
+              @media (max-width: $mobile){
+                width: 30%;
+              }
+            }
+            .text{
+              width: 90%;
+              @media (max-width: $desktop_1024){
+                width: 85%;
+              }
+              @media (max-width: $tablet){
+                width: 80%;
+              }
+              @media (max-width: $mobile){
+                width: 70%;
+              }
+              span{
+                color: $red1;
+                font-size: 1.7rem;
+                font-weight: 700;
+                font-style: normal;
+                line-height: normal;
+                font-family: $Poppins;
+                @media (max-width: $desktop_1640){
+                  font-size: 1.4rem;
+                }
+                @media (max-width: $mobile){
+                  font-size: 1.1rem;
+                }
+              }
+            }
+            .icon{
+              top: 0;
+              right: 0;
+              bottom: 0;
+              width: 35px;
+              height: 35px;
+              margin: auto;
+              border-radius: 50%;
+              position: absolute;
+              background-color: $red1;
+
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              @media (max-width: $desktop_1640){
+                width: 25px;
+                height: 25px;
+              }
+              i{
+                font-size: .75rem;
+                color: $white;
+                transition: all .25s;
+                @media (max-width: $desktop_1640){
+                  font-size: .55rem;
+                }
+              }
+            }
+          }
+          .panel-collapse{
+            padding: 30px 0 15px 0;
+            h2, h3, h4, h5, h6{
+              color: $green1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*modal-login*/
+.modal-login{
+  padding: 0 !important;
+  .modal-dialog{
+    .modal-content{
+      border-radius: 40px;
+      @media (max-width: $mobile){
+        border-radius: 25px;
+      }
+      .icon-icon-close1{
+        top: -35px;
+        right: 5px;
+        z-index: 1;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: $white;
+        position: absolute;
+      }
+      .modal-body{
+        padding: 0;
+        .c-modal-login{
+          position: relative;
+          padding: 45px 45px 130px 45px;
+
+          background-size: contain;
+          background-position: bottom;
+          background-repeat: no-repeat;
+          background-image: url("/themes/custom/alqueria/assets/img/icons/border.png");
+          @media (max-width: $mobile){
+            padding: 40px 7% 90px 7%;
+          }
+          .form-login{
+            form{
+              .content-title{
+                width: 90%;
+                margin: 0 auto;
+                text-align: center;
+                @media (max-width: $mobile){
+                  width: 100%;
+                }
+                .title{
+                  width: auto;
+                  display: table;
+                  margin: 0 auto;
+                  position: relative;
+                  &:before{
+                    top: 0;
+                    left: -30px;
+                    width: auto;
+                    height: auto;
+                    position: absolute;
+                    background-color: transparent;
+                    content: url("/themes/custom/alqueria/assets/img/icons/figure1.png");
+                  }
+                  &:after{
+                    top: 0;
+                    right: -40px;
+                    width: auto;
+                    height: auto;
+                    position: absolute;
+                    background-color: transparent;
+                    content: url("/themes/custom/alqueria/assets/img/icons/figure2.png");
+                  }
+                }
+                p{
+                  padding-top: 15px;
+                }
+              }
+              .content-social{
+                padding: 15px 0;
+                text-align: center;
+                .items{
+                  padding-top: 10px;
+                  position: relative;
+
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: center;
+                  @media (max-width: $mobile){
+                    padding-top: 5px;
+                  }
+                  .btn-facebook{
+                    width: 45px;
+                    height: 45px;
+                    cursor: pointer;
+                    margin-right: 7px;
+                    border-radius: 50%;
+                    background-color: $facebook;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    @media (max-width: $desktop_1640){
+                      width: 40px;
+                      height: 40px;
+                    }
+                    &:before{
+                      content: "";
+                      right: 0;
+                      width: 35%;
+                      height: 1px;
+                      position: absolute;
+                      background-color: $gray4;
+                      @media (max-width: $desktop_1024){
+                        width: 35%;
+                      }
+                      @media (max-width: $tablet){
+                        width: 33%;
+                      }
+                      @media (max-width: $mobile){
+                        width: 30%;
+                      }
+                    }
+                    i{
+                      font-size: 1.5rem;
+                      color: $white;
+                      @media (max-width: $mobile){
+                        font-size: 1.45rem;
+                      }
+                    }
+                  }
+                  .btn-gmail{
+                    width: 45px;
+                    height: 45px;
+                    cursor: pointer;
+                    margin-left: 7px;
+                    border-radius: 50%;
+                    border: 1px solid $gray4;
+                    background-color: $white;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    @media (max-width: $desktop_1640){
+                      width: 40px;
+                      height: 40px;
+                    }
+                    &:after{
+                      content: "";
+                      left: 0;
+                      width: 35%;
+                      height: 1px;
+                      position: absolute;
+                      background-color: $gray4;
+                      @media (max-width: $desktop_1024){
+                        width: 35%;
+                      }
+                      @media (max-width: $tablet){
+                        width: 33%;
+                      }
+                      @media (max-width: $mobile){
+                        width: 30%;
+                      }
+                    }
+                    img{
+                      width: auto;
+                      height: auto;
+                    }
+                  }
+                }
+              }
+              .content-form{
+                .form{
+                  .form-group{
+                    label{
+                      display: block;
+                      padding-left: 3px;
+                      padding-bottom: 3px;
+
+                      font-weight: 700;
+                      font-style: normal;
+                      font-family: $Poppins;
+                    }
+                    input{
+                      width: 100%;
+                      height: 40px;
+                      padding: 10px;
+                      box-shadow: none;
+                      border: 1px solid $gray6;
+                      background-color: $white;
+
+                      color: $gray1;
+                      font-size: 1.2rem;
+                      font-weight: 300;
+                      font-style: normal;
+                      font-family: $Poppins;
+                      @media (max-width: $desktop_1640){
+                        font-size: 1rem;
+                      }
+                    }
+                  }
+                }
+                .checks{
+                  .div-checks{
+                    margin-top: -5px;
+
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    @media (max-width: $mobile){
+                      align-items: center;
+                      flex-direction: column;
+                      justify-content: center;
+                    }
+                    .div-check{
+                      &:first-child{
+                        @media (max-width: $tablet){
+                          padding: 5px 0 3px 0;
+                        }
+                      }
+                      .form-check{
+                        padding-left: 0;
+                        span{
+                          cursor: pointer;
+
+                          color: $gray1;
+                          text-decoration: underline !important;
+                        }
+                        input[type="checkbox"]{
+                          display: none;
+                        }
+                        input[type="checkbox"]{
+                          top: 3px;
+                          width: 18px;
+                          height: 18px;
+                          cursor: pointer;
+                          border-radius: 0;
+                          margin-right: 5px;
+                          position: relative;
+                          display: inline-block;
+                          box-sizing: border-box;
+                          border: 1px solid $gray2;
+                          background-color: transparent;
+
+                          -webkit-appearance: none;
+                          -moz-appearance: none;
+                          appearance: none;
+                        }
+                        input[type="checkbox"]:checked{
+                          background-image: url("../img/icons/checkbox3.png");
+                          background-repeat: no-repeat;
+                          background-position: center;
+                          border-color: transparent;
+                          background-size: 18px;
+                        }
+                      }
+                    }
+                  }
+                }
+                .button{
+                  padding-top: 20px;
+                  text-align: center;
+                }
+                .text{
+                  left: 0;
+                  right: 0;
+                  bottom: 35px;
+                  margin: 0 auto;
+                  text-align: center;
+                  position: absolute;
+                  @media (max-width: $mobile){
+                    bottom: 10px;
+                  }
+                  span{
+                    color: $white;
+                    a{
+                      color: $white;
+                      font-weight: 700;
+                      font-style: normal;
+                      font-family: $Poppins;
+                      text-decoration: underline !important;
+                      @media (max-width: $mobile){
+                        display: block;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*modal-promotion*/
+.modal-promotion{
+  padding: 0 !important;
+  .modal-dialog{
+    .modal-content{
+      border-radius: 40px;
+      @media (max-width: $mobile){
+        border-radius: 25px;
+      }
+      .icon-icon-close1{
+        top: -35px;
+        right: 5px;
+        z-index: 1;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: $white;
+        position: absolute;
+      }
+      .modal-body{
+        padding: 0;
+      }
+    }
+  }
+}
+
+/*modal-question*/
+.modal-question{
+  .modal-dialog{
+    right: 120px;
+    bottom: 100px;
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    @media (max-width: $desktop_1640){
+      right: 120px;
+      bottom: 80px;
+    }
+    @media (max-width: $mobile){
+      right: initial;
+      bottom: initial;
+      position: relative;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .modal-content{
+      .icon-icon-close1{
+        top: -30px;
+        right: 0;
+        z-index: 1;
+        cursor: pointer;
+        font-size: 1.4rem;
+        color: $red1;
+        position: absolute;
+      }
+      .modal-body{
+        padding: 0;
+        .c-modal-question{
+          position: relative;
+          .info{
+            text-align: center;
+            padding: 25px 25px 30px 25px;
+            form{
+              h3{
+                text-align: center;
+              }
+              p{
+                padding: 15px 0 10px 0;
+              }
+              .radios--wrapper{
+                margin: 15px 0 20px 0;
+                .fieldset-legend{
+                  display: block;
+                  text-align: center;
+                  padding-bottom: 20px;
+                }
+                .js-webform-radios{
+                  .form-check{
+                    padding-left: 0;
+                    padding-bottom: 10px;
+
+                    display: flex;
+                    flex-direction: row;
+                    &:last-child{
+                      padding-bottom: 0;
+                    }
+                    label{
+                      padding-left: 10px;
+                    }
+                    input[type="radio"]{
+                      display: none;
+                    }
+                    input[type="radio"]{
+                      margin: 0;
+                      width: 18px;
+                      height: 18px;
+                      cursor: pointer;
+                      border-radius: 50%;
+                      position: relative;
+                      display: inline-block;
+                      box-sizing: border-box;
+                      border: 1px solid $gray3;
+                      background-color: $white;
+
+                      -webkit-appearance: none;
+                      -moz-appearance: none;
+                      appearance: none;
+                    }
+                    input[type="radio"]:checked{
+                      border: 1px solid $red1;
+
+                      background-image: url("../img/icons/checkbox2.png");
+                      background-repeat: no-repeat;
+                      background-position: center;
+                      background-size: 18px;
+                    }
+                  }
+                }
+              }
+              .btn-default{
+                width: 60%;
+                border: none;
+                height: initial;
+                cursor: pointer;
+                font-size: 1.4rem;
+                @media (max-width: $desktop_1640){
+                  font-size: 1.2rem;
+                }
+                &.back-green:hover{
+                  background-color: $green1;
+                }
+                &.back-red:hover{
+                  background-color: $red1;
+                }
+              }
+              .button-question{
+                top: -30px;
+                left: 0;
+                right: 0;
+                width: 60px;
+                height: 60px;
+                margin: 0 auto;
+                border-radius: 50%;
+                position: absolute;
+                border: 3px solid $white;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @media (max-width: $desktop_1640){
+                  width: 50px;
+                  height: 50px;
+                }
+                .icon-icon-question{
+                  font-size: 2rem;
+                  color: $white;
+                }
+                .icon-icon-check{
+                  font-size: 1.4rem;
+                  color: $white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*modal-recover*/
+.modal-recover{
+  padding: 0 !important;
+  .modal-dialog{
+    .modal-content{
+      border-radius: 40px;
+      @media (max-width: $mobile){
+        border-radius: 25px;
+      }
+      .icon-icon-close1{
+        top: -35px;
+        right: 5px;
+        z-index: 1;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: $white;
+        position: absolute;
+      }
+      .modal-body{
+        padding: 0;
+        .c-modal-recover{
+          position: relative;
+          padding: 45px 45px 130px 45px;
+
+          background-size: contain;
+          background-position: bottom;
+          background-repeat: no-repeat;
+          background-image: url("/themes/custom/alqueria/assets/img/icons/border.png");
+          @media (max-width: $mobile){
+            padding: 40px 7% 90px 7%;
+          }
+          .form-recover{
+            form{
+              .content-icon{
+                width: 140px;
+                height: 140px;
+                margin: 0 auto;
+                border-radius: 50%;
+                box-shadow: 0 0 10px 0 $shadow;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @media (max-width: $desktop_1640){
+                  width: 130px;
+                  height: 130px;
+                }
+                @media (max-width: $mobile){
+                  width: 120px;
+                  height: 120px;
+                }
+                .icon-icon-exclamation2{
+                  font-size: 4rem;
+                  color: $red1;
+                  @media (max-width: $mobile){
+                    font-size: 3.7rem;
+                  }
+                }
+              }
+              .content-title{
+                width: 90%;
+                margin: 0 auto;
+                padding-top: 20px;
+                text-align: center;
+                @media (max-width: $mobile){
+                  width: 100%;
+                }
+                .title{
+                  width: auto;
+                  display: table;
+                  margin: 0 auto;
+                  position: relative;
+                  @media (max-width: $mobile){
+                    width: 80%;
+                  }
+                  &:before{
+                    top: 0;
+                    left: -30px;
+                    width: auto;
+                    height: auto;
+                    position: absolute;
+                    background-color: transparent;
+                    content: url("/themes/custom/alqueria/assets/img/icons/figure1.png");
+                    @media (max-width: $mobile){
+                      top: 0;
+                      left: -20px;
+                    }
+                  }
+                  &:after{
+                    top: 0;
+                    right: -40px;
+                    width: auto;
+                    height: auto;
+                    position: absolute;
+                    background-color: transparent;
+                    content: url("/themes/custom/alqueria/assets/img/icons/figure2.png");
+                    @media (max-width: $mobile){
+                      top: 0;
+                      right: -30px;
+                    }
+                  }
+                }
+                p{
+                  padding: 15px 0 20px 0;
+                }
+              }
+              .content-form{
+                .form{
+                  .form-group{
+                    label{
+                      display: block;
+                      padding-bottom: 3px;
+
+                      font-size: 1.15rem;
+                      font-weight: 700;
+                      font-style: normal;
+                      font-family: $Poppins;
+                      @media (max-width: $mobile){
+                        font-size: 1.1rem;
+                      }
+                    }
+                    input{
+                      width: 100%;
+                      height: 40px;
+                      padding: 10px;
+                      border-radius: 0;
+                      box-shadow: none;
+                      border: 1px solid $gray6;
+                      background-color: $white;
+
+                      color: $gray1;
+                      font-size: 1.2rem;
+                      font-weight: 300;
+                      font-style: normal;
+                      font-family: $Poppins;
+                      @media (max-width: $desktop_1640){
+                        font-size: 1rem;
+                      }
+                    }
+                  }
+                }
+                .button{
+                  padding-top: 15px;
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*modal-search*/
+.modal-search{
+  .modal-dialog{
+    @media (max-width: $desktop_1024){
+      width: 85%;
+      max-width: 85%;
+    }
+    @media (max-width: $mobile){
+      width: 90%;
+      max-width: 90%;
+    }
+    .modal-content{
+      border-radius: 80px;
+      .icon-icon-close1{
+        top: -35px;
+        right: 5px;
+        z-index: 1;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: $white;
+        position: absolute;
+      }
+      .modal-body{
+        padding: 30px;
+        @media (max-width: $mobile){
+          padding: 15px;
+        }
+        .c-modal-search{
+          form{
+            display: flex;
+            flex-direction: row;
+            .column-left{
+              width: 80%;
+              margin-right: 25px;
+              @media (max-width: $mobile){
+                width: 90%;
+                margin-right: 10px;
+              }
+              input{
+                width: 100%;
+                height: 45px;
+                padding: 0 25px;
+                border-radius: 50px;
+                border: 1px solid $green1;
+
+                color: $gray1;
+                font-size: 1.25rem;
+                font-weight: 300;
+                font-style: normal;
+                font-family: $Poppins;
+                @media (max-width: $mobile){
+                  height: 40px;
+                  padding: 0 15px;
+                }
+              }
+            }
+            .column-right{
+              width: 20%;
+              @media (max-width: $mobile){
+                width: auto;
+              }
+              .btn-default{
+                width: 100%;
+                @media (max-width: $mobile){
+                  width: 40px;
+                  height: 40px;
+                  padding: 0;
+                  border-radius: 50%;
+
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                }
+                span{
+                  color: $white;
+                  font-size: 1.4rem;
+                  font-weight: 700;
+                  font-style: normal;
+                  font-family: $Poppins;
+                  @media (max-width: $desktop_1640){
+                    font-size: 1.2rem;
+                  }
+                  @media (max-width: $mobile){
+                    display: none;
+                  }
+                }
+                i{
+                  display: none;
+                  color: $white;
+                  font-size: 1.5rem;
+                  @media (max-width: $mobile){
+                    display: block;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*modal-successful*/
+/*modal-unsuccessful*/
+.modal-successful,
+.modal-unsuccessful{
+  padding: 0 !important;
+  .modal-dialog{
+    .modal-content{
+      border-radius: 40px;
+      @media (max-width: $mobile){
+        border-radius: 25px;
+      }
+      .icon-icon-close1{
+        top: -35px;
+        right: 5px;
+        z-index: 1;
+        cursor: pointer;
+        font-size: 1.5rem;
+        color: $white;
+        position: absolute;
+      }
+      .modal-body{
+        padding: 0;
+        .c-registration{
+          text-align: center;
+          position: relative;
+          padding: 45px 45px 130px 45px;
+
+          background-size: contain;
+          background-position: bottom;
+          background-repeat: no-repeat;
+          background-image: url("/themes/custom/alqueria/assets/img/icons/border.png");
+          @media (max-width: $mobile){
+            padding: 40px 7% 90px 7%;
+          }
+          .content-icon{
+            width: 140px;
+            height: 140px;
+            margin: 0 auto;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 0 $shadow;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media (max-width: $desktop_1640){
+              width: 130px;
+              height: 130px;
+            }
+            @media (max-width: $mobile){
+              width: 120px;
+              height: 120px;
+            }
+            .icon-icon-check1{
+              font-size: 2.7rem;
+              color: $green1;
+              @media (max-width: $mobile){
+                font-size: 2.4rem;
+              }
+            }
+            .icon-icon-close2{
+              font-size: 3rem;
+              color: $red1;
+              @media (max-width: $mobile){
+                font-size: 2.7rem;
+              }
+            }
+          }
+          .content-title{
+            width: 90%;
+            margin: 0 auto;
+            padding-top: 20px;
+            text-align: center;
+            @media (max-width: $mobile){
+              width: 100%;
+            }
+            .title{
+              width: auto;
+              display: table;
+              margin: 0 auto;
+              position: relative;
+              @media (max-width: $mobile){
+                width: 80%;
+              }
+              &:before{
+                top: 0;
+                left: -30px;
+                width: auto;
+                height: auto;
+                position: absolute;
+                background-color: transparent;
+                content: url("/themes/custom/alqueria/assets/img/icons/figure1.png");
+                @media (max-width: $mobile){
+                  top: 0;
+                  left: -20px;
+                }
+              }
+              &:after{
+                top: 0;
+                right: -40px;
+                width: auto;
+                height: auto;
+                position: absolute;
+                background-color: transparent;
+                content: url("/themes/custom/alqueria/assets/img/icons/figure2.png");
+                @media (max-width: $mobile){
+                  top: 0;
+                  right: -30px;
+                }
+              }
+            }
+            p{
+              color: $gray1;
+              text-align: center;
+              padding: 15px 0 20px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*modal-tips*/
+.modal-tips{
+  .modal-dialog{
+    .modal-content{
+      border: none;
+      border-radius: 0;
+      .icon-icon-close1{
+        top: -30px;
+        right: 0;
+        z-index: 1;
+        cursor: pointer;
+        font-size: 1.4rem;
+        color: $white;
+        position: absolute;
+      }
+      .modal-body{
+        padding: 0;
+        .c-modal-tips{
+          display: flex;
+          flex-direction: row;
+          @media (max-width: $tablet){
+            flex-direction: column-reverse;
+          }
+          .info{
+            width: 40%;
+            padding: 10px 20px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            @media (max-width: $tablet){
+              width: 100%;
+            }
+            @media (max-width: $mobile){
+              padding: 20px;
+            }
+            h3{
+              font-size: 2rem;
+              @media (max-width: $desktop_1640){
+                font-size: 1.7rem;
+              }
+            }
+            .text{
+              height: 300px;
+              overflow: auto;
+              margin-top: 15px;
+              padding-right: 15px;
+              @media (max-width: $tablet){
+                height: 150px;
+              }
+              a{
+                color: $links;
+              }
+            }
+          }
+          .img-video{
+            width: 60%;
+            box-shadow: 0px 0 10px 0px $shadow;
+            @media (max-width: $tablet){
+              width: 100%;
+            }
+            .video, iframe{
+              width: 100%;
+              height: 500px;
+              @media (max-width: $desktop_1640){
+                height: 450px;
+              }
+              @media (max-width: $tablet){
+                height: 350px;
+              }
+              @media (max-width: $mobile){
+                height: 250px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
